@@ -34,13 +34,23 @@ const state = {
 const US = () => state.settings.units !== 'si';
 const THEMES = [
   ['classic', 'Classic', ['#eef2f7', '#ffffff', '#2563eb']],
-  ['seaglass', 'Sea glass', ['#eef4f1', '#bfe0d6', '#1f4e6b']],
-  ['midnight', 'Midnight', ['#08090c', '#1a1d2b', '#8b93ff']],
-  ['daybreak', 'Daybreak', ['#f6f9fc', '#a960ee', '#635bff']],
-  ['civic', 'Civic', ['#0b0c0c', '#ffdd00', '#1d70b8']],
+  ['coastal', 'Coastal', ['#f2f7f6', '#9be0c9', '#0f6e7a']],
+  ['nightfall', 'Nightfall', ['#070b0f', '#14535a', '#5eead4']],
+  ['editorial', 'Editorial', ['#f7f3ec', '#fffdf9', '#2f6b5b']],
+  ['sky', 'Live sky', ['#2f80d1', '#c76b6b', '#0b1736']],
 ];
 const theme = () => document.documentElement.dataset.theme || 'classic';
-const isDark = () => theme() === 'midnight' || matchMedia('(prefers-color-scheme: dark)').matches;
+const isDark = () => theme() === 'nightfall' || (theme() === 'sky' ? /^(night|dusk)/.test(document.documentElement.dataset.sky || '') : matchMedia('(prefers-color-scheme: dark)').matches);
+// "Live sky" theme: pick a background from current conditions and time of day.
+function skyFor(v) {
+  const s = v.sun, n = Date.now(), txt = `${v.now.text || ''} ${v.hourly[0]?.text || ''}`.toLowerCase();
+  const near = d => d && Math.abs(n - d) < 45 * 60e3;
+  const day = s.rise && s.set ? n > s.rise && n < s.set : true;
+  const wet = /rain|shower|drizzle|thunder|storm|snow|sleet/.test(txt) || (v.hourly[0]?.pop ?? 0) >= 60;
+  const cloudy = !wet && /overcast|mostly cloudy|^cloudy|\bcloudy|fog|haze|smoke/.test(txt) && !/partly/.test(txt);
+  if ((near(s.rise) || near(s.set)) && !wet) return 'dusk';
+  return `${day ? 'day' : 'night'}-${wet ? 'rain' : cloudy ? 'cloudy' : 'clear'}`;
+}
 function setTheme(t) {
   document.documentElement.dataset.theme = t;
   store.set('wx.theme', t);
@@ -599,6 +609,7 @@ async function show(force) {
 }
 
 function render(v, loc) {
+  document.documentElement.dataset.sky = skyFor(v);
   const n = v.now, tz = v.tz;
   const firstDay = v.days[0];
   const hl = [firstDay?.hi && `H ${firstDay.hi}`, (firstDay?.lo || v.days[1]?.lo) && `L ${firstDay?.lo || v.days[1]?.lo}`].filter(Boolean).join('  ');
