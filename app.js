@@ -57,21 +57,29 @@ function setTheme(t) {
   renderThemePick();
   if (typeof fx !== 'undefined') { if (t === 'sky' && state.lastView) fxFromView(state.lastView); else fx.start(); }
 }
+// [id, label, CSS family for the preview, stylesheet URL (null = already loaded), note]
+const GF = q => `https://fonts.googleapis.com/css2?family=${q}&display=swap`;
+const FS = q => `https://api.fontshare.com/v2/css?f[]=${q}&display=swap`;
 const FONTS = [
-  ['', 'Theme default', 'inherit', null],
-  ['inter', 'Inter', '"Inter"', null],
-  ['manrope', 'Manrope', '"Manrope"', 'Manrope:wght@200;300;400;500;600;700'],
-  ['jakarta', 'Plus Jakarta Sans', '"Plus Jakarta Sans"', 'Plus+Jakarta+Sans:wght@200;300;400;500;600;700'],
-  ['outfit', 'Outfit', '"Outfit"', 'Outfit:wght@100;200;300;400;500;600;700'],
-  ['space', 'Space Grotesk', '"Space Grotesk"', 'Space+Grotesk:wght@300;400;500;600;700'],
-  ['fraunces', 'Fraunces + Inter', '"Fraunces"', null],
+  ['', 'Theme default', 'inherit', null, ''],
+  ['inter', 'Inter', '"Inter"', null, ''],
+  ['josefin', 'Josefin Sans', '"Josefin Sans"', GF('Josefin+Sans:wght@200;300;400;500;600;700'), ''],
+  ['rubik', 'Rubik', '"Rubik"', GF('Rubik:wght@300;400;500;600;700'), ''],
+  ['dmsans', 'DM Sans', '"DM Sans"', GF('DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700'), ''],
+  ['manrope', 'Manrope', '"Manrope"', GF('Manrope:wght@200;300;400;500;600;700'), ''],
+  ['geist', 'Geist', '"Geist"', GF('Geist:wght@200;300;400;500;600;700'), ''],
+  ['satoshi', 'Satoshi', '"Satoshi"', FS('satoshi@300,400,500,700'), ''],
+  ['clash', 'Clash Grotesk', '"Clash Grotesk"', FS('clash-grotesk@200,300,400,500,600,700'), ''],
+  ['general', 'General Sans', '"General Sans"', FS('general-sans@200,300,400,500,600,700'), 'free stand-in for Aeonik'],
+  ['switzer', 'Switzer', '"Switzer"', FS('switzer@200,300,400,500,600,700'), 'free stand-in for Mori'],
+  ['unbounded', 'Unbounded + Manrope', '"Unbounded"', GF('Unbounded:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600;700'), 'free stand-in for Monument'],
 ];
 function loadFont(id) {
   const f = FONTS.find(x => x[0] === id);
   if (!f || !f[3] || document.getElementById(`font-${id}`)) return;
   const l = document.createElement('link');
   l.id = `font-${id}`; l.rel = 'stylesheet';
-  l.href = `https://fonts.googleapis.com/css2?family=${f[3]}&display=swap`;
+  l.href = f[3];
   document.head.appendChild(l);
 }
 function setFont(id) {
@@ -84,8 +92,8 @@ function renderFontPick() {
   if (!el) return;
   FONTS.forEach(f => loadFont(f[0]));
   const cur = document.documentElement.dataset.font || '';
-  el.innerHTML = FONTS.map(([id, name, fam]) => `<button type="button" data-f="${id}" aria-pressed="${cur === id}">
-    <span class="fs" style="font-family:${fam === 'inherit' ? 'inherit' : `${fam}, sans-serif`}">69°<em>Aa</em></span><span class="fn">${esc(name)}</span></button>`).join('');
+  el.innerHTML = FONTS.map(([id, name, fam, , note]) => `<button type="button" data-f="${id}" aria-pressed="${cur === id}">
+    <span class="fs" style="font-family:${fam === 'inherit' ? 'inherit' : `${fam}, sans-serif`}">69°<em>Aa</em></span><span class="fn">${esc(name)}</span>${note ? `<span class="fnote">${esc(note)}</span>` : ''}</button>`).join('');
   el.querySelectorAll('button').forEach(b => b.onclick = () => setFont(b.dataset.f));
 }
 function renderThemePick() {
