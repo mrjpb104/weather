@@ -68,7 +68,7 @@ const FONTS = [
   ['dmsans', 'DM Sans', '"DM Sans"', GF('DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700'), ''],
   ['manrope', 'Manrope', '"Manrope"', GF('Manrope:wght@200;300;400;500;600;700'), ''],
   ['geist', 'Geist', '"Geist"', GF('Geist:wght@200;300;400;500;600;700'), ''],
-  ['satoshi', 'Satoshi', '"Satoshi"', FS('satoshi@300,400,500,700'), ''],
+  ['satoshi', 'Satoshi', '"Satoshi"', FS('satoshi@300,400,500,700'), 'default'],
   ['clash', 'Clash Grotesk', '"Clash Grotesk"', FS('clash-grotesk@200,300,400,500,600,700'), ''],
   ['general', 'General Sans', '"General Sans"', FS('general-sans@200,300,400,500,600,700'), 'free stand-in for Aeonik'],
   ['switzer', 'Switzer', '"Switzer"', FS('switzer@200,300,400,500,600,700'), 'free stand-in for Mori'],
