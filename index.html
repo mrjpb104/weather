@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weather</title>
+<meta name="description" content="Personal weather: NWS forecasts, radar, and plain-English forecast discussions.">
+<meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef2f7" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Weather">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <nav id="tabs" class="tabs" aria-label="Locations"></nav>
+  <button id="btnAdd" class="iconbtn" aria-label="Add a location" title="Add a location">＋</button>
+  <button id="btnSettings" class="iconbtn" aria-label="Settings" title="Settings">⚙︎</button>
+</header>
+
+<main id="main" aria-live="polite"></main>
+
+<dialog id="dlgAdd" class="sheet">
+  <form method="dialog" class="sheet-head">
+    <h2>Add a location</h2>
+    <button class="iconbtn" value="close" aria-label="Close">✕</button>
+  </form>
+  <input id="addQuery" type="search" placeholder="City, ZIP code, or lat, lon" autocomplete="off" enterkeyhint="search">
+  <button id="addHere" class="btn wide" type="button">📍 Save my current location</button>
+  <ul id="addResults" class="results"></ul>
+  <p class="fine">Search by Open-Meteo geocoding.</p>
+</dialog>
+
+<dialog id="dlgSettings" class="sheet">
+  <form method="dialog" class="sheet-head">
+    <h2>Settings</h2>
+    <button class="iconbtn" value="close" aria-label="Close">✕</button>
+  </form>
+  <div class="setting">
+    <span>Units</span>
+    <div class="seg" id="unitSeg">
+      <button type="button" data-u="us">°F · mph · in</button>
+      <button type="button" data-u="si">°C · km/h · mm</button>
+    </div>
+  </div>
+  <h3>Saved locations</h3>
+  <ul id="savedList" class="saved"></ul>
+  <h3>About</h3>
+  <p class="fine">Data: National Weather Service (api.weather.gov) for U.S. forecasts, observations, alerts and forecast discussions; Open-Meteo for international forecasts, UV and air quality; NOAA Tides &amp; Currents; Iowa Environmental Mesonet for U.S. radar and HRRR future radar; RainViewer for international radar. Plain-English discussion summaries are written by Claude on a schedule and may lag the newest NWS issuance.</p>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
