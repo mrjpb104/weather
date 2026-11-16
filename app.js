@@ -855,7 +855,9 @@ async function usFutureFrames() {
   try {
     const j = await getJSON(`${IEM}/data/gis/images/4326/hrrr/refd_1080.json`, { cache: 'no-store', timeout: 8000 });
     if (j.model_init_utc) init = new Date(j.model_init_utc);
-  } catch { /* fall back to "latest" */ }
+  } catch { /* metadata unreachable: estimate below */ }
+  // IEM finishes each HRRR run ~1h50m after its start time; if the metadata file was blocked, assume the newest run that should be ready.
+  if (!init) init = new Date(Math.floor((Date.now() - 115 * 60e3) / 3600e3) * 3600e3);
   const fr = [];
   const stamp = d => d.toISOString().replace(/[-:T]/g, '').slice(0, 12);
   if (init) {
@@ -864,7 +866,7 @@ async function usFutureFrames() {
       const valid = firstValid + k * 3600e3;
       const fmin = Math.round((valid - init) / 60e3);
       if (fmin < 0 || fmin > 1080 || valid > Date.now() + 12.5 * 3600e3) continue;
-      fr.push({ url: `${IEM}/c/tile.py/1.0.0/hrrr::REFP-F${String(fmin).padStart(4, '0')}-${stamp(init)}/{z}/{x}/{y}.png`, label: fmtDayTime(new Date(valid), tz), fc: true, attr: 'Forecast: NOAA HRRR via IEM' });
+      fr.push({ url: `${IEM}/cache/tile.py/1.0.0/hrrr::REFP-F${String(fmin).padStart(4, '0')}-${stamp(init)}/{z}/{x}/{y}.png`, label: fmtDayTime(new Date(valid), tz), fc: true, attr: 'Forecast: NOAA HRRR via IEM' });
     }
   } else {
     for (let h = 1; h <= 12; h++) fr.push({ url: `${IEM}/cache/tile.py/1.0.0/hrrr::REFP-F${String(h * 60).padStart(4, '0')}-0/{z}/{x}/{y}.png`, label: `Model run +${h}h`, fc: true, attr: 'Forecast: NOAA HRRR via IEM' });
