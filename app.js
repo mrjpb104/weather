@@ -767,6 +767,10 @@ async function setupRadar(v) {
     map.removeLayer(base); map.removeLayer(labels);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 12, attribution: '© OpenStreetMap contributors' }).addTo(map);
   });
+  // Radar layers live in their own pane so they can be smoothed with a zoom-aware blur.
+  map.createPane('radar');
+  map.getPane('radar').style.zIndex = 350;
+  map.on('zoomend', smoothRadar);
   L.circleMarker([v.lat, v.lon], { radius: 6, color: '#fff', weight: 2, fillColor: '#2563eb', fillOpacity: 1 }).addTo(map);
   state.radar = { v, frames: [], layers: [], i: 0, timer: null, mode: 'past' };
   $('#rPlay').onclick = () => (state.radar?.timer ? pause() : play());
@@ -794,6 +798,7 @@ async function loadFrames(mode) {
   }
   if (state.radar !== R) return;
   R.layers = R.frames.map(() => null);
+  smoothRadar();
   const sl = $('#rSlide'); sl.max = R.frames.length - 1;
   const start = mode === 'future' ? 0 : R.frames.length - 1;
   showFrame(start);
@@ -803,10 +808,19 @@ async function loadFrames(mode) {
     : 'Observed radar, past hour (max detail is limited outside the U.S.). Future radar isn’t available for this location.';
   play();
 }
+// Data cell size: HRRR ~3 km, NEXRAD mosaic ~1 km, RainViewer capped at zoom 7 (~1.2 km/px at that zoom).
+function smoothRadar() {
+  const R = state.radar, map = state.map;
+  if (!R || !map) return;
+  const cellM = R.v.kind !== 'us' ? 2500 : R.mode === 'future' ? 3000 : 1000;
+  const mPerPx = 156543.03 * Math.cos(map.getCenter().lat * Math.PI / 180) / 2 ** map.getZoom();
+  const px = clamp((cellM / mPerPx) * 0.28, 0, 16);
+  map.getPane('radar').style.filter = px >= 0.8 ? `blur(${px.toFixed(1)}px)` : 'none';
+}
 function layerFor(i) {
   const R = state.radar, f = R.frames[i];
   if (!R.layers[i]) {
-    R.layers[i] = L.tileLayer(f.url, { opacity: 0, maxNativeZoom: f.maxNative || 12, maxZoom: 12, attribution: f.attr, zIndex: 10 + i, crossOrigin: false }).addTo(state.map);
+    R.layers[i] = L.tileLayer(f.url, { pane: 'radar', opacity: 0, maxNativeZoom: f.maxNative || 12, maxZoom: 12, attribution: f.attr, zIndex: 10 + i, crossOrigin: false }).addTo(state.map);
   }
   return R.layers[i];
 }
