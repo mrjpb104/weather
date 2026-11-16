@@ -691,9 +691,10 @@ function renderAFD(v) {
   }
   if (a) {
     const secs = parseAFD(a.text || '');
-    parts.push(`<div class="afd-raw">${extras.map(([t, h]) => `<details><summary>${t}</summary><div class="rawtext">${h}</div></details>`).join('')}<p class="fine" style="margin-top:12px">Original NWS text, issued ${esc(fmtStamp(a.issued, tz))}:</p>${secs.map((x, i) => `<details${!s && i === 0 ? ' open' : ''}><summary>${esc(x.title)}</summary><div class="rawtext">${x.paras.map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('')}</div></details>`).join('')}
-      <details><summary>Jargon decoder</summary><dl class="jargon">${JARGON.map(([k, d]) => `<dt>${esc(k)}</dt><dd>${esc(d)}</dd>`).join('')}</dl></details></div>`);
-  } else parts.push(`<div class="afd-raw">${extras.map(([t, h]) => `<details><summary>${t}</summary><div class="rawtext">${h}</div></details>`).join('')}</div><p class="fine">The latest original discussion couldn’t be loaded right now.</p>`);
+    const extraHTML = extras.length ? `<div class="afd-group"><h4>More from the summary</h4>${extras.map(([t, h]) => `<details><summary>${t}</summary><div class="rawtext">${h}</div></details>`).join('')}</div>` : '';
+    parts.push(`<div class="afd-raw">${extraHTML}<div class="afd-group"><h4>Original NWS discussion <span>issued ${esc(fmtStamp(a.issued, tz))}</span></h4>${secs.map((x, i) => `<details${!s && i === 0 ? ' open' : ''}><summary>${esc(x.title)}</summary><div class="rawtext">${x.paras.map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('')}</div></details>`).join('')}
+      <details><summary>Jargon decoder</summary><dl class="jargon">${JARGON.map(([k, d]) => `<dt>${esc(k)}</dt><dd>${esc(d)}</dd>`).join('')}</dl></details></div></div>`);
+  } else parts.push(`<div class="afd-raw">${extras.length ? `<div class="afd-group"><h4>More from the summary</h4>${extras.map(([t, h]) => `<details><summary>${t}</summary><div class="rawtext">${h}</div></details>`).join('')}</div>` : ''}</div><p class="fine">The latest original discussion couldn’t be loaded right now.</p>`);
   parts.push('</section>');
   return parts.join('');
 }
