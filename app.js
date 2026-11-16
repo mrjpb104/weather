@@ -307,7 +307,7 @@ async function loadUS(loc, lat, lon, points) {
     nws(`/alerts/active?point=${lat.toFixed(4)},${lon.toFixed(4)}`),
     getJSON(omURL(lat, lon)), getJSON(aqURL(lat, lon)),
     nws(P.observationStations), nws(`/products/types/AFD/locations/${office}`),
-    getJSON(`summaries/${office}.json`, { cache: 'no-store' }),
+    getJSON(`summaries/${office}.json?t=${Date.now()}`, { cache: 'no-store' }),
   ]);
 
   // Observation: first nearby station with a recent temperature
