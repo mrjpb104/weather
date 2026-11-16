@@ -753,7 +753,20 @@ async function setupRadar(v) {
   const map = L.map(el, { zoomControl: true, attributionControl: true, scrollWheelZoom: false, worldCopyJump: true }).setView([v.lat, v.lon], v.kind === 'us' ? 8 : 6);
   state.map = map;
   const dark = matchMedia('(prefers-color-scheme: dark)').matches;
-  L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark ? 'dark_all' : 'light_all'}/{z}/{x}/{y}{r}.png`, { subdomains: 'abcd', maxZoom: 12, attribution: '© OpenStreetMap © CARTO' }).addTo(map);
+  // Basemap: Esri gray canvas (no API key); labels drawn above the radar. Falls back to OpenStreetMap if Esri tiles fail.
+  const esri = name => `https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/${name}/MapServer/tile/{z}/{y}/{x}`;
+  const esriAttr = 'Tiles © Esri — Esri, HERE, Garmin, © OpenStreetMap contributors';
+  map.createPane('labels');
+  map.getPane('labels').style.zIndex = 650;
+  map.getPane('labels').style.pointerEvents = 'none';
+  const base = L.tileLayer(esri(dark ? 'World_Dark_Gray_Base' : 'World_Light_Gray_Base'), { maxZoom: 12, maxNativeZoom: 16, attribution: esriAttr }).addTo(map);
+  const labels = L.tileLayer(esri(dark ? 'World_Dark_Gray_Reference' : 'World_Light_Gray_Reference'), { maxZoom: 12, pane: 'labels' }).addTo(map);
+  let fails = 0;
+  base.on('tileerror', () => {
+    if (++fails !== 4) return;
+    map.removeLayer(base); map.removeLayer(labels);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 12, attribution: '© OpenStreetMap contributors' }).addTo(map);
+  });
   L.circleMarker([v.lat, v.lon], { radius: 6, color: '#fff', weight: 2, fillColor: '#2563eb', fillOpacity: 1 }).addTo(map);
   state.radar = { v, frames: [], layers: [], i: 0, timer: null, mode: 'past' };
   $('#rPlay').onclick = () => (state.radar?.timer ? pause() : play());
