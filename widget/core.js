@@ -7,12 +7,13 @@ const SITE = 'https://mrjpb104.github.io/weather/';
 const HOME = { lat: 33.14986, lon: -117.30919, name: 'Home' };
 const UA = { 'User-Agent': '(mrjpb104 personal weather widget)', Accept: 'application/geo+json' };
 
-async function getJSON(url, headers = UA) {
+async function getJSON(url, headers = UA, timeout = 8) {
   const r = new Request(url);
   r.headers = headers;
-  r.timeoutInterval = 20;
+  r.timeoutInterval = timeout;
   return await r.loadJSON();
 }
+const soft = p => p.catch(() => null); // optional requests: failure is fine
 
 // ---------- Look & icons ----------
 function symbolName(text = '', day = true) {
@@ -76,20 +77,36 @@ function rainLine(hourly) {
   return `Rain from ${hourLabel(hourly[idx].t)}${until ? `–${until}` : ''}`;
 }
 
-async function load(place) {
-  const pt = await getJSON(`https://api.weather.gov/points/${place.lat.toFixed(4)},${place.lon.toFixed(4)}`);
-  const P = pt.properties;
-  const [fc, hr, st, al] = await Promise.all([
-    getJSON(P.forecast), getJSON(P.forecastHourly), getJSON(P.observationStations),
-    getJSON(`https://api.weather.gov/alerts/active?point=${place.lat.toFixed(4)},${place.lon.toFixed(4)}`).catch(() => null),
-  ]);
-  let obs = null;
-  for (const f of (st.features || []).slice(0, 3)) {
-    try {
-      const o = (await getJSON(`https://api.weather.gov/stations/${f.properties.stationIdentifier}/observations/latest`)).properties;
-      if (o.temperature && o.temperature.value != null && Date.now() - new Date(o.timestamp) < 2.5 * 3600e3) { obs = o; break; }
-    } catch (e) { /* try the next station */ }
+// Location metadata (forecast URLs, nearest station) rarely changes: keep it for a week.
+async function pointInfo(place) {
+  const fm = FileManager.local();
+  const path = fm.joinPath(fm.cacheDirectory(), `wx-pt-${place.lat.toFixed(3)}_${place.lon.toFixed(3)}.json`);
+  if (fm.fileExists(path)) {
+    const c = JSON.parse(fm.readString(path));
+    if (Date.now() - c.at < 7 * 864e5) return c;
   }
+  const P = (await getJSON(`https://api.weather.gov/points/${place.lat.toFixed(4)},${place.lon.toFixed(4)}`)).properties;
+  const st = await soft(getJSON(P.observationStations, UA, 6));
+  const rl = P.relativeLocation && P.relativeLocation.properties;
+  const c = { at: Date.now(), forecast: P.forecast, hourly: P.forecastHourly, cwa: P.cwa, city: rl ? rl.city : null,
+    stations: st && st.features ? st.features.slice(0, 2).map(f => f.properties.stationIdentifier) : [] };
+  fm.writeString(path, JSON.stringify(c));
+  return c;
+}
+
+async function load(place) {
+  const P = await pointInfo(place);
+  const ll = `${place.lat.toFixed(4)},${place.lon.toFixed(4)}`;
+  // Everything in parallel; only the two forecasts are required.
+  const [fc, hr, o1, o2, al, summary] = await Promise.all([
+    getJSON(P.forecast), getJSON(P.hourly),
+    P.stations[0] ? soft(getJSON(`https://api.weather.gov/stations/${P.stations[0]}/observations/latest`, UA, 6)) : null,
+    P.stations[1] ? soft(getJSON(`https://api.weather.gov/stations/${P.stations[1]}/observations/latest`, UA, 6)) : null,
+    soft(getJSON(`https://api.weather.gov/alerts/active?point=${ll}`, UA, 6)),
+    soft(getJSON(`${SITE}summaries/${P.cwa}.json?t=${Date.now()}`, {}, 5)),
+  ]);
+  const fresh = o => o && o.properties && o.properties.temperature && o.properties.temperature.value != null && Date.now() - new Date(o.properties.timestamp) < 2.5 * 3600e3;
+  const obs = fresh(o1) ? o1.properties : fresh(o2) ? o2.properties : null;
   const periods = fc.properties.periods;
   const hourly = hr.properties.periods.filter(p => new Date(p.endTime) > Date.now()).slice(0, 24)
     .map(p => ({ t: new Date(p.startTime), temp: p.temperature, pop: (p.probabilityOfPrecipitation && p.probabilityOfPrecipitation.value) || 0, text: p.shortForecast, day: p.isDaytime }));
@@ -106,11 +123,8 @@ async function load(place) {
       days.push({ t: new Date(p.startTime), hi: null, lo: p.temperature, pop: (p.probabilityOfPrecipitation || {}).value || 0, text: p.shortForecast, name: 'Tonight' });
     }
   }
-  let summary = null;
-  try { summary = await getJSON(`${SITE}summaries/${P.cwa}.json?t=${Date.now()}`, {}); } catch (e) { /* none for this office */ }
-  const rl = P.relativeLocation && P.relativeLocation.properties;
   return {
-    name: place.name || (place.here ? (rl ? rl.city : 'Here') : rl ? rl.city : 'Weather'),
+    name: place.name || (place.here ? (P.city || 'Here') : P.city || 'Weather'),
     tempF, nowText, day, hourly, days,
     hi: days[0] ? days[0].hi : null, lo: days[0] ? (days[0].lo != null ? days[0].lo : days[1] && days[1].lo) : null,
     rain: rainLine(hourly),
@@ -126,17 +140,24 @@ function cachePath(place) {
 }
 async function getData(place) {
   const [fm, path] = cachePath(place);
+  const cached = () => {
+    if (!fm.fileExists(path)) return null;
+    const d = JSON.parse(fm.readString(path));
+    d.hourly.forEach(h => (h.t = new Date(h.t))); d.days.forEach(x => (x.t = new Date(x.t)));
+    d.hourly = d.hourly.filter(h => +h.t + 3600e3 > Date.now());
+    d.rain = rainLine(d.hourly);
+    d.stale = true;
+    return d;
+  };
+  // Widgets get only a short run time: give the network ~10 s, then use the last good data.
+  const deadline = new Promise((_, rej) => Timer.schedule(10000, false, () => rej(new Error('NWS is slow right now'))));
   try {
-    const d = await load(place);
+    const d = await Promise.race([load(place), deadline]);
     fm.writeString(path, JSON.stringify(d));
     return d;
   } catch (e) {
-    if (fm.fileExists(path)) {
-      const d = JSON.parse(fm.readString(path));
-      d.hourly.forEach(h => (h.t = new Date(h.t))); d.days.forEach(x => (x.t = new Date(x.t)));
-      d.stale = true;
-      return d;
-    }
+    const d = cached();
+    if (d) return d;
     throw e;
   }
 }
