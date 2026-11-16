@@ -57,6 +57,37 @@ function setTheme(t) {
   renderThemePick();
   if (typeof fx !== 'undefined') { if (t === 'sky' && state.lastView) fxFromView(state.lastView); else fx.start(); }
 }
+const FONTS = [
+  ['', 'Theme default', 'inherit', null],
+  ['inter', 'Inter', '"Inter"', null],
+  ['manrope', 'Manrope', '"Manrope"', 'Manrope:wght@200;300;400;500;600;700'],
+  ['jakarta', 'Plus Jakarta Sans', '"Plus Jakarta Sans"', 'Plus+Jakarta+Sans:wght@200;300;400;500;600;700'],
+  ['outfit', 'Outfit', '"Outfit"', 'Outfit:wght@100;200;300;400;500;600;700'],
+  ['space', 'Space Grotesk', '"Space Grotesk"', 'Space+Grotesk:wght@300;400;500;600;700'],
+  ['fraunces', 'Fraunces + Inter', '"Fraunces"', null],
+];
+function loadFont(id) {
+  const f = FONTS.find(x => x[0] === id);
+  if (!f || !f[3] || document.getElementById(`font-${id}`)) return;
+  const l = document.createElement('link');
+  l.id = `font-${id}`; l.rel = 'stylesheet';
+  l.href = `https://fonts.googleapis.com/css2?family=${f[3]}&display=swap`;
+  document.head.appendChild(l);
+}
+function setFont(id) {
+  if (id) { document.documentElement.dataset.font = id; loadFont(id); } else delete document.documentElement.dataset.font;
+  store.set('wx.font', id || null);
+  renderFontPick();
+}
+function renderFontPick() {
+  const el = $('#fontPick');
+  if (!el) return;
+  FONTS.forEach(f => loadFont(f[0]));
+  const cur = document.documentElement.dataset.font || '';
+  el.innerHTML = FONTS.map(([id, name, fam]) => `<button type="button" data-f="${id}" aria-pressed="${cur === id}">
+    <span class="fs" style="font-family:${fam === 'inherit' ? 'inherit' : `${fam}, sans-serif`}">69°<em>Aa</em></span><span class="fn">${esc(name)}</span></button>`).join('');
+  el.querySelectorAll('button').forEach(b => b.onclick = () => setFont(b.dataset.f));
+}
 function renderThemePick() {
   const el = $('#themePick');
   if (!el) return;
@@ -1056,6 +1087,7 @@ function openSettings() {
   $('#unitSeg').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.u === state.settings.units));
   renderSaved();
   renderThemePick();
+  renderFontPick();
   $('#dlgSettings').showModal();
 }
 function renderSaved() {
@@ -1090,6 +1122,7 @@ function renderSaved() {
 
 // ---------- Boot ----------
 function boot() {
+  if (window.WX_FONT_PRELOAD) loadFont(window.WX_FONT_PRELOAD);
   $('#btnAdd').onclick = openAdd;
   $('#btnSettings').onclick = openSettings;
   $('#addQuery').oninput = e => { clearTimeout(searchTimer); searchTimer = setTimeout(() => doSearch(e.target.value), 350); };

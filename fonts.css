@@ -1,0 +1,26 @@
+/* Font choices. Each sets the body font (--font) and the display font (--display) used for
+   the big temperature, place name and key numbers. Without a choice, the theme's font applies. */
+html[data-font="inter"]    { --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --display: var(--font); }
+html[data-font="manrope"]  { --font: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --display: var(--font); }
+html[data-font="jakarta"]  { --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --display: var(--font); }
+html[data-font="outfit"]   { --font: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --display: var(--font); }
+html[data-font="space"]    { --font: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --display: var(--font); }
+html[data-font="fraunces"] { --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --display: "Fraunces", Georgia, "Times New Roman", serif; }
+
+.hero .big, .hero .place, .sunlabels b, .gbig, .afd-head, .gauge .gval, .hcurve .tlab { font-family: var(--display, var(--font)); }
+
+/* Per-font tuning of the big temperature */
+html[data-font="outfit"] .hero .big { font-weight: 200; letter-spacing: -4px; }
+html[data-font="space"] .hero .big { font-weight: 300; letter-spacing: -6px; }
+html[data-font="manrope"] .hero .big { letter-spacing: -6px; }
+html[data-font="fraunces"] .hero .big { font-weight: 300; letter-spacing: -4px; font-variation-settings: "opsz" 144; }
+html[data-font="fraunces"] .hero .place { font-weight: 500; }
+html[data-font="fraunces"] .afd-head { font-weight: 600; }
+
+/* Font picker in Settings */
+.fonts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.fonts button { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); color: var(--ink); cursor: pointer; text-align: left; }
+.fonts button[aria-pressed="true"] { outline: 2px solid var(--accent); outline-offset: 1px; }
+.fonts .fs { font-size: 26px; font-weight: 300; line-height: 1.1; }
+.fonts .fs em { font-style: normal; font-size: 18px; font-weight: 500; margin-left: 8px; opacity: .7; }
+.fonts .fn { font-size: 13px; font-weight: 600; }

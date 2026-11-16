@@ -20,12 +20,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="themes.css">
+<link rel="stylesheet" href="fonts.css">
 <script>
   // Apply the saved (or ?theme= preview) theme before first paint.
   (function () {
     var t = null;
     try { t = new URLSearchParams(location.search).get('theme'); if (t) localStorage.setItem('wx.theme', JSON.stringify(t)); else t = JSON.parse(localStorage.getItem('wx.theme') || 'null'); } catch (e) {}
     document.documentElement.dataset.theme = t || 'sky';
+    // Font choice (optional): saved, or ?font= preview. Load only the chosen family.
+    var f = null;
+    try { f = new URLSearchParams(location.search).get('font'); if (f) localStorage.setItem('wx.font', JSON.stringify(f)); else f = JSON.parse(localStorage.getItem('wx.font') || 'null'); } catch (e) {}
+    if (f) { document.documentElement.dataset.font = f; window.WX_FONT_PRELOAD = f; }
   })();
 </script>
 </head>
@@ -63,6 +68,8 @@
   </div>
   <h3>Appearance</h3>
   <div class="themes" id="themePick"></div>
+  <h3>Font</h3>
+  <div class="fonts" id="fontPick"></div>
   <h3>Saved locations</h3>
   <ul id="savedList" class="saved"></ul>
   <h3>About</h3>
