@@ -55,6 +55,7 @@ function setTheme(t) {
   document.documentElement.dataset.theme = t;
   store.set('wx.theme', t);
   renderThemePick();
+  if (typeof fx !== 'undefined') { if (t === 'sky' && state.lastView) fxFromView(state.lastView); else fx.start(); }
 }
 function renderThemePick() {
   const el = $('#themePick');
@@ -294,7 +295,7 @@ async function loadUS(loc, lat, lon, points) {
   const periods = val(fc)?.properties?.periods || [];
   const hourly = (val(hr)?.properties?.periods || []).filter(p => new Date(p.endTime) > Date.now()).slice(0, 24).map(p => ({
     t: new Date(p.startTime), temp: p.temperature, pop: p.probabilityOfPrecipitation?.value ?? 0,
-    emoji: nwsEmoji(p.shortForecast, p.isDaytime), text: p.shortForecast,
+    emoji: nwsEmoji(p.shortForecast, p.isDaytime), kind: iconKindText(p.shortForecast, p.isDaytime), text: p.shortForecast,
     gustKmh: maxBetween(gust, new Date(p.startTime), new Date(p.endTime))?.value ?? null,
   }));
 
@@ -320,7 +321,9 @@ async function loadUS(loc, lat, lon, points) {
     now.uvMax = omv.daily?.uv_index_max?.[0];
   }
   const firstIsDay = periods[0]?.isDaytime ?? true;
-  now.emoji = nwsEmoji(now.text || periods[0]?.shortForecast, obs ? isDaylight(lat, lon, tz) : firstIsDay);
+  const dayNow = obs ? isDaylight(lat, lon, tz) : firstIsDay;
+  now.emoji = nwsEmoji(now.text || periods[0]?.shortForecast, dayNow);
+  now.kind = iconKindText(now.text || periods[0]?.shortForecast, dayNow);
   const aqv = val(aq)?.current;
   if (aqv) now.aqi = aqv.us_aqi;
 
@@ -341,7 +344,8 @@ async function loadUS(loc, lat, lon, points) {
     return {
       name: d ? (/^(today|this)/i.test(d.name) ? 'Today' : d.name.slice(0, 3)) : (n.name.length > 9 ? n.name.slice(0, 3) : n.name),
       fullName: d ? d.name : n.name,
-      hi: d ? `${d.temperature}°` : null, lo: n ? `${n.temperature}°` : null,
+      hi: d ? `${d.temperature}°` : null, lo: n ? `${n.temperature}°` : null, hiN: d ? d.temperature : null, loN: n ? n.temperature : null,
+      kind: iconKindText((d || n).shortForecast, !!d),
       pop: Math.max(...pops), emoji: nwsEmoji((d || n).shortForecast, !!d), short: (d || n).shortForecast,
       detail: [d && [d.name, d.detailedForecast], n && [n.name, n.detailedForecast]].filter(Boolean),
       precipMm: precip, gustKmh: gmax?.value ?? null,
@@ -388,6 +392,7 @@ async function loadIntl(loc, lat, lon) {
     windKmh: k.wind_speed_10m, windDir: k.wind_direction_10m, gustKmh: k.wind_gusts_10m, rh: k.relative_humidity_2m, dewC: k.dew_point_2m,
     presHpa: k.pressure_msl, visM: k.visibility, uv: k.uv_index, uvMax: o.daily?.uv_index_max?.[0],
     time: new Date(k.time * 1000), source: 'Open-Meteo (blend of national weather service models)',
+    kind: iconKindWMO(k.weather_code, k.is_day),
   };
   const aqv = val(aq)?.current;
   if (aqv) { now.aqi = aqv.us_aqi; now.eaqi = aqv.european_aqi; }
@@ -397,7 +402,7 @@ async function loadIntl(loc, lat, lon) {
     const t = new Date(H.time[i] * 1000);
     if (+t + 3600e3 <= Date.now()) continue;
     const w = wmo(H.weather_code[i], H.is_day[i]);
-    hourly.push({ t, temp: Math.round(T(H.temperature_2m[i])), pop: H.precipitation_probability[i] ?? 0, emoji: w.emoji, text: w.text, gustKmh: H.wind_gusts_10m[i], precipMm: H.precipitation[i] });
+    hourly.push({ t, temp: Math.round(T(H.temperature_2m[i])), pop: H.precipitation_probability[i] ?? 0, emoji: w.emoji, kind: iconKindWMO(H.weather_code[i], H.is_day[i]), text: w.text, gustKmh: H.wind_gusts_10m[i], precipMm: H.precipitation[i] });
   }
   const D = o.daily;
   const days = D.time.map((ts, i) => {
@@ -407,7 +412,7 @@ async function loadIntl(loc, lat, lon) {
     return {
       name, fullName: i === 0 ? 'Today' : dtf(tz, { weekday: 'long' }).format(d),
       hi: fmtT(D.temperature_2m_max[i]), lo: fmtT(D.temperature_2m_min[i]),
-      hiC: D.temperature_2m_max[i], loC: D.temperature_2m_min[i],
+      hiC: D.temperature_2m_max[i], loC: D.temperature_2m_min[i], hiN: Math.round(T(D.temperature_2m_max[i])), loN: Math.round(T(D.temperature_2m_min[i])), kind: iconKindWMO(D.weather_code[i], true),
       pop: D.precipitation_probability_max[i] ?? 0, emoji: w.emoji, short: w.text,
       precipMm: D.precipitation_sum[i], gustKmh: D.wind_gusts_10m_max[i], windDir: D.wind_direction_10m_dominant[i], uv: D.uv_index_max[i],
     };
@@ -454,8 +459,7 @@ function rainSentence(hourly, tz, qpf24) {
 }
 function glanceCommon(v) {
   const out = [];
-  const r = rainSentence(v.hourly, v.tz, v.qpf24);
-  if (r) out.push([r[0], esc(r[1])]);
+  // The rain sentence leads the hero card, so it isn't repeated here.
   const g = v.gust24;
   if (g && spdNum(g.value) >= (US() ? 25 : 40)) out.push(['💨', esc(`Gusty: wind gusts up to ${fmtSpd(g.value)} around ${whenH(new Date(g.start), v.tz)}.`)]);
   const s = v.sun, n = new Date();
@@ -608,11 +612,81 @@ async function show(force) {
   }
 }
 
+const hdr = (icon, title, aside) => `<h2><span class="ht">${ui(icon)}${title}</span>${aside ? `<span class="aside">${aside}</span>` : ''}</h2>`;
+const toF = x => (US() ? x : x * 9 / 5 + 32);
+const GLANCE_ICON = { '☀️': 'sun', '🌂': 'umbrella', '🌧️': 'umbrella', '💨': 'wind', '🌇': 'sunset', '🌅': 'sunrise', '🧴': 'sun', '🌡️': 'thermo' };
+
+function renderHourly(v) {
+  const H = v.hourly, tz = v.tz, CW = 58, W = H.length * CW, CH = 76;
+  const temps = H.map(h => h.temp), tmin = Math.min(...temps), tmax = Math.max(...temps), span = Math.max(tmax - tmin, 4);
+  const pts = H.map((h, i) => [i * CW + CW / 2, 22 + (1 - (h.temp - tmin) / span) * 40]);
+  const line = smoothPath(pts);
+  const area = `${line} L${pts[pts.length - 1][0]},${CH} L${pts[0][0]},${CH} Z`;
+  const stops = H.map((h, i) => `<stop offset="${(i / Math.max(H.length - 1, 1)).toFixed(3)}" stop-color="${tempColor(toF(h.temp))}"/>`).join('');
+  return `<div class="hscroll"><div class="hgrid" style="width:${W}px">
+    <div class="hrow">${H.map((h, i) => `<div class="hc${i === 0 ? ' now' : ''}" title="${esc(h.text)}"><div class="t">${i === 0 ? 'Now' : esc(fmtHour(h.t, tz))}</div>${wxIcon(h.kind, 'sm')}</div>`).join('')}</div>
+    <svg class="hcurve" width="${W}" height="${CH}" viewBox="0 0 ${W} ${CH}" aria-hidden="true">
+      <defs><linearGradient id="gTline" x1="0" x2="1">${stops}</linearGradient>
+      <linearGradient id="gTarea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".16"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+      <path d="${area}" fill="url(#gTarea)"/><path d="${line}" stroke="url(#gTline)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      ${pts.map((p, i) => `<circle cx="${p[0]}" cy="${p[1].toFixed(1)}" r="${i === 0 ? 4.5 : 2.6}" class="${i === 0 ? 'tnow' : 'tdot'}"/><text x="${p[0]}" y="${(p[1] - 9).toFixed(1)}" class="tlab">${H[i].temp}°</text>`).join('')}
+    </svg>
+    <div class="hrow pops">${H.map(h => `<div class="hc"><div class="pbar"><i style="height:${Math.max(h.pop, 0)}%;opacity:${h.pop >= 10 ? clamp(.35 + h.pop / 140, .35, 1) : 0}"></i></div><div class="p">${h.pop >= 10 ? h.pop + '%' : ''}</div></div>`).join('')}</div>
+  </div></div>`;
+}
+
+function renderDays(v) {
+  const days = v.days.slice(0, 8), n = v.now;
+  const all = days.flatMap(d => [d.hiN, d.loN]).filter(x => x != null);
+  const curT = n.tempC != null ? Math.round(T(n.tempC)) : null;
+  if (curT != null) all.push(curT);
+  const wmin = Math.min(...all), wmax = Math.max(...all), span = Math.max(wmax - wmin, 1);
+  const pos = t => ((t - wmin) / span) * 100;
+  return days.map((d, i) => {
+    const lo = d.loN ?? d.hiN, hi = d.hiN ?? d.loN;
+    const left = pos(lo), width = Math.max(pos(hi) - left, 0);
+    const bar = d.hiN != null && d.loN != null
+      ? `<i style="left:${left.toFixed(1)}%;width:${width.toFixed(1)}%;background:linear-gradient(90deg,${tempColor(toF(lo))},${tempColor(toF(hi))})"></i>`
+      : `<i class="solo" style="left:calc(${left.toFixed(1)}% - 4px);background:${tempColor(toF(lo))}"></i>`;
+    const dot = i === 0 && curT != null ? `<b class="cur" style="left:${pos(curT).toFixed(1)}%" title="Now ${curT}°"></b>` : '';
+    const amt = d.precipMm != null && d.precipMm >= 0.25 ? ` · about ${esc(fmtLen(d.precipMm))}` : '';
+    return `<details class="day"><summary>
+      <span class="dn">${esc(d.name)}</span><span class="de">${wxIcon(d.kind, 'sm')}</span>
+      <span class="dp">${d.pop >= 20 ? `${d.pop}%` : ''}</span>
+      <span class="dlo">${d.loN != null ? `${d.loN}°` : ''}</span>
+      <span class="rbar">${bar}${dot}</span>
+      <span class="dhi">${d.hiN != null ? `${d.hiN}°` : ''}</span></summary>
+      <div class="detail"><p class="dshort">${esc(d.short)}${d.pop >= 10 ? ` · ${d.pop}% chance of precipitation` : ''}${amt}</p>
+      ${d.detail.map(([nm, tx]) => `<p><b>${esc(nm)}:</b> ${esc(tx)}</p>`).join('')}${d.gustKmh != null && spdNum(d.gustKmh) >= (US() ? 20 : 32) && v.kind === 'us' ? `<p class="muted">Peak gusts near ${esc(fmtSpd(d.gustKmh))}.</p>` : ''}</div>
+    </details>`;
+  }).join('');
+}
+
+function renderConditions(v) {
+  const n = v.now;
+  const sp = n.windKmh != null ? Math.round(spdNum(n.windKmh)) : '–';
+  const uv = n.uv != null ? n.uv : null, aqi = n.aqi != null ? n.aqi : null;
+  const presTxt = n.presHpa == null ? '–' : US() ? (n.presHpa * 0.02953).toFixed(2) : Math.round(n.presHpa);
+  const visMi = n.visM != null ? n.visM / 1609.34 : null;
+  const visWord = visMi == null ? '' : visMi >= 9 ? 'Clear view' : visMi >= 5 ? 'Slight haze' : visMi >= 2 ? 'Hazy' : visMi >= 0.6 ? 'Mist / fog' : 'Dense fog';
+  const g = (icon, title, body, foot) => `<div class="gtile"><div class="gk">${ui(icon)}${title}</div>${body}${foot ? `<div class="gs">${foot}</div>` : ''}</div>`;
+  return `<div class="ggrid">
+    ${g('wind', 'Wind', windDial(n.windDir, sp, US() ? 'mph' : 'km/h'), `${n.windDir != null ? `From the ${compass(n.windDir)}` : ''}${n.gustKmh ? ` · gusts ${esc(fmtSpd(n.gustKmh))}` : ''}`)}
+    ${g('sun', 'UV index', uv == null ? '<div class="gbig">–</div>' : arcGauge(uv / 11, [[0, '#4cc38a'], [.3, '#f5d547'], [.55, '#ff9f43'], [.8, '#ff5b5b'], [1, '#a463f2']], Math.round(uv), uvCat(uv)), n.uvMax != null ? `Peak today ${Math.round(n.uvMax)}` : '')}
+    ${g('leaf', 'Air quality', aqi == null ? '<div class="gbig">–</div>' : arcGauge(aqi / 300, [[0, '#4cc38a'], [.17, '#f5d547'], [.33, '#ff9f43'], [.5, '#ff5b5b'], [.67, '#a463f2'], [1, '#8b2c4a']], Math.round(aqi), aqi <= 50 ? 'Good' : aqi <= 100 ? 'Moderate' : 'Unhealthy'), aqiCat(aqi ?? 0) && aqi != null ? `U.S. AQI · ${aqiCat(aqi)}` : 'U.S. AQI')}
+    ${g('drop', 'Humidity', `<div class="gbig">${n.rh != null ? Math.round(n.rh) + '%' : '–'}</div>${n.rh != null ? barMeter(n.rh / 100, ['#f3c27a', '#7fd6c2', '#4aa3ff']) : ''}`, n.dewC != null ? `Dew point ${fmtT(n.dewC)}` : '')}
+    ${g('gauge', 'Pressure', n.presHpa == null ? '<div class="gbig">–</div>' : arcGauge((n.presHpa - 985) / 55, [[0, '#7aa2ff'], [.5, '#c9d6e8'], [1, '#ffcf7a']], presTxt, US() ? 'inHg' : 'hPa'), n.presHpa != null ? (n.presHpa < 1005 ? 'Low — unsettled' : n.presHpa > 1022 ? 'High — settled' : 'Near normal') : '')}
+    ${g('eye', 'Visibility', `<div class="gbig">${esc(fmtVis(n.visM))}</div>${visMi != null ? barMeter(Math.min(visMi, 10) / 10, ['#9aa7b8', '#cfe3f5']) : ''}`, visWord)}
+  </div>`;
+}
+
 function render(v, loc) {
   document.documentElement.dataset.sky = skyFor(v);
+  state.lastView = v;
   const n = v.now, tz = v.tz;
   const firstDay = v.days[0];
-  const hl = [firstDay?.hi && `H ${firstDay.hi}`, (firstDay?.lo || v.days[1]?.lo) && `L ${firstDay?.lo || v.days[1]?.lo}`].filter(Boolean).join('  ');
+  const hiT = firstDay?.hi, loT = firstDay?.lo || v.days[1]?.lo;
+  const lede = rainSentence(v.hourly, tz, v.qpf24)?.[1];
   const html = [];
 
   if (v.notice) html.push(`<div class="note">${esc(v.notice)}</div>`);
@@ -621,32 +695,28 @@ function render(v, loc) {
     <p class="place">${esc(v.name)}</p>
     <div class="sub">${esc(v.sub)}${v.kind === 'us' ? ' · NWS ' + esc(v.office) : ''}</div>
     <div class="nowrow">
-      <div class="emoji">${n.emoji || ''}</div>
+      <div class="hicon">${wxIcon(n.kind, 'anim')}</div>
       <div class="big">${fmtT(n.tempC)}</div>
-      <div><div class="cond">${esc(n.text || '')}</div>
-        <div class="hl">Feels like ${fmtT(n.feelsC)}${hl ? ' · ' + hl : ''}</div></div>
+      <div class="nowtxt"><div class="cond">${esc(n.text || '')}</div>
+        <div class="hl">Feels like ${fmtT(n.feelsC)}</div>
+        ${hiT || loT ? `<div class="hl hlr">${hiT ? `<span>H ${esc(hiT)}</span>` : ''}${loT ? `<span>L ${esc(loT)}</span>` : ''}</div>` : ''}</div>
     </div>
+    ${lede ? `<p class="lede">${esc(lede)}</p>` : ''}
     <div class="meta"><span class="fine">${n.time ? `${/^Open-Meteo/.test(n.source) ? 'Model data' : 'Observed'} ${esc(ago(n.time))} · ${esc(n.source)}` : ''}</span>
-      <button class="btn" id="refresh" title="Refresh">↻ Refresh</button></div>
+      <button class="btn ghost" id="refresh" title="Refresh">${ui('refresh')} Refresh</button></div>
   </section>`);
 
   v.alerts.forEach(a => {
     const sev = /Extreme|Severe/.test(a.severity) || /Warning/.test(a.event);
-    html.push(`<details class="alert${sev ? ' severe' : ''}"><summary>⚠️ ${esc(a.event)}<span class="when">${a.onset ? esc(fmtDayTime(new Date(a.onset), tz)) : ''}${a.ends || a.expires ? ' – ' + esc(fmtDayTime(new Date(a.ends || a.expires), tz)) : ''} · tap for details</span></summary>
+    html.push(`<details class="alert${sev ? ' severe' : ''}"><summary>${ui('alert')}<span><b>${esc(a.event)}</b><span class="when">${a.onset ? esc(fmtDayTime(new Date(a.onset), tz)) : ''}${a.ends || a.expires ? ' – ' + esc(fmtDayTime(new Date(a.ends || a.expires), tz)) : ''} · tap for details</span></span></summary>
       <div class="body">${esc(a.description || '')}${a.instruction ? '\n\n' + esc(a.instruction) : ''}</div></details>`);
   });
 
-  if (v.glance.length) html.push(`<section class="card"><h2>Next 24 hours</h2><ul class="glance">${v.glance.map(([i, t]) => `<li><span class="ic">${i}</span><span>${t}</span></li>`).join('')}</ul></section>`);
+  if (v.glance.length) html.push(`<section class="card">${hdr('clock', 'Next 24 hours')}<ul class="glance">${v.glance.map(([i, t]) => `<li><span class="ic">${GLANCE_ICON[i] ? ui(GLANCE_ICON[i]) : i}</span><span>${t}</span></li>`).join('')}</ul></section>`);
 
-  if (v.hourly.length) {
-    html.push(`<section class="card"><h2>Hourly <span class="aside">rain chance in blue</span></h2><div class="hourly">${v.hourly.map((h, i) => `
-      <div class="hr${i === 0 ? ' now' : ''}" title="${esc(h.text)}">
-        <div class="t">${i === 0 ? 'Now' : esc(fmtHour(h.t, tz))}</div><div class="e">${h.emoji}</div>
-        <div class="v">${h.temp}°</div><div class="p">${h.pop >= 10 ? h.pop + '%' : ''}</div>
-        <div class="bar" style="opacity:${h.pop >= 10 ? clamp(h.pop / 100, .15, 1) : 0}"></div></div>`).join('')}</div></section>`);
-  }
+  if (v.hourly.length) html.push(`<section class="card">${hdr('clock', 'Hourly', 'temperature · chance of rain')}${renderHourly(v)}</section>`);
 
-  html.push(`<section class="card"><h2>Radar <span class="aside" id="radarSrc"></span></h2>
+  html.push(`<section class="card">${hdr('radar', 'Radar', '<span id="radarSrc"></span>')}
     <div id="radar"></div>
     <div class="radar-ctl">
       <button class="btn" id="rPlay" aria-label="Play or pause">▶︎</button>
@@ -658,56 +728,41 @@ function render(v, loc) {
     <p class="fine" id="radarNote"></p>
   </section>`);
 
-  if (v.days.length) {
-    html.push(`<section class="card"><h2>${v.kind === 'us' ? '7-day forecast <span class="aside">NWS · tap a day for details</span>' : '7-day forecast <span class="aside">Open-Meteo · tap for details</span>'}</h2>${v.days.slice(0, 8).map(d => `
-      <details class="day"><summary>
-        <span class="dn">${esc(d.name)}</span><span class="de">${d.emoji}</span>
-        <span class="ds">${esc(d.short)}${d.pop >= 10 ? ` · <span class="pp">${d.pop}%</span>` : ''}${d.precipMm != null && d.precipMm >= 0.25 ? ` · ${esc(fmtLen(d.precipMm))}` : ''}</span>
-        <span class="dt">${d.hi ? esc(d.hi) : ''}<span class="lo">${d.lo ? esc(d.lo) : ''}</span></span></summary>
-        <div class="detail">${d.detail.map(([nm, tx]) => `<p><b>${esc(nm)}:</b> ${esc(tx)}</p>`).join('')}${d.gustKmh != null && spdNum(d.gustKmh) >= (US() ? 20 : 32) && v.kind === 'us' ? `<p class="muted">Peak gusts near ${esc(fmtSpd(d.gustKmh))}.</p>` : ''}</div>
-      </details>`).join('')}</section>`);
-  }
+  if (v.days.length) html.push(`<section class="card">${hdr('calendar', '7-day forecast', v.kind === 'us' ? 'NWS · tap a day' : 'Open-Meteo · tap a day')}${renderDays(v)}</section>`);
 
   html.push(v.kind === 'us' ? renderAFD(v) : renderPlain(v));
 
-  // Sun & moon
   const s = v.sun, m = v.moon;
-  const dl = s.delta == null ? '' : `${s.delta >= 0 ? '+' : '−'}${Math.abs(s.delta).toFixed(1)} min vs. yesterday`;
-  html.push(`<section class="card"><h2>Sun &amp; moon</h2><div class="grid">
-    ${tile('Sunrise', s.rise ? fmtTime(s.rise, tz) : '—', s.dawn ? `First light ${fmtTime(s.dawn, tz)}` : '')}
-    ${tile('Sunset', s.set ? fmtTime(s.set, tz) : '—', s.dusk ? `Last light ${fmtTime(s.dusk, tz)}` : '')}
-    ${tile('Daylight', s.length != null ? durHM(s.length) : '—', dl)}
-    ${tile('Moon', `${m.emoji} ${Math.round(m.illum * 100)}%`, m.name)}
-    ${tile('Next full moon', dtf(tz, { month: 'short', day: 'numeric' }).format(m.nextFull), '')}
-    ${tile('Next new moon', dtf(tz, { month: 'short', day: 'numeric' }).format(m.nextNew), '')}
+  const dl = s.delta == null ? '' : ` · ${s.delta >= 0 ? '+' : '−'}${Math.abs(s.delta).toFixed(1)} min vs. yesterday`;
+  html.push(`<section class="card">${hdr('sunrise', 'Sun &amp; moon')}<div class="sungrid">
+    <div class="sunbox">${sunArc(s.rise, s.set)}
+      <div class="sunlabels"><div><span class="sl">${ui('sunrise')}Sunrise</span><b>${s.rise ? esc(fmtTime(s.rise, tz)) : '—'}</b><small>${s.dawn ? `First light ${esc(fmtTime(s.dawn, tz))}` : ''}</small></div>
+      <div class="r"><span class="sl">${ui('sunset')}Sunset</span><b>${s.set ? esc(fmtTime(s.set, tz)) : '—'}</b><small>${s.dusk ? `Last light ${esc(fmtTime(s.dusk, tz))}` : ''}</small></div></div>
+      <p class="fine center">${s.length != null ? `${durHM(s.length)} of daylight${esc(dl)}` : ''}</p></div>
+    <div class="moonbox">${moonDisc(m.age)}<div class="mtxt"><b>${esc(m.name)}</b><span>${Math.round(m.illum * 100)}% illuminated</span>
+      <span class="fine">Full ${esc(dtf(tz, { month: 'short', day: 'numeric' }).format(m.nextFull))} · New ${esc(dtf(tz, { month: 'short', day: 'numeric' }).format(m.nextNew))}</span></div></div>
   </div></section>`);
 
-  // Details
-  html.push(`<section class="card"><h2>Conditions</h2><div class="grid">
-    ${tile('Wind', n.windKmh != null ? `${compass(n.windDir)} ${fmtSpd(n.windKmh)}` : '—', n.gustKmh ? `Gusts ${fmtSpd(n.gustKmh)}` : '')}
-    ${tile('Humidity', n.rh != null ? `${Math.round(n.rh)}%` : '—', n.dewC != null ? `Dew point ${fmtT(n.dewC)}` : '')}
-    ${tile('Pressure', fmtPres(n.presHpa), '')}
-    ${tile('Visibility', fmtVis(n.visM), '')}
-    ${tile('UV index', n.uv != null ? `${Math.round(n.uv)} · ${uvCat(n.uv)}` : '—', n.uvMax != null ? `Today’s peak ${Math.round(n.uvMax)}` : '')}
-    ${tile('Air quality', n.aqi != null ? `${Math.round(n.aqi)} · ${aqiCat(n.aqi)}` : '—', 'U.S. AQI (Open-Meteo)')}
-  </div></section>`);
+  html.push(`<section class="card">${hdr('gauge', 'Conditions')}${renderConditions(v)}</section>`);
 
   if (v.tides) {
-    html.push(`<section class="card"><h2>Tides <span class="aside">${esc(v.tides.station)} · ${Math.round(v.tides.km)} km away</span></h2><div class="tides">${v.tides.events.map(e => `<div class="tile"><div class="k">${esc(e.day)}</div><div class="v">${e.type === 'High' ? '⬆︎' : '⬇︎'} ${esc(e.time)}</div><div class="s">${esc(e.type)} · ${esc(e.height)}</div></div>`).join('')}</div></section>`);
+    html.push(`<section class="card">${hdr('waves', 'Tides', `${esc(v.tides.station)} · ${Math.round(v.tides.km)} km`)}<div class="tides">${v.tides.events.map(e => `<div class="tile tide ${e.type === 'High' ? 'hi' : 'lo'}"><div class="k">${esc(e.day)}</div><div class="v">${e.type === 'High' ? '▲' : '▼'} ${esc(e.time)}</div><div class="s">${esc(e.type)} · ${esc(e.height)}</div></div>`).join('')}</div></section>`);
   }
 
-  html.push(`<section class="card"><h2>More detail</h2><div class="links">${links(v).map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div></section>`);
+  html.push(`<section class="card">${hdr('link', 'More detail')}<div class="links">${links(v).map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div></section>`);
   html.push(`<footer class="src fine">Updated ${esc(fmtTime(v.loadedAt, tz))} (${esc(tz.replace(/_/g, ' '))}) · ${v.lat.toFixed(4)}, ${v.lon.toFixed(4)}</footer>`);
 
-  $('#main').innerHTML = html.join('');
+  let k = 0;
+  $('#main').innerHTML = html.join('').replace(/<(section|details) class="(card|alert)/g, (mm, tag, cls) => `<${tag} style="--i:${k++}" class="${cls}`);
   $('#refresh').onclick = () => show(true);
+  if (typeof fxFromView === 'function') fxFromView(v);
   setupRadar(v);
 }
 const tile = (k, v, s) => `<div class="tile"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div>${s ? `<div class="s">${esc(s)}</div>` : ''}</div>`;
 
 function renderAFD(v) {
   const a = v.afd, s = v.summary, tz = v.tz;
-  const parts = [`<section class="card"><h2>Forecast discussion <span class="aside">NWS ${esc(v.office)} forecasters’ reasoning</span></h2>`];
+  const parts = [`<section class="card">${hdr('doc', 'Forecast discussion', `NWS ${esc(v.office)} forecasters`)}`];
   const sIssued = s?.afd_issued ? new Date(s.afd_issued) : null;
   const extras = [];
   if (s && s.headline) {
@@ -746,7 +801,7 @@ const EU = new Set('AT BE BG HR CY CZ DK EE FI FR DE GR HU IS IE IT LV LT LU MT 
 
 function renderPlain(v) {
   const nat = NATIONAL[v.cc];
-  return `<section class="card"><h2>The week in plain English <span class="aside">from model data</span></h2>
+  return `<section class="card">${hdr('doc', 'The week in plain English', 'from model data')}
     <ul class="glance">${(v.plain || []).map(t => `<li><span class="ic">•</span><span>${esc(t)}</span></li>`).join('')}</ul>
     <p class="fine">Outside the U.S. there’s no NWS forecaster discussion. This summary is generated from Open-Meteo’s blend of national weather service models.
     For official forecasts and warnings, check ${nat ? `<a href="${nat[1]}" target="_blank" rel="noopener">${esc(nat[0])}</a>` : '<a href="https://worldweather.wmo.int/en/home.html" target="_blank" rel="noopener">the country’s national weather service (WMO directory)</a>'}${EU.has(v.cc) ? ' or <a href="https://www.meteoalarm.org/" target="_blank" rel="noopener">MeteoAlarm</a> for European warnings' : ''}.</p></section>`;
