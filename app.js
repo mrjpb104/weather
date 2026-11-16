@@ -811,13 +811,28 @@ async function loadFrames(mode) {
   play();
 }
 // Data cell size: HRRR ~3 km, NEXRAD mosaic ~1 km, RainViewer capped at zoom 7 (~1.2 km/px at that zoom).
+// Smooth, contour-like rendering: blur blends the coarse cells, then an alpha curve re-sharpens the
+// outer edge and caps opacity so the map shows through. In light mode the radar also multiplies into
+// the basemap so roads and coastline stay visible underneath.
+function ensureRadarFilter() {
+  if (document.getElementById('radarSoft')) return;
+  document.body.insertAdjacentHTML('beforeend', `<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="radarSoft" filterUnits="userSpaceOnUse" x="-6000" y="-6000" width="12000" height="12000" color-interpolation-filters="sRGB">
+      <feGaussianBlur id="radarSoftBlur" stdDeviation="3"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.05 0.5 0.8 0.86 0.86 0.86 0.86"/></feComponentTransfer>
+    </filter></svg>`);
+}
 function smoothRadar() {
   const R = state.radar, map = state.map;
   if (!R || !map) return;
+  ensureRadarFilter();
   const cellM = R.v.kind !== 'us' ? 2500 : R.mode === 'future' ? 3000 : 1000;
   const mPerPx = 156543.03 * Math.cos(map.getCenter().lat * Math.PI / 180) / 2 ** map.getZoom();
-  const px = clamp((cellM / mPerPx) * 0.12, 0, 6);
-  map.getPane('radar').style.filter = `${px >= 0.8 ? `blur(${px.toFixed(1)}px) ` : ''}saturate(1.35) contrast(1.1)`;
+  const sd = clamp((cellM / mPerPx) * 0.24, 0.6, 14);
+  document.getElementById('radarSoftBlur').setAttribute('stdDeviation', sd.toFixed(1));
+  const pane = map.getPane('radar');
+  pane.style.filter = 'url(#radarSoft)';
+  pane.style.mixBlendMode = matchMedia('(prefers-color-scheme: dark)').matches ? 'normal' : 'multiply';
 }
 function layerFor(i) {
   const R = state.radar, f = R.frames[i];
@@ -830,7 +845,7 @@ function showFrame(i) {
   const R = state.radar;
   if (!R || !R.frames.length || !$('#rSlide')) return;
   i = ((i % R.frames.length) + R.frames.length) % R.frames.length;
-  layerFor(i).setOpacity(0.92);
+  layerFor(i).setOpacity(1);
   R.layers.forEach((l, j) => { if (l && j !== i) l.setOpacity(0); });
   layerFor((i + 1) % R.frames.length); // preload next
   R.i = i;
