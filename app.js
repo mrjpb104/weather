@@ -677,22 +677,23 @@ function renderAFD(v) {
   const a = v.afd, s = v.summary, tz = v.tz;
   const parts = [`<section class="card"><h2>Forecast discussion <span class="aside">NWS ${esc(v.office)} forecasters’ reasoning</span></h2>`];
   const sIssued = s?.afd_issued ? new Date(s.afd_issued) : null;
+  const extras = [];
   if (s && s.headline) {
     parts.push(`<p class="afd-head">${esc(s.headline)}</p>`);
     (s.sections || []).forEach(x => parts.push(`<div class="afd-sec"><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div>`));
-    if (s.coast) parts.push(`<div class="callout"><b>For the coast</b>${esc(s.coast)}</div>`);
-    if (s.watch_for?.length) parts.push(`<div class="afd-sec"><h3>Worth watching</h3><p>${s.watch_for.map(esc).join('<br>')}</p></div>`);
-    if (s.confidence) parts.push(`<p class="fine"><b>Confidence:</b> ${esc(s.confidence)}</p>`);
     parts.push(`<p class="fine">Plain-English summary by Claude of the discussion issued ${sIssued ? esc(fmtStamp(sIssued, tz)) : '—'}.</p>`);
     if (a && sIssued && a.issued - sIssued > 5 * 60e3) parts.push(`<div class="note">A newer discussion was issued ${esc(fmtStamp(a.issued, tz))}. The summary refreshes at the next scheduled update; the latest original text is below.</div>`);
+    if (s.coast) extras.push(['Coast, beaches &amp; marine', `<p>${esc(s.coast)}</p>`]);
+    const wf = (s.watch_for || []).map(x => `<p>• ${esc(x)}</p>`).join('');
+    if (wf || s.confidence) extras.push(['Worth watching &amp; confidence', `${wf}${s.confidence ? `<p><b>Confidence:</b> ${esc(s.confidence)}</p>` : ''}`]);
   } else {
     parts.push(`<p class="fine">No plain-English summary is set up for the ${esc(v.office)} office yet — ask Claude to add “${esc(v.office)}” to your weather app’s summary list. The original discussion is below.</p>`);
   }
   if (a) {
     const secs = parseAFD(a.text || '');
-    parts.push(`<div class="afd-raw"><p class="fine">Original text issued ${esc(fmtStamp(a.issued, tz))}:</p>${secs.map((x, i) => `<details${!s && i === 0 ? ' open' : ''}><summary>${esc(x.title)}</summary><div class="rawtext">${x.paras.map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('')}</div></details>`).join('')}
+    parts.push(`<div class="afd-raw">${extras.map(([t, h]) => `<details><summary>${t}</summary><div class="rawtext">${h}</div></details>`).join('')}<p class="fine" style="margin-top:12px">Original NWS text, issued ${esc(fmtStamp(a.issued, tz))}:</p>${secs.map((x, i) => `<details${!s && i === 0 ? ' open' : ''}><summary>${esc(x.title)}</summary><div class="rawtext">${x.paras.map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('')}</div></details>`).join('')}
       <details><summary>Jargon decoder</summary><dl class="jargon">${JARGON.map(([k, d]) => `<dt>${esc(k)}</dt><dd>${esc(d)}</dd>`).join('')}</dl></details></div>`);
-  } else parts.push('<p class="fine">The latest discussion couldn’t be loaded right now.</p>');
+  } else parts.push(`<div class="afd-raw">${extras.map(([t, h]) => `<details><summary>${t}</summary><div class="rawtext">${h}</div></details>`).join('')}</div><p class="fine">The latest original discussion couldn’t be loaded right now.</p>`);
   parts.push('</section>');
   return parts.join('');
 }
@@ -814,8 +815,8 @@ function smoothRadar() {
   if (!R || !map) return;
   const cellM = R.v.kind !== 'us' ? 2500 : R.mode === 'future' ? 3000 : 1000;
   const mPerPx = 156543.03 * Math.cos(map.getCenter().lat * Math.PI / 180) / 2 ** map.getZoom();
-  const px = clamp((cellM / mPerPx) * 0.28, 0, 16);
-  map.getPane('radar').style.filter = px >= 0.8 ? `blur(${px.toFixed(1)}px)` : 'none';
+  const px = clamp((cellM / mPerPx) * 0.12, 0, 6);
+  map.getPane('radar').style.filter = `${px >= 0.8 ? `blur(${px.toFixed(1)}px) ` : ''}saturate(1.35) contrast(1.1)`;
 }
 function layerFor(i) {
   const R = state.radar, f = R.frames[i];
@@ -828,7 +829,7 @@ function showFrame(i) {
   const R = state.radar;
   if (!R || !R.frames.length || !$('#rSlide')) return;
   i = ((i % R.frames.length) + R.frames.length) % R.frames.length;
-  layerFor(i).setOpacity(0.72);
+  layerFor(i).setOpacity(0.92);
   R.layers.forEach((l, j) => { if (l && j !== i) l.setOpacity(0); });
   layerFor((i + 1) % R.frames.length); // preload next
   R.i = i;

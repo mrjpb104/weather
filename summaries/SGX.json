@@ -6,10 +6,18 @@
   "generated": "2026-11-16T19:45:00Z",
   "headline": "Showers and maybe a thunderstorm this afternoon and evening, a dry break Tuesday–Wednesday, then a stronger, windier storm Thursday.",
   "sections": [
-    { "title": "Today & tonight", "text": "A weak system brings showers to the coast from late morning, spreading inland in the afternoon. The heaviest bursts (and a stray thunderstorm) are most likely between about 4 and 10 PM. Rain totals are light — generally a tenth to a quarter inch — with San Diego County getting more than Orange County. Showers clear out overnight." },
-    { "title": "Tuesday–Wednesday", "text": "Dry, but not warm: highs run a few degrees below normal, in the 60s at the coast, with chilly nights near 50." },
-    { "title": "Thursday", "text": "The main event of the week. A stronger system brings more rain and wind than today's — roughly half an inch around San Diego, about an inch in Orange County, and more in the mountains. Gusts of 25–30 mph at the coast; much stronger in mountain passes. Snow is possible above about 7,000 feet." },
-    { "title": "Friday through the weekend", "text": "Drying out and a little warmer Friday and Saturday. Another, weaker system may arrive Sunday or Monday, but forecasters have low confidence in its timing." }
+    {
+      "title": "Today & Tonight",
+      "text": "A weak system brings showers to the coast from late morning, spreading inland in the afternoon. The heaviest bursts, and possibly a stray thunderstorm, are most likely between about 4 and 10 PM. Totals are light, generally a tenth to a quarter inch, with San Diego County getting more than Orange County. Showers clear out overnight."
+    },
+    {
+      "title": "Short Term",
+      "text": "Tuesday and Wednesday are dry but not warm: highs run a few degrees below normal, in the 60s at the coast, with chilly nights near 50. Winds and seas ease by Wednesday morning."
+    },
+    {
+      "title": "Long Term",
+      "text": "Thursday is the main event of the week: a stronger system with more rain and wind than today's, roughly half an inch around San Diego, about an inch in Orange County, and more in the mountains. Expect gusts of 25–30 mph at the coast, and snow above about 7,000 feet. Friday and Saturday dry out and turn a little warmer. Another, weaker system may arrive Sunday or Monday, but forecasters have low confidence in its timing."
+    }
   ],
   "coast": "High surf continues: 6–8 ft with sets near 10 ft on west-facing beaches through Tuesday night (High Surf Advisory until 4 AM Wednesday). Another swell arrives Thursday afternoon and likely keeps surf dangerous into the weekend. Rough seas for boaters this afternoon through Wednesday morning and again Thursday.",
   "watch_for": [
