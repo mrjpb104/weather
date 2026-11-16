@@ -2,27 +2,28 @@
   "office": "SGX",
   "office_name": "San Diego",
   "afd_id": null,
-  "afd_issued": "2026-11-16T10:26:00Z",
-  "generated": "2026-11-16T19:45:00Z",
-  "headline": "Showers and maybe a thunderstorm this afternoon and evening, a dry break Tuesday–Wednesday, then a stronger, windier storm Thursday.",
+  "afd_issued": "2026-11-16T20:34:00Z",
+  "generated": "2026-11-16T22:28:22Z",
+  "headline": "Showers, possibly with a thunderstorm, peak this evening; Tuesday and Wednesday dry out, then a stronger, windier storm arrives Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A weak system brings showers to the coast from late morning, spreading inland in the afternoon. The heaviest bursts, and possibly a stray thunderstorm, are most likely between about 4 and 10 PM. Totals are light, generally a tenth to a quarter inch, with San Diego County getting more than Orange County. Showers clear out overnight."
+      "text": "Showers spread inland this afternoon and become more widespread this evening and overnight, with downpours of up to about a third of an inch per hour. Expect roughly 0.10–0.50 inch along the San Diego County coast and valleys, 0.05–0.20 inch in Orange County, and half an inch to an inch in the mountains. There's a 10% chance of a thunderstorm along the coast until about 10 PM, which could bring sudden gusty winds and brief street flooding. Showers taper off from northwest to southeast Tuesday morning."
     },
     {
       "title": "Short Term",
-      "text": "Tuesday and Wednesday are dry but not warm: highs run a few degrees below normal, in the 60s at the coast, with chilly nights near 50. Winds and seas ease by Wednesday morning."
+      "text": "Tuesday and Wednesday are mostly dry but stay cool, with highs 2–12 degrees below normal. Wednesday is a few degrees warmer than Tuesday, but only briefly. Mountain and desert winds gust 40–50 mph this evening into Tuesday morning before easing."
     },
     {
       "title": "Long Term",
-      "text": "Thursday is the main event of the week: a stronger system with more rain and wind than today's, roughly half an inch around San Diego, about an inch in Orange County, and more in the mountains. Expect gusts of 25–30 mph at the coast, and snow above about 7,000 feet. Friday and Saturday dry out and turn a little warmer. Another, weaker system may arrive Sunday or Monday, but forecasters have low confidence in its timing."
+      "text": "Thursday brings a weak atmospheric river, a moisture-rich storm with more rain and wind than today's. The chance of more than an inch of rain from early Thursday to early Friday is 20–50% for San Diego County and 70–90% from Orange County north, and an isolated thunderstorm is possible near the coast Thursday afternoon. Mountain and desert gusts reach 40–55 mph, locally 60 mph, and snow levels fall to about 6,500 feet. Rain tapers Friday morning; Friday afternoon and Saturday are dry, with inland highs 7–12 degrees below normal. Another weaker system may arrive Sunday or Monday, but its timing is very uncertain."
     }
   ],
-  "coast": "High surf continues: 6–8 ft with sets near 10 ft on west-facing beaches through Tuesday night (High Surf Advisory until 4 AM Wednesday). Another swell arrives Thursday afternoon and likely keeps surf dangerous into the weekend. Rough seas for boaters this afternoon through Wednesday morning and again Thursday.",
+  "coast": "High surf continues: 6–8 ft with sets to 10 ft on west-facing beaches this afternoon, and a High Surf Advisory runs until 4 AM Wednesday. Surf drops briefly to 4–6 ft Wednesday, then a new northwest swell Thursday brings dangerous surf and rip currents back into the weekend. Coastal flooding is possible at times with the high surf, and king tides above 7 ft may start around Saturday, November 21. Rough seas for boaters (7–10 ft, gusts 25–30 knots) through Wednesday morning and again Thursday into Friday morning.",
   "watch_for": [
-    "Brief downpours or a thunderstorm at the coast this evening.",
-    "Thursday's storm tracking a bit farther north, which would mean less rain here."
+    "Brief downpours or a thunderstorm along the coast this evening.",
+    "How far north Thursday's storm tracks, which decides how much rain San Diego County gets.",
+    "King tides plus big surf this weekend for low-lying beach areas."
   ],
-  "confidence": "Moderate to high for Thursday's storm; low for anything Sunday–Monday."
+  "confidence": "Good confidence in this evening's showers and in Thursday's storm being stronger than today's; rain totals for San Diego County Thursday are still uncertain, and confidence is low for Sunday–Monday."
 }
