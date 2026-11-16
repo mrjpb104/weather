@@ -14,8 +14,20 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="themes.css">
+<script>
+  // Apply the saved (or ?theme= preview) theme before first paint.
+  (function () {
+    var t = null;
+    try { t = new URLSearchParams(location.search).get('theme'); if (t) localStorage.setItem('wx.theme', JSON.stringify(t)); else t = JSON.parse(localStorage.getItem('wx.theme') || 'null'); } catch (e) {}
+    document.documentElement.dataset.theme = t || 'classic';
+  })();
+</script>
 </head>
 <body>
 <header class="topbar">
@@ -49,6 +61,8 @@
       <button type="button" data-u="si">°C · km/h · mm</button>
     </div>
   </div>
+  <h3>Appearance</h3>
+  <div class="themes" id="themePick"></div>
   <h3>Saved locations</h3>
   <ul id="savedList" class="saved"></ul>
   <h3>About</h3>

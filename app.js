@@ -32,6 +32,27 @@ const state = {
   token: 0,
 };
 const US = () => state.settings.units !== 'si';
+const THEMES = [
+  ['classic', 'Classic', ['#eef2f7', '#ffffff', '#2563eb']],
+  ['seaglass', 'Sea glass', ['#eef4f1', '#bfe0d6', '#1f4e6b']],
+  ['midnight', 'Midnight', ['#08090c', '#1a1d2b', '#8b93ff']],
+  ['daybreak', 'Daybreak', ['#f6f9fc', '#a960ee', '#635bff']],
+  ['civic', 'Civic', ['#0b0c0c', '#ffdd00', '#1d70b8']],
+];
+const theme = () => document.documentElement.dataset.theme || 'classic';
+const isDark = () => theme() === 'midnight' || matchMedia('(prefers-color-scheme: dark)').matches;
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  store.set('wx.theme', t);
+  renderThemePick();
+}
+function renderThemePick() {
+  const el = $('#themePick');
+  if (!el) return;
+  el.innerHTML = THEMES.map(([id, name, sw]) => `<button type="button" data-t="${id}" aria-pressed="${theme() === id}">
+    <span class="sw">${sw.map(c => `<i style="background:${c}"></i>`).join('')}</span>${esc(name)}</button>`).join('');
+  el.querySelectorAll('button').forEach(b => b.onclick = () => { setTheme(b.dataset.t); });
+}
 
 async function getJSON(url, { timeout = 15000, text = false, cache = 'default' } = {}) {
   const ctrl = new AbortController();
@@ -754,7 +775,7 @@ async function setupRadar(v) {
   if (!window.L) { el.innerHTML = '<p class="fine" style="padding:12px">Map library failed to load. Use the radar links below.</p>'; $('#rLabel').textContent = ''; return; }
   const map = L.map(el, { zoomControl: true, attributionControl: true, scrollWheelZoom: false, worldCopyJump: true }).setView([v.lat, v.lon], v.kind === 'us' ? 8 : 6);
   state.map = map;
-  const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  const dark = isDark();
   // Basemap: Esri gray canvas (no API key); labels drawn above the radar. Falls back to OpenStreetMap if Esri tiles fail.
   const esri = name => `https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/${name}/MapServer/tile/{z}/{y}/{x}`;
   const esriAttr = 'Tiles © Esri — Esri, HERE, Garmin, © OpenStreetMap contributors';
@@ -832,7 +853,7 @@ function smoothRadar() {
   document.getElementById('radarSoftBlur').setAttribute('stdDeviation', sd.toFixed(1));
   const pane = map.getPane('radar');
   pane.style.filter = 'url(#radarSoft)';
-  pane.style.mixBlendMode = matchMedia('(prefers-color-scheme: dark)').matches ? 'normal' : 'multiply';
+  pane.style.mixBlendMode = isDark() ? 'normal' : 'multiply';
 }
 function layerFor(i) {
   const R = state.radar, f = R.frames[i];
@@ -968,6 +989,7 @@ async function addHere() {
 function openSettings() {
   $('#unitSeg').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.u === state.settings.units));
   renderSaved();
+  renderThemePick();
   $('#dlgSettings').showModal();
 }
 function renderSaved() {
