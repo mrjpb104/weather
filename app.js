@@ -64,6 +64,14 @@ async function nws(path, tries = 3) {
   }
   throw err;
 }
+// Open-Meteo occasionally times out or rate-limits; retry a couple of times before giving up.
+async function retryJSON(url, tries = 3) {
+  let err;
+  for (let i = 0; i < tries; i++) {
+    try { return await getJSON(url); } catch (e) { err = e; if (e.status === 400 || e.status === 404) break; await sleep(700 * (i + 1)); }
+  }
+  throw err;
+}
 const val = r => (r && r.status === 'fulfilled' ? r.value : null);
 
 // ---------- Units & formatting ----------
@@ -223,7 +231,8 @@ async function loadLocation(loc, force = false) {
     if (nwsFail && nwsFail.status !== 404 && inUSBox(lat, lon)) view.notice = 'The National Weather Service didn’t respond, so this view is using Open-Meteo data. Tap Refresh to try NWS again.';
   }
   view.loadedAt = new Date();
-  state.cache.set(key, { at: Date.now(), view });
+  // If the extra conditions (UV, pressure, visibility) didn't load, keep this view for only a minute so they're retried.
+  state.cache.set(key, { at: view.omv ? Date.now() : Date.now() - CACHE_MS + 60e3, view });
   return view;
 }
 const inUSBox = (lat, lon) => lat > 18 && lat < 72 && lon > -180 && lon < -64;
@@ -248,7 +257,7 @@ async function loadUS(loc, lat, lon, points) {
   const [fc, hr, grid, alerts, om, aq, stations, afdList, summary, cfg] = await Promise.allSettled([
     nws(P.forecast + unitQ), nws(P.forecastHourly + unitQ), nws(P.forecastGridData),
     nws(`/alerts/active?point=${lat.toFixed(4)},${lon.toFixed(4)}`),
-    getJSON(omURL(lat, lon)), getJSON(aqURL(lat, lon)),
+    retryJSON(omURL(lat, lon)), retryJSON(aqURL(lat, lon)),
     nws(P.observationStations), nws(`/products/types/AFD/locations/${office}`),
     getJSON(`summaries/${office}.json?t=${Date.now()}`, { cache: 'no-store' }),
     getJSON(`config.json?t=${Date.now()}`, { cache: 'no-store' }),
@@ -358,7 +367,7 @@ function isDaylight(lat, lon, tz) {
 
 async function loadIntl(loc, lat, lon) {
   const [om, aq, rev] = await Promise.allSettled([
-    getJSON(omURL(lat, lon)), getJSON(aqURL(lat, lon)),
+    retryJSON(omURL(lat, lon)), retryJSON(aqURL(lat, lon)),
     loc.cc ? Promise.resolve(null) : getJSON(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`),
   ]);
   const o = val(om);
@@ -673,7 +682,10 @@ function renderConditions(v) {
   const presTxt = n.presHpa == null ? '–' : US() ? (n.presHpa * 0.02953).toFixed(2) : Math.round(n.presHpa);
   const visMi = n.visM != null ? n.visM / 1609.34 : null;
   const visWord = visMi == null ? '' : visMi >= 9 ? 'Clear view' : visMi >= 5 ? 'Slight haze' : visMi >= 2 ? 'Hazy' : visMi >= 0.6 ? 'Mist / fog' : 'Dense fog';
-  const g = (icon, title, body, foot) => `<div class="gtile"><div class="gk">${ui(icon)}${title}</div>${body}${foot ? `<div class="gs">${foot}</div>` : ''}</div>`;
+  const g = (icon, title, body, foot) => {
+    if (!foot && /class="gbig">–</.test(body)) foot = 'Not available right now';
+    return `<div class="gtile"><div class="gk">${ui(icon)}${title}</div>${body}${foot ? `<div class="gs">${foot}</div>` : ''}</div>`;
+  };
   return `<div class="ggrid">
     ${g('wind', 'Wind', windDial(n.windDir, sp, US() ? 'mph' : 'km/h'), `${n.windDir != null ? `From the ${compass(n.windDir)}` : ''}${n.gustKmh ? ` · gusts ${esc(fmtSpd(n.gustKmh))}` : ''}`)}
     ${g('sun', 'UV index', uv == null ? '<div class="gbig">–</div>' : arcGauge(uv / 11, [[0, '#4cc38a'], [.3, '#f5d547'], [.55, '#ff9f43'], [.8, '#ff5b5b'], [1, '#a463f2']], Math.round(uv), uvCat(uv)), n.uvMax != null ? `Peak today ${Math.round(n.uvMax)}` : '')}
