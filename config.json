@@ -1,7 +1,8 @@
 {
   "summary_offices": [
     "SGX",
-    "SEW"
+    "SEW",
+    "OKX"
   ],
   "home": {
     "lat": 33.14986,
@@ -16,6 +17,10 @@
     "SEW": {
       "name": "Seattle",
       "focus": "the north Olympic Peninsula and Strait of Juan de Fuca shore (Sequim / Port Angeles, around 48.13, -123.19) and the Puget Sound lowlands first, then the coast, Cascades and passes briefly"
+    },
+    "OKX": {
+      "name": "New York",
+      "focus": "the area around New York, NY (40.74, -74.00) first, then the rest of the forecast area briefly"
     }
   }
 }
