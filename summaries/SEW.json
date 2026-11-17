@@ -1,29 +1,29 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": "5917d9ea-6f76-43f5-83cf-256eb56f3f81",
-  "afd_issued": "2026-11-17T04:21:00Z",
-  "generated": "2026-11-17T05:24:52Z",
-  "headline": "Mostly quiet weather through Friday, with fog early Tuesday, gusty east winds and a few showers in the south half of western Washington on Wednesday, before a wetter, stormier pattern returns this weekend into next week.",
+  "afd_id": "79179926-aa6b-454f-bdef-5d720575eef7",
+  "afd_issued": "2026-11-17T11:16:00Z",
+  "generated": "2026-11-17T12:25:33Z",
+  "headline": "Western Washington stays mostly dry and cool through Friday, with morning fog, highs near 50, and gusty east winds Tuesday night into Wednesday, before an uncertain chance of rain and pass snow returns this weekend.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Monday night turns drier, with leftover showers mostly staying offshore after a few moved inland across the Olympic Peninsula this evening. With light winds and clearing skies, fog forms overnight, first in the South Sound and Chehalis River Valley (around Olympia) and then spreading into other parts of Puget Sound, possibly thick for a few hours early Tuesday; Sea-Tac has about a 10% chance of dense, low fog between 4 and 6 AM. The fog clears by mid-morning Tuesday as a breeze off the ocean picks up, and Tuesday highs are mostly in the low 50s."
+      "text": "Low clouds and fog this morning, thickest in the Southwest Interior and on the Kitsap Peninsula with visibility under a mile in spots, thin out by afternoon for more sunshine and highs near 50. Tuesday night is mostly clear with more fog, especially south of Seattle, and possible freezing fog in the Southwest Interior where lows dip near freezing; lows elsewhere are in the mid 30s to lower 40s. East winds pick up Tuesday night into Wednesday morning, especially through the Strait of Juan de Fuca, the Cascade gaps and foothills, and near Hoquiam."
     },
     {
       "title": "Short Term",
-      "text": "A deep storm system off the coast slides south Tuesday night into Wednesday, keeping most of its rain south of western Washington, but it swirls some spotty showers into the southern half of the area and along the coast on Wednesday. East winds pick up, especially through the Cascade passes and gaps, with a 40–60% chance of gusts over 35 mph Wednesday morning. Wednesday is a bit cooler, with highs in the upper 40s to low 50s (mid 40s possible on the coast and in the southwest interior) and lows in the low to mid 30s."
+      "text": "Wednesday clouds up quickly as a storm passes well to the south, and bands of showers could reach as far north as Everett during the day, while east winds stay breezy in the foothills; another round of morning fog and low clouds is possible. The storm weakens over Oregon Wednesday night into Thursday, and dry air from the north clears skies by Thursday afternoon. Highs stay near 50 with lows in the mid 30s to lower 40s."
     },
     {
       "title": "Long Term",
-      "text": "Thursday and Friday turn drier as the storm moves off to the south, though fog is likely in places Friday morning. Over the weekend a new storm system drops down from the Gulf of Alaska and parks along the coast, spinning light rain showers back into the area. Computer models point to a wetter, more active first half of next week with several storms moving through, though no rain amounts are given yet. River flooding isn't expected for the next several days, but chances rise again early next week, mainly on the Skokomish River."
+      "text": "Friday looks dry and settled as high pressure moves overhead, with colder mornings in the upper 20s and 30s Friday and Saturday. Over the weekend a new storm will sit off the coast, but forecasters can't yet tell whether it stalls offshore or moves inland to the south Saturday night into Sunday, so there's a general chance of rain both days, with snow levels near 2,500 feet meaning any Cascade precipitation falls as snow in the passes. Monday is equally uncertain, either drier under high pressure or showery as the leftover storm moves through, with lows in the mid 30s to lower 40s Sunday and Monday mornings, highs near 50 throughout, and no river flooding expected over the next 7 days."
     }
   ],
-  "coast": "Seas of 14–16 ft on the coastal waters Monday evening ease to 10–12 ft by Tuesday morning. Winds increase Tuesday and turn offshore Tuesday night, funneling east through the Strait of Juan de Fuca at 25–30 knots in the central and western Strait (small craft advisories likely) and near Grays Harbor. On the outer coastal waters there's a 70–90% chance of gale-force gusts, and a Gale Warning runs from 1 PM Tuesday to 4 AM Wednesday; gale gusts may briefly reach the inner waters near the west entrance of the Strait and Grays Harbor County, and seas build back to 12–15 ft Tuesday night into early Wednesday. Small Craft Advisories are up for the Grays Harbor Bar until 4 AM Tuesday, the west entrance of the Strait until midnight tonight, and the coastal waters until 1 PM Tuesday. Wednesday through Friday are calmer on the water before things turn active again this weekend.",
+  "coast": "Winds increase over the waters today and turn offshore (from the east) this evening, funneling strongly through the Strait of Juan de Fuca and near Grays Harbor Tuesday night. A Small Craft Advisory covers the Central and West Strait of Juan de Fuca from 6 PM Tuesday to 4 PM Wednesday (70–100% chance of small-craft-strength winds), and the inner coastal waters are under a Small Craft Advisory into early Wednesday, with gusts briefly reaching gale force Wednesday morning near the west entrance of the Strait and off Grays Harbor County. Farther out (10–60 miles), a Gale Warning runs from 1 PM Tuesday to 4 AM Wednesday; seas dip to 10 feet or less this afternoon, then build to 10–15 feet Tuesday night into Wednesday. Calmer conditions arrive late Wednesday into Thursday, with an active pattern returning this weekend into next week.",
   "watch_for": [
-    "Early-morning fog Tuesday (and again Friday) around Puget Sound, the South Sound and the Chehalis Valley.",
-    "Gusty east winds out the Strait of Juan de Fuca Tuesday night and through the Cascade passes Wednesday morning.",
-    "How wet next week gets: several storms are expected, and river flooding chances rise early in the week, mainly on the Skokomish."
+    "Fog and freezing fog on Tuesday night and Wednesday morning roads, especially south of Seattle.",
+    "Gusty east winds through the Strait of Juan de Fuca Tuesday night into Wednesday.",
+    "Whether the weekend storm brings rain to the lowlands and snow to the Cascade passes."
   ],
-  "confidence": "Forecasters are fairly confident in Tuesday's fog-then-dry weather and in strong offshore winds Tuesday night (70–90% odds of gales offshore), less certain about exactly where Wednesday's spotty showers fall, and describe the weekend and next week only in general terms as wetter and more active."
+  "confidence": "Confidence is good through Friday, with computer models agreeing on the dry stretch, but low for the weekend and Monday, when the models disagree about where the next storm goes."
 }

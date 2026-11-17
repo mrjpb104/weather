@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "d3631317-830b-4827-a4cd-9fb9657d226c",
-  "afd_issued": "2026-11-17T05:38:00Z",
-  "generated": "2026-11-17T06:25:00Z",
-  "headline": "Monday night's showers clear out by early Tuesday, leaving a cool, dry Tuesday and Wednesday before a stronger, windier storm — a weak atmospheric river — brings more rain Thursday.",
+  "afd_id": "0e21b1e8-99bd-40c9-92c3-a69f73575d7c",
+  "afd_issued": "2026-11-17T10:57:00Z",
+  "generated": "2026-11-17T12:25:33Z",
+  "headline": "Showers are ending and Tuesday turns sunny but cool and windy; after a dry Wednesday, the next storm brings rain, wind and a slight chance of thunderstorms on Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Scattered showers continue Monday evening, most widespread in San Diego County, with brief downpours of 0.30–0.40 inch per hour possible and a 10% chance of a thunderstorm near the coast until about 10 PM. Storm totals run 0.10–0.50 inch for the San Diego County coast and valleys, 0.05–0.20 inch for Orange County and the Inland Empire, half an inch to an inch in the mountains, under 0.20 inch in the High Desert and little to none in the lower deserts. Rain largely leaves the coast and valleys by about 1 AM Tuesday and tapers off in the mountains by early Tuesday morning; west winds along the coast gust 20–25 knots (about 25–30 mph) until around 4 AM, with occasional gusts near 20 knots on the San Diego County coast Tuesday afternoon. In the mountains and deserts, gusts reach 40–50 mph tonight into Tuesday morning, and 2–4 inches of snow falls above 8,000 feet, with only a dusting lower as snow levels drop to 5,500–6,000 feet; Tuesday turns mostly dry with clearing skies and highs 2–12 degrees below normal."
+      "text": "The last showers end around sunrise Tuesday, and the day turns mostly sunny but cool and breezy, with highs in the upper 60s along the coast and valleys, lower 70s in the low desert, 50s in the High Desert and upper 30s to lower 50s in the mountains, roughly 2–12 degrees below normal. Winds peak around midday: the San Diego County coast sees occasional gusts near 20 knots (about 25 mph) into the afternoon, while mountains and deserts gust 25–40 mph, topping 40 mph on ridges and through passes with very isolated gusts near 50 mph. Winds ease late Tuesday afternoon and evening, and clouds drift back over the coast Tuesday night, with a small (10–20%) chance of a low cloud deck early Wednesday morning."
     },
     {
       "title": "Short Term",
-      "text": "Wednesday stays mostly dry and a few degrees warmer than Tuesday, though still below normal. Late Wednesday night into Thursday, a weak atmospheric river (a long plume of moisture pushed in by a strong jet stream) brings more rain, stronger winds and lower snow than Monday's storm, though its exact track is still uncertain. The chance of more than an inch of rain from early Thursday to early Friday is 20–50% for San Diego County, 70–90% from Orange County north (highest in the San Bernardino Mountains), and under 15% for the deserts, with isolated thunderstorms possible near the coast Thursday afternoon. Mountain and desert gusts reach 40–55 mph, locally 60 mph in wind-prone passes and canyons, and snow levels fall from about 7,500 feet Wednesday night to 6,500 feet by Thursday evening, with most snow accumulating above 7,000 feet."
+      "text": "Wednesday is mostly sunny, dry and not windy, but only a couple of degrees warmer. The next storm arrives Thursday morning in Orange and western San Bernardino Counties and spreads southeast through the day, bringing rain, a slight chance of thunderstorms, and gusts of 35–50 mph in the mountains and deserts. By the time it moves out early Friday, totals should be a little over an inch in the mountains, under three-quarters of an inch for most of San Diego and Riverside Counties, and perhaps only about a quarter inch around San Diego. Snow levels drop to around 6,500 feet as the rain ends, giving Big Bear light snow and a few inches above 7,500 feet such as the higher ski slopes; Friday afternoon then turns fair and dry."
     },
     {
       "title": "Long Term",
-      "text": "Rain and gusty winds taper off Thursday night into Friday morning, and Friday afternoon and Saturday are dry. It stays cool, with inland highs 7–12 degrees below normal Thursday through Saturday. Another, weaker system may arrive Sunday and/or Monday, less wet and windy than Thursday's, but its timing and track are very uncertain; the one sure thing is that the weather stays unsettled and cool."
+      "text": "Saturday looks fair and dry. Sunday and Monday are very uncertain: it could stay dry, but most computer-model runs bring in a weak system with light rain sometime Sunday, Sunday night or Monday. After that, some runs build a strong area of high pressure over the West that would bring dry and very warm weather ahead of Thanksgiving, while others keep the cool, unsettled and sometimes wet and windy pattern going."
     }
   ],
-  "coast": "A High Surf Advisory is in effect until 4 AM Wednesday for the Orange County and San Diego County coasts, and the unsettled weather will bring periods of coastal flooding this week. For boaters, a Small Craft Advisory runs until 4 AM Wednesday for waters out to 60 miles, with 25–30 knot gusts (near gale force around San Clemente Island), steep 7–10 ft seas, and a 10% chance of thunderstorms over the water until 10 PM Monday. Winds and seas ease Wednesday morning, then steep 7–10 ft seas and 20–30 knot gusts return Thursday into Friday morning.",
+  "coast": "A High Surf Advisory is in effect until 4 AM Wednesday for the Orange County and San Diego County coasts: surf of 6–9 feet with sets to 11 feet on west-facing beaches, plus strong rip currents through midweek. Surf dips briefly to 3–5 feet with sets to 6 feet on Wednesday, then a new northwest swell raises it again Thursday through Friday. Minor coastal flooding is expected at times during high tides this week because of the surf, even with tides under 6.5 feet through Friday; King Tides peak next week, with tides over 7 feet possible starting Saturday, Nov. 21. For boaters, a Small Craft Advisory runs until 4 AM Wednesday with 25–30 knot gusts (near gale force around San Clemente Island) and steep 7–10 ft seas, easing Wednesday morning, before steep 7–10 ft seas and 20–30 knot gusts return Thursday into Friday morning.",
   "watch_for": [
-    "How Thursday's storm tracks, which decides whether San Diego County gets an inch or more of rain.",
-    "Gusts up to 60 mph in mountain passes and canyons Wednesday night into Thursday.",
-    "High surf and coastal flooding at the beaches through the week."
+    "Thursday's rain amounts around San Diego, which may be only about a quarter inch while areas to the north get more.",
+    "High surf and minor coastal flooding at high tide, with King Tides starting to push above 7 feet from Saturday.",
+    "Whether Sunday–Monday brings light rain, and whether a warm, dry spell follows before Thanksgiving."
   ],
-  "confidence": "Good confidence that tonight's showers clear by Tuesday and that Thursday's storm will be stronger than Monday's, but San Diego County rain totals Thursday are still uncertain, and confidence is low for the Sunday–Monday system."
+  "confidence": "Forecasters are confident in a sunny, breezy Tuesday and a dry Wednesday, more confident than before in Thursday's storm details, and quite uncertain about Sunday onward."
 }
