@@ -1,0 +1,28 @@
+{
+  "office": "OKX",
+  "office_name": "New York",
+  "afd_id": "3396f5a4-53fc-40f9-9ef2-f69a240d4ed6",
+  "afd_issued": "2026-11-16T23:58:00Z",
+  "generated": "2026-11-17T04:25:09Z",
+  "headline": "A long stretch of dry, mild weather is on the way, with highs in the low to mid 60s from Wednesday through Sunday and no significant weather expected.",
+  "sections": [
+    {
+      "title": "Today & Tonight",
+      "text": "Monday night is clear and dry with high pressure sitting just west of the area, and light northwest winds. Tuesday stays dry and sunny with highs slightly above normal; winds turn more westerly in the afternoon and pick up a little, to around 10 mph, from late morning through the afternoon. There are no watches, warnings or advisories in effect for New York City, Long Island, the Lower Hudson Valley, northeast New Jersey or southern Connecticut."
+    },
+    {
+      "title": "Short Term",
+      "text": "A large, strong area of high pressure building from the middle of the country eastward keeps Wednesday and Thursday dry. Highs climb to 60–65 degrees across the whole area, including New York City, which is above normal for mid-November. Nights warm up more slowly because the air is dry and clear skies let temperatures drop efficiently after sunset."
+    },
+    {
+      "title": "Long Term",
+      "text": "The dry, mild pattern continues Friday and Saturday, and likely through the entire weekend, with highs still 60–65 degrees through Sunday. A cold front moving through Sunday night into Monday may bring a few showers, but no impactful weather is expected."
+    }
+  ],
+  "coast": "Quiet on the water all week: high pressure keeps winds mostly from the northwest to west at under 15 knots (about 17 mph) and ocean seas no higher than 2–3 ft, below Small Craft Advisory levels. No marine advisories are in effect.",
+  "watch_for": [
+    "Whether Sunday stays fully dry or clouds and moisture arrive ahead of the cold front.",
+    "A few showers possible with the cold front Sunday night into Monday."
+  ],
+  "confidence": "Forecasters are confident in dry, above-normal-warmth weather through at least Saturday; Sunday and the Sunday night–Monday front are a bit less certain, though no impactful weather is expected."
+}
