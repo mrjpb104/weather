@@ -1,10 +1,10 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "e2eadc0c-607c-4ed4-8b09-5cc6d2b19796",
-  "afd_issued": "2026-11-17T14:45:00Z",
-  "generated": "2026-11-17T16:24:55Z",
-  "headline": "Dry weather with a slow warm-up to above-normal temperatures lasts through Saturday, and rain chances are rising for Sunday.",
+  "afd_id": "9ab9f6bf-401d-4e9c-b644-60c3c83ec154",
+  "afd_issued": "2026-11-17T16:51:00Z",
+  "generated": "2026-11-17T17:25:18Z",
+  "headline": "Dry weather with a slow warm-up to above-normal temperatures lasts through Saturday, and rain chances are rising for Sunday, though it's not a lock.",
   "sections": [
     {
       "title": "Today & Tonight",
@@ -12,7 +12,7 @@
     },
     {
       "title": "Short Term",
-      "text": "Wednesday through Friday stay dry as a big area of high pressure over the middle of the country spreads east. Temperatures climb above normal, but the warm-up is gradual because a layer of warm, sinking air overhead keeps the milder air from mixing down to the ground quickly."
+      "text": "Wednesday through Friday stay dry as a big area of high pressure over the middle of the country spreads east, with light west to west-northwest winds of about 6–9 mph on Wednesday. Temperatures climb above normal, but the warm-up is gradual because a layer of warm, sinking air overhead keeps the milder air from mixing down to the ground quickly."
     },
     {
       "title": "Long Term",

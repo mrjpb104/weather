@@ -1,25 +1,25 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": "79179926-aa6b-454f-bdef-5d720575eef7",
-  "afd_issued": "2026-11-17T11:16:00Z",
-  "generated": "2026-11-17T12:25:33Z",
-  "headline": "Western Washington stays mostly dry and cool through Friday, with morning fog, highs near 50, and gusty east winds Tuesday night into Wednesday, before an uncertain chance of rain and pass snow returns this weekend.",
+  "afd_id": "dedc6fe1-59c7-4960-bd4c-b50688b0a149",
+  "afd_issued": "2026-11-17T16:22:00Z",
+  "generated": "2026-11-17T17:25:18Z",
+  "headline": "Western Washington stays mostly dry and cool through Friday, with fog, highs near 50, and gusty east winds through the Strait Tuesday night into Wednesday, before an uncertain chance of rain and pass snow returns this weekend.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Low clouds and fog this morning, thickest in the Southwest Interior and on the Kitsap Peninsula with visibility under a mile in spots, thin out by afternoon for more sunshine and highs near 50. Tuesday night is mostly clear with more fog, especially south of Seattle, and possible freezing fog in the Southwest Interior where lows dip near freezing; lows elsewhere are in the mid 30s to lower 40s. East winds pick up Tuesday night into Wednesday morning, especially through the Strait of Juan de Fuca, the Cascade gaps and foothills, and near Hoquiam."
+      "text": "Morning low clouds and fog have mostly cleared, and Tuesday afternoon brings partial sunshine with highs near 50 across the north Olympic Peninsula and Puget Sound lowlands. Tuesday night is mostly clear with more fog, especially south of Seattle, and possible freezing fog in the Southwest Interior where lows dip near freezing; lows elsewhere are in the mid 30s to lower 40s. East winds pick up Tuesday evening and night, especially through the Strait of Juan de Fuca, the Cascade gaps and foothills, and near Hoquiam."
     },
     {
       "title": "Short Term",
-      "text": "Wednesday clouds up quickly as a storm passes well to the south, and bands of showers could reach as far north as Everett during the day, while east winds stay breezy in the foothills; another round of morning fog and low clouds is possible. The storm weakens over Oregon Wednesday night into Thursday, and dry air from the north clears skies by Thursday afternoon. Highs stay near 50 with lows in the mid 30s to lower 40s."
+      "text": "Wednesday clouds up quickly as a storm passes well to the south; light showers wrapping around it could reach the southern half of Western Washington Wednesday afternoon and evening, possibly as far north as Everett, while east winds stay breezy in the foothills. The storm weakens over Oregon Wednesday night into Thursday, and dry air from the north clears skies by Thursday afternoon. Highs stay near 50 with lows in the mid 30s to lower 40s."
     },
     {
       "title": "Long Term",
       "text": "Friday looks dry and settled as high pressure moves overhead, with colder mornings in the upper 20s and 30s Friday and Saturday. Over the weekend a new storm will sit off the coast, but forecasters can't yet tell whether it stalls offshore or moves inland to the south Saturday night into Sunday, so there's a general chance of rain both days, with snow levels near 2,500 feet meaning any Cascade precipitation falls as snow in the passes. Monday is equally uncertain, either drier under high pressure or showery as the leftover storm moves through, with lows in the mid 30s to lower 40s Sunday and Monday mornings, highs near 50 throughout, and no river flooding expected over the next 7 days."
     }
   ],
-  "coast": "Winds increase over the waters today and turn offshore (from the east) this evening, funneling strongly through the Strait of Juan de Fuca and near Grays Harbor Tuesday night. A Small Craft Advisory covers the Central and West Strait of Juan de Fuca from 6 PM Tuesday to 4 PM Wednesday (70–100% chance of small-craft-strength winds), and the inner coastal waters are under a Small Craft Advisory into early Wednesday, with gusts briefly reaching gale force Wednesday morning near the west entrance of the Strait and off Grays Harbor County. Farther out (10–60 miles), a Gale Warning runs from 1 PM Tuesday to 4 AM Wednesday; seas dip to 10 feet or less this afternoon, then build to 10–15 feet Tuesday night into Wednesday. Calmer conditions arrive late Wednesday into Thursday, with an active pattern returning this weekend into next week.",
+  "coast": "Winds increase over the waters today and turn offshore (from the east) this evening, funneling strongly through the Strait of Juan de Fuca and near Grays Harbor Tuesday night. A Small Craft Advisory covers the Central and West Strait of Juan de Fuca from 6 PM Tuesday to 4 PM Wednesday (70–100% chance of small-craft-strength winds), and the inner coastal waters are under a Small Craft Advisory into early Wednesday, with gusts briefly reaching gale force Wednesday morning near the west entrance of the Strait and off Grays Harbor County; the Grays Harbor Bar advisory ended at 7 AM Tuesday. Farther out (10–60 miles), a Small Craft Advisory until 1 PM Tuesday gives way to a Gale Warning from 1 PM Tuesday to 4 AM Wednesday; seas dip to 10 feet or less this afternoon, then build to 10–15 feet Tuesday night into Wednesday. Calmer conditions arrive late Wednesday into Thursday, with an active pattern returning this weekend into next week.",
   "watch_for": [
     "Fog and freezing fog on Tuesday night and Wednesday morning roads, especially south of Seattle.",
     "Gusty east winds through the Strait of Juan de Fuca Tuesday night into Wednesday.",
