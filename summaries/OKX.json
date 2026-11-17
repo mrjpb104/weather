@@ -1,27 +1,27 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "6714bc92-b215-418e-8e52-1def156b5fe7",
-  "afd_issued": "2026-11-17T11:26:00Z",
-  "generated": "2026-11-17T12:25:33Z",
-  "headline": "Dry weather with a gradual warm-up to above-normal temperatures lasts through Saturday, with rising chances of rain on Sunday.",
+  "afd_id": "e2eadc0c-607c-4ed4-8b09-5cc6d2b19796",
+  "afd_issued": "2026-11-17T14:45:00Z",
+  "generated": "2026-11-17T16:24:55Z",
+  "headline": "Dry weather with a slow warm-up to above-normal temperatures lasts through Saturday, and rain chances are rising for Sunday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High pressure keeps New York City and the surrounding area dry on Tuesday and Tuesday night. Winds are light, from the west-northwest at around 10 mph this afternoon and 5–10 mph tonight."
+      "text": "High pressure keeps New York City and the surrounding area dry and quiet on Tuesday and Tuesday night. Winds from the northwest to west run around 12 mph this afternoon, easing to about 6–8 mph tonight in the city and along the coast and going light to calm in the outlying suburbs."
     },
     {
       "title": "Short Term",
-      "text": "Wednesday through Friday stay dry as a large area of high pressure builds east from the middle of the country. Temperatures run above normal, but the warm-up is gradual because a layer of warm air aloft keeps the milder air from mixing down quickly."
+      "text": "Wednesday through Friday stay dry as a big area of high pressure over the middle of the country spreads east. Temperatures climb above normal, but the warm-up is gradual because a layer of warm, sinking air overhead keeps the milder air from mixing down to the ground quickly."
     },
     {
       "title": "Long Term",
-      "text": "Saturday stays dry and above normal. Rain chances are trending up for Sunday as two storm systems, one from the Midwest and one near the Southeast coast, interact, but it's not a sure thing. Some computer models take the storm offshore, while others run a low straight up the East Coast with a significant soaking Sunday into Sunday night; how the two systems combine will decide which happens."
+      "text": "Saturday stays dry and above normal. Rain chances are trending up for Sunday as a disturbance from the Pacific reaching the Upper Midwest interacts with a storm near the Southeast and Mid-Atlantic coast, though rain is not a sure thing. Some computer models keep the storm offshore, while others run a low straight up the East Coast with a significant soaking Sunday into Sunday night; how the two systems combine will decide which happens."
     }
   ],
-  "coast": "Calm boating conditions all week, with no advisories: winds from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 feet.",
+  "coast": "Calm boating conditions all week with no advisories: winds from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 feet.",
   "watch_for": [
-    "Whether Sunday's storm stays offshore or tracks up the coast and brings a significant rain Sunday into Sunday night."
+    "Whether Sunday's storm stays offshore or tracks up the coast, bringing a significant rain Sunday into Sunday night."
   ],
-  "confidence": "High confidence in dry, gradually warming weather through Saturday; low confidence in Sunday's rain, which depends on how two storm systems interact."
+  "confidence": "High confidence in dry, gradually warming weather through Saturday; low confidence in Sunday's rain, which hinges on how two storm systems interact."
 }
