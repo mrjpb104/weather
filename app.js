@@ -35,15 +35,8 @@ const state = {
   token: 0,
 };
 const US = () => state.settings.units !== 'si';
-const THEMES = [
-  ['classic', 'Classic', ['#eef2f7', '#ffffff', '#2563eb']],
-  ['coastal', 'Coastal', ['#f2f7f6', '#9be0c9', '#0f6e7a']],
-  ['nightfall', 'Nightfall', ['#070b0f', '#14535a', '#5eead4']],
-  ['editorial', 'Editorial', ['#f7f3ec', '#fffdf9', '#2f6b5b']],
-  ['sky', 'Live sky', ['#2f80d1', '#c76b6b', '#0b1736']],
-];
-const theme = () => document.documentElement.dataset.theme || 'classic';
-const isDark = () => theme() === 'nightfall' || (theme() === 'sky' ? /^(night|dusk)/.test(document.documentElement.dataset.sky || '') : matchMedia('(prefers-color-scheme: dark)').matches);
+const theme = () => document.documentElement.dataset.theme || 'sky';
+const isDark = () => (theme() === 'sky' ? /^(night|dusk)/.test(document.documentElement.dataset.sky || '') : matchMedia('(prefers-color-scheme: dark)').matches);
 // "Live sky" theme: pick a background from current conditions and time of day.
 function skyFor(v) {
   const s = v.sun, n = Date.now(), txt = `${v.now.text || ''} ${v.hourly[0]?.text || ''}`.toLowerCase();
@@ -54,59 +47,6 @@ function skyFor(v) {
   if ((near(s.rise) || near(s.set)) && !wet) return 'dusk';
   return `${day ? 'day' : 'night'}-${wet ? 'rain' : cloudy ? 'cloudy' : 'clear'}`;
 }
-function setTheme(t) {
-  document.documentElement.dataset.theme = t;
-  store.set('wx.theme', t);
-  renderThemePick();
-  if (typeof fx !== 'undefined') { if (t === 'sky' && state.lastView) fxFromView(state.lastView); else fx.start(); }
-}
-// [id, label, CSS family for the preview, stylesheet URL (null = already loaded), note]
-const GF = q => `https://fonts.googleapis.com/css2?family=${q}&display=swap`;
-const FS = q => `https://api.fontshare.com/v2/css?f[]=${q}&display=swap`;
-const FONTS = [
-  ['', 'Theme default', 'inherit', null, ''],
-  ['inter', 'Inter', '"Inter"', null, ''],
-  ['josefin', 'Josefin Sans', '"Josefin Sans"', GF('Josefin+Sans:wght@200;300;400;500;600;700'), ''],
-  ['rubik', 'Rubik', '"Rubik"', GF('Rubik:wght@300;400;500;600;700'), ''],
-  ['dmsans', 'DM Sans', '"DM Sans"', GF('DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700'), ''],
-  ['manrope', 'Manrope', '"Manrope"', GF('Manrope:wght@200;300;400;500;600;700'), ''],
-  ['geist', 'Geist', '"Geist"', GF('Geist:wght@200;300;400;500;600;700'), ''],
-  ['satoshi', 'Satoshi', '"Satoshi"', FS('satoshi@300,400,500,700'), 'default'],
-  ['clash', 'Clash Grotesk', '"Clash Grotesk"', FS('clash-grotesk@200,300,400,500,600,700'), ''],
-  ['general', 'General Sans', '"General Sans"', FS('general-sans@200,300,400,500,600,700'), 'free stand-in for Aeonik'],
-  ['switzer', 'Switzer', '"Switzer"', FS('switzer@200,300,400,500,600,700'), 'free stand-in for Mori'],
-  ['unbounded', 'Unbounded + Manrope', '"Unbounded"', GF('Unbounded:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600;700'), 'free stand-in for Monument'],
-];
-function loadFont(id) {
-  const f = FONTS.find(x => x[0] === id);
-  if (!f || !f[3] || document.getElementById(`font-${id}`)) return;
-  const l = document.createElement('link');
-  l.id = `font-${id}`; l.rel = 'stylesheet';
-  l.href = f[3];
-  document.head.appendChild(l);
-}
-function setFont(id) {
-  if (id) { document.documentElement.dataset.font = id; loadFont(id); } else delete document.documentElement.dataset.font;
-  store.set('wx.font', id || null);
-  renderFontPick();
-}
-function renderFontPick() {
-  const el = $('#fontPick');
-  if (!el) return;
-  FONTS.forEach(f => loadFont(f[0]));
-  const cur = document.documentElement.dataset.font || '';
-  el.innerHTML = FONTS.map(([id, name, fam, , note]) => `<button type="button" data-f="${id}" aria-pressed="${cur === id}">
-    <span class="fs" style="font-family:${fam === 'inherit' ? 'inherit' : `${fam}, sans-serif`}">69°<em>Aa</em></span><span class="fn">${esc(name)}</span>${note ? `<span class="fnote">${esc(note)}</span>` : ''}</button>`).join('');
-  el.querySelectorAll('button').forEach(b => b.onclick = () => setFont(b.dataset.f));
-}
-function renderThemePick() {
-  const el = $('#themePick');
-  if (!el) return;
-  el.innerHTML = THEMES.map(([id, name, sw]) => `<button type="button" data-t="${id}" aria-pressed="${theme() === id}">
-    <span class="sw">${sw.map(c => `<i style="background:${c}"></i>`).join('')}</span>${esc(name)}</button>`).join('');
-  el.querySelectorAll('button').forEach(b => b.onclick = () => { setTheme(b.dataset.t); });
-}
-
 async function getJSON(url, { timeout = 15000, text = false, cache = 'default' } = {}) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeout);
@@ -1253,8 +1193,6 @@ async function addHere() {
 function openSettings(section) {
   $('#unitSeg').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.u === state.settings.units));
   renderSaved();
-  renderThemePick();
-  renderFontPick();
   renderGh();
   const d = $('#dlgSettings');
   if (!d.open) d.showModal();
@@ -1348,7 +1286,6 @@ function renderSaved() {
 
 // ---------- Boot ----------
 function boot() {
-  if (window.WX_FONT_PRELOAD) loadFont(window.WX_FONT_PRELOAD);
   $('#btnAdd').onclick = openAdd;
   $('#btnSettings').onclick = openSettings;
   $('#addQuery').oninput = e => { clearTimeout(searchTimer); searchTimer = setTimeout(() => doSearch(e.target.value), 350); };
