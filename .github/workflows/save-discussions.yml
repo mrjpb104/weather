@@ -1,0 +1,31 @@
+# Saves the latest NWS forecast discussion for each office in config.json to discussions/<OFFICE>.json,
+# so the scheduled Claude summary task can read it from the repo without fetching from the web.
+name: Save forecast discussions
+
+on:
+  schedule:
+    - cron: '5 * * * *'   # hourly at :05 UTC (the summary task runs at :24)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [config.json]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: save-discussions
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch the latest discussions
+        id: fetch
+        run: python3 scripts/save_discussions.py
+      - name: Commit any new discussions
+        if: ${{ !cancelled() && steps.fetch.outputs.changed != '' }}
+        run: scripts/commit.sh "Save forecast discussions (${{ steps.fetch.outputs.changed }})"

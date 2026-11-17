@@ -7,13 +7,18 @@ No build step, no API keys. Hosted on GitHub Pages.
 ## Files
 - `index.html`, `style.css`, `app.js` — the app
 - `summaries/<OFFICE>.json` — plain-English forecast-discussion summaries, written by a scheduled Claude task
+- `discussions/<OFFICE>.json` — the latest original NWS forecast discussion for each summary office, saved hourly by GitHub Actions (`.github/workflows/save-discussions.yml`); the summary task reads these instead of fetching from the web
 - `config.json` — which NWS offices get summaries (`summary_offices`) and which areas each summary should emphasize (`office_focus`)
+- `scripts/` — helpers the workflows run
+
+## Turning on summaries for a new forecast area
+When a location is in an NWS office that doesn't have summaries yet, the app shows a **Turn on summaries** button. It opens a prefilled GitHub issue titled `Enable summaries: <OFFICE>`; when the repo owner submits it, `.github/workflows/enable-summaries.yml` adds the office to `config.json` (focused on that location), saves its discussion, and closes the issue. The next hourly summary run writes the first summary. You can also run that workflow by hand from the Actions tab.
 
 ## Summary file format
 ```json
 {
   "office": "SGX", "office_name": "San Diego",
-  "afd_id": "<api.weather.gov product id>", "afd_issued": "<ISO time of the AFD summarized>",
+  "afd_id": "<product id or null>", "afd_issued": "<the \"issued\" time from discussions/<OFFICE>.json>",
   "generated": "<ISO time>",
   "headline": "One-sentence takeaway",
   "sections": [{ "title": "Today & tonight", "text": "..." }],

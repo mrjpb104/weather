@@ -315,3 +315,12 @@ footer.src { text-align: center; padding: 8px 12px 16px; }
 
 /* Tides */
 .tide.hi .v { color: var(--rain); }
+
+/* Turn on plain-English summaries for a new NWS office */
+.sumcta { margin: 0 0 12px; }
+.sumcta > p:first-child { margin: 0 0 10px; font-size: 15px; line-height: 1.45; }
+.sumcta.top > p:first-child { display: flex; gap: 10px; align-items: flex-start; }
+.sumcta.top > p:first-child .uii { flex: none; width: 20px; height: 20px; margin-top: 1px; opacity: .8; }
+a.btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.sumbtn { padding: 10px 14px; font-weight: 600; }
+.sumcta .fine { margin: 8px 0 0; }

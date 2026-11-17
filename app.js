@@ -10,6 +10,7 @@ const OM_AQ = 'https://air-quality-api.open-meteo.com/v1/air-quality';
 const OM_GEO = 'https://geocoding-api.open-meteo.com/v1/search';
 const IEM = 'https://mesonet.agron.iastate.edu';
 const CACHE_MS = 5 * 60 * 1000;
+const REPO = 'mrjpb104/weather'; // GitHub repo the app is served from; the "Turn on summaries" button opens an issue here
 
 // ---------- Small utilities ----------
 const $ = (s, el = document) => el.querySelector(s);
@@ -304,12 +305,13 @@ async function loadUS(loc, lat, lon, points) {
   const office = P.cwa || P.gridId;
   const rl = P.relativeLocation?.properties || {};
   const unitQ = US() ? '' : '?units=si';
-  const [fc, hr, grid, alerts, om, aq, stations, afdList, summary] = await Promise.allSettled([
+  const [fc, hr, grid, alerts, om, aq, stations, afdList, summary, cfg] = await Promise.allSettled([
     nws(P.forecast + unitQ), nws(P.forecastHourly + unitQ), nws(P.forecastGridData),
     nws(`/alerts/active?point=${lat.toFixed(4)},${lon.toFixed(4)}`),
     getJSON(omURL(lat, lon)), getJSON(aqURL(lat, lon)),
     nws(P.observationStations), nws(`/products/types/AFD/locations/${office}`),
     getJSON(`summaries/${office}.json?t=${Date.now()}`, { cache: 'no-store' }),
+    getJSON(`config.json?t=${Date.now()}`, { cache: 'no-store' }),
   ]);
 
   // Observation: first nearby station with a recent temperature
@@ -398,7 +400,7 @@ async function loadUS(loc, lat, lon, points) {
     kind: 'us', name: loc.name, sub, lat, lon, tz, office,
     officeName: null, radarStation: P.radarStation, now, hourly, days, periods,
     alerts: (val(alerts)?.features || []).map(f => f.properties),
-    afd, summary: val(summary), sun: sunInfo(lat, lon, tz), moon: moonInfo(),
+    afd, summary: val(summary), summaryOffices: val(cfg)?.summary_offices || null, sun: sunInfo(lat, lon, tz), moon: moonInfo(),
     qpf24: sumBetween(qpf, new Date(), new Date(Date.now() + 24 * 3600e3)),
     gust24: maxBetween(gust, new Date(), new Date(Date.now() + 24 * 3600e3)),
     cc: 'US', omv,
@@ -752,6 +754,11 @@ function render(v, loc) {
   const html = [];
 
   if (v.notice) html.push(`<div class="note">${esc(v.notice)}</div>`);
+  if (loc && state.justAdded === loc.id) {
+    state.justAdded = null;
+    const st = summaryState(v);
+    if (st === 'off') html.push(`<section class="card sumcta top"><p>${ui('doc')}<span>This spot is in the NWS <b>${esc(areaName(v))}</b> forecast area, which doesn’t have plain-English discussion summaries yet.</span></p>${enableBtn(v, loc)}</section>`);
+  }
 
   html.push(`<section class="card hero">
     <p class="place">${esc(loc?.name || v.name)}</p>
@@ -817,10 +824,41 @@ function render(v, loc) {
   let k = 0;
   $('#main').innerHTML = html.join('').replace(/<(section|details) class="(card|alert)/g, (mm, tag, cls) => `<${tag} style="--i:${k++}" class="${cls}`);
   $('#refresh').onclick = () => show(true);
+  wireEnableButtons();
   if (typeof fxFromView === 'function') fxFromView(v);
   setupRadar(v);
 }
 const tile = (k, v, s) => `<div class="tile"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div>${s ? `<div class="s">${esc(s)}</div>` : ''}</div>`;
+
+// ---------- Turning on summaries for a new NWS office ----------
+// The button opens a prefilled GitHub issue; .github/workflows/enable-summaries.yml does the rest.
+const PENDING_MS = 24 * 3600e3;
+function pendingOffices() {
+  const p = store.get('wx.sumPending', {}), now = Date.now();
+  for (const k of Object.keys(p)) if (now - p[k] > PENDING_MS) delete p[k];
+  return p;
+}
+function summaryState(v) {
+  if (v.summary) return 'ready';
+  if (v.summaryOffices?.includes(v.office)) return 'on';
+  return pendingOffices()[v.office] ? 'pending' : 'off';
+}
+const areaName = v => (v.afd?.text?.match(/National Weather Service ([^\n]+)/)?.[1] || v.office).trim().replace(/ ([A-Z]{2})$/, ', $1');
+function enableURL(v, loc) {
+  const nm = loc?.name || v.name || '', place = !v.sub || v.sub.startsWith(nm) ? v.sub || nm : `${nm} (${v.sub})`;
+  const body = [`Office: ${v.office}`, `Area: ${areaName(v)}`, `Location: ${place}`, `Coordinates: ${v.lat.toFixed(4)}, ${v.lon.toFixed(4)}`, '',
+    'Sent from the weather app. Submitting this turns on plain-English forecast-discussion summaries for this office automatically; the issue closes itself when it’s done.'].join('\n');
+  return `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(`Enable summaries: ${v.office}`)}&body=${encodeURIComponent(body)}`;
+}
+const enableBtn = (v, loc, label) => `<a class="btn primary sumbtn" href="${esc(enableURL(v, loc))}" target="_blank" rel="noopener" data-enable="${esc(v.office)}">${esc(label || `Turn on summaries for ${areaName(v)}`)}</a>
+  ${label ? '' : '<p class="fine">Opens a prefilled request on GitHub — tap <b>Create</b> and it’s set up automatically.</p>'}`;
+function wireEnableButtons() {
+  document.querySelectorAll('[data-enable]').forEach(a => a.addEventListener('click', () => {
+    const p = pendingOffices(); p[a.dataset.enable] = Date.now(); store.set('wx.sumPending', p);
+    state.cache.clear();
+    setTimeout(() => show('quiet'), 1500);
+  }));
+}
 
 function renderAFD(v) {
   const a = v.afd, s = v.summary, tz = v.tz;
@@ -836,7 +874,10 @@ function renderAFD(v) {
     const wf = (s.watch_for || []).map(x => `<p>• ${esc(x)}</p>`).join('');
     if (wf || s.confidence) extras.push(['Worth watching &amp; confidence', `${wf}${s.confidence ? `<p><b>Confidence:</b> ${esc(s.confidence)}</p>` : ''}`]);
   } else {
-    parts.push(`<p class="fine">No plain-English summary is set up for the ${esc(v.office)} office yet — ask Claude to add “${esc(v.office)}” to your weather app’s summary list. The original discussion is below.</p>`);
+    const st = summaryState(v);
+    if (st === 'on') parts.push(`<div class="sumcta"><p>Plain-English summaries are on for the NWS ${esc(areaName(v))} area. The first one arrives within about an hour; the original discussion is below.</p></div>`);
+    else if (st === 'pending') parts.push(`<div class="sumcta"><p>Turning on summaries for the NWS ${esc(areaName(v))} area. Once you’ve tapped <b>Create</b> on GitHub it finishes in a minute or two, and the first summary follows within about an hour.</p>${enableBtn(v, null, 'Open the request again')}</div>`);
+    else parts.push(`<div class="sumcta"><p>No plain-English summary for the NWS ${esc(areaName(v))} forecast area yet. The original discussion is below.</p>${enableBtn(v, null)}</div>`);
   }
   if (a) {
     const secs = parseAFD(a.text || '');
@@ -1094,6 +1135,7 @@ function addLocation(o) {
   const id = `loc-${Date.now().toString(36)}`;
   state.saved.push({ id, ...o });
   store.set('wx.saved', state.saved);
+  state.justAdded = id;
   $('#dlgAdd').close();
   go(id);
   // Entered as bare coordinates? Name it after the nearest town (U.S. only); rename anytime in Settings.
