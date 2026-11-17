@@ -7,7 +7,7 @@ No build step, no API keys. Hosted on GitHub Pages.
 ## Files
 - `index.html`, `style.css`, `app.js` — the app
 - `summaries/<OFFICE>.json` — plain-English forecast-discussion summaries, written by a scheduled Claude task
-- `config.json` — which NWS offices get summaries (`summary_offices`)
+- `config.json` — which NWS offices get summaries (`summary_offices`) and which areas each summary should emphasize (`office_focus`)
 
 ## Summary file format
 ```json

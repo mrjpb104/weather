@@ -1,0 +1,29 @@
+{
+  "office": "SEW",
+  "office_name": "Seattle",
+  "afd_id": null,
+  "afd_issued": "2026-11-16T22:48:00Z",
+  "generated": "2026-11-17T02:00:17Z",
+  "headline": "Mostly quiet, dry weather through Friday apart from Tuesday-morning fog, some showers Wednesday in the southern half of western Washington, and gusty east winds; a wetter, stormier pattern builds this weekend into next week.",
+  "sections": [
+    {
+      "title": "Today & Tonight",
+      "text": "Monday stays mostly dry, with a mix of sun and clouds and highs in the low to mid 50s (low 50s near the water); a few showers coming off the ocean push inland across the Olympic Peninsula in the afternoon. With light winds overnight, fog forms first in the South Sound and Chehalis Valley and spreads into Central Puget Sound early Tuesday, possibly thick for a few hours around dawn — Sea-Tac has about a 10% chance of dense fog between 4 and 6 AM. The fog burns off by mid-morning Tuesday as a breeze off the ocean picks up."
+    },
+    {
+      "title": "Short Term",
+      "text": "Tuesday is dry with highs generally in the low 50s. On Wednesday a deep storm system off the coast slides south, keeping most of its rain south of the area, but showers swirl into the southern half of western Washington and along the coast. East winds strengthen, especially in the Cascade passes and gaps, where there's a 40–60% chance of gusts over 35 mph Wednesday morning. Wednesday highs are in the upper 40s to low 50s (mid 40s possible on the coast and in the southwest interior), with lows in the low to mid 30s."
+    },
+    {
+      "title": "Long Term",
+      "text": "Thursday and Friday turn drier as the storm moves away, though fog is likely Friday morning. Over the weekend a new storm system drops down from the Gulf of Alaska and settles along the coast, bringing light rain back. The first half of next week looks wetter and more active, with several storms likely, though forecasters haven't given rain amounts yet. No river flooding is expected for several days, but chances rise early next week, mainly on the Skokomish River."
+    }
+  ],
+  "coast": "Big seas of 16–18 ft on Monday ease to 10–12 ft by Tuesday morning; a High Surf Advisory runs until 4 PM Monday for the Northern Washington and Grays Harbor County coasts. Winds pick up Tuesday and turn offshore Tuesday night, funneling east through the Strait of Juan de Fuca at 25–30 knots in the central and western Strait (small craft advisories likely) and near Grays Harbor. On the outer coastal waters there's a 70–90% chance of gale-force gusts, and a Gale Warning runs from 1 PM Tuesday to 4 AM Wednesday, with seas building to 12–15 ft Tuesday night. Small Craft Advisories are also up for the Grays Harbor Bar until 4 AM Tuesday, the west entrance of the Strait until 10 PM Monday, and the coastal waters until 1 PM Tuesday. Wednesday through Friday are calmer on the water before things turn active again this weekend.",
+  "watch_for": [
+    "Early-morning fog Tuesday (and again Friday) around Puget Sound and the South Sound.",
+    "Gusty east winds out the Strait of Juan de Fuca Tuesday night and through the Cascade passes Wednesday morning.",
+    "How wet next week gets — several storms are expected and river flooding chances rise early in the week, mainly on the Skokomish."
+  ],
+  "confidence": "Forecasters are most confident in dry weather through Tuesday and the timing of Tuesday night's winds; the fog and Wednesday's showers are less certain, and next week is described only as wetter and more active, with no amounts or timing yet."
+}

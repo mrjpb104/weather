@@ -24,6 +24,8 @@ const store = {
 const state = {
   settings: store.get('wx.settings', { units: 'us' }),
   saved: store.get('wx.saved', []),
+  order: store.get('wx.order', []),
+  labels: store.get('wx.labels', {}),
   active: 'home',
   cache: new Map(),
   gps: null,
@@ -393,7 +395,7 @@ async function loadUS(loc, lat, lon, points) {
 
   const sub = rl.city ? `${rl.city}, ${rl.state}` : `${lat.toFixed(3)}, ${lon.toFixed(3)}`;
   const view = {
-    kind: 'us', name: loc.kind === 'gps' ? 'Current Location' : loc.name, sub, lat, lon, tz, office,
+    kind: 'us', name: loc.name, sub, lat, lon, tz, office,
     officeName: null, radarStation: P.radarStation, now, hourly, days, periods,
     alerts: (val(alerts)?.features || []).map(f => f.properties),
     afd, summary: val(summary), sun: sunInfo(lat, lon, tz), moon: moonInfo(),
@@ -458,7 +460,7 @@ async function loadIntl(loc, lat, lon) {
   });
   days.forEach(d => { d.detail = [[d.fullName, intlDayText(d)]]; });
   const view = {
-    kind: 'intl', name: loc.kind === 'gps' ? 'Current Location' : loc.name, sub, lat, lon, tz, cc,
+    kind: 'intl', name: loc.name, sub, lat, lon, tz, cc,
     now, hourly, days, alerts: [], sun: sunInfo(lat, lon, tz), moon: moonInfo(), omv: o,
     qpf24: hourly.reduce((a, h) => a + (h.precipMm || 0), 0),
     gust24: (() => { let b = null; hourly.forEach(h => { if (h.gustKmh != null && (!b || h.gustKmh > b.value)) b = { value: h.gustKmh, start: h.t }; }); return b; })(),
@@ -616,11 +618,32 @@ const JARGON = [
 ];
 
 // ---------- Rendering ----------
+// Tab order and names. Home and Current keep fixed ids; their custom names live in wx.labels,
+// saved locations keep their name on the saved object. wx.order lists tab ids left to right.
+const DEFAULT_LABEL = { home: 'Home', here: 'Current' };
+const tabLabel = l => l.kind === 'home' || l.kind === 'gps' ? (state.labels[l.id] || DEFAULT_LABEL[l.id]) : l.name;
+const tabIcon = l => l.id === 'home' ? '🏠 ' : l.id === 'here' ? '📍 ' : '';
+function allLocs() {
+  const base = [{ ...HOME, name: state.labels.home || HOME.name }, { ...HERE, name: state.labels.here || HERE.name }, ...state.saved];
+  const byId = new Map(base.map(l => [l.id, l]));
+  const out = [];
+  for (const id of state.order) if (byId.has(id)) { out.push(byId.get(id)); byId.delete(id); }
+  return out.concat([...byId.values()]);
+}
+function saveOrder(ids) { state.order = ids; store.set('wx.order', ids); }
+
 function renderTabs() {
   const tabs = $('#tabs');
-  const locs = [HOME, HERE, ...state.saved];
-  tabs.innerHTML = locs.map(l => `<button class="tab" data-id="${esc(l.id)}" aria-current="${l.id === state.active}">${l.id === 'home' ? '🏠 ' : l.id === 'here' ? '📍 ' : ''}${esc(l.id === 'here' ? 'Current' : l.name)}</button>`).join('');
-  tabs.querySelectorAll('.tab').forEach(b => b.onclick = () => go(b.dataset.id));
+  tabs.innerHTML = allLocs().map(l => `<button class="tab" data-id="${esc(l.id)}" aria-current="${l.id === state.active}">${tabIcon(l)}${esc(tabLabel(l))}</button>`).join('');
+  tabs.querySelectorAll('.tab').forEach(b => {
+    b.onclick = () => { if (b.dataset.held) { delete b.dataset.held; return; } go(b.dataset.id); };
+    // Long-press a tab to jump to the reorder/rename list.
+    let t = null;
+    const cancel = () => clearTimeout(t);
+    b.addEventListener('pointerdown', () => { t = setTimeout(() => { b.dataset.held = '1'; openSettings('locations'); }, 550); });
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => b.addEventListener(ev, cancel));
+    b.addEventListener('contextmenu', e => e.preventDefault());
+  });
   $('.tab[aria-current="true"]', tabs)?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
 }
 
@@ -632,7 +655,7 @@ function go(id) {
   renderTabs();
   show(false);
 }
-const locById = id => [HOME, HERE, ...state.saved].find(l => l.id === id);
+const locById = id => allLocs().find(l => l.id === id);
 
 async function show(force) {
   const loc = locById(state.active);
@@ -731,7 +754,7 @@ function render(v, loc) {
   if (v.notice) html.push(`<div class="note">${esc(v.notice)}</div>`);
 
   html.push(`<section class="card hero">
-    <p class="place">${esc(v.name)}</p>
+    <p class="place">${esc(loc?.name || v.name)}</p>
     <div class="sub">${esc(v.sub)}${v.kind === 'us' ? ' · NWS ' + esc(v.office) : ''}</div>
     <div class="nowrow">
       <div class="hicon">${wxIcon(n.kind, 'anim')}</div>
@@ -1073,6 +1096,17 @@ function addLocation(o) {
   store.set('wx.saved', state.saved);
   $('#dlgAdd').close();
   go(id);
+  // Entered as bare coordinates? Name it after the nearest town (U.S. only); rename anytime in Settings.
+  if (!o.cc && /^-?\d+(\.\d+)?, -?\d+(\.\d+)?$/.test(o.name)) {
+    nws(`/points/${o.lat.toFixed(4)},${o.lon.toFixed(4)}`, 1).then(p => {
+      const rl = p.properties.relativeLocation?.properties, s = state.saved.find(x => x.id === id);
+      if (!rl?.city || !s || s.name !== o.name) return;
+      Object.assign(s, { name: rl.city, admin: rl.state, cc: 'US', country: 'United States' });
+      store.set('wx.saved', state.saved);
+      renderTabs();
+      if (state.active === id) { const pl = $('.place'); if (pl) pl.textContent = s.name; }
+    }).catch(() => { /* keep the coordinates as the name */ });
+  }
 }
 async function addHere() {
   const b = $('#addHere');
@@ -1091,41 +1125,98 @@ async function addHere() {
   } catch (e) { b.textContent = e.message; setTimeout(() => (b.textContent = '📍 Save my current location'), 4000); return; }
   b.textContent = '📍 Save my current location';
 }
-function openSettings() {
+function openSettings(section) {
   $('#unitSeg').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.u === state.settings.units));
   renderSaved();
   renderThemePick();
   renderFontPick();
-  $('#dlgSettings').showModal();
+  const d = $('#dlgSettings');
+  if (!d.open) d.showModal();
+  if (section === 'locations') requestAnimationFrame(() => $('#locHead').scrollIntoView({ block: 'start' }));
 }
 function renderSaved() {
   const ul = $('#savedList');
-  ul.innerHTML = `<li><span class="nm">🏠 Home<small>${HOME.lat}, ${HOME.lon} · fixed</small></span></li>` + state.saved.map((l, i) => `
-    <li data-i="${i}"><span class="nm">${esc(l.name)}<small>${esc([l.admin, l.country].filter(Boolean).join(', ') || `${l.lat}, ${l.lon}`)}</small></span>
-      <button data-a="up" aria-label="Move up" ${i === 0 ? 'disabled' : ''}>↑</button>
+  const locs = allLocs();
+  const sub = l => l.kind === 'home' ? `${HOME.lat}, ${HOME.lon}` : l.kind === 'gps' ? 'Wherever you are'
+    : esc([l.admin, l.country].filter(Boolean).join(', ') || `${l.lat}, ${l.lon}`);
+  ul.innerHTML = locs.map((l, i) => `
+    <li data-id="${esc(l.id)}">
+      <span class="grip" aria-hidden="true" title="Drag to reorder">⠿</span>
+      <span class="nm">${tabIcon(l)}${esc(tabLabel(l))}<small>${sub(l)}</small></span>
+      <button data-a="up" aria-label="Move ${esc(tabLabel(l))} left" ${i === 0 ? 'disabled' : ''}>↑</button>
+      <button data-a="down" aria-label="Move ${esc(tabLabel(l))} right" ${i === locs.length - 1 ? 'disabled' : ''}>↓</button>
       <button data-a="ren">Rename</button>
-      <button data-a="del">Delete</button></li>`).join('');
+      ${l.kind === 'home' || l.kind === 'gps' ? '' : '<button data-a="del">Delete</button>'}</li>`).join('');
   if (!state.saved.length) ul.insertAdjacentHTML('beforeend', '<li class="fine">No saved locations yet — tap ＋ to add one.</li>');
-  ul.querySelectorAll('li[data-i] button').forEach(b => b.onclick = () => {
-    const i = +b.closest('li').dataset.i, a = b.dataset.a;
-    if (a === 'up' && i > 0) [state.saved[i - 1], state.saved[i]] = [state.saved[i], state.saved[i - 1]];
-    if (a === 'del') {
-      if (b.dataset.confirm !== '1') { b.dataset.confirm = '1'; b.textContent = 'Confirm'; return; }
-      const [gone] = state.saved.splice(i, 1);
-      if (gone.id === state.active) state.active = 'home';
-    }
-    if (a === 'ren') {
-      const li = b.closest('li');
-      li.querySelector('.nm').innerHTML = `<input value="${esc(state.saved[i].name)}" style="width:100%;font-size:16px;padding:4px 6px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink)">`;
-      const inp = li.querySelector('input'); inp.focus(); inp.select();
-      const done = () => { state.saved[i].name = inp.value.trim() || state.saved[i].name; store.set('wx.saved', state.saved); renderSaved(); renderTabs(); };
-      inp.onkeydown = e => { if (e.key === 'Enter') done(); };
-      inp.onblur = done;
+  const ids = () => [...ul.querySelectorAll('li[data-id]')].map(li => li.dataset.id);
+  const refresh = () => { renderSaved(); renderTabs(); };
+
+  ul.querySelectorAll('li[data-id] button').forEach(b => b.onclick = () => {
+    const li = b.closest('li'), id = li.dataset.id, a = b.dataset.a;
+    const order = ids(), i = order.indexOf(id);
+    if (a === 'up' || a === 'down') {
+      const j = a === 'up' ? i - 1 : i + 1;
+      if (j < 0 || j >= order.length) return;
+      [order[i], order[j]] = [order[j], order[i]];
+      saveOrder(order); refresh();
+      ul.querySelector(`li[data-id="${CSS.escape(id)}"] button[data-a="${a}"]:not([disabled])`)?.focus();
       return;
     }
-    store.set('wx.saved', state.saved);
-    renderSaved(); renderTabs();
+    if (a === 'del') {
+      if (b.dataset.confirm !== '1') { b.dataset.confirm = '1'; b.textContent = 'Confirm'; return; }
+      state.saved = state.saved.filter(l => l.id !== id);
+      store.set('wx.saved', state.saved);
+      saveOrder(order.filter(x => x !== id));
+      if (id === state.active) { state.active = 'home'; history.replaceState(null, '', '#home'); store.set('wx.active', 'home'); }
+      refresh();
+      return;
+    }
+    if (a === 'ren') {
+      const l = locById(id), fixed = l.kind === 'home' || l.kind === 'gps';
+      li.querySelector('.nm').innerHTML = `<input class="ren" value="${esc(tabLabel(l))}" maxlength="40" aria-label="New name" placeholder="${fixed ? esc(DEFAULT_LABEL[id]) : ''}">`;
+      const inp = li.querySelector('input'); inp.focus(); inp.select();
+      let finished = false;
+      const done = () => {
+        if (finished) return; finished = true;
+        const v = inp.value.trim();
+        if (fixed) {
+          if (v && v !== DEFAULT_LABEL[id]) state.labels[id] = v; else delete state.labels[id];
+          store.set('wx.labels', state.labels);
+        } else if (v) {
+          const s = state.saved.find(x => x.id === id); s.name = v; store.set('wx.saved', state.saved);
+        }
+        refresh();
+      };
+      inp.onkeydown = e => { if (e.key === 'Enter') done(); if (e.key === 'Escape') { e.preventDefault(); finished = true; refresh(); } };
+      inp.onblur = done;
+    }
   });
+
+  // Drag the ⠿ handle to reorder (works with touch, mouse and pen).
+  ul.querySelectorAll('.grip').forEach(g => g.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    const li = g.closest('li');
+    li.classList.add('dragging');
+    const move = ev => {
+      const rows = [...ul.querySelectorAll('li[data-id]:not(.dragging)')];
+      const before = rows.find(r => { const rc = r.getBoundingClientRect(); return ev.clientY < rc.top + rc.height / 2; });
+      if (before) { if (li.nextElementSibling !== before) ul.insertBefore(li, before); }
+      else if (rows.length && rows[rows.length - 1].nextElementSibling !== li) rows[rows.length - 1].after(li);
+    };
+    // Listen on window: moving the row in the DOM drops pointer capture, so the grip alone can miss events.
+    const end = ev => {
+      if (ev.pointerId !== e.pointerId) return;
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', end);
+      window.removeEventListener('pointercancel', end);
+      li.classList.remove('dragging');
+      saveOrder(ids()); refresh();
+    };
+    const onMove = ev => { if (ev.pointerId === e.pointerId) { ev.preventDefault(); move(ev); } };
+    window.addEventListener('pointermove', onMove, { passive: false });
+    window.addEventListener('pointerup', end);
+    window.addEventListener('pointercancel', end);
+  }));
 }
 
 // ---------- Boot ----------

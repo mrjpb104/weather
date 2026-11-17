@@ -1,4 +1,21 @@
 {
-  "summary_offices": ["SGX"],
-  "home": { "lat": 33.14986, "lon": -117.30919, "label": "Home (Carlsbad, CA)" }
+  "summary_offices": [
+    "SGX",
+    "SEW"
+  ],
+  "home": {
+    "lat": 33.14986,
+    "lon": -117.30919,
+    "label": "Home (Carlsbad, CA)"
+  },
+  "office_focus": {
+    "SGX": {
+      "name": "San Diego",
+      "focus": "the populated coast and valleys first (Jeremy lives in coastal Carlsbad, San Diego County), then mountains and deserts briefly"
+    },
+    "SEW": {
+      "name": "Seattle",
+      "focus": "the north Olympic Peninsula and Strait of Juan de Fuca shore (Sequim / Port Angeles, around 48.13, -123.19) and the Puget Sound lowlands first, then the coast, Cascades and passes briefly"
+    }
+  }
 }
