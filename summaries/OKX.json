@@ -1,27 +1,28 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "d750f4aa-0efb-4243-9cd0-b8ce9de99ed9",
-  "afd_issued": "2026-11-17T05:32:00Z",
-  "generated": "2026-11-17T06:25:00Z",
-  "headline": "A long stretch of dry, mild weather is in store for New York, with highs in the 60s Wednesday through Sunday and no significant weather expected.",
+  "afd_id": "064cc835-af47-410d-b8a4-efce280e58d7",
+  "afd_issued": "2026-11-17T06:20:00Z",
+  "generated": "2026-11-17T07:25:00Z",
+  "headline": "Dry and gradually warmer weather lasts through Saturday around New York, but the odds of rain on Sunday are rising — possibly a soaking Sunday into Sunday night.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Tuesday is dry with high pressure overhead and highs slightly above normal. Winds are light from the northwest early, around 10 knots (about 10 mph) by late morning and afternoon, shifting to come from the west. Tuesday night stays dry and clear with light winds."
+      "text": "Tuesday is dry and sunny-to-clear with high pressure centered just west of the area, and temperatures above normal. Winds are light from the northwest early, picking up to around 10 mph by late morning and afternoon and turning to come from the west. Tuesday night stays dry with light winds of 5–10 mph."
     },
     {
       "title": "Short Term",
-      "text": "Wednesday through Friday stay dry as a large area of high pressure builds over the middle of the country and expands east. Highs reach 60–65 degrees across the region, well above normal. Nights warm up more slowly because the dry air and clear skies let temperatures drop after sunset."
+      "text": "Wednesday through Friday stay dry as a big dome of high pressure over the middle of the country spreads east. Temperatures stay above normal and creep up slowly day by day; a layer of sinking, warm air aloft acts like a lid, keeping the warm-up gradual. No advisories are in effect."
     },
     {
       "title": "Long Term",
-      "text": "Dry, mild weather continues through at least Saturday and possibly the whole weekend, with highs still 60–65 through Sunday. A cold front passing Sunday night into Monday may bring a few showers, but no significant impacts are expected."
+      "text": "Saturday remains dry and mild. Sunday brings a growing chance of rain as a storm from the Pacific crossing the Mississippi Valley interacts with a second system near the Southeast and Mid-Atlantic coast. If the two combine into a low tracking up the East Coast, Sunday into Sunday night could be a significant rain event; if the system stays farther offshore, much less rain would fall."
     }
   ],
-  "coast": "High pressure keeps the waters calm all week, with no advisories: winds mostly from the northwest to west under 15 knots and ocean seas no higher than 2–3 ft.",
+  "coast": "High pressure keeps the waters calm through the week with no marine advisories: winds mostly from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 ft.",
   "watch_for": [
-    "A few showers possible with a cold front Sunday night into Monday."
+    "Sunday rain chances are trending up — a coastal storm could bring heavy rain Sunday into Sunday night, or it could slip offshore.",
+    "Check back later in the week as forecast models settle on the storm's track and strength."
   ],
-  "confidence": "High confidence in dry, mild weather through Saturday; slightly less certainty about whether Sunday stays dry ahead of the cold front."
+  "confidence": "High confidence in dry, above-normal-temperature weather through Saturday; low confidence for Sunday, as computer models keep shifting the storm's track and strength from run to run."
 }
