@@ -77,6 +77,18 @@
   <h3 id="locHead">Locations &amp; tabs</h3>
   <p class="fine">Drag ⠿ (or use ↑ ↓) to change the tab order. Rename changes the tab’s name. Tip: press and hold a tab to jump here.</p>
   <ul id="savedList" class="saved"></ul>
+  <h3 id="ghHead">Summaries for new areas</h3>
+  <p class="fine" id="ghStatus"></p>
+  <div id="ghForm">
+    <ol class="fine steps">
+      <li><a id="ghCreate" target="_blank" rel="noopener">Open GitHub’s token page</a> (name and permission are filled in).</li>
+      <li>Under <b>Repository access</b>, choose <b>Only select repositories</b> → <b>weather</b>.</li>
+      <li>Tap <b>Generate token</b>, copy it, and paste it here.</li>
+    </ol>
+    <div class="tokrow"><input id="ghToken" type="password" placeholder="github_pat_…" autocomplete="off" autocapitalize="off" spellcheck="false"><button class="btn primary" id="ghSave" type="button">Save</button></div>
+    <p class="fine">Stays on this device only. It can run this app’s workflows and nothing else.</p>
+  </div>
+  <button class="btn" id="ghRemove" type="button" hidden>Remove GitHub access from this device</button>
   <h3>About</h3>
   <p class="fine">Data: National Weather Service (api.weather.gov) for U.S. forecasts, observations, alerts and forecast discussions; Open-Meteo for international forecasts, UV and air quality; NOAA Tides &amp; Currents; Iowa Environmental Mesonet for U.S. radar and HRRR future radar; RainViewer for international radar. Plain-English discussion summaries are written by Claude on a schedule and may lag the newest NWS issuance.</p>
 </dialog>

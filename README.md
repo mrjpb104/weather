@@ -12,7 +12,7 @@ No build step, no API keys. Hosted on GitHub Pages.
 - `scripts/` — helpers the workflows run
 
 ## Turning on summaries for a new forecast area
-When a location is in an NWS office that doesn't have summaries yet, the app shows a **Turn on summaries** button. It opens a prefilled GitHub issue titled `Enable summaries: <OFFICE>`; when the repo owner submits it, `.github/workflows/enable-summaries.yml` adds the office to `config.json` (focused on that location), saves its discussion, and closes the issue. The next hourly summary run writes the first summary. You can also run that workflow by hand from the Actions tab.
+When a location is in an NWS office that doesn't have summaries yet, the app shows a **Turn on summaries** button. If a GitHub token is saved in Settings → Summaries for new areas (fine-grained, this repo only, Actions: read and write), the button runs `enable-summaries.yml` directly in one tap. Otherwise it opens a prefilled GitHub issue titled `Enable summaries: <OFFICE>`; when the repo owner submits it, `.github/workflows/enable-summaries.yml` adds the office to `config.json` (focused on that location), saves its discussion, and closes the issue. The next hourly summary run writes the first summary. You can also run that workflow by hand from the Actions tab.
 
 ## Summary file format
 ```json

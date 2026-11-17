@@ -833,31 +833,112 @@ const tile = (k, v, s) => `<div class="tile"><div class="k">${esc(k)}</div><div 
 // ---------- Turning on summaries for a new NWS office ----------
 // The button opens a prefilled GitHub issue; .github/workflows/enable-summaries.yml does the rest.
 const PENDING_MS = 24 * 3600e3;
+const GH_API = 'https://api.github.com';
+const GH_WORKFLOW = 'enable-summaries.yml';
+// Fine-grained token template: this account, Actions read/write only, 1 year. The repo still has to be picked on GitHub.
+const GH_TOKEN_URL = `https://github.com/settings/personal-access-tokens/new?${new URLSearchParams({
+  name: 'Weather app summaries', description: 'Lets the weather app turn on forecast summaries for new areas (runs one workflow in mrjpb104/weather).',
+  target_name: REPO.split('/')[0], expires_in: '365', actions: 'write',
+})}`;
+const ghToken = () => store.get('wx.ghToken', '');
 function pendingOffices() {
   const p = store.get('wx.sumPending', {}), now = Date.now();
-  for (const k of Object.keys(p)) if (now - p[k] > PENDING_MS) delete p[k];
+  for (const k of Object.keys(p)) {
+    if (typeof p[k] === 'number') p[k] = { at: p[k], via: 'issue' };
+    if (now - p[k].at > PENDING_MS) delete p[k];
+  }
   return p;
 }
+function setPending(office, via) { const p = pendingOffices(); p[office] = { at: Date.now(), via }; store.set('wx.sumPending', p); }
 function summaryState(v) {
   if (v.summary) return 'ready';
   if (v.summaryOffices?.includes(v.office)) return 'on';
   return pendingOffices()[v.office] ? 'pending' : 'off';
 }
 const areaName = v => (v.afd?.text?.match(/National Weather Service ([^\n]+)/)?.[1] || v.office).trim().replace(/ ([A-Z]{2})$/, ', $1');
+const placeOf = (v, loc) => { const nm = loc?.name || v.name || ''; return !v.sub || v.sub.startsWith(nm) ? v.sub || nm : `${nm} (${v.sub})`; };
+const coordsOf = v => `${v.lat.toFixed(4)}, ${v.lon.toFixed(4)}`;
 function enableURL(v, loc) {
-  const nm = loc?.name || v.name || '', place = !v.sub || v.sub.startsWith(nm) ? v.sub || nm : `${nm} (${v.sub})`;
-  const body = [`Office: ${v.office}`, `Area: ${areaName(v)}`, `Location: ${place}`, `Coordinates: ${v.lat.toFixed(4)}, ${v.lon.toFixed(4)}`, '',
+  const body = [`Office: ${v.office}`, `Area: ${areaName(v)}`, `Location: ${placeOf(v, loc)}`, `Coordinates: ${coordsOf(v)}`, '',
     'Sent from the weather app. Submitting this turns on plain-English forecast-discussion summaries for this office automatically; the issue closes itself when it’s done.'].join('\n');
   return `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(`Enable summaries: ${v.office}`)}&body=${encodeURIComponent(body)}`;
 }
-const enableBtn = (v, loc, label) => `<a class="btn primary sumbtn" href="${esc(enableURL(v, loc))}" target="_blank" rel="noopener" data-enable="${esc(v.office)}">${esc(label || `Turn on summaries for ${areaName(v)}`)}</a>
-  ${label ? '' : '<p class="fine">Opens a prefilled request on GitHub — tap <b>Create</b> and it’s set up automatically.</p>'}`;
+// With a saved token the button turns summaries on directly; without one it opens a prefilled GitHub issue.
+function enableBtn(v, loc, label) {
+  const data = `data-enable="${esc(v.office)}" data-place="${esc(placeOf(v, loc))}" data-coords="${esc(coordsOf(v))}"`;
+  const text = esc(label || `Turn on summaries for ${areaName(v)}`);
+  if (ghToken()) return `<button type="button" class="btn primary sumbtn" ${data}>${text}</button><p class="fine sumerr" hidden></p>`;
+  return `<a class="btn primary sumbtn" href="${esc(enableURL(v, loc))}" target="_blank" rel="noopener" ${data}>${text}</a>
+    ${label ? '' : '<p class="fine">Opens a prefilled request on GitHub — tap <b>Create</b> and it’s set up automatically. <button type="button" class="linkbtn" data-gh-setup>Make this one tap</button></p>'}`;
+}
+async function dispatchEnable(office, place, coords) {
+  const r = await fetch(`${GH_API}/repos/${REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${ghToken()}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+    body: JSON.stringify({ ref: 'main', inputs: { office, location: place, coords } }),
+  });
+  if (r.status !== 204) { const e = new Error(`GitHub said ${r.status}`); e.status = r.status; throw e; }
+}
+// After turning an office on, watch config.json (GitHub Pages) until it lists the office, then refresh.
+let enableWatch = null;
+function watchForOffice(office) {
+  clearInterval(enableWatch);
+  const t0 = Date.now();
+  enableWatch = setInterval(async () => {
+    if (Date.now() - t0 > 6 * 60e3) return clearInterval(enableWatch);
+    try {
+      const c = await getJSON(`config.json?t=${Date.now()}`, { cache: 'no-store' });
+      if (c.summary_offices?.includes(office)) { clearInterval(enableWatch); state.cache.clear(); show('quiet'); }
+    } catch { /* keep watching */ }
+  }, 15000);
+}
 function wireEnableButtons() {
-  document.querySelectorAll('[data-enable]').forEach(a => a.addEventListener('click', () => {
-    const p = pendingOffices(); p[a.dataset.enable] = Date.now(); store.set('wx.sumPending', p);
-    state.cache.clear();
-    setTimeout(() => show('quiet'), 1500);
+  document.querySelectorAll('[data-gh-setup]').forEach(b => b.onclick = () => openSettings('github'));
+  document.querySelectorAll('[data-enable]').forEach(el => el.addEventListener('click', async () => {
+    const office = el.dataset.enable;
+    if (el.tagName === 'A') { setPending(office, 'issue'); state.cache.clear(); setTimeout(() => show('quiet'), 1500); watchForOffice(office); return; }
+    const err = el.nextElementSibling;
+    el.disabled = true; el.textContent = 'Turning on…';
+    try {
+      await dispatchEnable(office, el.dataset.place, el.dataset.coords);
+      setPending(office, 'token');
+      state.cache.clear(); show('quiet'); watchForOffice(office);
+    } catch (e) {
+      el.disabled = false; el.textContent = 'Try again';
+      if (err) {
+        err.hidden = false;
+        err.innerHTML = e.status === 401 || e.status === 403 || e.status === 404
+          ? 'Your saved GitHub access isn’t working (it may have expired or be missing the weather repo). <button type="button" class="linkbtn" data-gh-setup>Fix it in Settings</button>'
+          : `Couldn’t reach GitHub (${esc(e.message)}). Check your connection and try again.`;
+        err.querySelector('[data-gh-setup]')?.addEventListener('click', () => openSettings('github'));
+      }
+    }
   }));
+}
+
+// ---------- Settings: GitHub access for one-tap summaries ----------
+function renderGh(msg) {
+  const has = !!ghToken();
+  $('#ghStatus').innerHTML = msg || (has
+    ? '✓ GitHub access is saved on this device. <b>Turn on summaries</b> works in one tap.'
+    : 'Save a GitHub access token on this device and <b>Turn on summaries</b> works in one tap. Without one, the button opens a prefilled GitHub request instead.');
+  $('#ghForm').hidden = has;
+  $('#ghRemove').hidden = !has;
+  $('#ghCreate').href = GH_TOKEN_URL;
+}
+async function saveGh() {
+  const inp = $('#ghToken'), tok = inp.value.trim(), b = $('#ghSave');
+  if (!tok) return;
+  b.disabled = true; b.textContent = 'Checking…';
+  try {
+    const r = await fetch(`${GH_API}/repos/${REPO}/actions/workflows/${GH_WORKFLOW}`, { headers: { Authorization: `Bearer ${tok}`, Accept: 'application/vnd.github+json' } });
+    if (!r.ok) throw new Error(r.status === 401 ? 'GitHub didn’t accept that token. Check you copied all of it.' : r.status === 404 || r.status === 403
+      ? `That token can’t see the ${REPO.split('/')[1]} repo’s workflows. On GitHub, edit the token: Repository access → Only select repositories → ${REPO.split('/')[1]}, and Actions → Read and write.`
+      : `GitHub said ${r.status}. Try again.`);
+    store.set('wx.ghToken', tok); inp.value = '';
+    renderGh();
+  } catch (e) { renderGh(`<span class="bad">${esc(e.message)}</span>`); }
+  b.disabled = false; b.textContent = 'Save';
 }
 
 function renderAFD(v) {
@@ -876,7 +957,9 @@ function renderAFD(v) {
   } else {
     const st = summaryState(v);
     if (st === 'on') parts.push(`<div class="sumcta"><p>Plain-English summaries are on for the NWS ${esc(areaName(v))} area. The first one arrives within about an hour; the original discussion is below.</p></div>`);
-    else if (st === 'pending') parts.push(`<div class="sumcta"><p>Turning on summaries for the NWS ${esc(areaName(v))} area. Once you’ve tapped <b>Create</b> on GitHub it finishes in a minute or two, and the first summary follows within about an hour.</p>${enableBtn(v, null, 'Open the request again')}</div>`);
+    else if (st === 'pending') parts.push(pendingOffices()[v.office].via === 'token'
+      ? `<div class="sumcta"><p>Turning on summaries for the NWS ${esc(areaName(v))} area — this takes a minute or two. The first summary follows within about an hour.</p></div>`
+      : `<div class="sumcta"><p>Turning on summaries for the NWS ${esc(areaName(v))} area. Once you’ve tapped <b>Create</b> on GitHub it finishes in a minute or two, and the first summary follows within about an hour.</p>${ghToken() ? enableBtn(v, null, 'Turn on now') : enableBtn(v, null, 'Open the request again')}</div>`);
     else parts.push(`<div class="sumcta"><p>No plain-English summary for the NWS ${esc(areaName(v))} forecast area yet. The original discussion is below.</p>${enableBtn(v, null)}</div>`);
   }
   if (a) {
@@ -1172,9 +1255,11 @@ function openSettings(section) {
   renderSaved();
   renderThemePick();
   renderFontPick();
+  renderGh();
   const d = $('#dlgSettings');
   if (!d.open) d.showModal();
   if (section === 'locations') requestAnimationFrame(() => $('#locHead').scrollIntoView({ block: 'start' }));
+  if (section === 'github') requestAnimationFrame(() => $('#ghHead').scrollIntoView({ block: 'start' }));
 }
 function renderSaved() {
   const ul = $('#savedList');
@@ -1268,6 +1353,9 @@ function boot() {
   $('#btnSettings').onclick = openSettings;
   $('#addQuery').oninput = e => { clearTimeout(searchTimer); searchTimer = setTimeout(() => doSearch(e.target.value), 350); };
   $('#addHere').onclick = addHere;
+  $('#ghSave').onclick = saveGh;
+  $('#ghToken').onkeydown = e => { if (e.key === 'Enter') saveGh(); };
+  $('#ghRemove').onclick = () => { store.set('wx.ghToken', ''); try { localStorage.removeItem('wx.ghToken'); } catch { /* ignore */ } renderGh(); };
   $('#unitSeg').querySelectorAll('button').forEach(b => b.onclick = () => {
     state.settings.units = b.dataset.u; store.set('wx.settings', state.settings);
     $('#unitSeg').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
