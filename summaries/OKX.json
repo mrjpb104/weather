@@ -1,27 +1,28 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "9ab9f6bf-401d-4e9c-b644-60c3c83ec154",
-  "afd_issued": "2026-11-17T16:51:00Z",
-  "generated": "2026-11-17T17:25:18Z",
-  "headline": "Dry weather with a slow warm-up to above-normal temperatures lasts through Saturday, and rain chances are rising for Sunday, though it's not a lock.",
+  "afd_id": "a3276966-b42e-4c4d-8c33-e659e04a7a60",
+  "afd_issued": "2026-11-17T18:26:00Z",
+  "generated": "2026-11-17T19:24:53Z",
+  "headline": "Dry, steadily milder weather lasts through Saturday, then a storm could bring heavy rain, possibly several inches, sometime Sunday into Monday, though its track is still very uncertain.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High pressure keeps New York City and the surrounding area dry and quiet on Tuesday and Tuesday night. Winds from the northwest to west run around 12 mph this afternoon, easing to about 6–8 mph tonight in the city and along the coast and going light to calm in the outlying suburbs."
+      "text": "Strong high pressure keeps New York City and the surrounding area dry and clear on Tuesday and Tuesday night. Northwest to west winds run around 12 mph this afternoon, easing to about 6–8 mph tonight in the city and along the coast and going light to calm in the outlying suburbs. With clear skies and light winds, tonight's low will depend on how efficiently the ground cools off, so outlying spots will run colder than the city."
     },
     {
       "title": "Short Term",
-      "text": "Wednesday through Friday stay dry as a big area of high pressure over the middle of the country spreads east, with light west to west-northwest winds of about 6–9 mph on Wednesday. Temperatures climb above normal, but the warm-up is gradual because a layer of warm, sinking air overhead keeps the milder air from mixing down to the ground quickly."
+      "text": "Wednesday through Friday stay dry and clear as the high pressure slowly settles over the area, with light west to west-northwest winds of about 6–9 mph on Wednesday. Temperatures keep warming, with highs reaching the upper 50s to mid 60s on Thursday and Friday. Nights stay chilly through Thursday morning under clear, calm skies, but starting Thursday night a southwest breeze brings in a bit more moisture, so lows won't drop as far."
     },
     {
       "title": "Long Term",
-      "text": "Saturday stays dry and above normal. Rain chances are trending up for Sunday as a disturbance from the Pacific reaching the Upper Midwest interacts with a storm near the Southeast and Mid-Atlantic coast, though rain is not a sure thing. Some computer models keep the storm offshore, while others run a low straight up the East Coast with a significant soaking Sunday into Sunday night; how the two systems combine will decide which happens."
+      "text": "Saturday looks dry with the milder nights continuing. By Sunday, a disturbance approaches from the northwest while a separate system from the subtropics may spin up a storm that moves up the East Coast, with a decent chance of a period of moderate to locally heavy rain Sunday into Monday and the possibility of several inches in 24 hours somewhere near the area. Newer AI-based forecast models more consistently take the storm farther west, which would bring steadier rain, while the main traditional global models (the European and American) take it farther east and could largely miss the area; the exact timing and how the two systems merge will decide which happens."
     }
   ],
-  "coast": "Calm boating conditions all week with no advisories: winds from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 feet.",
+  "coast": "Calm boating conditions through the week with no advisories: winds mostly from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 feet.",
   "watch_for": [
-    "Whether Sunday's storm stays offshore or tracks up the coast, bringing a significant rain Sunday into Sunday night."
+    "Whether the Sunday–Monday storm tracks close to the coast (steady, possibly heavy rain with several inches possible) or stays offshore and mostly misses.",
+    "Possible poor visibility and low clouds in rain on Sunday if the storm comes close."
   ],
-  "confidence": "High confidence in dry, gradually warming weather through Saturday; low confidence in Sunday's rain, which hinges on how two storm systems interact."
+  "confidence": "High confidence in dry, gradually warming weather through Saturday; low confidence in the timing, track and rain totals for the Sunday–Monday storm."
 }
