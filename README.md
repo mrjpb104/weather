@@ -5,7 +5,7 @@ A personal weather web app: National Weather Service point forecasts, observatio
 No build step, no API keys. Hosted on GitHub Pages.
 
 ## Files
-- `index.html`, `style.css`, `app.js` — the app
+- `index.html`, `style.css`, `themes.css`, `fonts.css`, `app.js`, `fx.js` (Live sky animation), `icons.js` — the app. When you change any of these, bump the `?v=` stamp on their links in `index.html` so phones load the new copy instead of a cached one.
 - `summaries/<OFFICE>.json` — plain-English forecast-discussion summaries, written by a scheduled Claude task
 - `discussions/<OFFICE>.json` — the latest original NWS forecast discussion for each summary office, saved hourly by GitHub Actions (`.github/workflows/save-discussions.yml`); the summary task reads these instead of fetching from the web
 - `config.json` — which NWS offices get summaries (`summary_offices`) and which areas each summary should emphasize (`office_focus`)
