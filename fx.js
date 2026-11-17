@@ -48,6 +48,7 @@ const fx = {
   canvas: null, ctx: null, w: 0, h: 0, dpr: 1, raf: 0, last: 0, running: false,
   state: { lat: 33, lon: -117, cloud: 0.2, precip: 0, kind: 'rain', thunder: false, wind: 0.3 },
   clouds: [], drops: [], stars: [], flash: 0, nextFlash: 0, sprites: null, reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
+  scrollIdleAt: 0, skyKey: '',
 
   init() {
     if (this.canvas) return;
@@ -56,23 +57,35 @@ const fx = {
     document.body.prepend(c);
     this.canvas = c; this.ctx = c.getContext('2d');
     addEventListener('resize', () => this.resize());
+    // Hold the sky still while the page scrolls: the glass cards re-blur whatever is behind them,
+    // so animating underneath a scroll makes it stutter on phones.
+    addEventListener('scroll', () => { this.scrollIdleAt = performance.now() + 250; }, { passive: true });
     document.addEventListener('visibilitychange', () => (document.hidden ? this.stop() : this.start()));
     this.resize();
   },
   resize() {
     if (!this.canvas) return;
+    // Mobile browsers fire resize whenever their toolbars slide in or out while scrolling. Size the
+    // canvas to the tallest the viewport can get, and only rebuild the scene when the width changes
+    // (rotation), so the clouds don't jump around mid-scroll.
+    const w = innerWidth, h = Math.max(innerHeight, screen.height || 0, this.h || 0);
+    if (w === this.w && h === this.h) return;
+    const widthChanged = w !== this.w;
     this.dpr = Math.min(devicePixelRatio || 1, 1.5);
-    this.w = innerWidth; this.h = innerHeight;
-    this.canvas.width = Math.round(this.w * this.dpr); this.canvas.height = Math.round(this.h * this.dpr);
-    this.canvas.style.width = `${this.w}px`; this.canvas.style.height = `${this.h}px`;
+    this.w = w; this.h = h;
+    this.canvas.width = Math.round(w * this.dpr); this.canvas.height = Math.round(h * this.dpr);
+    this.canvas.style.width = `${w}px`; this.canvas.style.height = `${h}px`;
     this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
-    this.seed();
-    if (!this.running) this.draw(0);
+    if (widthChanged || !this.clouds.length) this.seed();
+    this.draw(0);
   },
   update(s) {
+    // Re-rendering the same place (refresh, tab switch) shouldn't reshuffle the sky; only rebuild
+    // it when the conditions change noticeably.
+    const key = [Math.round(s.cloud * 5), Math.round(s.precip * 3), s.kind, s.thunder, Math.round(s.lat), Math.round(s.lon)].join('|');
     Object.assign(this.state, s);
     this.init();
-    this.seed();
+    if (key !== this.skyKey || !this.clouds.length) { this.skyKey = key; this.seed(); }
     this.start();
   },
   enabled() { return document.documentElement.dataset.theme === 'sky'; },
@@ -84,10 +97,12 @@ const fx = {
     this.running = true; this.last = performance.now();
     const loop = t => {
       if (!this.running) return;
+      this.raf = requestAnimationFrame(loop);
+      if (t < this.scrollIdleAt) { this.last = t; return; } // paused while scrolling
+      if (t - this.last < 31) return; // about 30 frames a second is plenty for drifting clouds
       const dt = Math.min(0.05, (t - this.last) / 1000);
       this.last = t;
       this.draw(dt);
-      this.raf = requestAnimationFrame(loop);
     };
     this.raf = requestAnimationFrame(loop);
   },
@@ -96,13 +111,14 @@ const fx = {
   makeSprites() {
     // Soft cloud puffs rendered once to offscreen canvases (light and dark variants)
     const mk = (seed, dark) => {
-      const W = 420, H = 180, c = document.createElement('canvas');
+      const W = 520, H = 260, c = document.createElement('canvas');
       c.width = W; c.height = H;
       const x = c.getContext('2d');
       let r = seed;
       const rnd = () => ((r = (r * 9301 + 49297) % 233280) / 233280);
       for (let i = 0; i < 16; i++) {
-        const px = 70 + rnd() * 280, py = 70 + rnd() * 50 - (Math.abs(px - 210) < 90 ? 20 : 0), pr = 34 + rnd() * 46;
+        // Keep every puff fully inside the sprite so none gets cut off into a hard-edged block.
+        const px = 120 + rnd() * 280, py = 120 + rnd() * 40 - (Math.abs(px - 260) < 90 ? 20 : 0), pr = 34 + rnd() * 46;
         const g = x.createRadialGradient(px, py, 0, px, py, pr);
         const base = dark ? '150,162,180' : '255,255,255';
         g.addColorStop(0, `rgba(${base},${dark ? 0.55 : 0.75})`);
@@ -120,7 +136,7 @@ const fx = {
     const s = this.state;
     const nClouds = Math.round(2 + s.cloud * 14);
     this.clouds = Array.from({ length: nClouds }, (_, i) => ({
-      x: Math.random() * (this.w + 500) - 250,
+      x: Math.random() * (this.w + 520) - 520,
       y: -40 + Math.random() * this.h * 0.75,
       s: 0.6 + Math.random() * 1.1,
       v: 4 + Math.random() * 10 + s.wind * 12,
@@ -145,15 +161,18 @@ const fx = {
     const sun = solarPosition(now, s.lat, s.lon);
     const wet = s.precip > 0.05;
     const [top, mid, bot] = skyColors(sun.alt, s.cloud, wet);
-    const scroll = scrollY || 0;
 
     // Sky gradient
     const g = ctx.createLinearGradient(0, 0, 0, h);
     g.addColorStop(0, rgb(top)); g.addColorStop(0.55, rgb(mid)); g.addColorStop(1, rgb(bot));
     ctx.globalCompositeOperation = 'source-over';
     ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
-    document.documentElement.style.setProperty('--sky-top', rgb(top));
-    document.documentElement.style.setProperty('--sky-bot', rgb(bot));
+    const skyKey = rgb(top) + rgb(bot);
+    if (skyKey !== this.skyCss) {
+      this.skyCss = skyKey;
+      document.documentElement.style.setProperty('--sky-top', rgb(top));
+      document.documentElement.style.setProperty('--sky-bot', rgb(bot));
+    }
 
     // Stars (fade in below -4° sun altitude, hidden by clouds)
     const starA = clamp((-sun.alt - 4) / 8, 0, 1) * (1 - clamp(s.cloud * 1.3, 0, 1));
@@ -162,7 +181,7 @@ const fx = {
       ctx.fillStyle = '#ffffff';
       for (const st of this.stars) {
         ctx.globalAlpha = starA * (0.45 + 0.55 * Math.abs(Math.sin(st.p + t * st.sp * (this.reduced ? 0 : 1))));
-        ctx.beginPath(); ctx.arc(st.x, st.y - scroll * 0.05, st.r, 0, 6.283); ctx.fill();
+        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 6.283); ctx.fill();
       }
       ctx.globalAlpha = 1;
     }
@@ -170,7 +189,7 @@ const fx = {
     // Sun or moon glow, placed by azimuth (east = left, west = right) and altitude
     const sx = w * clamp(0.5 + ((sun.az - 180) / 180) * 0.62, 0.08, 0.92);
     if (sun.alt > -8) {
-      const sy = h * clamp(0.42 - (sun.alt / 60) * 0.5, 0.04, 0.62) - scroll * 0.08;
+      const sy = h * clamp(0.42 - (sun.alt / 60) * 0.5, 0.04, 0.62);
       const warm = clamp(1 - sun.alt / 18, 0, 1);
       const strength = clamp((sun.alt + 8) / 10, 0, 1) * (1 - s.cloud * 0.75);
       const R = Math.max(w, h) * (0.35 + warm * 0.25);
@@ -188,12 +207,12 @@ const fx = {
         ctx.globalAlpha = 1;
       }
       ctx.globalCompositeOperation = 'source-over';
-    } else if (s.cloud < 0.85) {
-      const mx = w * 0.78, my = h * 0.14 - scroll * 0.06;
+    } else if (s.cloud < 0.5 && !wet) {
+      const mx = w * 0.78, my = h * 0.12;
       const mg = ctx.createRadialGradient(mx, my, 0, mx, my, 160);
       mg.addColorStop(0, `rgba(220,230,255,${0.22 * (1 - s.cloud)})`); mg.addColorStop(1, 'rgba(220,230,255,0)');
       ctx.fillStyle = mg; ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = `rgba(250,248,235,${0.85 * (1 - s.cloud)})`;
+      ctx.fillStyle = `rgba(250,248,235,${0.9 * (1 - s.cloud * 1.6)})`;
       ctx.beginPath(); ctx.arc(mx, my, 13, 0, 6.283); ctx.fill();
     }
 
@@ -202,11 +221,11 @@ const fx = {
     const set = night || wet || s.cloud > 0.75 ? this.sprites.dark : this.sprites.light;
     const tint = clamp((sun.alt + 6) / 14, 0, 1);
     for (const c of this.clouds) {
-      c.x += c.v * dt;
-      if (c.x > w + 260) { c.x = -460 * c.s; c.y = -40 + Math.random() * h * 0.75; }
       const sp = set[c.k];
-      ctx.globalAlpha = c.a * (night ? 0.55 : 0.6 + 0.4 * tint) * (0.55 + s.cloud * 0.6);
-      ctx.drawImage(sp, c.x, c.y - scroll * 0.12 * c.s, sp.width * c.s, sp.height * c.s);
+      c.x += c.v * dt;
+      if (c.x > w + 60) { c.x = -sp.width * c.s; c.y = -60 + Math.random() * h * 0.75; }
+      ctx.globalAlpha = c.a * (night ? 0.38 : 0.6 + 0.4 * tint) * (0.55 + s.cloud * 0.6);
+      ctx.drawImage(sp, c.x, c.y, sp.width * c.s, sp.height * c.s);
     }
     ctx.globalAlpha = 1;
 
@@ -236,8 +255,10 @@ const fx = {
       const t = performance.now();
       if (t > this.nextFlash) { this.flash = 1; this.nextFlash = t + 5000 + Math.random() * 11000; }
       if (this.flash > 0.01) {
-        ctx.fillStyle = `rgba(235,240,255,${(this.flash * 0.45 * (0.6 + 0.4 * Math.random())).toFixed(3)})`;
-        ctx.fillRect(0, 0, w, h);
+        const lg = ctx.createLinearGradient(0, 0, 0, h * 0.6);
+        lg.addColorStop(0, `rgba(225,232,255,${(this.flash * 0.28).toFixed(3)})`);
+        lg.addColorStop(1, 'rgba(225,232,255,0)');
+        ctx.fillStyle = lg; ctx.fillRect(0, 0, w, h * 0.6);
         this.flash *= Math.pow(0.02, dt * 2.2);
       }
     }

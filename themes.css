@@ -22,7 +22,7 @@
 [data-theme="sky"][data-sky="night-clear"]  { --sky: linear-gradient(180deg, #08122b 0%, #15244a 55%, #263a6a 100%); }
 [data-theme="sky"][data-sky="night-cloudy"] { --sky: linear-gradient(180deg, #161d29 0%, #252f40 55%, #364258 100%); }
 [data-theme="sky"][data-sky="night-rain"]   { --sky: linear-gradient(180deg, #0f1620 0%, #1c2634 55%, #2a3747 100%); }
-html[data-theme="sky"] { background: #0f1620; }
+html[data-theme="sky"] { background: var(--sky-top, #0f1620); }
 [data-theme="sky"] body { background: transparent; }
 [data-theme="sky"] body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--sky); transition: background .6s; }
 [data-theme="sky"] .topbar { background: rgba(255,255,255,.08); border-bottom-color: rgba(255,255,255,.12); }
