@@ -1,18 +1,18 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "67e7237b-23cd-4f07-a7fa-45448a27bd8e",
-  "afd_issued": "2026-11-18T15:29:00Z",
-  "generated": "2026-11-18T16:24:52Z",
-  "headline": "Mostly sunny, dry and milder than normal through Saturday, then a coastal storm could bring 1–2 inches of rain or more and gusty winds late Sunday into early next week, though its track is still very uncertain.",
+  "afd_id": "fd49e4d0-527b-42b1-854f-71c3362891ba",
+  "afd_issued": "2026-11-18T17:12:00Z",
+  "generated": "2026-11-18T18:24:52Z",
+  "headline": "Mostly sunny, dry and milder than normal through Saturday, then a coastal storm could bring 1–2 inches of rain or more and gusty winds late Sunday into Monday, though its track is still very uncertain.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Strong high pressure keeps New York City and the surrounding area mostly sunny and dry Wednesday, with no watches or advisories in effect. Light winds this morning pick up to about 6–12 mph this afternoon and turn west-southwest (possibly southwest near JFK). Tonight winds go back to light west-northwest under about 6 mph, turning variable outside the city, so how cold it gets will depend mostly on how efficiently the ground cools off under the clear sky."
+      "text": "Strong high pressure keeps New York City and the surrounding area mostly sunny and dry Wednesday, with no watches or advisories in effect. Winds stay light this afternoon, about 6–9 mph from the northwest to west-southwest. Tonight winds drop to 5 mph or less and go calm outside the city, so how cold it gets will depend mostly on how efficiently the ground cools off under the clear sky."
     },
     {
       "title": "Short Term",
-      "text": "Thursday through Saturday stay mostly sunny and dry as the high pressure lingers, with highs several degrees above normal, in the upper 50s to mid 60s, and similar light winds on Thursday. Clear skies and calm air will keep nights cool, but overnight lows will gradually ease to a few to several degrees above normal late in the week and into the weekend, especially in the city and right along the coast."
+      "text": "Thursday through Saturday stay mostly sunny and dry as the high pressure lingers, with highs several degrees above normal, in the upper 50s to mid 60s, and light winds on Thursday. Clear skies and calm air will keep nights cool, but overnight lows will gradually ease to a few to several degrees above normal late in the week and into the weekend, especially in the city and right along the coast."
     },
     {
       "title": "Long Term",
@@ -24,5 +24,5 @@
     "Whether the late Sunday–Monday storm tracks close to the coast (1–2+ inches of rain and 30–40 mph gusts) or stays offshore and mostly misses.",
     "Where the sharp western edge of the rain sets up, which could mean big differences in totals over short distances."
   ],
-  "confidence": "High confidence in dry, mild weather through Saturday; low confidence in the track, timing and rain totals for the late Sunday–early next week storm."
+  "confidence": "High confidence in dry, mild weather through Saturday; low confidence in the track, timing and rain totals for the late Sunday–Monday storm."
 }
