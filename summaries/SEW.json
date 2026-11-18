@@ -1,29 +1,29 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": "fa49cdfe-3fdf-4a50-941b-2dab3da52ee4",
-  "afd_issued": "2026-11-18T04:18:00Z",
-  "generated": "2026-11-18T05:25:00Z",
-  "headline": "A storm sliding south into Oregon spreads light showers into Western Washington on Wednesday (little to nothing north of Everett), followed by drier weather Thursday and Friday, a weak weekend system, and a stormier, windier pattern next week.",
+  "afd_id": "75ec7baa-b9cc-47ee-9742-11a51ecafc18",
+  "afd_issued": "2026-11-18T10:56:00Z",
+  "generated": "2026-11-18T12:25:05Z",
+  "headline": "A fading storm brushes Western Washington with a little light rain from about Everett south on Wednesday, then Thursday and Friday turn dry with morning fog, before a showery weekend and a more organized rainy front on Tuesday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Tuesday evening is quiet, with Western Washington sitting between storms and clouds breaking up early in the evening. Overnight, high clouds spread in from south to north (roughly 2 to 6 AM Wednesday), which should keep fog limited mainly to low-lying valleys. Light winds of about 5 to 10 mph turn to the northeast and northwest overnight, while gusts of about 25 to 30 mph are expected along the Pacific and Olympic Peninsula coastlines."
+      "text": "Wednesday starts with high clouds and temperatures in the 30s and low 40s, patchy fog or freezing fog in the southern interior, and breezy east winds through the Cascade foothills and the Strait of Juan de Fuca that ease during the afternoon. A weakening front pushes light rain north from Oregon, reaching roughly as far as Everett by late afternoon, so the Sequim and Port Angeles area should stay mostly dry; wherever rain does fall, it will only add up to a few hundredths of an inch. Under the clouds, highs will be fairly uniform near 50. Light rain stays possible from Everett southward Wednesday evening as the front falls apart, with lows in the low 30s to low 40s."
     },
     {
       "title": "Short Term",
-      "text": "On Wednesday the next storm takes a southern track into Oregon and Northern California, but moisture wrapping around it spreads light showers northward during the day, arriving roughly 7 to 10 AM and reaching the Seattle area around noon. Places north of about Everett, including the north Olympic Peninsula around Sequim and Port Angeles, will probably see little to no measurable rain, and clouds may lower briefly Wednesday afternoon and early evening. Things start drying out Thursday, and high pressure moves overhead Friday, with temperatures through Friday near or slightly below normal."
+      "text": "Thursday will be mostly dry, though a stray shower can't be completely ruled out with the weakened storm lingering over western Oregon; fog forms in the morning over the southwest interior and in river valleys, then clears by afternoon, with highs again near 50. High pressure moves overhead Thursday night into Friday, clearing the skies. Friday morning will be colder, with lows in the upper 20s and 30s and freezing fog possible in the southwest interior, then sunny skies and highs near 50 once the fog burns off."
     },
     {
       "title": "Long Term",
-      "text": "Another storm moves into the coastal or offshore waters over the weekend; computer models still disagree on its exact track, but generally agree it will come ashore weakened with minimal impacts and only light rain. Snow levels will be around 2,500 feet, so anything that falls in the Cascade passes will be snow. Early to mid next week looks more active, as a very strong jet stream across the Pacific carves out a deep dip in the jet far offshore and steers a series of stronger fronts into the region, bringing more widespread rain, mountain snow, and windy conditions at times. No river flooding is expected over the next 7 days, though next week's rain should cause rivers to rise."
+      "text": "Another storm is expected to stall off the Oregon coast this weekend, sending bands of moisture toward Western Washington; most model runs keep it far enough offshore that the area gets only glancing blows, but if it parks closer, showers become much more likely. Expect a chance of showers Saturday through Monday, then rain is likely Tuesday as the storm fades Monday and an organized front arrives. Snow levels around 2,500 feet this weekend mean any precipitation in the Cascade passes falls as snow; snow levels rise to 3,000 to 4,000 feet Monday night and Tuesday, but east winds through the passes could trap cold air there and keep wintry conditions going even with snow levels above pass level. Highs stay in the mid 40s to low 50s with lows in the 30s, and no river flooding is expected over the next 7 days."
     }
   ],
-  "coast": "Offshore (east) winds increase tonight into Wednesday over the coastal waters and the western two-thirds of the Strait of Juan de Fuca, strongest in the outer coastal waters. A Small Craft Advisory covers the Central and West Entrance of the Strait until 4 PM Wednesday and the inner coastal waters (out 10 miles) until 10 PM Wednesday; farther out (10 to 60 miles), a Gale Warning runs until 10 AM Wednesday, followed by a Small Craft Advisory from 10 AM to 10 PM. Seas around 8 to 10 feet build back to 10 to 14 feet Wednesday, then ease to 5 to 8 feet Thursday through Saturday with light winds Thursday and Friday. More systems arrive Saturday into next week, with a 40 to 50% chance of storm-force gusts in the coastal waters and seas building back to 10 to 14 feet early next week.",
+  "coast": "Seas in the coastal waters build to 10 to 14 feet Wednesday morning, then drop below 10 feet Thursday. A Gale Warning covers the outer coastal waters (10 to 60 miles out) until 10 AM Wednesday, followed by a Small Craft Advisory there until 4 AM Thursday; the inner coastal waters (out 10 miles) are under a Small Craft Advisory until 4 AM Thursday, the Central and West Entrance of the Strait of Juan de Fuca until 4 PM Wednesday, and the Grays Harbor Bar from 6 AM Wednesday to 3 AM Thursday as seas there build just above 10 feet. Thursday and Friday look calm on the water. This weekend a system clipping the waters brings a 70% or higher chance of Small Craft Advisory winds on the coast and 50 to 60% in the Strait, with seas of 10 to 13 feet; a stronger system Monday and Tuesday brings a 70% or higher chance of gales on the coast, a 50 to 65% chance in the Strait, a 25 to 35% chance of storm-force gusts in the coastal waters, and seas of 12 to 16 feet.",
   "watch_for": [
-    "How far north Wednesday's light showers reach.",
-    "The track of the weekend storm and any snow in the Cascade passes.",
-    "Next week's stormier pattern: widespread rain, mountain snow, strong winds, and rising rivers."
+    "Where the weekend storm stalls: farther offshore means just a few showers, closer in means a wetter weekend and snow in the Cascade passes.",
+    "Freezing fog Friday morning in the southwest interior.",
+    "Tuesday's front: likely rain, possible lingering cold air and snow in the passes, and gale-force winds on the water."
   ],
-  "confidence": "Confidence is good through Friday, moderate for the weekend since models disagree on the storm's track but agree it will be weak, and the stormy pattern next week is becoming more likely though details are still coming into focus."
+  "confidence": "Confidence is high for the mostly dry, foggy pattern through Friday; it is moderate for the weekend because rain chances hinge on exactly where the offshore storm stalls, and fairly good that an organized rainy front arrives Tuesday."
 }
