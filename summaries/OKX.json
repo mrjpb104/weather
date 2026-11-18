@@ -1,14 +1,14 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "67242b28-6cdd-4ced-8b41-8543da8f6f3a",
-  "afd_issued": "2026-11-18T07:23:00Z",
-  "generated": "2026-11-18T08:24:56Z",
+  "afd_id": "092c5298-1b4c-447a-95fd-324ce16eed8a",
+  "afd_issued": "2026-11-18T12:01:00Z",
+  "generated": "2026-11-18T13:26:54Z",
   "headline": "Dry, steadily milder weather lasts through Saturday, then a coastal storm could bring 1–2 inches of rain or more and gusty winds late Sunday into Monday, though its track is still very uncertain.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Strong high pressure keeps New York City and the surrounding area dry and clear Wednesday, with light winds mostly from the west-southwest to west-northwest at about 6–12 mph, possibly turning more southwesterly by mid to late afternoon. Wednesday night stays clear and calm, so how cold it gets will depend on how efficiently the ground cools off overnight, with outlying spots likely colder than the city."
+      "text": "Strong high pressure keeps New York City and the surrounding area dry and clear Wednesday, with light west-northwest winds this morning picking up to about 6–12 mph and turning west-southwest in the afternoon (possibly southwest near JFK). Tonight winds go back to light west-northwest under about 6 mph, turning calm and variable outside the city, so how cold it gets will depend mostly on how efficiently the ground cools off under the clear sky."
     },
     {
       "title": "Short Term",
@@ -16,10 +16,10 @@
     },
     {
       "title": "Long Term",
-      "text": "A well-developed storm is likely to form off the Southeast coast this weekend and then head northeast. If it tracks close enough, rain would spread up the coast late Sunday and continue through Monday, with 1–2 inches possible and locally more, plus gusts of 30–40 mph in parts of the area; the chance of rain is currently 30–60%. The American model and its AI version show this direct hit, while the European model keeps the storm farther out to sea with little or no impact, and rain totals could drop off sharply on the storm's western edge."
+      "text": "A storm is likely to form off the Southeast coast this weekend and then head northeast as a dip in the jet stream approaches. If it tracks close enough, rain would spread up the coast late Sunday and continue through Monday, with 1–2 inches possible and locally more, plus gusts of 30–40 mph in parts of the area; the chance of rain is currently 30–60%. The American model and its AI version show this closer track, while the European model is slower and keeps the storm farther south and east—deeper, but far enough offshore to have limited impact—and rain totals could drop off sharply on the storm's western edge."
     }
   ],
-  "coast": "Calm boating conditions through Saturday with no advisories: winds mostly from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 feet. Seas start building Sunday, and a Small Craft Advisory may be needed by Sunday night if the storm comes close.",
+  "coast": "Calm boating conditions through Saturday with no advisories: winds mostly from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 feet. Seas start building Sunday, and a Small Craft Advisory may be needed by Sunday night.",
   "watch_for": [
     "Whether the Sunday–Monday storm tracks close to the coast (1–2+ inches of rain and 30–40 mph gusts) or stays offshore and mostly misses.",
     "Where the sharp western edge of the rain sets up, which could mean big differences in totals over short distances."
