@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "35373132-1d59-4b12-bcb4-6f576b137841",
-  "afd_issued": "2026-11-18T06:33:00Z",
-  "generated": "2026-11-18T07:25:17Z",
-  "headline": "Wednesday stays dry, then a fast-moving cold front brings bursts of heavy rain, gusty winds and possible thunderstorms late Wednesday night into Thursday, with about a quarter to half inch of rain in San Diego County and more to the north.",
+  "afd_id": "5b470a4d-98b2-4c11-a71d-31da22a24a4a",
+  "afd_issued": "2026-11-18T10:24:00Z",
+  "generated": "2026-11-18T11:24:46Z",
+  "headline": "After a cool, dry Wednesday, a strong cold front sweeps through Thursday with intense bursts of rain that could cause street flooding, gusty winds and a small chance of thunderstorms, followed by dry, cool weather Friday through the weekend.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Wednesday stays dry after Monday night's widespread soaking west of the mountains, with temperatures near normal along the coast and below normal farther inland. A low cloud deck may form along the coast at times early Wednesday (20–30% chance, mainly about 2–7 AM), and high clouds spread in Wednesday morning, thickening again late Wednesday evening as the next storm approaches. Winds pick up over the mountains and deserts late Wednesday night, with a Wind Advisory starting at 11 PM for the San Bernardino Mountains and Apple and Lucerne Valleys; rain and possible isolated thunderstorms begin to arrive late Wednesday night."
+      "text": "Wednesday starts chilly under clear skies, with inland valleys in the 40s (a few upper 30s) and mountain valleys in the 20s early this morning. Afternoon highs reach the mid 60s to lower 70s at lower elevations, about 1–3 degrees below average at the coast and 4–10 degrees below average in the valleys, with high clouds spreading in during the day. Clouds lower and thicken late tonight as the next storm approaches, and a Wind Advisory begins at 11 PM for the San Bernardino Mountains and the Apple and Lucerne Valleys."
     },
     {
       "title": "Short Term",
-      "text": "A storm diving down the West Coast pushes a cold front from northwest to southeast across the region starting Thursday morning; it is strongest in Orange and San Bernardino Counties and weakens as it reaches Riverside and San Diego Counties late Thursday morning or early afternoon, possibly with thunderstorms. Rain can fall at 0.25–0.50 inch per hour in San Diego County (heaviest in North County) and 0.50–0.65 inch per hour farther north and in the mountains, enough for street flooding and ponding on roads, along with 30–35 mph gusts at the coast and valleys, so secure outdoor items and watch for falling tree limbs; scattered showers linger through Thursday, and a weaker disturbance could bring more light rain to northern areas Friday (timing uncertain). Totals: 0.25–0.50 inch in San Diego County, 0.50–1 inch in Orange County and parts of the Inland Empire, 0.50–1.50 inches in the San Diego and Riverside mountains, 1–2 inches in the San Bernardino Mountains, 0.10–0.30 inch in the High Desert and 0.10 inch or less in the lower deserts. In the mountains and deserts, gusts of 50–60 mph hit the San Bernardino Mountains' ridges and desert slopes and 45–55 mph in the High Desert (Wind Advisory until 4 PM Thursday), and 40–55 mph in the Riverside and San Diego County mountains and passes, easing Thursday evening; snow levels stay above 7,000 feet during the heaviest rain, then drop to 6,000–6,500 feet Thursday afternoon and evening, with 3–5 inches above 7,500 feet and 1–2 inches below that."
+      "text": "Thursday's storm will be fairly strong, with a well-defined cold front bringing rain to the L.A. Basin in the morning and moving southeast into Riverside and San Diego Counties during the afternoon (rain is not expected at the San Diego County coast until after about 10 AM). Rain will be intense along the front, with a small chance of thunderstorms, and rates of 0.50–0.65 inch per hour could cause some urban flooding; gusts top 25–30 mph at the coast and 40–55 mph in the mountains and desert slopes, where the Wind Advisory runs until 4 PM Thursday. Snow levels start high and fall to about 6,500 feet, with a few inches above 7,500 feet on the upper Big Bear ski slopes but little if any at Big Bear Lake; showers follow the front Thursday evening and end Thursday night. Friday starts quite cold but turns mostly sunny, and Friday night into Saturday brings light offshore (east) winds that will be brisk only in a few isolated foothill spots."
     },
     {
       "title": "Long Term",
-      "text": "Saturday looks dry, with temperatures staying near to below normal into early next week. Another round of unsettled weather is possible sometime Sunday or Monday, with most computer-model runs showing at least light rain west of the mountains. The timing and how far south that storm reaches are still uncertain, with more details expected in the coming days."
+      "text": "The weekend stays dry and slightly warmer but still below normal, with highs in the mid 60s to lower 70s at lower elevations, upper 30s to mid 50s in the mountains, and 50s in the High Desert. A much weaker disturbance arrives Sunday, bringing light showers Sunday night and Monday with lighter rain and winds than Thursday's storm. By Tuesday the computer models are split almost evenly between more unsettled, occasionally wet and windy weather and a drier, warmer pattern heading into the Thanksgiving holiday."
     }
   ],
-  "coast": "A High Surf Advisory runs until 4 AM Wednesday for the Orange County and San Diego County coasts, and forecasters expect periods of high surf and coastal flooding with the unsettled weather this week. For boaters, a Small Craft Advisory runs until 4 AM Wednesday with 20–25 knot gusts and choppy 4–7 ft seas (steep 7–10 ft seas south of San Clemente Island through Wednesday morning), easing afterward. Conditions turn dangerous again Thursday into Friday morning, with steep 7–10 ft seas and 20–30 knot gusts, winds turning from south-southwest to west by late Thursday afternoon.",
+  "coast": "The High Surf Advisory for the Orange and San Diego County coasts ended at 4 AM Wednesday, and surf drops to 3–5 feet today as the northwest swell fades. A new northwest swell builds Thursday, raising surf again Thursday evening into early Friday. Coastal flooding is expected at times through the rest of the week; King Tides peak next week, with tides above 7 feet possible as early as Saturday, Nov. 21. For boaters, a Small Craft Advisory runs from 4 AM Thursday to 10 AM Friday with steep 7–10 ft seas and 20–30 knot gusts, winds turning from south-southwest to west by late Thursday afternoon; seas calm down by the weekend.",
   "watch_for": [
-    "Bursts of heavy rain and 30–35 mph gusts as the front passes Thursday morning and early afternoon, with street flooding possible.",
-    "Possible thunderstorms within the front on Thursday.",
-    "Timing of Friday's light showers and of the possible Sunday–Monday storm."
+    "Heavy downpours of 0.50–0.65 inch per hour along Thursday's front, with possible urban flooding and a small chance of thunderstorms.",
+    "How much snow falls in the San Bernardino Mountains Thursday, since the timing of the cold air is uncertain.",
+    "Whether the pattern stays unsettled or turns dry and warmer heading into the Thanksgiving holiday."
   ],
-  "confidence": "Forecasters are confident in a dry Wednesday and in Thursday's front, less sure about the timing of Friday's light showers, and uncertain about the timing and reach of the Sunday–Monday system."
+  "confidence": "Forecasters are confident in Thursday's storm and a dry, cool Friday through Sunday, less certain about mountain snow amounts, and evenly split on the pattern from Tuesday into the holiday."
 }
