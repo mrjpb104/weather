@@ -1,28 +1,28 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "092c5298-1b4c-447a-95fd-324ce16eed8a",
-  "afd_issued": "2026-11-18T12:01:00Z",
-  "generated": "2026-11-18T13:26:54Z",
-  "headline": "Dry, steadily milder weather lasts through Saturday, then a coastal storm could bring 1–2 inches of rain or more and gusty winds late Sunday into Monday, though its track is still very uncertain.",
+  "afd_id": "67e7237b-23cd-4f07-a7fa-45448a27bd8e",
+  "afd_issued": "2026-11-18T15:29:00Z",
+  "generated": "2026-11-18T16:24:52Z",
+  "headline": "Mostly sunny, dry and milder than normal through Saturday, then a coastal storm could bring 1–2 inches of rain or more and gusty winds late Sunday into early next week, though its track is still very uncertain.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Strong high pressure keeps New York City and the surrounding area dry and clear Wednesday, with light west-northwest winds this morning picking up to about 6–12 mph and turning west-southwest in the afternoon (possibly southwest near JFK). Tonight winds go back to light west-northwest under about 6 mph, turning calm and variable outside the city, so how cold it gets will depend mostly on how efficiently the ground cools off under the clear sky."
+      "text": "Strong high pressure keeps New York City and the surrounding area mostly sunny and dry Wednesday, with no watches or advisories in effect. Light winds this morning pick up to about 6–12 mph this afternoon and turn west-southwest (possibly southwest near JFK). Tonight winds go back to light west-northwest under about 6 mph, turning variable outside the city, so how cold it gets will depend mostly on how efficiently the ground cools off under the clear sky."
     },
     {
       "title": "Short Term",
-      "text": "Thursday through Saturday stay dry as the high pressure slowly settles over the area, and temperatures keep warming, with highs reaching the upper 50s to mid 60s by Friday. Thursday morning is another chilly start under clear skies and light winds, but starting Thursday night a southwest breeze brings in a little more moisture, so lows won't drop as far into the weekend."
+      "text": "Thursday through Saturday stay mostly sunny and dry as the high pressure lingers, with highs several degrees above normal, in the upper 50s to mid 60s, and similar light winds on Thursday. Clear skies and calm air will keep nights cool, but overnight lows will gradually ease to a few to several degrees above normal late in the week and into the weekend, especially in the city and right along the coast."
     },
     {
       "title": "Long Term",
-      "text": "A storm is likely to form off the Southeast coast this weekend and then head northeast as a dip in the jet stream approaches. If it tracks close enough, rain would spread up the coast late Sunday and continue through Monday, with 1–2 inches possible and locally more, plus gusts of 30–40 mph in parts of the area; the chance of rain is currently 30–60%. The American model and its AI version show this closer track, while the European model is slower and keeps the storm farther south and east—deeper, but far enough offshore to have limited impact—and rain totals could drop off sharply on the storm's western edge."
+      "text": "A storm is likely to form off the Southeast coast this weekend and then head northeast as a dip in the jet stream approaches. If it tracks close enough, rain and wind would spread up the coast late Sunday and continue through Monday, with 1–2 inches of rain possible and locally more, plus gusts of 30–40 mph in parts of the area; the chance of rain is currently 30–60%. The American model and its AI version show this closer track, while the European model is slower and keeps the storm farther south and east—stronger, but far enough offshore to have limited impact—and rain totals could drop off sharply on the storm's western edge."
     }
   ],
-  "coast": "Calm boating conditions through Saturday with no advisories: winds mostly from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 feet. Seas start building Sunday, and a Small Craft Advisory may be needed by Sunday night.",
+  "coast": "Calm boating conditions through Sunday morning with no advisories: winds mostly from the northwest to west under 15 knots (about 17 mph) and ocean seas no higher than 2–3 feet. Small Craft Advisory conditions are possible later Sunday into Monday, depending on the track and strength of the coastal storm.",
   "watch_for": [
-    "Whether the Sunday–Monday storm tracks close to the coast (1–2+ inches of rain and 30–40 mph gusts) or stays offshore and mostly misses.",
+    "Whether the late Sunday–Monday storm tracks close to the coast (1–2+ inches of rain and 30–40 mph gusts) or stays offshore and mostly misses.",
     "Where the sharp western edge of the rain sets up, which could mean big differences in totals over short distances."
   ],
-  "confidence": "High confidence in dry, gradually warming weather through Saturday; low confidence in the track, timing and rain totals for the late Sunday–Monday storm."
+  "confidence": "High confidence in dry, mild weather through Saturday; low confidence in the track, timing and rain totals for the late Sunday–early next week storm."
 }
