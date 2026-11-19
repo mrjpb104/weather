@@ -1102,46 +1102,48 @@ const prettyDate = (iso, year = true) => new Date(iso + 'T12:00:00Z').toLocaleDa
 const climT = f => (f == null ? '—' : `${Math.round(US() ? f : (f - 32) * 5 / 9)}°`);
 const climR = i => (i == null ? '—' : US() ? `${i.toFixed(2)} in` : `${Math.round(i * 25.4)} mm`);
 const pctOf = (a, b) => (a != null && b > 0.05 ? `${Math.round(a / b * 100)}% of normal` : '');
-const nameCase = s => String(s || '').toLowerCase().replace(/\b([a-z])/g, c => c.toUpperCase()).replace(/\b(Ap|Nas|Mcas|Afb|Wso|Intl|Faa)\b/g, m => m.toUpperCase()).replace(/\bArea\b/, 'area');
+const nameCase = s => String(s || '').toLowerCase().replace(/\b([a-z])/g, c => c.toUpperCase()).replace(/\b(Ap|Nas|Mcas|Afb|Wso|Intl|Faa)\b/g, m => m.toUpperCase()).replace(/\bMc([a-z])/g, (m, c) => 'Mc' + c.toUpperCase()).replace(/\bArea\b/, 'area');
 
 // Nearby stations with a long record (30+ years) that are still reporting. Where an airport has a
 // "threaded" NWS climate record (ThreadEx — the official city record NWS climate reports use, often
 // going back to the 1800s), that record is used instead.
 async function climateStations(lat, lon, today, elevM) {
-  const key = `wx.climSt2.${lat.toFixed(2)},${lon.toFixed(2)}`, hit = store.get(key);
+  const key = `wx.climSt3.${lat.toFixed(2)},${lon.toFixed(2)}`, hit = store.get(key);
   if (hit?.list?.length && Date.now() - hit.at < 7 * 864e5) return hit.list;
-  const since = `${+today.slice(0, 4) - 30}${today.slice(4)}`;
-  let list = [];
-  for (const [deg, lagDays] of [[0.75, 10], [1.5, 10], [1.5, 60]]) {
-    const dl = deg / Math.cos(lat * Math.PI / 180), recent = isoAdd(today, -lagDays);
+  const since = `${+today.slice(0, 4) - 25}${today.slice(4)}`, fresh = isoAdd(today, -10), recent = isoAdd(today, -60);
+  const ft = elevM != null ? elevM * 3.281 : null;
+  let all = [];
+  for (const deg of [0.75, 1.5]) {
+    const dl = deg / Math.cos(lat * Math.PI / 180);
     const j = await acis('StnMeta', { bbox: [lon - dl, lat - deg, lon + dl, lat + deg].map(x => x.toFixed(3)).join(','), elems: 'pcpn,maxt', meta: 'name,sids,ll,elev,valid_daterange' });
     const cur = [];
     for (const m of j.meta || []) {
       const [p, t] = m.valid_daterange || [];
       if (!m.ll || !p?.length || !t?.length || p[1] < recent || t[1] < recent) continue;
       const sids = m.sids || [], id = t => sids.find(x => x.endsWith(' ' + t))?.split(' ')[0];
-      cur.push({ sid: id(6) || sids[0].split(' ')[0], faa: id(3), name: nameCase(m.name), km: distKm(lat, lon, m.ll[1], m.ll[0]), elev: m.elev ?? null, start: p[0] > t[0] ? p[0] : t[0], pStart: p[0], end: p[1] });
+      cur.push({ sid: id(6) || sids[0].split(' ')[0], faa: id(3), name: nameCase(m.name), km: distKm(lat, lon, m.ll[1], m.ll[0]), elev: m.elev ?? null, start: p[0] > t[0] ? p[0] : t[0], pStart: p[0], end: p[1] < t[1] ? p[1] : t[1] });
     }
     const faas = [...new Set(cur.sort((a, b) => a.km - b.km).map(c => c.faa).filter(f => /^[A-Z0-9]{3}$/.test(f || '')))].slice(0, 25);
     if (faas.length) {
       const t = await acis('StnMeta', { sids: faas.map(f => f + 'thr').join(','), elems: 'pcpn,maxt', meta: 'name,sids,valid_daterange' }).catch(() => null);
       for (const m of t?.meta || []) {
         const id = (m.sids?.[0] || '').split(' ')[0], c = cur.find(x => x.faa === id.replace(/thr$/, '')), [p, tt] = m.valid_daterange || [];
-        if (c && p?.length && tt?.length && p[1] >= recent) Object.assign(c, { sid: id, name: nameCase(m.name), start: p[0] > tt[0] ? p[0] : tt[0], pStart: p[0], end: p[1], thr: true });
+        if (c && p?.length && tt?.length && p[1] >= recent) Object.assign(c, { sid: id, name: nameCase(m.name), start: p[0] > tt[0] ? p[0] : tt[0], pStart: p[0], end: p[1] < tt[1] ? p[1] : tt[1], thr: true });
       }
     }
-    list = cur.filter(c => c.start <= since);
-    if (list.length) break;
+    all = cur.filter(c => c.start <= since);
+    for (const c of all) { c.lag = c.end < fresh; c.score = c.km + (ft != null && c.elev != null ? Math.abs(c.elev - ft) / 40 : 0); }
+    if (all.some(c => !c.lag)) break;
   }
   // Rank by distance plus an elevation penalty (1,000 ft difference counts like 25 km), so a coastal
   // spot isn't matched to an inland or mountain station just because it's a bit closer.
-  const ft = elevM != null ? elevM * 3.281 : null;
-  for (const c of list) c.score = c.km + (ft != null && c.elev != null ? Math.abs(c.elev - ft) / 40 : 0);
-  list.sort((a, b) => a.score - b.score);
-  // Default: the best match, unless an official city record scores within 30 km of it.
-  const best = list[0], thr = list.find(c => c.thr);
-  if (thr && best && thr !== best && thr.score <= best.score + 30) list = [thr, ...list.filter(c => c !== thr)];
-  list = list.slice(0, 6);
+  all.sort((a, b) => a.score - b.score);
+  let live = all.filter(c => !c.lag);
+  const slow = all.filter(c => c.lag).slice(0, 2); // long-record co-op stations that report monthly: in the picker, never the default
+  // Default: the best match, unless an official city record (usually a far longer history) scores within 45 km of it.
+  const best = live[0], thr = live.find(c => c.thr);
+  if (thr && best && thr !== best && thr.score <= best.score + 45) live = [thr, ...live.filter(c => c !== thr)];
+  const list = [...live.slice(0, 5), ...slow];
   if (list.length) store.set(key, { at: Date.now(), list });
   return list;
 }
@@ -1164,7 +1166,7 @@ async function climateSeasonFetch(st, today) {
   const O = obs.data || [], N = new Map((nrm.data || []).map(r => [r[0], acisNum(r[1])]));
   const last = [...O].reverse().find(r => acisNum(r[1]) != null)?.[0] || today;
   const sum = (rows, a, b) => { let t = 0, miss = 0; for (const [d, x] of rows) if (d >= a && d <= b) { const n = acisNum(x); if (n == null) miss++; else t += n; } return { t, miss }; };
-  const nsum = (a, b) => { let t = 0; for (const [d, n] of N) if (d >= a && d <= b && n != null) t += n; return t; };
+  const nsum = (a, b) => { let t = 0, k = 0; for (const [d, n] of N) if (d >= a && d <= b && n != null) { t += n; k++; } return k ? t : null; };
   const cur = sum(O, wyStart, last), prev = sum(O, prevStart, prevEnd), ytd = sum(O, jan1, last);
   return { wy, last, season: cur.t, seasonMiss: cur.miss, seasonNormal: nsum(wyStart, last), fullNormal: nsum(prevStart, prevEnd),
     prev: prev.miss > 15 ? null : prev.t, ytd: ytd.t, ytdNormal: nsum(jan1, last) };
@@ -1217,7 +1219,7 @@ async function fillClimate(v, token, pick) {
   const chosen = store.get('wx.climPick', {}), sid = pick || chosen[locKey];
   const st = list.find(s => s.sid === sid) || list[0];
   if (pick) { chosen[locKey] = pick; store.set('wx.climPick', chosen); }
-  const picker = `<label class="climpick"><span class="fine">Station</span><select>${list.map(s => `<option value="${esc(s.sid)}"${s === st ? ' selected' : ''}>${esc(s.name)} · ${US() ? Math.round(s.km / 1.609) + ' mi' : Math.round(s.km) + ' km'}</option>`).join('')}</select></label>`;
+  const picker = `<label class="climpick"><span class="fine">Station</span><select>${list.map(s => `<option value="${esc(s.sid)}"${s === st ? ' selected' : ''}>${esc(s.name)} · ${US() ? Math.round(s.km / 1.609) + ' mi' : Math.round(s.km) + ' km'} · since ${esc(s.start.slice(0, 4))}${s.lag ? ' · monthly reports' : ''}</option>`).join('')}</select></label>`;
   box().innerHTML = `${picker}<p class="fine">Loading…</p>`;
   const wire = () => { const sel = $('#clim select'); if (sel) sel.onchange = () => fillClimate(v, token, sel.value); };
   wire();
@@ -1228,8 +1230,8 @@ async function fillClimate(v, token, pick) {
     html.push(`<h3 class="climh">Rain season since Oct 1 <span class="fine">· through ${esc(prettyDate(S.last, false))}</span></h3><div class="grid">
       ${tile('This season', climR(S.season), [S.seasonNormal != null ? `Normal to date ${climR(S.seasonNormal)}` : '', pctOf(S.season, S.seasonNormal)].filter(Boolean).join(' · '))}
       ${tile(`Last season (${seasonLabel(S.wy - 1)})`, climR(S.prev), pctOf(S.prev, S.fullNormal))}
-      ${tile('Normal full season', climR(S.fullNormal), 'Oct 1 – Sep 30')}
-      ${tile(`Since Jan 1, ${S.last.slice(0, 4)}`, climR(S.ytd), [`Normal ${climR(S.ytdNormal)}`, pctOf(S.ytd, S.ytdNormal)].filter(Boolean).join(' · '))}
+      ${S.fullNormal != null ? tile('Normal full season', climR(S.fullNormal), 'Oct 1 – Sep 30') : ''}
+      ${tile(`Since Jan 1, ${S.last.slice(0, 4)}`, climR(S.ytd), [S.ytdNormal != null ? `Normal ${climR(S.ytdNormal)}` : '', pctOf(S.ytd, S.ytdNormal)].filter(Boolean).join(' · '))}
     </div>${S.seasonMiss > 3 ? `<p class="fine">${S.seasonMiss} days are missing from this season’s record, so the total may be low.</p>` : ''}`);
   }
   const yrs = b => { if (!b) return ''; const y = [...b.years].reverse(); return y.slice(0, 2).join(', ') + (y.length > 2 ? ` +${y.length - 2} more` : ''); };
