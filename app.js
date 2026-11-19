@@ -250,6 +250,7 @@ async function loadLocationFresh(loc, lat, lon, key) {
   return view;
 }
 const inUSBox = (lat, lon) => lat > 18 && lat < 72 && lon > -180 && lon < -64;
+const inCONUS = (lat, lon) => lat > 24 && lat < 50 && lon > -125.5 && lon < -66;
 
 function omURL(lat, lon) {
   const p = new URLSearchParams({
@@ -425,6 +426,20 @@ async function loadIntl(loc, lat, lon) {
       precipMm: D.precipitation_sum[i], gustKmh: D.wind_gusts_10m_max[i], windDir: D.wind_direction_10m_dominant[i], uv: D.uv_index_max[i],
     };
   });
+  // Each day's low should be the coming night's (6 PM – 9 AM), like the NWS day/night pairs. Open-Meteo's daily
+  // minimum runs midnight to midnight, so it's usually this morning's low. Work it out from the hourly data instead.
+  const hr24 = dtf(tz, { hour: 'numeric', hourCycle: 'h23' }), nights = {};
+  H.time.forEach((ts, i) => {
+    const t = new Date(ts * 1000), h = +hr24.format(t) % 24, c = H.temperature_2m[i];
+    const key = h >= 18 ? ymd(t, tz) : h < 9 ? ymd(new Date(t - 12 * 3600e3), tz) : null;
+    if (key && c != null) { const n = nights[key] || (nights[key] = { min: Infinity, k: 0 }); n.min = Math.min(n.min, c); n.k++; }
+  });
+  days.forEach((d, i) => {
+    const n = nights[ymd(new Date((D.time[i] + 12 * 3600) * 1000), tz)];
+    const loC = n && n.k >= 12 ? n.min : D.temperature_2m_min[i + 1] ?? D.temperature_2m_min[i];
+    if (loC == null) return;
+    Object.assign(d, { lo: fmtT(loC), loC, loN: Math.round(T(loC)) });
+  });
   days.forEach(d => { d.detail = [[d.fullName, intlDayText(d)]]; });
   const view = {
     kind: 'intl', name: loc.name, sub, lat, lon, tz, cc,
@@ -438,7 +453,7 @@ async function loadIntl(loc, lat, lon) {
 }
 
 function intlDayText(d) {
-  const parts = [`${d.short}.`, `High ${d.hi}, low ${d.lo}.`];
+  const parts = [`${d.short}.`, `High ${d.hi}, low ${d.lo} overnight.`];
   if (d.pop >= 15 || d.precipMm >= 0.5) parts.push(`${d.pop}% chance of precipitation${d.precipMm >= 0.25 ? ` (about ${fmtLen(d.precipMm)})` : ''}.`);
   if (d.gustKmh != null && d.gustKmh >= 35) parts.push(`Gusts to ${fmtSpd(d.gustKmh)} from the ${compass(d.windDir)}.`);
   if (d.uv >= 6) parts.push(`UV index up to ${Math.round(d.uv)} (${uvCat(d.uv)}).`);
@@ -492,7 +507,7 @@ function glanceUS(v) {
 function glanceIntl(v) {
   const out = glanceCommon(v);
   const d0 = v.days[0], d1 = v.days[1];
-  if (d0 && d1) out.splice(1, 0, ['🌡️', esc(`High ${d0.hi} today, low ${d1 ? d0.lo : ''} tonight; tomorrow ${d1.hi}/${d1.lo}.`)]);
+  if (d0 && d1) out.splice(1, 0, ['🌡️', esc(`High ${d0.hi} today, low ${d0.lo} tonight; tomorrow ${d1.hi}/${d1.lo}.`)]);
   return out;
 }
 function intlWeekText(v) {
@@ -510,7 +525,7 @@ function intlWeekText(v) {
   const windy = d.reduce((a, x) => ((x.gustKmh || 0) > (a.gustKmh || 0) ? x : a));
   if (windy.gustKmh >= 40) lines.push(`Windiest: ${windy.fullName}, gusts to ${fmtSpd(windy.gustKmh)}.`);
   const cold = d.reduce((a, x) => (x.loC < a.loC ? x : a));
-  if (cold.loC <= 2) lines.push(`Coldest night: ${cold.fullName} (${cold.lo}) — frost or freezing possible.`);
+  if (cold.loC <= 2) lines.push(`Coldest night: ${cold.fullName === 'Today' ? 'tonight' : cold.fullName + ' night'} (${cold.lo}) — frost or freezing possible.`);
   const snowy = d.filter(x => /snow/i.test(x.short));
   if (snowy.length) lines.push(`Snow possible: ${snowy.map(x => x.fullName).join(', ')}.`);
   return lines;
@@ -804,7 +819,7 @@ function render(v, loc) {
       <button class="btn" id="rPlay" aria-label="Play radar animation">▶︎</button>
       <input type="range" id="rSlide" min="0" max="0" value="0" aria-label="Radar time">
       <span class="radar-label" id="rLabel">Loading…</span>
-      ${v.kind === 'us' ? '<div class="seg" id="rMode"><button type="button" data-m="past" aria-pressed="true">Past hour</button><button type="button" data-m="future" aria-pressed="false">Next 12 h</button></div>' : ''}
+      ${v.kind === 'us' && inCONUS(v.lat, v.lon) ? '<div class="seg" id="rMode"><button type="button" data-m="past" aria-pressed="true">Past hour</button><button type="button" data-m="future" aria-pressed="false">Next 12 h</button></div>' : ''}
     </div>
     <div class="legend"><span>Light</span><span class="ramp"></span><span>Heavy</span></div>
     <p class="fine" id="radarNote"></p>
@@ -1017,6 +1032,18 @@ const localSync = () => cleanSync({ saved: state.saved, order: state.order, labe
 const b64dec = b => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\s/g, '')), c => c.charCodeAt(0)));
 const b64enc = t => { let s = ''; new TextEncoder().encode(t).forEach(c => (s += String.fromCharCode(c))); return btoa(s); };
 
+// This device reordered its tabs: keep its order, but slot in tabs that only exist in the shared copy (added on
+// another device) next to the tab they follow there, instead of dropping them at the end.
+function mergeOrder(local, remote) {
+  const out = [...local];
+  remote.forEach((id, i) => {
+    if (out.includes(id)) return;
+    let j = i - 1;
+    while (j >= 0 && !out.includes(remote[j])) j--;
+    out.splice(j < 0 ? 0 : out.indexOf(remote[j]) + 1, 0, id);
+  });
+  return out;
+}
 // Three-way merge of this device's copy (local) onto the shared copy (remote), relative to base.
 function mergeSync(base, local, remote) {
   const first = !base;
@@ -1034,7 +1061,7 @@ function mergeSync(base, local, remote) {
     if (first && remote.saved.some(r => near(r, l))) continue; // first sync: same place already shared
     saved.push(l); // added here
   }
-  const order = first ? (remote.order.length ? remote.order : local.order) : JSON.stringify(local.order) !== JSON.stringify(base.order) ? local.order : remote.order;
+  const order = first ? (remote.order.length ? remote.order : local.order) : JSON.stringify(local.order) !== JSON.stringify(base.order) ? mergeOrder(local.order, remote.order) : remote.order;
   const labels = {};
   for (const k of ['home', 'here']) {
     const v = first ? (remote.labels[k] || local.labels[k]) : local.labels[k] !== base.labels[k] ? local.labels[k] : remote.labels[k];
@@ -1432,7 +1459,8 @@ async function setupRadar(v) {
   map.getPane('radar').style.zIndex = 350;
   map.on('zoomend', smoothRadar);
   L.circleMarker([v.lat, v.lon], { radius: 6, color: '#fff', weight: 2, fillColor: '#2563eb', fillOpacity: 1 }).addTo(map);
-  state.radar = { v, frames: [], layers: [], i: 0, timer: null, mode: 'past' };
+  // IEM's NEXRAD mosaic and the HRRR model cover only the lower 48; elsewhere (Alaska, Hawaii, Puerto Rico…) use RainViewer.
+  state.radar = { v, conus: v.kind === 'us' && inCONUS(v.lat, v.lon), frames: [], layers: [], i: 0, timer: null, mode: 'past' };
   $('#rPlay').onclick = () => (state.radar?.timer ? pause() : play());
   $('#rSlide').oninput = e => { pause(); showFrame(+e.target.value); };
   $('#rMode')?.querySelectorAll('button').forEach(b => b.onclick = () => {
@@ -1452,7 +1480,7 @@ async function loadFrames(mode) {
   $('#rLabel').textContent = 'Loading…';
   let frames;
   try {
-    frames = R.v.kind === 'us' ? (mode === 'past' ? usPastFrames() : await usFutureFrames()) : await rvFrames();
+    frames = R.conus ? (mode === 'past' ? usPastFrames() : await usFutureFrames()) : await rvFrames();
   } catch (e) {
     if (state.radar !== R || R.req !== req) return;
     $('#rLabel').textContent = 'Radar unavailable';
@@ -1467,10 +1495,10 @@ async function loadFrames(mode) {
   const sl = $('#rSlide'); sl.max = R.frames.length - 1;
   const start = mode === 'future' ? 0 : R.frames.length - 1;
   showFrame(start);
-  $('#radarSrc').textContent = R.v.kind === 'us' ? (mode === 'past' ? 'NEXRAD via Iowa Mesonet' : 'HRRR model via Iowa Mesonet') : 'RainViewer';
-  $('#radarNote').innerHTML = R.v.kind === 'us'
+  $('#radarSrc').textContent = R.conus ? (mode === 'past' ? 'NEXRAD via Iowa Mesonet' : 'HRRR model via Iowa Mesonet') : 'RainViewer';
+  $('#radarNote').innerHTML = R.conus
     ? (mode === 'past' ? 'Observed radar, last 50 minutes in 5-minute steps.' : 'Future frames are the HRRR model’s <i>simulated</i> radar — a forecast, not an observation. Good for timing, less reliable for exact placement of individual showers.')
-    : 'Observed radar, past hour (max detail is limited outside the U.S.). Future radar isn’t available for this location.';
+    : `Observed radar, past hour (max detail is limited outside the lower 48 states). Future radar isn’t available for this location.`;
   play();
 }
 // Data cell size: HRRR ~3 km, NEXRAD mosaic ~1 km, RainViewer capped at zoom 7 (~1.2 km/px at that zoom).
@@ -1489,7 +1517,7 @@ function smoothRadar() {
   const R = state.radar, map = state.map;
   if (!R || !map) return;
   ensureRadarFilter();
-  const cellM = R.v.kind !== 'us' ? 2500 : R.mode === 'future' ? 3000 : 1000;
+  const cellM = !R.conus ? 2500 : R.mode === 'future' ? 3000 : 1000;
   const mPerPx = 156543.03 * Math.cos(map.getCenter().lat * Math.PI / 180) / 2 ** map.getZoom();
   const sd = clamp((cellM / mPerPx) * 0.24, 0.6, 14);
   document.getElementById('radarSoftBlur').setAttribute('stdDeviation', sd.toFixed(1));
