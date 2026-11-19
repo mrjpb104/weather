@@ -1,0 +1,29 @@
+{
+  "saved": [
+    {
+      "id": "loc-mwk12vk8",
+      "name": "Sequim, WA",
+      "lat": 48.1256472,
+      "lon": -123.1894096,
+      "cc": "",
+      "admin": "",
+      "country": ""
+    },
+    {
+      "id": "loc-mwk6jjfn",
+      "name": "New York, NY",
+      "lat": 40.736,
+      "lon": -74.0017,
+      "cc": "US",
+      "admin": "NY",
+      "country": "United States"
+    }
+  ],
+  "order": [
+    "here",
+    "home",
+    "loc-mwk12vk8"
+  ],
+  "labels": {},
+  "updated": "2026-11-19T05:03:09.341Z"
+}
