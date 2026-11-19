@@ -347,7 +347,7 @@ async function loadUS(loc, lat, lon, points) {
 
   const sub = rl.city ? `${rl.city}, ${rl.state}` : `${lat.toFixed(3)}, ${lon.toFixed(3)}`;
   const view = {
-    kind: 'us', name: loc.name, sub, lat, lon, tz, office,
+    kind: 'us', name: loc.name, sub, lat, lon, tz, office, elevM: val(grid)?.properties?.elevation?.value ?? val(om)?.elevation ?? null,
     officeName: null, radarStation: P.radarStation, now, hourly, days, periods,
     alerts: (val(alerts)?.features || []).map(f => f.properties),
     afd, summary: val(summary), summaryOffices: val(cfg)?.summary_offices || null, sun: sunInfo(lat, lon, tz), moon: moonInfo(),
@@ -1107,20 +1107,20 @@ const nameCase = s => String(s || '').toLowerCase().replace(/\b([a-z])/g, c => c
 // Nearby stations with a long record (30+ years) that are still reporting. Where an airport has a
 // "threaded" NWS climate record (ThreadEx — the official city record NWS climate reports use, often
 // going back to the 1800s), that record is used instead.
-async function climateStations(lat, lon, today) {
-  const key = `wx.climSt.${lat.toFixed(2)},${lon.toFixed(2)}`, hit = store.get(key);
+async function climateStations(lat, lon, today, elevM) {
+  const key = `wx.climSt2.${lat.toFixed(2)},${lon.toFixed(2)}`, hit = store.get(key);
   if (hit?.list?.length && Date.now() - hit.at < 7 * 864e5) return hit.list;
   const since = `${+today.slice(0, 4) - 30}${today.slice(4)}`;
   let list = [];
   for (const [deg, lagDays] of [[0.75, 10], [1.5, 10], [1.5, 60]]) {
     const dl = deg / Math.cos(lat * Math.PI / 180), recent = isoAdd(today, -lagDays);
-    const j = await acis('StnMeta', { bbox: [lon - dl, lat - deg, lon + dl, lat + deg].map(x => x.toFixed(3)).join(','), elems: 'pcpn,maxt', meta: 'name,sids,ll,valid_daterange' });
+    const j = await acis('StnMeta', { bbox: [lon - dl, lat - deg, lon + dl, lat + deg].map(x => x.toFixed(3)).join(','), elems: 'pcpn,maxt', meta: 'name,sids,ll,elev,valid_daterange' });
     const cur = [];
     for (const m of j.meta || []) {
       const [p, t] = m.valid_daterange || [];
       if (!m.ll || !p?.length || !t?.length || p[1] < recent || t[1] < recent) continue;
       const sids = m.sids || [], id = t => sids.find(x => x.endsWith(' ' + t))?.split(' ')[0];
-      cur.push({ sid: id(6) || sids[0].split(' ')[0], faa: id(3), name: nameCase(m.name), km: distKm(lat, lon, m.ll[1], m.ll[0]), start: p[0] > t[0] ? p[0] : t[0], pStart: p[0], end: p[1] });
+      cur.push({ sid: id(6) || sids[0].split(' ')[0], faa: id(3), name: nameCase(m.name), km: distKm(lat, lon, m.ll[1], m.ll[0]), elev: m.elev ?? null, start: p[0] > t[0] ? p[0] : t[0], pStart: p[0], end: p[1] });
     }
     const faas = [...new Set(cur.sort((a, b) => a.km - b.km).map(c => c.faa).filter(f => /^[A-Z0-9]{3}$/.test(f || '')))].slice(0, 25);
     if (faas.length) {
@@ -1133,9 +1133,14 @@ async function climateStations(lat, lon, today) {
     list = cur.filter(c => c.start <= since);
     if (list.length) break;
   }
-  // Default: the nearest station, unless an official city record is within 30 km more of it.
-  const near = list[0], thr = list.find(c => c.thr);
-  if (thr && near && thr !== near && thr.km <= near.km + 30) list = [thr, ...list.filter(c => c !== thr)];
+  // Rank by distance plus an elevation penalty (1,000 ft difference counts like 25 km), so a coastal
+  // spot isn't matched to an inland or mountain station just because it's a bit closer.
+  const ft = elevM != null ? elevM * 3.281 : null;
+  for (const c of list) c.score = c.km + (ft != null && c.elev != null ? Math.abs(c.elev - ft) / 40 : 0);
+  list.sort((a, b) => a.score - b.score);
+  // Default: the best match, unless an official city record scores within 30 km of it.
+  const best = list[0], thr = list.find(c => c.thr);
+  if (thr && best && thr !== best && thr.score <= best.score + 30) list = [thr, ...list.filter(c => c !== thr)];
   list = list.slice(0, 6);
   if (list.length) store.set(key, { at: Date.now(), list });
   return list;
@@ -1206,7 +1211,7 @@ async function fillClimate(v, token, pick) {
   const box = () => (token === state.token ? $('#clim .climbody') : null);
   const today = isoDay(v.tz), locKey = `${v.lat.toFixed(2)},${v.lon.toFixed(2)}`;
   let list;
-  try { list = await climateStations(v.lat, v.lon, today); } catch { list = null; }
+  try { list = await climateStations(v.lat, v.lon, today, v.elevM); } catch { list = null; }
   if (!box()) return;
   if (!list?.length) { box().innerHTML = '<p class="fine">Couldn’t find a nearby long-record weather station for season totals and records. The links below have the NWS office’s own reports.</p>'; return; }
   const chosen = store.get('wx.climPick', {}), sid = pick || chosen[locKey];
