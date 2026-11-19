@@ -21,9 +21,19 @@
   ],
   "order": [
     "here",
-    "home",
-    "loc-mwk12vk8"
+    "g-mwn3m489",
+    "loc-mwk12vk8",
+    "loc-mwk6jjfn"
   ],
   "labels": {},
-  "updated": "2026-11-19T05:03:09.341Z"
+  "groups": [
+    {
+      "id": "g-mwn3m489",
+      "name": "San Diego",
+      "members": [
+        "home"
+      ]
+    }
+  ],
+  "updated": "2026-11-19T05:17:19.399Z"
 }
