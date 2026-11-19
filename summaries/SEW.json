@@ -1,29 +1,29 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": "97e413d0-26be-4d81-8fb8-1aa56e99ab0d",
-  "afd_issued": "2026-11-18T22:00:00Z",
-  "generated": "2026-11-18T23:25:04Z",
-  "headline": "Light showers end tonight and Thursday and Friday stay dry with morning fog, before a showery, breezy Sunday and a stronger Tuesday storm that could bring wind, mountain-pass snow and coastal flooding with next week's high tides.",
+  "afd_id": "1a0b39ec-8b78-4077-909c-83edebe9ce99",
+  "afd_issued": "2026-11-19T04:38:00Z",
+  "generated": "2026-11-19T05:25:00Z",
+  "headline": "Tonight's last showers fade, leaving Thursday through early Saturday dry and near normal with morning fog, before showers return Sunday and a stronger Tuesday storm brings wind, Cascade pass snow and a coastal flooding risk with next week's peak tides.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A weakening storm sliding inland to the south keeps rain showers going across Western Washington through Wednesday evening, with the south interior the most likely spot for brief lower clouds and reduced visibility in the heavier showers. East winds die down through the afternoon and turn light overnight, shifting to the northeast. Showers taper off tonight, and fog is expected to stay confined to isolated valleys and low-lying spots."
+      "text": "A few showers linger across Western Washington this Wednesday evening as a weakening storm to the south drifts inland, but they should wind down overnight. Winds are mostly light east to northeast at 5 to 10 mph, easing further overnight, with a few gusts near 20 mph around Sea-Tac this evening. Clouds stay high enough that fog should be limited to isolated valleys and low-lying spots tonight."
     },
     {
       "title": "Short Term",
-      "text": "By Thursday the moisture wrapping around the departing storm should be cut off, leaving Thursday and Friday mostly dry across the Strait shore and Puget Sound lowlands, though a few lingering showers over the southern Cascades can't be ruled out Thursday. High pressure builds in behind the storm, bringing periods of morning fog and low clouds followed by cloudy afternoons, with skies turning mostly clear Thursday afternoon around the Sound. Temperatures stay near normal, with lowland highs in the upper 40s to low 50s and lows mostly in the 30s. Near-freezing temperatures early Friday morning could produce pockets of freezing fog in the southwest interior."
+      "text": "Thursday turns drier across the Strait shore and the Puget Sound lowlands as the moisture wrapping around the departing storm gets cut off, though a few lingering showers over the southern Cascades can't be ruled out; skies around Seattle should clear by late Thursday morning or afternoon. High pressure building overhead keeps Thursday and Friday quiet, with periods of morning fog and low clouds and cloudy afternoons. Temperatures stay near normal, with lowland highs in the upper 40s to low 50s and lows mostly in the 30s. Near-freezing temperatures early Friday morning could produce pockets of freezing fog in the southwest interior."
     },
     {
       "title": "Long Term",
-      "text": "Saturday morning likely stays dry before high pressure moves east and the next system arrives. A storm cut off from the main jet stream sets up offshore late Saturday, sending bands of moisture into Western Washington into Sunday with light rain showers in the lowlands, breezy east winds through the Cascade gaps, and snow levels around 2,000 to 2,500 feet giving the mountains a dusting of snow. Monday may bring a brief lull between systems before a stronger, more organized front arrives Tuesday, potentially bringing widespread breezy winds and snow over the Cascade passes. No river flooding is expected over the next 7 days."
+      "text": "Saturday likely stays dry at least through the morning before high pressure shifts east. A slow-moving storm cut off from the main jet stream sets up offshore late Saturday, sending bands of moisture into Western Washington into Sunday with light rain showers in the lowlands, breezy east winds through the Cascade gaps, and snow levels around 2,000 to 2,500 feet giving the mountains a dusting. Monday may bring a brief lull before a stronger, more organized front arrives Tuesday, potentially bringing widespread breezy winds and snow over the Cascade passes. No river flooding is expected over the next 7 days."
     }
   ],
-  "coast": "Seas of 10 to 14 feet linger in the coastal waters through Thursday under a Small Craft Advisory until 10 AM Thursday, which also covers the Grays Harbor Bar; the advisory for the central and western Strait of Juan de Fuca ends this afternoon/evening. Thursday and Friday bring calmer conditions on the water, with seas dropping to 5 to 8 feet. Conditions turn active again this weekend into early next week as seas climb back above 10 feet; Monday into Tuesday is the windiest stretch, with gale-force gusts likely in the coastal waters and parts of the Strait, a 40 to 50% chance of storm-force gusts in the outer coastal waters late Monday, and seas approaching 12 to 17 feet by midweek. Astronomical tides peak next week, raising the potential for coastal flooding, which the Tuesday storm's low pressure may make worse.",
+  "coast": "Seas of 10 to 13 feet linger in the coastal waters this evening, with a Small Craft Advisory until 10 AM Thursday; seas drop toward 6 to 8 feet during Thursday. High pressure brings calmer conditions on the water Thursday and Friday. It turns active again this weekend into early next week as seas climb back above 10 feet; Monday into Tuesday is the windiest stretch, with gale-force gusts likely in the coastal waters and parts of the Strait of Juan de Fuca, a 40 to 50% chance of storm-force gusts in the outer coastal waters late Monday, and seas approaching 12 to 17 feet by midweek. Astronomical tides peak next week, raising the potential for coastal flooding, which the Tuesday storm's low pressure may make worse.",
   "watch_for": [
     "Freezing fog in the southwest interior early Friday morning.",
     "Tuesday's stronger storm: widespread breezy winds and snow over the Cascade passes.",
     "Coastal flooding risk next week as peak high tides coincide with the Tuesday storm."
   ],
-  "confidence": "Forecasters are fairly confident in a quiet, dry Thursday through early Saturday; models continue to agree that Tuesday's system will be stronger and more organized, though its exact wind, snow and coastal flooding impacts remain uncertain."
+  "confidence": "Forecasters are confident in a quiet, mostly dry Thursday through Saturday morning; models continue to show Tuesday's system as stronger and more organized, though its exact wind, pass snow and coastal flooding impacts are still uncertain."
 }
