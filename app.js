@@ -19,8 +19,9 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage unavailable */ } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage unavailable */ } if (SYNC_KEYS.includes(k)) syncChanged(); },
 };
+const SYNC_KEYS = ['wx.saved', 'wx.order', 'wx.labels']; // these follow you across devices (see "Sync" below)
 
 const state = {
   settings: store.get('wx.settings', { units: 'us' }),
@@ -787,10 +788,10 @@ const tile = (k, v, s) => `<div class="tile"><div class="k">${esc(k)}</div><div 
 const PENDING_MS = 24 * 3600e3;
 const GH_API = 'https://api.github.com';
 const GH_WORKFLOW = 'enable-summaries.yml';
-// Fine-grained token template: this account, Actions read/write only, 1 year. The repo still has to be picked on GitHub.
+// Fine-grained token template: this account, Actions + Contents read/write, 1 year. The repo still has to be picked on GitHub.
 const GH_TOKEN_URL = `https://github.com/settings/personal-access-tokens/new?${new URLSearchParams({
-  name: 'Weather app summaries', description: 'Lets the weather app turn on forecast summaries for new areas (runs one workflow in mrjpb104/weather).',
-  target_name: REPO.split('/')[0], expires_in: '365', actions: 'write',
+  name: 'Weather app', description: 'Lets the weather app sync saved locations (locations.json) and turn on forecast summaries for new areas in mrjpb104/weather.',
+  target_name: REPO.split('/')[0], expires_in: '365', actions: 'write', contents: 'write',
 })}`;
 const ghToken = () => store.get('wx.ghToken', '');
 function pendingOffices() {
@@ -872,8 +873,8 @@ function wireEnableButtons() {
 function renderGh(msg) {
   const has = !!ghToken();
   $('#ghStatus').innerHTML = msg || (has
-    ? '✓ GitHub access is saved on this device. <b>Turn on summaries</b> works in one tap.'
-    : 'Save a GitHub access token on this device and <b>Turn on summaries</b> works in one tap. Without one, the button opens a prefilled GitHub request instead.');
+    ? '✓ GitHub access is saved on this device. Location changes made here sync to your other devices, and <b>Turn on summaries</b> works in one tap.'
+    : 'Save a GitHub access token on this device so location changes made here reach your other devices, and <b>Turn on summaries</b> works in one tap. Without one, this device still gets your synced locations, but its own changes stay here.');
   $('#ghForm').hidden = has;
   $('#ghRemove').hidden = !has;
   $('#ghCreate').href = GH_TOKEN_URL;
@@ -889,8 +890,128 @@ async function saveGh() {
       : `GitHub said ${r.status}. Try again.`);
     store.set('wx.ghToken', tok); inp.value = '';
     renderGh();
+    syncNow();
   } catch (e) { renderGh(`<span class="bad">${esc(e.message)}</span>`); }
   b.disabled = false; b.textContent = 'Save';
+}
+
+// ---------- Sync: saved locations, tab names and order follow you across devices ----------
+// The shared copy is locations.json in the repo (public, like config.json). Every device reads it;
+// a device with GitHub access (Contents: read and write) also writes it. Each device keeps the last
+// shared copy it saw (wx.syncBase) so changes merge three ways: edits made here since then win,
+// everything else comes from the shared copy. Without GitHub access, this device's own edits stay
+// on top of the shared copy until a device with access is used.
+const SYNC_FILE = 'locations.json';
+const sync = { sha: null, running: false, again: false, applying: false, timer: null, last: 0, status: '' };
+const EMPTY_SYNC = { saved: [], order: [], labels: {} };
+const syncData = d => ({ saved: d.saved, order: d.order, labels: d.labels });
+const sameSync = (a, b) => JSON.stringify(syncData(a)) === JSON.stringify(syncData(b));
+function cleanSync(d) {
+  const saved = (Array.isArray(d?.saved) ? d.saved : []).filter(l => l && typeof l.id === 'string' && typeof l.name === 'string' && Number.isFinite(+l.lat) && Number.isFinite(+l.lon))
+    .map(l => ({ id: l.id, name: l.name, lat: +l.lat, lon: +l.lon, cc: String(l.cc || ''), admin: String(l.admin || ''), country: String(l.country || '') }));
+  const order = (Array.isArray(d?.order) ? d.order : []).filter(x => typeof x === 'string');
+  const labels = {};
+  for (const k of ['home', 'here']) if (typeof d?.labels?.[k] === 'string' && d.labels[k]) labels[k] = d.labels[k];
+  return { saved, order, labels, updated: typeof d?.updated === 'string' ? d.updated : '' };
+}
+const localSync = () => cleanSync({ saved: state.saved, order: state.order, labels: state.labels });
+const b64dec = b => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\s/g, '')), c => c.charCodeAt(0)));
+const b64enc = t => { let s = ''; new TextEncoder().encode(t).forEach(c => (s += String.fromCharCode(c))); return btoa(s); };
+
+// Three-way merge of this device's copy (local) onto the shared copy (remote), relative to base.
+function mergeSync(base, local, remote) {
+  const first = !base;
+  base = base || EMPTY_SYNC;
+  const B = new Map(base.saved.map(l => [l.id, l])), L = new Map(local.saved.map(l => [l.id, l])), R = new Map(remote.saved.map(l => [l.id, l]));
+  const near = (a, b) => Math.abs(a.lat - b.lat) < 0.01 && Math.abs(a.lon - b.lon) < 0.01;
+  const saved = [];
+  for (const r of remote.saved) {
+    if (B.has(r.id) && !L.has(r.id)) continue; // deleted here
+    const l = L.get(r.id), b = B.get(r.id);
+    saved.push(l && b && JSON.stringify(l) !== JSON.stringify(b) ? l : r); // edited here (e.g. renamed)
+  }
+  for (const l of local.saved) {
+    if (R.has(l.id) || B.has(l.id)) continue;
+    if (first && remote.saved.some(r => near(r, l))) continue; // first sync: same place already shared
+    saved.push(l); // added here
+  }
+  const order = first ? (remote.order.length ? remote.order : local.order) : JSON.stringify(local.order) !== JSON.stringify(base.order) ? local.order : remote.order;
+  const labels = {};
+  for (const k of ['home', 'here']) {
+    const v = first ? (remote.labels[k] || local.labels[k]) : local.labels[k] !== base.labels[k] ? local.labels[k] : remote.labels[k];
+    if (v) labels[k] = v;
+  }
+  return { saved, order, labels };
+}
+function applySync(d) {
+  sync.applying = true;
+  try {
+    state.saved = d.saved; state.order = d.order; state.labels = d.labels;
+    store.set('wx.saved', d.saved); store.set('wx.order', d.order); store.set('wx.labels', d.labels);
+  } finally { sync.applying = false; }
+  if (!locById(state.active)) go('home'); else renderTabs();
+  if ($('#dlgSettings').open && !$('#savedList input.ren')) renderSaved();
+}
+async function fetchSync() {
+  // The GitHub API is up to date within seconds and gives the file's sha (needed to write); Pages lags a few minutes.
+  for (const tok of [...new Set([ghToken(), ''])]) {
+    try {
+      const h = { Accept: 'application/vnd.github+json' };
+      if (tok) h.Authorization = `Bearer ${tok}`;
+      const r = await fetch(`${GH_API}/repos/${REPO}/contents/${SYNC_FILE}?ref=main&t=${Date.now()}`, { headers: h, cache: 'no-store' });
+      if (r.status === 404) return { missing: true };
+      if (r.ok) { const j = await r.json(); return { data: cleanSync(JSON.parse(b64dec(j.content))), sha: j.sha }; }
+    } catch { /* try the next way */ }
+  }
+  try { return { data: cleanSync(await getJSON(`${SYNC_FILE}?t=${Date.now()}`, { cache: 'no-store' })) }; } catch { return null; }
+}
+function setSyncStatus(s) { sync.status = s; if ($('#dlgSettings').open) renderSyncStatus(); }
+async function syncNow() {
+  if (sync.running) { sync.again = true; return; }
+  sync.running = true; sync.last = Date.now();
+  try {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const rem = await fetchSync();
+      if (!rem) return setSyncStatus('offline');
+      const remote = rem.missing ? cleanSync(EMPTY_SYNC) : rem.data;
+      const base = store.get('wx.syncBase', null);
+      const merged = mergeSync(base && cleanSync(base), localSync(), remote);
+      if (!sameSync(merged, localSync())) applySync(merged);
+      if (!rem.missing) store.set('wx.syncBase', remote);
+      if (!rem.missing && sameSync(merged, remote)) return setSyncStatus('ok');
+      if (rem.missing && !merged.saved.length && !Object.keys(merged.labels).length && !merged.order.length) return setSyncStatus('ok');
+      if (!ghToken()) return setSyncStatus('local');
+      if (!rem.missing && !rem.sha) return setSyncStatus('offline');
+      const body = { ...merged, updated: new Date().toISOString() };
+      const r = await fetch(`${GH_API}/repos/${REPO}/contents/${SYNC_FILE}`, {
+        method: 'PUT',
+        headers: { Authorization: `Bearer ${ghToken()}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+        body: JSON.stringify({ message: 'Sync saved locations', content: b64enc(`${JSON.stringify(body, null, 2)}\n`), branch: 'main', ...(rem.sha ? { sha: rem.sha } : {}) }),
+      }).catch(() => null);
+      if (r?.ok) { store.set('wx.syncBase', body); return setSyncStatus('ok'); }
+      if (r && (r.status === 409 || r.status === 422)) continue; // changed elsewhere meanwhile: merge again
+      return setSyncStatus(r && [401, 403, 404].includes(r.status) ? 'noaccess' : 'offline');
+    }
+    setSyncStatus('offline');
+  } finally {
+    sync.running = false;
+    if (sync.again) { sync.again = false; syncNow(); }
+  }
+}
+function syncChanged() {
+  if (sync.applying) return;
+  clearTimeout(sync.timer);
+  sync.timer = setTimeout(syncNow, 1500);
+}
+function renderSyncStatus() {
+  const el = $('#syncStatus');
+  if (!el) return;
+  el.innerHTML = {
+    ok: ghToken() ? '✓ Your locations, tab names and order sync across your devices and browsers.' : '✓ Synced from your other devices. To make changes here that reach them too, add GitHub access under <b>GitHub access</b> below.',
+    local: 'Changes made here stay on this device. To send them to your other devices, add GitHub access under <b>GitHub access</b> below.',
+    noaccess: 'Couldn’t save changes for your other devices: the saved GitHub token needs <b>Contents → Read and write</b> on the weather repo. Edit the token on GitHub, or add a new one below.',
+    offline: 'Couldn’t reach GitHub to sync just now. Changes are kept here and sync next time.',
+  }[sync.status] || 'Checking sync…';
 }
 
 function renderAFD(v) {
@@ -1206,6 +1327,7 @@ function openSettings(section) {
   $('#unitSeg').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.u === state.settings.units));
   renderSaved();
   renderGh();
+  renderSyncStatus();
   const d = $('#dlgSettings');
   if (!d.open) d.showModal();
   if (section === 'locations') requestAnimationFrame(() => $('#locHead').scrollIntoView({ block: 'start' }));
@@ -1314,11 +1436,13 @@ function boot() {
   window.addEventListener('hashchange', () => { const id = location.hash.slice(1); if (id && id !== state.active) go(id); });
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
+      if (Date.now() - sync.last > 30e3) syncNow();
       const hit = [...state.cache.values()].pop();
       if (!hit || Date.now() - hit.at > 10 * 60e3) show(true);
     }
   });
   const fromHash = location.hash.slice(1);
   go(locById(fromHash) ? fromHash : store.get('wx.active', 'home'));
+  syncNow();
 }
 boot();

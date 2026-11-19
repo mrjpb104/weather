@@ -10,9 +10,13 @@ No build step, no API keys. Hosted on GitHub Pages.
 - `discussions/<OFFICE>.json` — the latest original NWS forecast discussion for each summary office, saved hourly by GitHub Actions (`.github/workflows/save-discussions.yml`); the summary task reads these instead of fetching from the web
 - `config.json` — which NWS offices get summaries (`summary_offices`) and which areas each summary should emphasize (`office_focus`)
 - `scripts/` — helpers the workflows run
+- `locations.json` — your saved locations, tab names and tab order, shared by every device and browser you open the app in (written by the app itself; see below)
 
 ## Turning on summaries for a new forecast area
 When a location is in an NWS office that doesn't have summaries yet, the app shows a **Turn on summaries** button. If a GitHub token is saved in Settings → Summaries for new areas (fine-grained, this repo only, Actions: read and write), the button runs `enable-summaries.yml` directly in one tap. Otherwise it opens a prefilled GitHub issue titled `Enable summaries: <OFFICE>`; when the repo owner submits it, `.github/workflows/enable-summaries.yml` adds the office to `config.json` (focused on that location), saves its discussion, and closes the issue. The next hourly summary run writes the first summary. You can also run that workflow by hand from the Actions tab.
+
+## Locations that follow you across devices
+Saved locations, renamed tabs and tab order live in `locations.json` in this repo, so every device and browser shows the same tabs. Every device reads it (no setup). A device with a GitHub token saved in Settings → GitHub access (fine-grained, this repo only, **Contents: read and write** plus Actions: read and write) also writes changes back; devices without one keep their own edits on top of the shared list. Edits merge, so adding a place on one device and deleting another elsewhere both stick. The repo is public, so `locations.json` (names and coordinates) is publicly visible.
 
 ## Summary file format
 ```json
