@@ -3,7 +3,8 @@
     "SGX",
     "SEW",
     "OKX",
-    "LOX"
+    "LOX",
+    "REV"
   ],
   "home": {
     "lat": 33.14986,
@@ -26,6 +27,10 @@
     "LOX": {
       "name": "Los Angeles",
       "focus": "the area around Glendale, CA (34.15, -118.24) first, then the rest of the forecast area briefly"
+    },
+    "REV": {
+      "name": "Reno",
+      "focus": "the area around Mammoth Lakes, CA (37.65, -119.03) first, then the rest of the forecast area briefly"
     }
   }
 }
