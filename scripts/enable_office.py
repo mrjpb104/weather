@@ -48,6 +48,12 @@ def main():
     m = re.search(r'(-?\d{1,2}(?:\.\d+)?)\s*,\s*(-?\d{1,3}(?:\.\d+)?)', coords or '')
     latlon = f'{float(m.group(1)):.2f}, {float(m.group(2)):.2f}' if m else ''
 
+    with open(CONFIG) as f:
+        cfg = json.load(f)
+    if office in cfg.get('summary_offices', []) and office in cfg.get('office_focus', {}):
+        output(office=office, name=cfg['office_focus'][office].get('name') or office, status='already')
+        return
+
     # Confirm the office exists and get its name from its latest discussion.
     new, _ = save_discussions.save(office)
     with open(os.path.join(save_discussions.OUT, f'{office}.json')) as f:

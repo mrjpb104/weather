@@ -17,9 +17,11 @@ const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+// localStorage, with an in-memory copy so things still work for the session when storage is blocked or full.
+const memStore = new Map();
 const store = {
-  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage unavailable */ } if (SYNC_KEYS.includes(k)) syncChanged(); },
+  get(k, d) { if (memStore.has(k)) return JSON.parse(memStore.get(k)); try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { const j = JSON.stringify(v); memStore.set(k, j); try { localStorage.setItem(k, j); } catch { /* storage unavailable: memory copy only */ } if (SYNC_KEYS.includes(k)) syncChanged(); },
 };
 const SYNC_KEYS = ['wx.saved', 'wx.order', 'wx.labels', 'wx.groups']; // these follow you across devices (see "Sync" below)
 
@@ -62,7 +64,7 @@ async function nws(path, tries = 3) {
   const url = path.startsWith('http') ? path : NWS + path;
   let err;
   for (let i = 0; i < tries; i++) {
-    try { return await getJSON(url); } catch (e) { err = e; if (e.status === 404) break; await sleep(500 * (i + 1)); }
+    try { return await getJSON(url); } catch (e) { err = e; if (e.status === 404 || e.name === 'AbortError' || i === tries - 1) break; await sleep(500 * (i + 1)); }
   }
   throw err;
 }
@@ -70,7 +72,7 @@ async function nws(path, tries = 3) {
 async function retryJSON(url, tries = 3) {
   let err;
   for (let i = 0; i < tries; i++) {
-    try { return await getJSON(url); } catch (e) { err = e; if (e.status === 400 || e.status === 404) break; await sleep(700 * (i + 1)); }
+    try { return await getJSON(url); } catch (e) { err = e; if (e.status === 400 || e.status === 404 || i === tries - 1) break; await sleep(700 * (i + 1)); }
   }
   throw err;
 }
@@ -87,11 +89,13 @@ const fmtLen = mm => {
   if (US()) { const i = mm / 25.4; return `${i < 0.995 ? i.toFixed(2) : i.toFixed(1)} in`; }
   return `${mm < 10 ? mm.toFixed(1) : Math.round(mm)} mm`;
 };
-const fmtVis = m => (m == null ? '–' : US() ? `${Math.round(m / 1609.34 * 10) / 10 >= 10 ? '10+' : (m / 1609.34).toFixed(1)} mi` : `${Math.round(m / 1000)} km`);
+const fmtVis = m => (m == null ? '–' : US() ? `${Math.round(m / 1609.34 * 10) / 10 >= 10 ? '10+' : (m / 1609.34).toFixed(1)} mi` : m < 10000 ? `${(m / 1000).toFixed(1)} km` : `${Math.round(m / 1000)} km`);
 const fmtPres = hpa => (hpa == null ? '–' : US() ? `${(hpa * 0.02953).toFixed(2)} inHg` : `${Math.round(hpa)} hPa`);
 const compass = d => (d == null ? '' : ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'][Math.round((((d % 360) + 360) % 360) / 22.5) % 16]);
 
-const dtf = (tz, o) => new Intl.DateTimeFormat('en-US', { timeZone: tz, ...o });
+// Building Intl formatters is slow (especially on Safari), and renders use dozens: reuse them.
+const dtfCache = new Map();
+const dtf = (tz, o) => { const k = tz + JSON.stringify(o); let f = dtfCache.get(k); if (!f) dtfCache.set(k, f = new Intl.DateTimeFormat('en-US', { timeZone: tz, ...o })); return f; };
 const fmtTime = (d, tz) => dtf(tz, { hour: 'numeric', minute: '2-digit' }).format(d);
 const fmtHour = (d, tz) => dtf(tz, { hour: 'numeric' }).format(d);
 const fmtWkd = (d, tz) => dtf(tz, { weekday: 'short' }).format(d);
@@ -99,7 +103,7 @@ const fmtDayTime = (d, tz) => dtf(tz, { weekday: 'short', hour: 'numeric', minut
 const fmtStamp = (d, tz) => dtf(tz, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }).format(d);
 const ymd = (d, tz) => new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
 const ago = d => { const m = Math.round((Date.now() - d) / 60000); return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : `${Math.round(m / 60)} hr ago`; };
-const durHM = h => `${Math.floor(h)}h ${Math.round((h % 1) * 60)}m`;
+const durHM = h => { const t = Math.round(h * 60); return `${Math.floor(t / 60)}h ${t % 60}m`; };
 
 // ---------- Weather icons ----------
 function nwsEmoji(text = '', isDay = true) {
@@ -223,6 +227,14 @@ async function loadLocation(loc, force = false) {
   const key = `${lat.toFixed(3)},${lon.toFixed(3)}|${state.settings.units}`;
   const hit = state.cache.get(key);
   if (!force && hit && Date.now() - hit.at < CACHE_MS) return hit.view;
+  // Already loading this place (e.g. a background preload when you swipe to it)? Share that request.
+  if (!force && loading.has(key)) return loading.get(key);
+  const p = loadLocationFresh(loc, lat, lon, key);
+  loading.set(key, p);
+  try { return await p; } finally { if (loading.get(key) === p) loading.delete(key); }
+}
+const loading = new Map();
+async function loadLocationFresh(loc, lat, lon, key) {
 
   let view;
   let points = null, nwsFail = null;
@@ -256,32 +268,33 @@ async function loadUS(loc, lat, lon, points) {
   const office = P.cwa || P.gridId;
   const rl = P.relativeLocation?.properties || {};
   const unitQ = US() ? '' : '?units=si';
-  const [fc, hr, grid, alerts, om, aq, stations, afdList, summary, cfg] = await Promise.allSettled([
+  // Observation: first nearby station with a recent temperature (chained so it runs alongside the forecast requests).
+  const obsP = nws(P.observationStations).then(async j => {
+    for (const f of (j?.features || []).slice(0, 4)) {
+      try {
+        const p = (await nws(`/stations/${f.properties.stationIdentifier}/observations/latest`, 1)).properties;
+        if (p.temperature?.value != null && Date.now() - new Date(p.timestamp) < 2.5 * 3600e3) return { obs: p, station: f.properties };
+      } catch { /* try next station */ }
+    }
+    return null;
+  });
+  // Latest forecast discussion
+  const afdP = nws(`/products/types/AFD/locations/${office}`).then(async j => {
+    const latest = j?.['@graph']?.[0];
+    if (!latest) return null;
+    const prod = await nws(`/products/${latest.id}`);
+    return { id: latest.id, issued: new Date(prod.issuanceTime || latest.issuanceTime), text: prod.productText };
+  });
+  const [fc, hr, grid, alerts, om, aq, obsR, afdR, summary, cfg, tidesR] = await Promise.allSettled([
     nws(P.forecast + unitQ), nws(P.forecastHourly + unitQ), nws(P.forecastGridData),
     nws(`/alerts/active?point=${lat.toFixed(4)},${lon.toFixed(4)}`),
     retryJSON(omURL(lat, lon)), retryJSON(aqURL(lat, lon)),
-    nws(P.observationStations), nws(`/products/types/AFD/locations/${office}`),
+    obsP, afdP,
     getJSON(`summaries/${office}.json?t=${Date.now()}`, { cache: 'no-store' }),
     getJSON(`config.json?t=${Date.now()}`, { cache: 'no-store' }),
+    loadTides(lat, lon, tz),
   ]);
-
-  // Observation: first nearby station with a recent temperature
-  let obs = null, station = null;
-  const st = val(stations)?.features || [];
-  for (const f of st.slice(0, 4)) {
-    try {
-      const o = await nws(`/stations/${f.properties.stationIdentifier}/observations/latest`, 1);
-      const p = o.properties;
-      if (p.temperature?.value != null && Date.now() - new Date(p.timestamp) < 2.5 * 3600e3) { obs = p; station = f.properties; break; }
-    } catch { /* try next station */ }
-  }
-
-  // Latest forecast discussion
-  let afd = null;
-  const latest = val(afdList)?.['@graph']?.[0];
-  if (latest) {
-    try { const prod = await nws(`/products/${latest.id}`); afd = { id: latest.id, issued: new Date(prod.issuanceTime || latest.issuanceTime), text: prod.productText }; } catch { /* leave null */ }
-  }
+  const obs = val(obsR)?.obs || null, station = val(obsR)?.station || null, afd = val(afdR);
 
   const omv = val(om);
   const g = val(grid)?.properties || {};
@@ -336,7 +349,8 @@ async function loadUS(loc, lat, lon, points) {
     const gmax = maxBetween(gust, t0, t1);
     const pops = [d, n].filter(Boolean).map(x => x.probabilityOfPrecipitation?.value ?? 0);
     return {
-      name: d ? (/^(today|this)/i.test(d.name) ? 'Today' : d.name.slice(0, 3)) : (n.name.length > 9 ? n.name.slice(0, 3) : n.name),
+      // Weekday from the date, not the period name: NWS names holidays ("Thanksgiving Day", "Christmas Day").
+      name: d ? (/^(today|this)/i.test(d.name) ? 'Today' : fmtWkd(new Date(d.startTime), tz)) : (/^(tonight|overnight|this)/i.test(n.name) ? n.name.replace(/^This /, '') : fmtWkd(new Date(n.startTime), tz)),
       fullName: d ? d.name : n.name,
       hi: d ? `${d.temperature}°` : null, lo: n ? `${n.temperature}°` : null, hiN: d ? d.temperature : null, loN: n ? n.temperature : null,
       kind: iconKindText((d || n).shortForecast, !!d),
@@ -357,7 +371,7 @@ async function loadUS(loc, lat, lon, points) {
     cc: 'US', omv,
   };
   view.glance = glanceUS(view);
-  view.tides = await loadTides(lat, lon, tz).catch(() => null);
+  view.tides = val(tidesR);
   return view;
 }
 
@@ -615,7 +629,7 @@ function renderTabs() {
     // Long-press a tab to jump to the reorder/rename list.
     let t = null;
     const cancel = () => clearTimeout(t);
-    b.addEventListener('pointerdown', () => { t = setTimeout(() => { b.dataset.held = '1'; openSettings('locations'); }, 550); });
+    b.addEventListener('pointerdown', () => { delete b.dataset.held; t = setTimeout(() => { b.dataset.held = '1'; openSettings('locations'); }, 550); });
     ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => b.addEventListener(ev, cancel));
     b.addEventListener('contextmenu', e => e.preventDefault());
   });
@@ -732,7 +746,7 @@ function renderConditions(v) {
   return `<div class="ggrid">
     ${g('wind', 'Wind', windDial(n.windDir, sp, US() ? 'mph' : 'km/h'), `${n.windDir != null ? `From the ${compass(n.windDir)}` : ''}${n.gustKmh ? ` · gusts ${esc(fmtSpd(n.gustKmh))}` : ''}`)}
     ${g('sun', 'UV index', uv == null ? '<div class="gbig">–</div>' : arcGauge(uv / 11, [[0, '#4cc38a'], [.3, '#f5d547'], [.55, '#ff9f43'], [.8, '#ff5b5b'], [1, '#a463f2']], Math.round(uv), uvCat(uv)), n.uvMax != null ? `Peak today ${Math.round(n.uvMax)}` : '')}
-    ${g('leaf', 'Air quality', aqi == null ? '<div class="gbig">–</div>' : arcGauge(aqi / 300, [[0, '#4cc38a'], [.17, '#f5d547'], [.33, '#ff9f43'], [.5, '#ff5b5b'], [.67, '#a463f2'], [1, '#8b2c4a']], Math.round(aqi), aqi <= 50 ? 'Good' : aqi <= 100 ? 'Moderate' : 'Unhealthy'), aqiCat(aqi ?? 0) && aqi != null ? `U.S. AQI · ${aqiCat(aqi)}` : 'U.S. AQI')}
+    ${g('leaf', 'Air quality', aqi == null ? '<div class="gbig">–</div>' : arcGauge(aqi / 300, [[0, '#4cc38a'], [.17, '#f5d547'], [.33, '#ff9f43'], [.5, '#ff5b5b'], [.67, '#a463f2'], [1, '#8b2c4a']], Math.round(aqi), aqi <= 50 ? 'Good' : aqi <= 100 ? 'Moderate' : aqi <= 150 ? 'Sensitive' : 'Unhealthy'), aqiCat(aqi ?? 0) && aqi != null ? `U.S. AQI · ${aqiCat(aqi)}` : 'U.S. AQI')}
     ${g('drop', 'Humidity', `<div class="gbig">${n.rh != null ? Math.round(n.rh) + '%' : '–'}</div>${n.rh != null ? barMeter(n.rh / 100, ['#f3c27a', '#7fd6c2', '#4aa3ff']) : ''}`, n.dewC != null ? `Dew point ${fmtT(n.dewC)}` : '')}
     ${g('gauge', 'Pressure', n.presHpa == null ? '<div class="gbig">–</div>' : arcGauge((n.presHpa - 985) / 55, [[0, '#7aa2ff'], [.5, '#c9d6e8'], [1, '#ffcf7a']], presTxt, US() ? 'inHg' : 'hPa'), n.presHpa != null ? (n.presHpa < 1005 ? 'Low — unsettled' : n.presHpa > 1022 ? 'High — settled' : 'Near normal') : '')}
     ${g('eye', 'Visibility', `<div class="gbig">${esc(fmtVis(n.visM))}</div>${visMi != null ? barMeter(Math.min(visMi, 10) / 10, ['#9aa7b8', '#cfe3f5']) : ''}`, visWord)}
@@ -787,7 +801,7 @@ function render(v, loc) {
   html.push(`<section class="card">${hdr('radar', 'Radar', '<span id="radarSrc"></span>')}
     <div id="radar"></div>
     <div class="radar-ctl">
-      <button class="btn" id="rPlay" aria-label="Play or pause">▶︎</button>
+      <button class="btn" id="rPlay" aria-label="Play radar animation">▶︎</button>
       <input type="range" id="rSlide" min="0" max="0" value="0" aria-label="Radar time">
       <span class="radar-label" id="rLabel">Loading…</span>
       ${v.kind === 'us' ? '<div class="seg" id="rMode"><button type="button" data-m="past" aria-pressed="true">Past hour</button><button type="button" data-m="future" aria-pressed="false">Next 12 h</button></div>' : ''}
@@ -860,7 +874,7 @@ function setupSwipe() {
   }, { passive: true });
   main.addEventListener('touchcancel', () => { t0 = null; }, { passive: true });
   document.addEventListener('keydown', e => {
-    if (e.target.closest('input, textarea, select, dialog') || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.target.closest('input, textarea, select, dialog, .leaflet-container') || e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.key === 'ArrowRight') stepPlace(1); else if (e.key === 'ArrowLeft') stepPlace(-1);
   });
 }
@@ -1026,10 +1040,23 @@ function mergeSync(base, local, remote) {
     const v = first ? (remote.labels[k] || local.labels[k]) : local.labels[k] !== base.labels[k] ? local.labels[k] : remote.labels[k];
     if (v) labels[k] = v;
   }
-  // Groups: if this device changed them since the last shared copy, this device's version wins; otherwise the shared one.
-  const gs = x => JSON.stringify(x.groups || []);
+  // Groups merge one by one, like places: a group added, deleted, renamed or re-membered on this device since the
+  // last shared copy keeps this device's version; everything else comes from the shared copy.
   // (A shared copy written by an older version of the app has no groups at all: keep this device's.)
-  const groups = cleanGroups(!remote.hasGroups || (first && !remote.groups.length) ? local.groups : first ? remote.groups : gs(local) !== gs(base) ? local.groups : remote.groups, saved.map(l => l.id));
+  let groups;
+  if (!remote.hasGroups || (first && !remote.groups.length)) groups = local.groups;
+  else if (first) groups = remote.groups;
+  else {
+    const GB = new Map(base.groups.map(g => [g.id, g])), GL = new Map(local.groups.map(g => [g.id, g])), GR = new Set(remote.groups.map(g => g.id));
+    groups = [];
+    for (const r of remote.groups) {
+      if (GB.has(r.id) && !GL.has(r.id)) continue; // deleted here
+      const l = GL.get(r.id), b = GB.get(r.id);
+      groups.push(l && b && JSON.stringify(l) !== JSON.stringify(b) ? l : r);
+    }
+    for (const l of local.groups) if (!GR.has(l.id) && !GB.has(l.id)) groups.push(l); // added here
+  }
+  groups = cleanGroups(groups, saved.map(l => l.id));
   return { saved, order, labels, groups };
 }
 function applySync(d) {
@@ -1039,7 +1066,12 @@ function applySync(d) {
     store.set('wx.saved', d.saved); store.set('wx.order', d.order); store.set('wx.labels', d.labels); store.set('wx.groups', state.groups);
   } finally { sync.applying = false; }
   if (!locById(state.active)) go('home'); else renderTabs();
-  if ($('#dlgSettings').open && !$('#savedList input.ren')) renderSaved();
+  if ($('#dlgSettings').open && !$('#savedList input.ren') && !$('#savedList li.dragging')) renderSaved();
+}
+// fetch() with a time limit, so a hung request can't block syncing until the page is reloaded.
+async function fetchT(url, opts = {}, ms = 15000) {
+  const ctrl = new AbortController(), t = setTimeout(() => ctrl.abort(), ms);
+  try { return await fetch(url, { ...opts, signal: ctrl.signal }); } finally { clearTimeout(t); }
 }
 async function fetchSync() {
   // The GitHub API is up to date within seconds and gives the file's sha (needed to write); Pages lags a few minutes.
@@ -1047,7 +1079,7 @@ async function fetchSync() {
     try {
       const h = { Accept: 'application/vnd.github+json' };
       if (tok) h.Authorization = `Bearer ${tok}`;
-      const r = await fetch(`${GH_API}/repos/${REPO}/contents/${SYNC_FILE}?ref=main&t=${Date.now()}`, { headers: h, cache: 'no-store' });
+      const r = await fetchT(`${GH_API}/repos/${REPO}/contents/${SYNC_FILE}?ref=main&t=${Date.now()}`, { headers: h, cache: 'no-store' });
       if (r.status === 404) return { missing: true };
       if (r.ok) { const j = await r.json(); return { data: cleanSync(JSON.parse(b64dec(j.content))), sha: j.sha }; }
     } catch { /* try the next way */ }
@@ -1062,8 +1094,12 @@ async function syncNow() {
     for (let attempt = 0; attempt < 3; attempt++) {
       const rem = await fetchSync();
       if (!rem) return setSyncStatus('offline');
-      const remote = rem.missing ? cleanSync(EMPTY_SYNC) : rem.data;
       const base = store.get('wx.syncBase', null);
+      // The GitHub Pages copy (used when the API is unavailable) lags behind; never merge one older than what we last saw.
+      if (!rem.missing && !rem.sha && base && (rem.data.updated || '') < (base.updated || '')) return setSyncStatus('offline');
+      // Shared file missing (deleted, or a one-off 404)? Merge against our last copy so nothing is treated as deleted;
+      // a device with GitHub access then recreates the file.
+      const remote = rem.missing ? cleanSync(base || EMPTY_SYNC) : rem.data;
       const merged = mergeSync(base && cleanSync(base), localSync(), remote);
       if (!sameSync(merged, localSync())) applySync(merged);
       if (!rem.missing) store.set('wx.syncBase', remote);
@@ -1072,7 +1108,7 @@ async function syncNow() {
       if (!ghToken()) return setSyncStatus('local');
       if (!rem.missing && !rem.sha) return setSyncStatus('offline');
       const body = { ...merged, updated: new Date().toISOString() };
-      const r = await fetch(`${GH_API}/repos/${REPO}/contents/${SYNC_FILE}`, {
+      const r = await fetchT(`${GH_API}/repos/${REPO}/contents/${SYNC_FILE}`, {
         method: 'PUT',
         headers: { Authorization: `Bearer ${ghToken()}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
         body: JSON.stringify({ message: 'Sync saved locations', content: b64enc(`${JSON.stringify(body, null, 2)}\n`), branch: 'main', ...(rem.sha ? { sha: rem.sha } : {}) }),
@@ -1180,7 +1216,8 @@ async function acis(method, params, timeout = 20000) {
     return j;
   } finally { clearTimeout(t); }
 }
-const acisNum = x => { const a = Array.isArray(x) ? x[0] : x; if (a == null || a === 'M' || a === 'S' || a === '') return null; if (a === 'T') return 0; const n = parseFloat(a); return Number.isFinite(n) ? n : null; };
+// 'M' missing; 'T' trace; 'S' = included in a later multi-day total marked with an 'A' suffix (so 0 for that day).
+const acisNum = x => { const a = Array.isArray(x) ? x[0] : x; if (a == null || a === 'M' || a === '') return null; if (a === 'T' || a === 'S') return 0; const n = parseFloat(a); return Number.isFinite(n) ? n : null; };
 const acisDate = x => (Array.isArray(x) && typeof x[1] === 'string' && /^\d{4}-\d\d-\d\d/.test(x[1]) ? x[1] : null);
 const isoDay = (tz, d = new Date()) => { const p = Object.fromEntries(dtf(tz, { year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(d).map(x => [x.type, x.value])); return `${p.year}-${p.month}-${p.day}`; };
 const isoAdd = (iso, days) => new Date(Date.parse(iso + 'T12:00:00Z') + days * 864e5).toISOString().slice(0, 10);
@@ -1269,7 +1306,7 @@ async function climateRecords(st, today) {
     const one = name => acis('StnData', { sid: st.sid, sdate, edate: today, elems: [{ name, interval: [1, 0, 0], duration: 'dly' }] }).then(j => j.data || []);
     const norm = name => acis('StnData', { sid: st.sid, sdate: today, edate: today, elems: [{ name, normal: '1' }] }).then(j => acisNum(j.data?.[0]?.[1])).catch(() => null);
     const r = await Promise.allSettled([one('maxt'), one('mint'), one('pcpn'), norm('maxt'), norm('mint')]);
-    const ext = (rows, hi) => { let b = null; for (const [d, x] of rows || []) { if (d.slice(5) !== mmdd || d === today) continue; const n = acisNum(x); if (n != null && (b == null || (hi ? n > b.v : n < b.v))) b = { v: n, years: [d.slice(0, 4)] }; else if (n != null && b && n === b.v) b.years.push(d.slice(0, 4)); } return b; };
+    const ext = (rows, hi) => { let b = null; for (const [d, x] of rows || []) { if (d.slice(5) !== mmdd || d === today) continue; const n = /A$/.test(x) ? null : acisNum(x); if (n != null && (b == null || (hi ? n > b.v : n < b.v))) b = { v: n, years: [d.slice(0, 4)] }; else if (n != null && b && n === b.v) b.years.push(d.slice(0, 4)); } return b; };
     if (r[0].status === 'fulfilled' || r[1].status === 'fulfilled') {
       out.day = { date: today, hi: ext(val(r[0]), true), lo: ext(val(r[1]), false), wet: ext(val(r[2]), true), nHi: val(r[3]), nLo: val(r[4]) };
       if (out.day.wet && out.day.wet.v <= 0) out.day.wet = null;
@@ -1408,18 +1445,23 @@ async function setupRadar(v) {
 async function loadFrames(mode) {
   const R = state.radar;
   if (!R) return;
+  const req = R.req = (R.req || 0) + 1; // a newer tap (or another location) makes this load stale
   pause();
   R.layers.forEach(l => l && state.map.removeLayer(l));
   R.layers = []; R.frames = []; R.mode = mode; R.i = 0;
   $('#rLabel').textContent = 'Loading…';
+  let frames;
   try {
-    R.frames = R.v.kind === 'us' ? (mode === 'past' ? usPastFrames() : await usFutureFrames()) : await rvFrames();
+    frames = R.v.kind === 'us' ? (mode === 'past' ? usPastFrames() : await usFutureFrames()) : await rvFrames();
   } catch (e) {
+    if (state.radar !== R || R.req !== req) return;
     $('#rLabel').textContent = 'Radar unavailable';
     $('#radarNote').textContent = 'Radar frames could not be loaded. Use the links below.';
     return;
   }
-  if (state.radar !== R) return;
+  if (state.radar !== R || R.req !== req) return;
+  R.layers.forEach(l => l && state.map.removeLayer(l));
+  R.frames = frames;
   R.layers = R.frames.map(() => null);
   smoothRadar();
   const sl = $('#rSlide'); sl.max = R.frames.length - 1;
@@ -1477,7 +1519,7 @@ function showFrame(i) {
 function play() {
   const R = state.radar;
   if (!R || R.timer || R.frames.length < 2) return;
-  $('#rPlay').textContent = '❚❚';
+  $('#rPlay').textContent = '❚❚'; $('#rPlay').setAttribute('aria-label', 'Pause radar animation');
   R.timer = setInterval(() => {
     const next = (R.i + 1) % R.frames.length;
     showFrame(next);
@@ -1488,7 +1530,7 @@ function pause() {
   const R = state.radar;
   if (!R) return;
   clearInterval(R.timer); clearTimeout(R.timer); R.timer = null;
-  const b = $('#rPlay'); if (b) b.textContent = '▶︎';
+  const b = $('#rPlay'); if (b) { b.textContent = '▶︎'; b.setAttribute('aria-label', 'Play radar animation'); }
 }
 function usPastFrames() {
   const tz = state.radar.v.tz;
@@ -1561,8 +1603,9 @@ function openAdd() {
   d.showModal();
   setTimeout(() => $('#addQuery').focus(), 50);
 }
+let searchSeq = 0;
 async function doSearch(q) {
-  const out = $('#addResults');
+  const out = $('#addResults'), seq = ++searchSeq;
   q = q.trim();
   if (q.length < 2) { out.innerHTML = ''; return; }
   const ll = /^\s*(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)\s*$/.exec(q);
@@ -1574,9 +1617,10 @@ async function doSearch(q) {
     try {
       const zip = /^\d{5}$/.test(q) ? '&countryCode=US' : '';
       const j = await getJSON(`${OM_GEO}?name=${encodeURIComponent(q)}&count=8&language=en&format=json${zip}`);
+      if (seq !== searchSeq) return; // a newer search has started
       const rs = j.results || [];
       out.innerHTML = rs.length ? rs.map(r => `<li><button data-lat="${r.latitude}" data-lon="${r.longitude}" data-name="${esc(r.name)}" data-cc="${esc(r.country_code || '')}" data-admin="${esc(r.admin1 || '')}" data-country="${esc(r.country || '')}">${esc(r.name)}<span class="r2">${esc([r.admin1, r.country].filter(Boolean).join(', '))}</span></button></li>`).join('') : '<li class="fine" style="padding:8px 4px">No matches. Try a nearby city, or enter coordinates like 48.85, 2.35.</li>';
-    } catch { out.innerHTML = '<li class="fine" style="padding:8px 4px">Search failed — check your connection.</li>'; }
+    } catch { if (seq === searchSeq) out.innerHTML = '<li class="fine" style="padding:8px 4px">Search failed — check your connection.</li>'; return; }
   }
   out.querySelectorAll('button').forEach(b => b.onclick = () => {
     const ds = b.dataset;
@@ -1737,7 +1781,7 @@ function renderSaved() {
             if (v && v !== DEFAULT_LABEL[id]) state.labels[id] = v; else delete state.labels[id];
             store.set('wx.labels', state.labels);
           } else if (v) {
-            const s = state.saved.find(x => x.id === id); s.name = v; store.set('wx.saved', state.saved);
+            const s = state.saved.find(x => x.id === id); if (s) { s.name = v; store.set('wx.saved', state.saved); }
           }
           refresh();
         };
@@ -1790,13 +1834,14 @@ function boot() {
     $('#unitSeg').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
     show(false);
   });
-  $('#dlgSettings').addEventListener('close', () => show(false));
+  $('#dlgSettings').addEventListener('close', () => show(isCached(placeById(state.active)) ? 'swap' : false));
   window.addEventListener('hashchange', () => { const id = location.hash.slice(1); if (id && id !== state.active) go(id); });
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
-      if (Date.now() - sync.last > 30e3) syncNow();
-      const hit = [...state.cache.values()].pop();
-      if (!hit || Date.now() - hit.at > 10 * 60e3) show(true);
+      if (Date.now() - sync.last > 3 * 60e3) syncNow(); // GitHub allows ~60 unauthenticated requests/hour
+      // Refresh the place on screen if its data is over 10 minutes old, keeping the current page up while it loads.
+      const l = placeById(state.active), hit = l && l.kind !== 'gps' && state.cache.get(`${l.lat.toFixed(3)},${l.lon.toFixed(3)}|${state.settings.units}`);
+      if (!hit || Date.now() - hit.at > 10 * 60e3) show('quiet');
     }
   });
   setupSwipe();

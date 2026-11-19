@@ -17,6 +17,7 @@ import re
 import sys
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'discussions')
@@ -26,18 +27,23 @@ TZ = {'HST': -10, 'HDT': -9, 'AKST': -9, 'AKDT': -8, 'PST': -8, 'PDT': -7, 'MST'
 MONTHS = {m: i + 1 for i, m in enumerate('JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC'.split())}
 
 
-def get(url, as_json=True, tries=3):
+def get(url, as_json=True, tries=2):
     err = None
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/geo+json' if as_json else 'text/plain'})
-            with urllib.request.urlopen(req, timeout=30) as r:
+            with urllib.request.urlopen(req, timeout=15) as r:
                 body = r.read().decode('utf-8', 'replace')
             return json.loads(body) if as_json else body
         except Exception as e:  # noqa: BLE001 — retry any network/parse error
             err = e
-            time.sleep(2 * (i + 1))
+            if i < tries - 1:
+                time.sleep(2)
     raise err
+
+
+def looks_like_afd(text):
+    return bool(text and text.strip()) and 'area forecast discussion' in text.lower()
 
 
 def iso(d):
@@ -62,13 +68,15 @@ def from_nws(office):
         raise RuntimeError('api.weather.gov lists no discussions')
     p = get(f"https://api.weather.gov/products/{items[0]['id']}")
     issued = dt.datetime.fromisoformat(p['issuanceTime'].replace('Z', '+00:00'))
+    if not looks_like_afd(p.get('productText')):
+        raise RuntimeError('api.weather.gov returned an empty or unexpected product')
     return {'source': 'api.weather.gov', 'product_id': p.get('id'), 'issued': issued, 'text': p['productText']}
 
 
 def from_iem(office):
     text = get(f'https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=AFD{office}&fmt=text&limit=1&order=desc', as_json=False)
     issued = issued_from_text(text)
-    if not issued or 'Area Forecast Discussion' not in text:
+    if not issued or not looks_like_afd(text):
         raise RuntimeError('IEM returned no parsable discussion')
     return {'source': 'mesonet.agron.iastate.edu', 'product_id': None, 'issued': issued, 'text': text.strip() + '\n'}
 
@@ -94,7 +102,8 @@ def save(office):
             old = json.load(f)
     except (OSError, ValueError):
         old = {}
-    if old.get('issued') == iso(best['issued']):
+    # Only move forward: never replace a saved discussion with an older one (e.g. one source lagging while the other is down).
+    if old.get('issued') and iso(best['issued']) <= old['issued']:
         return False, old['issued']
     doc = {
         'office': office,
@@ -115,24 +124,40 @@ def save(office):
 def main(argv):
     with open(os.path.join(ROOT, 'config.json')) as f:
         offices = argv or json.load(f).get('summary_offices', [])
-    changed, failed = [], []
+    valid = []
     for office in offices:
         office = office.strip().upper()
-        if not re.fullmatch(r'[A-Z]{3}', office):
+        if re.fullmatch(r'[A-Z]{3}', office):
+            valid.append(office)
+        else:
             print(f'::warning::Skipping invalid office ID {office!r}')
-            continue
+
+    def run(office):
         try:
-            new, issued = save(office)
+            return office, save(office), None
+        except Exception as e:  # noqa: BLE001
+            return office, None, e
+
+    # Offices in parallel, so one slow source can't push the job past its time limit.
+    changed, failed = [], []
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        for office, res, err in pool.map(run, valid):
+            if err:
+                print(f'::warning::{office}: {err}')
+                failed.append(office)
+                continue
+            new, issued = res
             print(f"{office}: {'saved new discussion' if new else 'unchanged'} (issued {issued})")
             if new:
                 changed.append(office)
-        except Exception as e:  # noqa: BLE001
-            print(f'::error::{office}: {e}')
-            failed.append(office)
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
             f.write(f"changed={' '.join(changed)}\n")
-    return 1 if failed else 0
+    # A brief outage for one office isn't worth a failed run (and an email); fail only if every office failed.
+    if valid and len(failed) == len(valid):
+        print('::error::Could not fetch a discussion for any office')
+        return 1
+    return 0
 
 
 if __name__ == '__main__':

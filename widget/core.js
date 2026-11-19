@@ -50,8 +50,11 @@ function text(stack, str, font, opacity = 1, color = Color.white()) {
   t.minimumScaleFactor = 0.6; t.lineLimit = 1;
   return t;
 }
-const hourLabel = d => d.toLocaleTimeString('en-US', { hour: 'numeric' }).replace(':00', '').replace(' ', '');
-const dayLabel = (d, i) => (i === 0 ? 'Today' : d.toLocaleDateString('en-US', { weekday: 'short' }));
+// Times are shown in the place's own time zone (set once its data loads), not the phone's.
+let PLACE_TZ;
+const hourLabel = d => d.toLocaleTimeString('en-US', { hour: 'numeric', timeZone: PLACE_TZ }).replace(':00', '').replace(' ', '');
+const dayLabel = (d, i) => (i === 0 ? 'Today' : d.toLocaleDateString('en-US', { weekday: 'short', timeZone: PLACE_TZ }));
+const dayKey = d => d.toLocaleDateString('en-CA', { timeZone: PLACE_TZ });
 
 // ---------- Data ----------
 async function resolvePlace(param) {
@@ -88,7 +91,7 @@ async function pointInfo(place) {
   const P = (await getJSON(`https://api.weather.gov/points/${place.lat.toFixed(4)},${place.lon.toFixed(4)}`)).properties;
   const st = await soft(getJSON(P.observationStations, UA, 6));
   const rl = P.relativeLocation && P.relativeLocation.properties;
-  const c = { at: Date.now(), forecast: P.forecast, hourly: P.forecastHourly, cwa: P.cwa, city: rl ? rl.city : null,
+  const c = { at: Date.now(), forecast: P.forecast, hourly: P.forecastHourly, cwa: P.cwa, city: rl ? rl.city : null, tz: P.timeZone,
     stations: st && st.features ? st.features.slice(0, 2).map(f => f.properties.stationIdentifier) : [] };
   fm.writeString(path, JSON.stringify(c));
   return c;
@@ -96,6 +99,7 @@ async function pointInfo(place) {
 
 async function load(place) {
   const P = await pointInfo(place);
+  PLACE_TZ = P.tz || undefined;
   const ll = `${place.lat.toFixed(4)},${place.lon.toFixed(4)}`;
   // Everything in parallel; only the two forecasts are required.
   const [fc, hr, o1, o2, al, summary] = await Promise.all([
@@ -129,7 +133,7 @@ async function load(place) {
     hi: days[0] ? days[0].hi : null, lo: days[0] ? (days[0].lo != null ? days[0].lo : days[1] && days[1].lo) : null,
     rain: rainLine(hourly),
     alert: al && al.features && al.features[0] ? al.features[0].properties.event : null,
-    headline: summary && summary.headline, at: Date.now(),
+    headline: summary && summary.headline, at: Date.now(), tz: P.tz || null,
   };
 }
 
@@ -144,7 +148,13 @@ async function getData(place) {
     if (!fm.fileExists(path)) return null;
     const d = JSON.parse(fm.readString(path));
     d.hourly.forEach(h => (h.t = new Date(h.t))); d.days.forEach(x => (x.t = new Date(x.t)));
+    PLACE_TZ = d.tz || undefined;
     d.hourly = d.hourly.filter(h => +h.t + 3600e3 > Date.now());
+    // Drop days that are already over, so an old forecast isn't shown as "Today".
+    const today = dayKey(new Date());
+    d.days = d.days.filter(x => dayKey(x.t) >= today);
+    d.hi = d.days[0] ? d.days[0].hi : null;
+    d.lo = d.days[0] ? (d.days[0].lo != null ? d.days[0].lo : d.days[1] && d.days[1].lo) : null;
     d.rain = rainLine(d.hourly);
     d.stale = true;
     return d;

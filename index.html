@@ -17,10 +17,10 @@
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link rel="stylesheet" id="font-satoshi" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="style.css?v=20261119g">
-<link rel="stylesheet" href="themes.css?v=20261119g">
-<link rel="stylesheet" href="fonts.css?v=20261119g">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="style.css?v=20261120a">
+<link rel="stylesheet" href="themes.css?v=20261120a">
+<link rel="stylesheet" href="fonts.css?v=20261120a">
 <script>
   // Fixed look: Live sky theme with the Satoshi font. Clear choices saved by the old pickers.
   document.documentElement.dataset.theme = 'sky';
@@ -35,7 +35,7 @@
   <button id="btnSettings" class="iconbtn" aria-label="Settings" title="Settings">⚙︎</button>
 </header>
 
-<main id="main" aria-live="polite"></main>
+<main id="main"></main>
 
 <dialog id="dlgAdd" class="sheet">
   <form method="dialog" class="sheet-head">
@@ -83,9 +83,9 @@
   <p class="fine">Data: National Weather Service (api.weather.gov) for U.S. forecasts, observations, alerts and forecast discussions; Open-Meteo for international forecasts, UV and air quality; NOAA Tides &amp; Currents; Iowa Environmental Mesonet for U.S. radar and HRRR future radar; RainViewer for international radar. Plain-English discussion summaries are written by Claude on a schedule and may lag the newest NWS issuance.</p>
 </dialog>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="icons.js?v=20261119g"></script>
-<script src="fx.js?v=20261119g"></script>
-<script src="app.js?v=20261119g"></script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="icons.js?v=20261120a"></script>
+<script src="fx.js?v=20261120a"></script>
+<script src="app.js?v=20261120a"></script>
 </body>
 </html>

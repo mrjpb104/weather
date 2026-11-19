@@ -45,7 +45,13 @@ jobs:
           INPUT_COORDS: ${{ inputs.coords }}
         run: python3 scripts/enable_office.py
       - name: Commit
-        run: scripts/commit.sh "Turn on summaries for ${{ steps.add.outputs.office }} (${{ steps.add.outputs.name }})"
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          INPUT_OFFICE: ${{ inputs.office }}
+          INPUT_LOCATION: ${{ inputs.location }}
+          INPUT_COORDS: ${{ inputs.coords }}
+        run: scripts/commit.sh "Turn on summaries for ${{ steps.add.outputs.office }} (${{ steps.add.outputs.name }})" "python3 scripts/enable_office.py"
       - name: Close the request
         if: github.event_name == 'issues'
         env:

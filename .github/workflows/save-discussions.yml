@@ -4,7 +4,7 @@ name: Save forecast discussions
 
 on:
   schedule:
-    - cron: '5 * * * *'   # hourly at :05 UTC (the summary task runs at :24)
+    - cron: '7,27,47 * * * *'   # three times an hour (GitHub often starts scheduled runs late; commits only when something changed)
   workflow_dispatch:
   push:
     branches: [main]
@@ -28,4 +28,4 @@ jobs:
         run: python3 scripts/save_discussions.py
       - name: Commit any new discussions
         if: ${{ !cancelled() && steps.fetch.outputs.changed != '' }}
-        run: scripts/commit.sh "Save forecast discussions (${{ steps.fetch.outputs.changed }})"
+        run: scripts/commit.sh "Save forecast discussions (${{ steps.fetch.outputs.changed }})" "python3 scripts/save_discussions.py ${{ steps.fetch.outputs.changed }}"
