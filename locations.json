@@ -53,6 +53,15 @@
       "cc": "US",
       "admin": "CA",
       "country": "United States"
+    },
+    {
+      "id": "loc-mwn6kehi",
+      "name": "Mammoth Lakes",
+      "lat": 37.65,
+      "lon": -119.03,
+      "cc": "US",
+      "admin": "CA",
+      "country": "United States"
     }
   ],
   "order": [
@@ -60,7 +69,8 @@
     "g-mwn3m489",
     "g-mwn3uv5l",
     "loc-mwk12vk8",
-    "loc-mwk6jjfn"
+    "loc-mwk6jjfn",
+    "g-mwn6kehk"
   ],
   "labels": {},
   "groups": [
@@ -80,7 +90,14 @@
         "loc-mwn3zlma",
         "loc-mwn41z7y"
       ]
+    },
+    {
+      "id": "g-mwn6kehk",
+      "name": "Mammoth",
+      "members": [
+        "loc-mwn6kehi"
+      ]
     }
   ],
-  "updated": "2026-11-19T05:30:23.231Z"
+  "updated": "2026-11-19T06:39:58.504Z"
 }
