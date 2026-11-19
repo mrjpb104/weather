@@ -256,7 +256,7 @@ function omURL(lat, lon) {
   const p = new URLSearchParams({
     latitude: lat.toFixed(4), longitude: lon.toFixed(4), timezone: 'auto', timeformat: 'unixtime', forecast_days: '8',
     current: 'temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,cloud_cover,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m,dew_point_2m,visibility,uv_index',
-    hourly: 'temperature_2m,precipitation_probability,precipitation,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,is_day',
+    hourly: 'temperature_2m,precipitation_probability,precipitation,snowfall,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,is_day',
     daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,uv_index_max',
   });
   return `${OM}?${p}`;
@@ -299,7 +299,7 @@ async function loadUS(loc, lat, lon, points) {
 
   const omv = val(om);
   const g = val(grid)?.properties || {};
-  const qpf = series(g.quantitativePrecipitation), gust = series(g.windGust);
+  const qpf = series(g.quantitativePrecipitation), gust = series(g.windGust), snowAmt = series(g.snowfallAmount);
   const periods = val(fc)?.properties?.periods || [];
   const hourly = (val(hr)?.properties?.periods || []).filter(p => new Date(p.endTime) > Date.now()).slice(0, 24).map(p => ({
     t: new Date(p.startTime), temp: p.temperature, pop: p.probabilityOfPrecipitation?.value ?? 0,
@@ -368,6 +368,7 @@ async function loadUS(loc, lat, lon, points) {
     alerts: (val(alerts)?.features || []).map(f => f.properties),
     afd, summary: val(summary), summaryOffices: val(cfg)?.summary_offices || null, sun: sunInfo(lat, lon, tz), moon: moonInfo(),
     qpf24: sumBetween(qpf, new Date(), new Date(Date.now() + 24 * 3600e3)),
+    snow24: sumBetween(snowAmt, new Date(), new Date(Date.now() + 24 * 3600e3)),
     gust24: maxBetween(gust, new Date(), new Date(Date.now() + 24 * 3600e3)),
     cc: 'US', omv,
   };
@@ -411,7 +412,7 @@ async function loadIntl(loc, lat, lon) {
     const t = new Date(H.time[i] * 1000);
     if (+t + 3600e3 <= Date.now()) continue;
     const w = wmo(H.weather_code[i], H.is_day[i]);
-    hourly.push({ t, temp: Math.round(T(H.temperature_2m[i])), pop: H.precipitation_probability[i] ?? 0, emoji: w.emoji, kind: iconKindWMO(H.weather_code[i], H.is_day[i]), text: w.text, gustKmh: H.wind_gusts_10m[i], precipMm: H.precipitation[i] });
+    hourly.push({ t, temp: Math.round(T(H.temperature_2m[i])), pop: H.precipitation_probability[i] ?? 0, emoji: w.emoji, kind: iconKindWMO(H.weather_code[i], H.is_day[i]), text: w.text, gustKmh: H.wind_gusts_10m[i], precipMm: H.precipitation[i], snowMm: H.snowfall?.[i] != null ? H.snowfall[i] * 10 : null });
   }
   const D = o.daily;
   const days = D.time.map((ts, i) => {
@@ -445,6 +446,7 @@ async function loadIntl(loc, lat, lon) {
     kind: 'intl', name: loc.name, sub, lat, lon, tz, cc,
     now, hourly, days, alerts: [], sun: sunInfo(lat, lon, tz), moon: moonInfo(), omv: o,
     qpf24: hourly.reduce((a, h) => a + (h.precipMm || 0), 0),
+    snow24: hourly.some(h => h.snowMm != null) ? hourly.reduce((a, h) => a + (h.snowMm || 0), 0) : null,
     gust24: (() => { let b = null; hourly.forEach(h => { if (h.gustKmh != null && (!b || h.gustKmh > b.value)) b = { value: h.gustKmh, start: h.t }; }); return b; })(),
   };
   view.glance = glanceIntl(view);
@@ -462,23 +464,52 @@ function intlDayText(d) {
 
 // ---------- Plain-English "next 24 hours" ----------
 const whenH = (d, tz) => (ymd(d, tz) === ymd(new Date(), tz) ? fmtHour(d, tz) : `${fmtWkd(d, tz)} ${fmtHour(d, tz)}`);
-function rainSentence(hourly, tz, qpf24) {
+// Snow depth (mm): whole inches / centimetres once it's more than a dusting.
+const fmtSnow = mm => {
+  if (US()) { const i = mm / 25.4; return `${i < 2 ? i.toFixed(1) : Math.round(i)} in`; }
+  const c = mm / 10; return `${c < 2 ? c.toFixed(1) : Math.round(c)} cm`;
+};
+// What's falling, from the forecast wording of the wet hours (NWS shortForecast or the WMO text).
+function precipKind(hours) {
+  let snow = false, rain = false, ice = false, first = null;
+  for (const h of hours) {
+    const t = (h.text || '').toLowerCase();
+    const s = /snow|flurr|blizzard/.test(t);
+    const i = /sleet|freezing|ice pellet|wintry/.test(t);
+    const r = /rain|drizzle|shower|thunder/.test(t.replace(/freezing (rain|drizzle)|snow showers?/g, ''));
+    if (!first && (s || r)) first = s && r ? (t.search(/snow|flurr|blizzard/) < t.search(/rain|drizzle|shower|thunder/) ? 'snow' : 'rain') : s ? 'snow' : 'rain';
+    snow ||= s; rain ||= r; ice ||= i;
+  }
+  if (ice) return { snow, label: 'A wintry mix', verb: 'is', emoji: '🌨️' };
+  if (snow && rain) return { snow, label: first === 'snow' ? 'Snow and rain' : 'Rain and snow', verb: 'are', emoji: '🌨️' };
+  if (snow) return { snow, only: true, label: 'Snow', verb: 'is', emoji: '❄️' };
+  if (rain) return { label: 'Rain', verb: 'is', emoji: '🌧️' };
+  return { label: 'Precipitation', verb: 'is', emoji: '🌧️' };
+}
+function rainSentence(hourly, tz, qpf24, snow24) {
   if (!hourly.length) return null;
   const maxPop = Math.max(...hourly.map(h => h.pop || 0));
   const idx = hourly.findIndex(h => h.pop >= 40);
-  const amt = qpf24 != null && qpf24 >= 0.25 ? ` Expected total: about ${fmtLen(qpf24)}.` : '';
+  const wetHours = idx < 0 ? hourly.filter(h => h.pop >= 15) : hourly.filter(h => h.pop >= 40);
+  const k = precipKind(wetHours);
+  const qpf = qpf24 != null && qpf24 >= 0.25 ? fmtLen(qpf24) : null;
+  // Liquid totals (QPF) include melted snow, so for snow lead with the snowfall itself.
+  let amt = '';
+  if (k.snow && snow24 != null && snow24 >= 2.5) amt = k.only ? ` Expected snowfall: about ${fmtSnow(snow24)}.` : ` Expected: about ${fmtSnow(snow24)} of snow${qpf ? ` (${qpf} total precipitation, melted)` : ''}.`;
+  else if (qpf) amt = k.label === 'Rain' ? ` Expected total: about ${qpf}.` : ` Expected total: about ${qpf} (melted).`;
   if (idx < 0) {
     if (maxPop < 15) return ['☀️', 'No rain expected in the next 24 hours.'];
     const pk = hourly.find(h => h.pop === maxPop);
-    return ['🌂', `Small chance of a shower (up to ${maxPop}% around ${whenH(pk.t, tz)}).${amt}`];
+    const what = k.snow && !k.only ? 'rain or snow' : k.only ? 'snow' : k.label === 'A wintry mix' ? 'a wintry mix' : 'a shower';
+    return ['🌂', `Small chance of ${what} (up to ${maxPop}% around ${whenH(pk.t, tz)}).${amt}`];
   }
   let end = idx;
   while (end + 1 < hourly.length && hourly[end + 1].pop >= 40) end++;
   const peak = hourly.slice(idx, end + 1).reduce((a, h) => (h.pop > a.pop ? h : a));
   const thunder = hourly.slice(idx, end + 1).some(h => /thunder/i.test(h.text));
   const endTxt = end + 1 < hourly.length ? ` until about ${whenH(new Date(+hourly[end].t + 3600e3), tz)}` : ' through at least the next day';
-  const startTxt = idx === 0 ? 'Rain is likely now' : `Rain likely starting around ${whenH(hourly[idx].t, tz)}`;
-  return ['🌧️', `${startTxt}${endTxt} (peak chance ${peak.pop}%)${thunder ? ', with a chance of thunder' : ''}.${amt}`];
+  const startTxt = idx === 0 ? `${k.label} ${k.verb} likely now` : `${k.label} likely starting around ${whenH(hourly[idx].t, tz)}`;
+  return [k.emoji, `${startTxt}${endTxt} (peak chance ${peak.pop}%)${thunder ? ', with a chance of thunder' : ''}.${amt}`];
 }
 function glanceCommon(v) {
   const out = [];
@@ -774,7 +805,7 @@ function render(v, loc) {
   const n = v.now, tz = v.tz;
   const firstDay = v.days[0];
   const hiT = firstDay?.hi, loT = firstDay?.lo || v.days[1]?.lo;
-  const lede = rainSentence(v.hourly, tz, v.qpf24)?.[1];
+  const lede = rainSentence(v.hourly, tz, v.qpf24, v.snow24)?.[1];
   const html = [];
 
   if (v.notice) html.push(`<div class="note">${esc(v.notice)}</div>`);
