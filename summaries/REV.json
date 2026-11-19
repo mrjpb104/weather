@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "b6bce17f-1296-4f56-b445-f2a81f597528",
-  "afd_issued": "2026-11-19T10:48:00Z",
-  "generated": "2026-11-19T11:25:21Z",
-  "headline": "Heavy Sierra snow continues through Friday morning, with another 15–30 inches above 7,000 feet around Mammoth Lakes, snowfall rates of 2–3 inches an hour and ridgetop gusts over 100 mph, followed by a bitterly cold break and a weaker storm Saturday afternoon into Sunday.",
+  "afd_id": "8de05566-c1b8-4554-899c-991e4a483afc",
+  "afd_issued": "2026-11-19T20:39:00Z",
+  "generated": "2026-11-19T22:25:17Z",
+  "headline": "A potent winter storm keeps piling heavy snow on the Sierra, including the Mammoth area, through Friday morning, with a brief break before a weaker storm arrives Saturday afternoon or night and more storms possible Thanksgiving week.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Mammoth Lakes and the rest of the Sierra, heavy snow continues Thursday, falling at 2–3 inches an hour this morning and afternoon and locally up to 4 inches an hour in heavier bands, with a 15–20% chance of thunder along the Sierra crest this afternoon; snow levels stay below 6,000 feet. By Friday morning expect another 15–30 inches above 7,000 feet (6–12 inches possible at the Mammoth airport) and 4–12 inches along US-395 in Mono County, with Winter Storm Warnings in the Sierra until 4 AM Friday. Ridgetop southwest gusts top 100 mph this morning, turning northwest at up to 50 mph this afternoon, and mountain travel will be treacherous. In the Reno–Carson–Minden area, steadier light snow from about 5 to 10 AM makes for a slick commute, with heavier bursts of snow (rain on the lowest valley floors) and possible lake-effect bands east of Lake Tahoe and Pyramid Lake this afternoon and evening; showers ease tonight."
+      "text": "Moderate to heavy snow showers continue in the Sierra Thursday, with another 1–2 feet possible along the eastern Sierra crest (a 70% chance of at least 12 inches there) and 6–12 more inches possible at Mammoth, Truckee and South Lake Tahoe through early Friday morning. Lake level at Tahoe picks up 2–6 inches, while western Nevada and northeast California valleys get up to 2 inches and areas above 5,000 feet 2–6 inches. Snow levels stay below 6,000 feet, west winds gust to 50–60 mph on Sierra ridges tonight into Friday morning, and gusty winds hit western Nevada valleys and northeast California. Winter Storm Warnings run until 4 AM Friday for parts of the Sierra and Winter Weather Advisories until 7 PM this evening elsewhere; snow showers turn more scattered by late evening, though lake-effect snow is possible on the south and southeast sides of Pyramid Lake and Lake Tahoe tonight into early Friday."
     },
     {
       "title": "Short Term",
-      "text": "Another round of showers Friday morning wraps up the storm, with valley floors getting up to 3 inches in total. Friday afternoon through Saturday morning is dry but very cold, offering a possible window for crossing the Sierra if roads improve (check Caltrans and NDOT), though melted snow will refreeze into icy roads Friday night, freezing fog may form in northeast California and Sierra valleys, and lows fall to the single digits and teens, with cold spots like Bodie, Bridgeport and Truckee possibly dipping below zero early Saturday. The next storm arrives Saturday afternoon with breezes and snow showers through Sunday, but it is much weaker: 3–6 inches along the Sierra crest and up to 3 inches above 6,000 feet."
+      "text": "Snow showers linger through late Friday morning, mainly around Tahoe, with up to 2–3 more inches in the Sierra and up to an inch in western Nevada; slush may turn to ice for the Friday morning commute, with lows in the teens in the Sierra and low to mid 20s in western Nevada. Friday stays very cold, about 15 degrees below average, and by Saturday morning lows drop to the single digits in the Sierra and low teens in western Nevada. A weaker storm moves in Saturday afternoon or night and lasts into early Monday, bringing 3–6 inches along the Sierra crest, up to 3 inches above 6,000 feet, and a trace to an inch even on valley floors including the Reno area, as the cold air keeps snow down to the valleys."
     },
     {
       "title": "Long Term",
-      "text": "Lingering cold air keeps snow levels at or below the valley floors with Sunday's storm, and a trace to 1 inch is possible for Reno and other western Nevada towns by Monday, though how much snow spills east of the Sierra is uncertain. The pattern stays unsettled heading into Thanksgiving week, with more storms likely to affect holiday travel, so check the latest forecast before any trip."
+      "text": "Cold, winter-like temperatures continue into early next week. The pattern stays unsettled through Thanksgiving week, with more storms that could affect holiday travel, but forecasters have low confidence in the details so far."
     }
   ],
   "watch_for": [
-    "Very heavy snow and extreme ridgetop winds around Mammoth Lakes and the Sierra through Friday morning",
-    "Icy roads, freezing fog and below-zero cold in spots Friday night into Saturday morning",
-    "Additional storms during Thanksgiving week that could disrupt holiday travel"
+    "Hazardous Sierra travel through Friday morning from heavy snow and 50–60 mph ridge winds, plus icy roads on the Friday morning commute.",
+    "Snow totals from the Saturday night–Monday storm, including possible light snow on valley floors.",
+    "Timing and strength of storms during Thanksgiving travel week."
   ],
-  "confidence": "Forecasters are confident in the heavy Sierra snow through Friday morning and the cold, dry break that follows, less certain how much of Sunday's snow reaches western Nevada, and expect more storms Thanksgiving week without firm details yet."
+  "confidence": "Forecasters are confident in heavy Sierra snow through Friday morning and a weaker storm late in the weekend, but have low confidence in the details for Thanksgiving week."
 }

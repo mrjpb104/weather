@@ -1,29 +1,29 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "30e7422c-9294-46bf-9aad-b400c9ea9028",
-  "afd_issued": "2026-11-19T18:24:00Z",
-  "generated": "2026-11-19T19:25:01Z",
-  "headline": "The powerful cold front was nearly out of LA County by late Thursday morning after very heavy rain and gusty winds, leaving scattered showers this afternoon and evening, then cool, dry weather Friday through most of the weekend.",
+  "afd_id": "d97b2636-7bd5-4412-935d-3ec870096d38",
+  "afd_issued": "2026-11-19T21:24:00Z",
+  "generated": "2026-11-19T22:25:17Z",
+  "headline": "Thursday's very powerful storm is winding down to scattered showers this evening, followed by a cool, dry Friday through Sunday afternoon and a dry, warmer Thanksgiving.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "The storm lived up to expectations: a very strong cold front swept the entire area with very heavy rain and gusty winds, including a peak of 2.26 inches in one hour in the San Fernando Valley near the Encino Reservoir, with storm totals of 1–3 inches along the coast and foothills and 2–5 inches on south-facing mountain slopes. As of 9:30 AM Thursday the front was close to leaving LA County, with periods of heavy rain around Glendale and the rest of the county for about another hour, then just scattered, mostly light to moderate showers into the evening with little added impact. Flood Watches run until 1, 3 or 6 PM depending on the area, Wind Advisories for south winds of 35–50 mph last until 1 or 4 PM, and LA County has a 20% chance of a thunderstorm until about 4 PM. Highs only reach the mid 60s, and 3–6 inches of snow may fall mostly above 7,000 feet late in the storm, too high to cause much trouble."
+      "text": "The storm that moved through Thursday dropped extremely heavy rain, peaking at 2.26 inches in one hour over Mulholland Drive above Encino, a rate expected only about once in 100 years. Scattered showers around Glendale and the rest of the area continue into this evening, but no further significant impacts are expected. LA County has a 20% chance of a thunderstorm until about 4 PM, and a Wind Advisory runs until 4 PM this afternoon."
     },
     {
       "title": "Short Term",
-      "text": "Friday turns dry, blustery and cool behind the storm, with fast northwest winds aloft and highs only in the low to mid 60s. A small area of high pressure brings a sunny Saturday, but highs rise just a degree or two and stay 4–8 degrees below normal. Dry weather continues through most of the weekend."
+      "text": "Friday through Sunday afternoon will be dry but cool, with highs mainly in the 60s, around 5 degrees below normal. Nights will be chilly, especially inland, where some spots could drop below freezing, most likely in the Antelope Valley and parts of interior San Luis Obispo County. Light northeast (offshore, land-to-sea) winds develop this weekend, likely topping out at 20–30 mph. A very weak system Sunday night into Monday morning brings at most about a quarter inch of rain to the Central Coast and a tenth of an inch or less farther south, including LA County."
     },
     {
       "title": "Long Term",
-      "text": "A minor disturbance brings a 20–30% chance of rain Sunday into Sunday night, with any amounts under two tenths of an inch, and computer models keep trending weaker; highs stay in the mid 60s. Monday is dry and mostly sunny and still 4–8 degrees below normal, and weak land-to-sea (offshore) flow Tuesday warms things 2–3 degrees into the mid to upper 60s without much wind. The next storm likely brings rain to the Central Coast Tuesday night or Wednesday but only a 30–40% chance south of Point Conception, including LA County, with at most about a half inch; models still disagree, and Thanksgiving Day looks dry for now."
+      "text": "The rest of Monday and Tuesday will be dry with a slow warming trend. Another weak system reaches California Wednesday, but computer models disagree on whether it brings any rain here; if it does it probably won't be much, though a small share of model runs show around a half inch. Thanksgiving Day is expected to be dry, with offshore winds pushing temperatures into the 70s."
     }
   ],
-  "coast": "Dangerous beach conditions continue into Friday, peaking Thursday, with High Surf Advisories for all beaches: large surf brings very dangerous rip currents and hazardous jetties. Minor to moderate coastal flooding is possible, especially at high tide, with seawater over low-lying beaches, walkways and parking lots and significant beach erosion; the Central Coast could see localized wave damage (especially to piers), flooded roads and possibly structures, and large breaking waves at Morro Bay Harbor (less so Ventura Harbor), with a Coastal Flood Advisory there Thursday. Offshore, ocean conditions stay dangerous through Friday with gusty winds and large seas, Small Craft Advisories into Friday, and a chance of thunderstorms over the water; winds turn northwest behind the front with showers possibly lingering into Friday, conditions improve Friday and turn fairly mild Saturday, and a weak front Sunday into Monday should have little impact. Extremely high, likely record-breaking tides arrive Thanksgiving week (peaking Tuesday through Thanksgiving Day), and with more swells increasingly likely they will probably cause at least widespread moderate coastal flooding on all coasts, possibly significant if a larger swell lines up with the tides.",
+  "coast": "High Surf Advisories cover all beaches into Friday (ending between 3 AM and 9 PM Friday depending on the beach), with large surf creating very dangerous rip currents and hazardous conditions near jetties; large breaking waves may hit Morro Bay Harbor, and to a lesser extent Ventura Harbor, through tonight. Ocean conditions stay dangerous through tonight from gusty winds and large, still-building seas, with Small Craft Advisories ending between 3 AM and 9 PM Friday; conditions improve Friday and turn fairly mild Saturday, and a weak front Sunday into Monday should have minimal impact. A stronger cold front could bring wind and rain to the coastal waters Tuesday night into Wednesday, with large seas returning mid to late next week. Extremely high, likely record-breaking tides arrive Thanksgiving week (peaking Tuesday through Thanksgiving Day), and combined with more swells they will likely cause at least widespread moderate coastal flooding on all coasts, with significant flooding possible if a larger swell lines up with the highest tides.",
   "watch_for": [
-    "Lingering flooding on streets and in flood-prone areas until Flood Watches expire this afternoon and evening, plus a 20% thunderstorm chance in LA County until about 4 PM.",
-    "Whether the Tuesday night–Wednesday storm reaches LA County (30–40% chance) ahead of Thanksgiving.",
-    "Record-high tides Thanksgiving week combined with new swells, raising the risk of widespread coastal flooding."
+    "Whether Wednesday's weak system brings any rain to LA County before a dry Thanksgiving.",
+    "Sub-freezing overnight lows this weekend in the Antelope Valley and interior San Luis Obispo County.",
+    "Record-high tides Tuesday through Thanksgiving combined with new swells, raising the risk of widespread coastal flooding."
   ],
-  "confidence": "Forecasters are confident the worst of the storm is ending and in dry weather Friday through Monday, but have low confidence in the Tuesday night–Wednesday storm because computer models disagree."
+  "confidence": "Forecasters are confident the storm's impacts are ending and in dry weather Friday through Sunday afternoon, but less sure about rain chances with Wednesday's system because computer models are mixed."
 }
