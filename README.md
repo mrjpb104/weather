@@ -18,8 +18,11 @@ Each U.S. location shows rain-season totals (since Oct 1, vs. normal), records f
 ## Turning on summaries for a new forecast area
 When a location is in an NWS office that doesn't have summaries yet, the app shows a **Turn on summaries** button. If a GitHub token is saved in Settings → Summaries for new areas (fine-grained, this repo only, Actions: read and write), the button runs `enable-summaries.yml` directly in one tap. Otherwise it opens a prefilled GitHub issue titled `Enable summaries: <OFFICE>`; when the repo owner submits it, `.github/workflows/enable-summaries.yml` adds the office to `config.json` (focused on that location), saves its discussion, and closes the issue. The next hourly summary run writes the first summary. You can also run that workflow by hand from the Actions tab.
 
+## Tabs with several places
+A tab can be a single place or a named group of places (e.g. **Los Angeles**: Westside, Downtown, Valley). Inside a group, swipe left/right (or tap the dots) to flip between places; everything on the page follows the place you're on. Make a group from Settings → a place's **Move to…** → **New tab…**, then move other places into it. When adding a place, pick which tab it goes in. Home can join a group; Current location stays its own tab.
+
 ## Locations that follow you across devices
-Saved locations, renamed tabs and tab order live in `locations.json` in this repo, so every device and browser shows the same tabs. Every device reads it (no setup). A device with a GitHub token saved in Settings → GitHub access (fine-grained, this repo only, **Contents: read and write** plus Actions: read and write) also writes changes back; devices without one keep their own edits on top of the shared list. Edits merge, so adding a place on one device and deleting another elsewhere both stick. The repo is public, so `locations.json` (names and coordinates) is publicly visible.
+Saved locations, groups, renamed tabs and tab order live in `locations.json` in this repo, so every device and browser shows the same tabs. Every device reads it (no setup). A device with a GitHub token saved in Settings → GitHub access (fine-grained, this repo only, **Contents: read and write** plus Actions: read and write) also writes changes back; devices without one keep their own edits on top of the shared list. Edits merge, so adding a place on one device and deleting another elsewhere both stick. The repo is public, so `locations.json` (names and coordinates) is publicly visible.
 
 ## Summary file format
 ```json

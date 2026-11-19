@@ -21,13 +21,14 @@ const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage unavailable */ } if (SYNC_KEYS.includes(k)) syncChanged(); },
 };
-const SYNC_KEYS = ['wx.saved', 'wx.order', 'wx.labels']; // these follow you across devices (see "Sync" below)
+const SYNC_KEYS = ['wx.saved', 'wx.order', 'wx.labels', 'wx.groups']; // these follow you across devices (see "Sync" below)
 
 const state = {
   settings: store.get('wx.settings', { units: 'us' }),
   saved: store.get('wx.saved', []),
   order: store.get('wx.order', []),
   labels: store.get('wx.labels', {}),
+  groups: store.get('wx.groups', []),
   active: 'home',
   cache: new Map(),
   gps: null,
@@ -570,23 +571,45 @@ const JARGON = [
 ];
 
 // ---------- Rendering ----------
-// Tab order and names. Home and Current keep fixed ids; their custom names live in wx.labels,
-// saved locations keep their name on the saved object. wx.order lists tab ids left to right.
+// Places are Home, Current location and saved locations. Tabs are groups (a named set of places you
+// swipe between, e.g. "Los Angeles": Westside, Downtown, Valley) or single places not in a group.
+// Home and Current keep fixed ids; their custom names live in wx.labels. wx.order lists tab ids left
+// to right; wx.groups is [{ id, name, members: [place ids] }]. Current location can't join a group.
 const DEFAULT_LABEL = { home: 'Home', here: 'Current' };
 const tabLabel = l => l.kind === 'home' || l.kind === 'gps' ? (state.labels[l.id] || DEFAULT_LABEL[l.id]) : l.name;
 const tabIcon = l => l.id === 'home' ? '🏠 ' : l.id === 'here' ? '📍 ' : '';
-function allLocs() {
-  const base = [{ ...HOME, name: state.labels.home || HOME.name }, { ...HERE, name: state.labels.here || HERE.name }, ...state.saved];
-  const byId = new Map(base.map(l => [l.id, l]));
-  const out = [];
+function allPlaces() {
+  return [{ ...HOME, name: state.labels.home || HOME.name }, { ...HERE, name: state.labels.here || HERE.name }, ...state.saved];
+}
+const placeById = id => allPlaces().find(l => l.id === id);
+const groupById = id => state.groups.find(g => g.id === id);
+const groupOf = id => state.groups.find(g => g.members.includes(id));
+// Keep groups consistent with the places that exist: no unknown or duplicate members, no empty groups.
+function cleanGroups(groups, savedIds) {
+  const ok = new Set(['home', ...savedIds]), seen = new Set(), out = [];
+  for (const g of groups || []) {
+    const members = (g.members || []).filter(id => ok.has(id) && !seen.has(id) && seen.add(id));
+    if (members.length) out.push({ id: g.id, name: g.name, members });
+  }
+  return out;
+}
+function saveGroups(groups) { state.groups = cleanGroups(groups, state.saved.map(l => l.id)); store.set('wx.groups', state.groups); }
+function allTabs() {
+  const grouped = new Set(state.groups.flatMap(g => g.members));
+  const items = [...state.groups.map(g => ({ id: g.id, group: g })), ...allPlaces().filter(l => !grouped.has(l.id)).map(l => ({ id: l.id, place: l }))];
+  const byId = new Map(items.map(t => [t.id, t])), out = [];
   for (const id of state.order) if (byId.has(id)) { out.push(byId.get(id)); byId.delete(id); }
   return out.concat([...byId.values()]);
 }
 function saveOrder(ids) { state.order = ids; store.set('wx.order', ids); }
+const tabIds = () => allTabs().map(t => t.id);
+const tabOf = id => groupOf(id)?.id || id;
+// Last place viewed in each group (this device only), so tapping a group tab returns there.
+const groupLast = () => store.get('wx.groupLast', {});
 
 function renderTabs() {
-  const tabs = $('#tabs');
-  tabs.innerHTML = allLocs().map(l => `<button class="tab" data-id="${esc(l.id)}" aria-current="${l.id === state.active}">${tabIcon(l)}${esc(tabLabel(l))}</button>`).join('');
+  const tabs = $('#tabs'), cur = tabOf(state.active);
+  tabs.innerHTML = allTabs().map(t => `<button class="tab${t.group ? ' grp' : ''}" data-id="${esc(t.id)}" aria-current="${t.id === cur}">${t.group ? esc(t.group.name) : tabIcon(t.place) + esc(tabLabel(t.place))}</button>`).join('');
   tabs.querySelectorAll('.tab').forEach(b => {
     b.onclick = () => { if (b.dataset.held) { delete b.dataset.held; return; } go(b.dataset.id); };
     // Long-press a tab to jump to the reorder/rename list.
@@ -599,24 +622,43 @@ function renderTabs() {
   $('.tab[aria-current="true"]', tabs)?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
 }
 
-function go(id) {
-  if (!locById(id)) id = 'home';
+function go(id, slide = 0) {
+  const g = groupById(id);
+  if (g) id = g.members.includes(groupLast()[g.id]) ? groupLast()[g.id] : g.members[0];
+  if (!placeById(id)) id = 'home';
+  const grp = groupOf(id);
+  if (grp) { const gl = groupLast(); gl[grp.id] = id; store.set('wx.groupLast', gl); }
   state.active = id;
+  state.slide = slide;
   if (location.hash.slice(1) !== id) history.replaceState(null, '', `#${id}`);
   store.set('wx.active', id);
   renderTabs();
-  show(false);
+  show(isCached(placeById(id)) ? 'swap' : false);
 }
-const locById = id => allLocs().find(l => l.id === id);
+// Step to the previous/next place in the current group (swipe or arrow keys).
+function stepPlace(dir) {
+  const g = groupOf(state.active);
+  if (!g || g.members.length < 2) return;
+  const i = g.members.indexOf(state.active), j = i + dir;
+  if (j < 0 || j >= g.members.length) { const m = $('#main'); m.classList.remove('bump'); void m.offsetWidth; m.classList.add('bump'); return; }
+  go(g.members[j], dir);
+}
+function isCached(loc) {
+  if (!loc || loc.kind === 'gps') return false;
+  const hit = state.cache.get(`${loc.lat.toFixed(3)},${loc.lon.toFixed(3)}|${state.settings.units}`);
+  return !!hit && Date.now() - hit.at < CACHE_MS;
+}
+const locById = placeById;
 
 async function show(force) {
   const loc = locById(state.active);
   const token = ++state.token;
   stopRadar();
   const main = $('#main');
-  if (!state.cache.size || force !== 'quiet') main.innerHTML = '<div class="skel"></div><div class="skel" style="height:80px"></div><div class="skel" style="height:300px"></div>';
+  // 'swap' = switching to a place already in the cache: no loading placeholders, no refetch.
+  if (!state.cache.size || (force !== 'quiet' && force !== 'swap')) main.innerHTML = '<div class="skel"></div><div class="skel" style="height:80px"></div><div class="skel" style="height:300px"></div>';
   try {
-    const view = await loadLocation(loc, !!force);
+    const view = await loadLocation(loc, force === true || force === 'quiet');
     if (token !== state.token) return;
     render(view, loc);
   } catch (e) {
@@ -713,8 +755,12 @@ function render(v, loc) {
     if (st === 'off') html.push(`<section class="card sumcta top"><p>${ui('doc')}<span>This spot is in the NWS <b>${esc(areaName(v))}</b> forecast area, which doesn’t have plain-English discussion summaries yet.</span></p>${enableBtn(v, loc)}</section>`);
   }
 
+  const grp = loc && groupOf(loc.id);
+  if (grp && grp.members.length > 1) {
+    html.push(`<nav class="pdots" aria-label="${esc(grp.name)} places">${grp.members.map(id => { const p = placeById(id); return `<button type="button" data-go="${esc(id)}" aria-label="${esc(tabLabel(p))}" aria-current="${id === loc.id}"><i></i></button>`; }).join('')}</nav>`);
+  }
   html.push(`<section class="card hero">
-    <p class="place">${esc(loc?.name || v.name)}</p>
+    <p class="place">${esc(loc ? tabLabel(loc) : v.name)}</p>
     <div class="sub">${esc(v.sub)}${v.kind === 'us' ? ' · NWS ' + esc(v.office) : ''}</div>
     <div class="nowrow">
       <div class="hicon">${wxIcon(n.kind, 'anim')}</div>
@@ -783,6 +829,40 @@ function render(v, loc) {
   if (typeof fxFromView === 'function') fxFromView(v);
   setupRadar(v);
   if (v.kind === 'us') fillClimate(v, state.token);
+  $('#main').querySelectorAll('.pdots button').forEach(b => b.onclick = () => { const g = groupOf(state.active); go(b.dataset.go, g ? Math.sign(g.members.indexOf(b.dataset.go) - g.members.indexOf(state.active)) : 0); });
+  const mainEl = $('#main');
+  mainEl.classList.remove('slide-next', 'slide-prev', 'bump');
+  if (state.slide) { void mainEl.offsetWidth; mainEl.classList.add(state.slide > 0 ? 'slide-next' : 'slide-prev'); state.slide = 0; }
+  // Load the neighboring places in this group in the background so swiping to them is instant.
+  if (grp) {
+    const i = grp.members.indexOf(loc.id), tok = state.token;
+    setTimeout(() => { if (tok !== state.token) return; [grp.members[i + 1], grp.members[i - 1]].map(placeById).filter(Boolean).forEach(p => { if (!isCached(p)) loadLocation(p).catch(() => {}); }); }, 1200);
+  }
+}
+// Swipe left/right on the page to move between the places in a group.
+function setupSwipe() {
+  const main = $('#main');
+  let t0 = null;
+  main.addEventListener('touchstart', e => {
+    t0 = null;
+    if (e.touches.length !== 1) return;
+    const g = groupOf(state.active), t = e.touches[0];
+    if (!g || g.members.length < 2) return;
+    if (t.clientX < 24 || t.clientX > innerWidth - 24) return; // leave screen edges to the browser's back/forward swipe
+    if (e.target.closest('.hscroll, #radar, .leaflet-container, input, select, textarea, button.ctl, .tides')) return;
+    t0 = { x: t.clientX, y: t.clientY, at: Date.now() };
+  }, { passive: true });
+  main.addEventListener('touchend', e => {
+    if (!t0) return;
+    const t = e.changedTouches[0], dx = t.clientX - t0.x, dy = t.clientY - t0.y, quick = Date.now() - t0.at < 700;
+    t0 = null;
+    if (quick && Math.abs(dx) > 60 && Math.abs(dx) > 1.6 * Math.abs(dy)) stepPlace(dx < 0 ? 1 : -1);
+  }, { passive: true });
+  main.addEventListener('touchcancel', () => { t0 = null; }, { passive: true });
+  document.addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea, select, dialog') || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === 'ArrowRight') stepPlace(1); else if (e.key === 'ArrowLeft') stepPlace(-1);
+  });
 }
 const tile = (k, v, s) => `<div class="tile"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div>${s ? `<div class="s">${esc(s)}</div>` : ''}</div>`;
 
@@ -906,8 +986,8 @@ async function saveGh() {
 // on top of the shared copy until a device with access is used.
 const SYNC_FILE = 'locations.json';
 const sync = { sha: null, running: false, again: false, applying: false, timer: null, last: 0, status: '' };
-const EMPTY_SYNC = { saved: [], order: [], labels: {} };
-const syncData = d => ({ saved: d.saved, order: d.order, labels: d.labels });
+const EMPTY_SYNC = { saved: [], order: [], labels: {}, groups: [] };
+const syncData = d => ({ saved: d.saved, order: d.order, labels: d.labels, groups: d.groups || [] });
 const sameSync = (a, b) => JSON.stringify(syncData(a)) === JSON.stringify(syncData(b));
 function cleanSync(d) {
   const saved = (Array.isArray(d?.saved) ? d.saved : []).filter(l => l && typeof l.id === 'string' && typeof l.name === 'string' && Number.isFinite(+l.lat) && Number.isFinite(+l.lon))
@@ -915,9 +995,11 @@ function cleanSync(d) {
   const order = (Array.isArray(d?.order) ? d.order : []).filter(x => typeof x === 'string');
   const labels = {};
   for (const k of ['home', 'here']) if (typeof d?.labels?.[k] === 'string' && d.labels[k]) labels[k] = d.labels[k];
-  return { saved, order, labels, updated: typeof d?.updated === 'string' ? d.updated : '' };
+  const groups = cleanGroups((Array.isArray(d?.groups) ? d.groups : []).filter(g => g && typeof g.id === 'string' && typeof g.name === 'string' && Array.isArray(g.members))
+    .map(g => ({ id: g.id, name: g.name, members: g.members.filter(x => typeof x === 'string') })), saved.map(l => l.id));
+  return { saved, order, labels, groups, hasGroups: Array.isArray(d?.groups), updated: typeof d?.updated === 'string' ? d.updated : '' };
 }
-const localSync = () => cleanSync({ saved: state.saved, order: state.order, labels: state.labels });
+const localSync = () => cleanSync({ saved: state.saved, order: state.order, labels: state.labels, groups: state.groups });
 const b64dec = b => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\s/g, '')), c => c.charCodeAt(0)));
 const b64enc = t => { let s = ''; new TextEncoder().encode(t).forEach(c => (s += String.fromCharCode(c))); return btoa(s); };
 
@@ -944,13 +1026,17 @@ function mergeSync(base, local, remote) {
     const v = first ? (remote.labels[k] || local.labels[k]) : local.labels[k] !== base.labels[k] ? local.labels[k] : remote.labels[k];
     if (v) labels[k] = v;
   }
-  return { saved, order, labels };
+  // Groups: if this device changed them since the last shared copy, this device's version wins; otherwise the shared one.
+  const gs = x => JSON.stringify(x.groups || []);
+  // (A shared copy written by an older version of the app has no groups at all: keep this device's.)
+  const groups = cleanGroups(!remote.hasGroups || (first && !remote.groups.length) ? local.groups : first ? remote.groups : gs(local) !== gs(base) ? local.groups : remote.groups, saved.map(l => l.id));
+  return { saved, order, labels, groups };
 }
 function applySync(d) {
   sync.applying = true;
   try {
-    state.saved = d.saved; state.order = d.order; state.labels = d.labels;
-    store.set('wx.saved', d.saved); store.set('wx.order', d.order); store.set('wx.labels', d.labels);
+    state.saved = d.saved; state.order = d.order; state.labels = d.labels; state.groups = d.groups || [];
+    store.set('wx.saved', d.saved); store.set('wx.order', d.order); store.set('wx.labels', d.labels); store.set('wx.groups', state.groups);
   } finally { sync.applying = false; }
   if (!locById(state.active)) go('home'); else renderTabs();
   if ($('#dlgSettings').open && !$('#savedList input.ren')) renderSaved();
@@ -1449,8 +1535,9 @@ async function rvFrames() {
 // ---------- Add / manage locations ----------
 let searchTimer = null;
 function openAdd() {
-  const d = $('#dlgAdd');
+  const d = $('#dlgAdd'), cur = groupOf(state.active);
   $('#addQuery').value = ''; $('#addResults').innerHTML = '';
+  $('#addTo').innerHTML = `<option value="own">Its own tab</option>${state.groups.map(g => `<option value="${esc(g.id)}"${g === cur ? ' selected' : ''}>${esc(g.name)}</option>`).join('')}<option value="new">New tab with other places…</option>`;
   d.showModal();
   setTimeout(() => $('#addQuery').focus(), 50);
 }
@@ -1480,6 +1567,8 @@ function addLocation(o) {
   const id = `loc-${Date.now().toString(36)}`;
   state.saved.push({ id, ...o });
   store.set('wx.saved', state.saved);
+  const to = $('#addTo')?.value || 'own';
+  if (to !== 'own') movePlace(id, to);
   state.justAdded = id;
   $('#dlgAdd').close();
   go(id);
@@ -1522,73 +1611,130 @@ function openSettings(section) {
   if (section === 'locations') requestAnimationFrame(() => $('#locHead').scrollIntoView({ block: 'start' }));
   if (section === 'github') requestAnimationFrame(() => $('#ghHead').scrollIntoView({ block: 'start' }));
 }
+// Move a place into a group ('g-…'), onto its own tab ('own'), or into a new group ('new').
+function movePlace(id, target) {
+  if (id === 'here' || !target) return false;
+  let name = '';
+  if (target === 'new') {
+    name = (prompt('Name for the new tab (e.g. San Diego)', '') || '').trim().slice(0, 40);
+    if (!name) return false;
+  }
+  const from = groupOf(id), order = tabIds();
+  const at = order.indexOf(from ? from.id : id);
+  let groups = state.groups.map(g => ({ ...g, members: g.members.filter(x => x !== id) }));
+  let newOrder = order.filter(x => x !== id);
+  if (target === 'own') newOrder.splice(at < 0 ? newOrder.length : at + 1, 0, id);
+  else if (target === 'new') {
+    const g = { id: `g-${Date.now().toString(36)}`, name, members: [id] };
+    groups.push(g);
+    newOrder.splice(at < 0 ? newOrder.length : from ? at + 1 : at, 0, g.id);
+  } else {
+    const g = groups.find(x => x.id === target);
+    if (!g) return false;
+    g.members.push(id);
+  }
+  saveGroups(groups);
+  saveOrder(newOrder.filter(x => groupById(x) || (placeById(x) && !groupOf(x))));
+  return true;
+}
+const moveOptions = (id, includeOwn) => `<option value="">Move to…</option>${includeOwn ? '<option value="own">Its own tab</option>' : ''}${state.groups.filter(g => !g.members.includes(id)).map(g => `<option value="${esc(g.id)}">${esc(g.name)}</option>`).join('')}<option value="new">New tab…</option>`;
+
 function renderSaved() {
   const ul = $('#savedList');
-  const locs = allLocs();
+  const tabs = allTabs();
   const sub = l => l.kind === 'home' ? `${HOME.lat}, ${HOME.lon}` : l.kind === 'gps' ? 'Wherever you are'
     : esc([l.admin, l.country].filter(Boolean).join(', ') || `${l.lat}, ${l.lon}`);
-  ul.innerHTML = locs.map((l, i) => `
-    <li data-id="${esc(l.id)}">
+  const placeRow = (l, i, n, inGroup) => `
+    <li data-id="${esc(l.id)}"><div class="row">
       <span class="grip" aria-hidden="true" title="Drag to reorder">⠿</span>
       <span class="nm">${tabIcon(l)}${esc(tabLabel(l))}<small>${sub(l)}</small></span>
-      <button data-a="up" aria-label="Move ${esc(tabLabel(l))} left" ${i === 0 ? 'disabled' : ''}>↑</button>
-      <button data-a="down" aria-label="Move ${esc(tabLabel(l))} right" ${i === locs.length - 1 ? 'disabled' : ''}>↓</button>
+      <button data-a="up" aria-label="Move ${esc(tabLabel(l))} up" ${i === 0 ? 'disabled' : ''}>↑</button>
+      <button data-a="down" aria-label="Move ${esc(tabLabel(l))} down" ${i === n - 1 ? 'disabled' : ''}>↓</button>
       <button data-a="ren">Rename</button>
-      ${l.kind === 'home' || l.kind === 'gps' ? '' : '<button data-a="del">Delete</button>'}</li>`).join('');
+      ${l.kind === 'gps' ? '' : `<select data-a="move" aria-label="Move ${esc(tabLabel(l))} to another tab">${moveOptions(l.id, inGroup)}</select>`}
+      ${l.kind === 'home' || l.kind === 'gps' ? '' : '<button data-a="del">Delete</button>'}</div></li>`;
+  ul.innerHTML = tabs.map((t, i) => t.place ? placeRow(t.place, i, tabs.length, false) : `
+    <li data-id="${esc(t.id)}" class="grp"><div class="row">
+      <span class="grip" aria-hidden="true" title="Drag to reorder">⠿</span>
+      <span class="nm"><b>${esc(t.group.name)}</b><small>${t.group.members.length === 1 ? '1 place — use Move to… on other places to add them' : `${t.group.members.length} places · swipe between them`}</small></span>
+      <button data-a="up" aria-label="Move ${esc(t.group.name)} up" ${i === 0 ? 'disabled' : ''}>↑</button>
+      <button data-a="down" aria-label="Move ${esc(t.group.name)} down" ${i === tabs.length - 1 ? 'disabled' : ''}>↓</button>
+      <button data-a="ren">Rename</button>
+      <button data-a="ungroup">Ungroup</button></div>
+      <ul class="members" data-g="${esc(t.id)}">${t.group.members.map((id, j, arr) => placeRow(placeById(id), j, arr.length, true)).join('')}</ul></li>`).join('');
   if (!state.saved.length) ul.insertAdjacentHTML('beforeend', '<li class="fine">No saved locations yet — tap ＋ to add one.</li>');
-  const ids = () => [...ul.querySelectorAll('li[data-id]')].map(li => li.dataset.id);
   const refresh = () => { renderSaved(); renderTabs(); };
+  // The ids of the rows in one list (the tab list, or one group's places), in on-screen order.
+  const idsIn = list => [...list.children].filter(li => li.dataset.id).map(li => li.dataset.id);
+  const saveList = list => {
+    if (list === ul) saveOrder(idsIn(ul));
+    else saveGroups(state.groups.map(g => (g.id === list.dataset.g ? { ...g, members: idsIn(list) } : g)));
+  };
 
-  ul.querySelectorAll('li[data-id] button').forEach(b => b.onclick = () => {
-    const li = b.closest('li'), id = li.dataset.id, a = b.dataset.a;
-    const order = ids(), i = order.indexOf(id);
-    if (a === 'up' || a === 'down') {
-      const j = a === 'up' ? i - 1 : i + 1;
-      if (j < 0 || j >= order.length) return;
-      [order[i], order[j]] = [order[j], order[i]];
-      saveOrder(order); refresh();
-      ul.querySelector(`li[data-id="${CSS.escape(id)}"] button[data-a="${a}"]:not([disabled])`)?.focus();
-      return;
-    }
-    if (a === 'del') {
-      if (b.dataset.confirm !== '1') { b.dataset.confirm = '1'; b.textContent = 'Confirm'; return; }
-      state.saved = state.saved.filter(l => l.id !== id);
-      store.set('wx.saved', state.saved);
-      saveOrder(order.filter(x => x !== id));
-      if (id === state.active) { state.active = 'home'; history.replaceState(null, '', '#home'); store.set('wx.active', 'home'); }
-      refresh();
-      return;
-    }
-    if (a === 'ren') {
-      const l = locById(id), fixed = l.kind === 'home' || l.kind === 'gps';
-      li.querySelector('.nm').innerHTML = `<input class="ren" value="${esc(tabLabel(l))}" maxlength="40" aria-label="New name" placeholder="${fixed ? esc(DEFAULT_LABEL[id]) : ''}">`;
-      const inp = li.querySelector('input'); inp.focus(); inp.select();
-      let finished = false;
-      const done = () => {
-        if (finished) return; finished = true;
-        const v = inp.value.trim();
-        if (fixed) {
-          if (v && v !== DEFAULT_LABEL[id]) state.labels[id] = v; else delete state.labels[id];
-          store.set('wx.labels', state.labels);
-        } else if (v) {
-          const s = state.saved.find(x => x.id === id); s.name = v; store.set('wx.saved', state.saved);
-        }
+  ul.querySelectorAll('li[data-id] > .row > button, li[data-id] > .row > select').forEach(b => {
+    const li = b.closest('li'), id = li.dataset.id, a = b.dataset.a, list = li.parentElement;
+    if (a === 'move') { b.onchange = () => { if (movePlace(id, b.value)) refresh(); else b.value = ''; }; return; }
+    b.onclick = () => {
+      if (a === 'up' || a === 'down') {
+        const order = idsIn(list), i = order.indexOf(id), j = a === 'up' ? i - 1 : i + 1;
+        if (j < 0 || j >= order.length) return;
+        if (j === i - 1) li.previousElementSibling?.before(li); else li.nextElementSibling?.after(li);
+        saveList(list); refresh();
+        ul.querySelector(`li[data-id="${CSS.escape(id)}"] > .row > button[data-a="${a}"]:not([disabled])`)?.focus();
+        return;
+      }
+      if (a === 'ungroup') {
+        const g = groupById(id), order = tabIds(), at = order.indexOf(id);
+        order.splice(at, 1, ...g.members);
+        saveGroups(state.groups.filter(x => x.id !== id));
+        saveOrder(order);
         refresh();
-      };
-      inp.onkeydown = e => { if (e.key === 'Enter') done(); if (e.key === 'Escape') { e.preventDefault(); finished = true; refresh(); } };
-      inp.onblur = done;
-    }
+        return;
+      }
+      if (a === 'del') {
+        if (b.dataset.confirm !== '1') { b.dataset.confirm = '1'; b.textContent = 'Confirm'; return; }
+        state.saved = state.saved.filter(l => l.id !== id);
+        store.set('wx.saved', state.saved);
+        saveGroups(state.groups);
+        saveOrder(tabIds().filter(x => x !== id));
+        if (id === state.active) { state.active = 'home'; history.replaceState(null, '', '#home'); store.set('wx.active', 'home'); }
+        refresh();
+        return;
+      }
+      if (a === 'ren') {
+        const g = groupById(id), l = g ? null : placeById(id), fixed = l && (l.kind === 'home' || l.kind === 'gps');
+        const cur = g ? g.name : tabLabel(l);
+        li.querySelector(':scope > .row > .nm').innerHTML = `<input class="ren" value="${esc(cur)}" maxlength="40" aria-label="New name" placeholder="${fixed ? esc(DEFAULT_LABEL[id]) : ''}">`;
+        const inp = li.querySelector('input.ren'); inp.focus(); inp.select();
+        let finished = false;
+        const done = () => {
+          if (finished) return; finished = true;
+          const v = inp.value.trim();
+          if (g) { if (v) saveGroups(state.groups.map(x => (x.id === id ? { ...x, name: v } : x))); }
+          else if (fixed) {
+            if (v && v !== DEFAULT_LABEL[id]) state.labels[id] = v; else delete state.labels[id];
+            store.set('wx.labels', state.labels);
+          } else if (v) {
+            const s = state.saved.find(x => x.id === id); s.name = v; store.set('wx.saved', state.saved);
+          }
+          refresh();
+        };
+        inp.onkeydown = e => { if (e.key === 'Enter') done(); if (e.key === 'Escape') { e.preventDefault(); finished = true; refresh(); } };
+        inp.onblur = done;
+      }
+    };
   });
 
-  // Drag the ⠿ handle to reorder (works with touch, mouse and pen).
+  // Drag the ⠿ handle to reorder tabs, or places within a group (works with touch, mouse and pen).
+  // To move a place to a different tab, use its "Move to…" menu.
   ul.querySelectorAll('.grip').forEach(g => g.addEventListener('pointerdown', e => {
     e.preventDefault();
-    const li = g.closest('li');
+    const li = g.closest('li'), list = li.parentElement;
     li.classList.add('dragging');
     const move = ev => {
-      const rows = [...ul.querySelectorAll('li[data-id]:not(.dragging)')];
+      const rows = [...list.children].filter(r => r.dataset.id && r !== li);
       const before = rows.find(r => { const rc = r.getBoundingClientRect(); return ev.clientY < rc.top + rc.height / 2; });
-      if (before) { if (li.nextElementSibling !== before) ul.insertBefore(li, before); }
+      if (before) { if (li.nextElementSibling !== before) list.insertBefore(li, before); }
       else if (rows.length && rows[rows.length - 1].nextElementSibling !== li) rows[rows.length - 1].after(li);
     };
     // Listen on window: moving the row in the DOM drops pointer capture, so the grip alone can miss events.
@@ -1598,7 +1744,7 @@ function renderSaved() {
       window.removeEventListener('pointerup', end);
       window.removeEventListener('pointercancel', end);
       li.classList.remove('dragging');
-      saveOrder(ids()); refresh();
+      saveList(list); refresh();
     };
     const onMove = ev => { if (ev.pointerId === e.pointerId) { ev.preventDefault(); move(ev); } };
     window.addEventListener('pointermove', onMove, { passive: false });
@@ -1630,8 +1776,10 @@ function boot() {
       if (!hit || Date.now() - hit.at > 10 * 60e3) show(true);
     }
   });
+  setupSwipe();
+  state.groups = cleanGroups(state.groups, state.saved.map(l => l.id));
   const fromHash = location.hash.slice(1);
-  go(locById(fromHash) ? fromHash : store.get('wx.active', 'home'));
+  go(placeById(fromHash) || groupById(fromHash) ? fromHash : store.get('wx.active', 'home'));
   syncNow();
 }
 boot();
