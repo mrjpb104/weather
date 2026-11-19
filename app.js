@@ -771,6 +771,8 @@ function render(v, loc) {
     html.push(`<section class="card">${hdr('waves', 'Tides', `${esc(v.tides.station)} · ${Math.round(v.tides.km)} km`)}<div class="tides">${v.tides.events.map(e => `<div class="tile tide ${e.type === 'High' ? 'hi' : 'lo'}"><div class="k">${esc(e.day)}</div><div class="v">${e.type === 'High' ? '▲' : '▼'} ${esc(e.time)}</div><div class="s">${esc(e.type)} · ${esc(e.height)}</div></div>`).join('')}</div></section>`);
   }
 
+  if (v.kind === 'us') html.push(`<section class="card">${hdr('drop', 'Rainfall & records', `NWS ${esc(v.office)}`)}<div class="links">${climateLinks(v).map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div>
+    <p class="fine">Storm totals come out as Public Information Statements after notable rain. Use “Previous version” on that page to page back through older ones. Season-to-date totals and record highs and lows are in Climate data: pick the nearest station, then a product such as “Monthly summarized data” or “Daily records.”</p></section>`);
   html.push(`<section class="card">${hdr('link', 'More detail')}<div class="links">${links(v).map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div></section>`);
   html.push(`<footer class="src fine">Updated ${esc(fmtTime(v.loadedAt, tz))} (${esc(tz.replace(/_/g, ' '))}) · ${v.lat.toFixed(4)}, ${v.lon.toFixed(4)}</footer>`);
 
@@ -1064,6 +1066,16 @@ function renderPlain(v) {
     <ul class="glance">${(v.plain || []).map(t => `<li><span class="ic">•</span><span>${esc(t)}</span></li>`).join('')}</ul>
     <p class="fine">Outside the U.S. there’s no NWS forecaster discussion. This summary is generated from Open-Meteo’s blend of national weather service models.
     For official forecasts and warnings, check ${nat ? `<a href="${nat[1]}" target="_blank" rel="noopener">${esc(nat[0])}</a>` : '<a href="https://worldweather.wmo.int/en/home.html" target="_blank" rel="noopener">the country’s national weather service (WMO directory)</a>'}${EU.has(v.cc) ? ' or <a href="https://www.meteoalarm.org/" target="_blank" rel="noopener">MeteoAlarm</a> for European warnings' : ''}.</p></section>`;
+}
+
+// Office-wide climate products: every NWS forecast office issues PNS and RER, and NOWData covers all offices.
+function climateLinks(v) {
+  const o = v.office, prod = c => `https://forecast.weather.gov/product.php?site=${o}&issuedby=${o}&product=${c}&format=CI&version=1&glossary=0`;
+  return [
+    ['Storm rainfall totals', prod('PNS')],
+    ['Climate data (season totals, records)', `https://www.weather.gov/wrh/climate?wfo=${o.toLowerCase()}`],
+    ['Records set', prod('RER')],
+  ];
 }
 
 function links(v) {
