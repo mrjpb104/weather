@@ -771,8 +771,8 @@ function render(v, loc) {
     html.push(`<section class="card">${hdr('waves', 'Tides', `${esc(v.tides.station)} · ${Math.round(v.tides.km)} km`)}<div class="tides">${v.tides.events.map(e => `<div class="tile tide ${e.type === 'High' ? 'hi' : 'lo'}"><div class="k">${esc(e.day)}</div><div class="v">${e.type === 'High' ? '▲' : '▼'} ${esc(e.time)}</div><div class="s">${esc(e.type)} · ${esc(e.height)}</div></div>`).join('')}</div></section>`);
   }
 
-  if (v.kind === 'us') html.push(`<section class="card">${hdr('drop', 'Rainfall & records', `NWS ${esc(v.office)}`)}<div class="links">${climateLinks(v).map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div>
-    <p class="fine">Storm totals come out as Public Information Statements after notable rain. Use “Previous version” on that page to page back through older ones. Season-to-date totals and record highs and lows are in Climate data: pick the nearest station, then a product such as “Monthly summarized data” or “Daily records.”</p></section>`);
+  if (v.kind === 'us') html.push(`<section class="card" id="clim">${hdr('drop', 'Rainfall & records')}<div class="climbody"><p class="fine">Loading season rainfall and records…</p></div>
+    <div class="links climlinks">${climateLinks(v).map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div></section>`);
   html.push(`<section class="card">${hdr('link', 'More detail')}<div class="links">${links(v).map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div></section>`);
   html.push(`<footer class="src fine">Updated ${esc(fmtTime(v.loadedAt, tz))} (${esc(tz.replace(/_/g, ' '))}) · ${v.lat.toFixed(4)}, ${v.lon.toFixed(4)}</footer>`);
 
@@ -782,6 +782,7 @@ function render(v, loc) {
   wireEnableButtons();
   if (typeof fxFromView === 'function') fxFromView(v);
   setupRadar(v);
+  if (v.kind === 'us') fillClimate(v, state.token);
 }
 const tile = (k, v, s) => `<div class="tile"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div>${s ? `<div class="s">${esc(s)}</div>` : ''}</div>`;
 
@@ -1073,9 +1074,178 @@ function climateLinks(v) {
   const o = v.office, prod = c => `https://forecast.weather.gov/product.php?site=${o}&issuedby=${o}&product=${c}&format=CI&version=1&glossary=0`;
   return [
     ['Storm rainfall totals', prod('PNS')],
-    ['Climate data (season totals, records)', `https://www.weather.gov/wrh/climate?wfo=${o.toLowerCase()}`],
-    ['Records set', prod('RER')],
+    ['Newly set records', prod('RER')],
+    ['NOWData (more climate tables)', `https://www.weather.gov/wrh/climate?wfo=${o.toLowerCase()}`],
   ];
+}
+
+// ---------- Rainfall & records ----------
+// ACIS is the NOAA Regional Climate Centers' data service — the same data NWS NOWData shows.
+// Season totals run on the water year (Oct 1 – Sep 30), the rain season the NWS uses in the West.
+const ACIS = 'https://data.rcc-acis.org';
+async function acis(method, params, timeout = 20000) {
+  const ctrl = new AbortController(), t = setTimeout(() => ctrl.abort(), timeout);
+  try {
+    // Form-encoded body keeps this a "simple" cross-origin request (no CORS preflight).
+    const r = await fetch(`${ACIS}/${method}`, { method: 'POST', body: new URLSearchParams({ params: JSON.stringify(params) }), signal: ctrl.signal });
+    if (!r.ok) throw new Error(`Climate data HTTP ${r.status}`);
+    const j = await r.json();
+    if (j.error) throw new Error(j.error);
+    return j;
+  } finally { clearTimeout(t); }
+}
+const acisNum = x => { const a = Array.isArray(x) ? x[0] : x; if (a == null || a === 'M' || a === 'S' || a === '') return null; if (a === 'T') return 0; const n = parseFloat(a); return Number.isFinite(n) ? n : null; };
+const acisDate = x => (Array.isArray(x) && typeof x[1] === 'string' && /^\d{4}-\d\d-\d\d/.test(x[1]) ? x[1] : null);
+const isoDay = (tz, d = new Date()) => { const p = Object.fromEntries(dtf(tz, { year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(d).map(x => [x.type, x.value])); return `${p.year}-${p.month}-${p.day}`; };
+const isoAdd = (iso, days) => new Date(Date.parse(iso + 'T12:00:00Z') + days * 864e5).toISOString().slice(0, 10);
+const prettyDate = (iso, year = true) => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', ...(year ? { year: 'numeric' } : {}) });
+const climT = f => (f == null ? '—' : `${Math.round(US() ? f : (f - 32) * 5 / 9)}°`);
+const climR = i => (i == null ? '—' : US() ? `${i.toFixed(2)} in` : `${Math.round(i * 25.4)} mm`);
+const pctOf = (a, b) => (a != null && b > 0.05 ? `${Math.round(a / b * 100)}% of normal` : '');
+const nameCase = s => String(s || '').toLowerCase().replace(/\b([a-z])/g, c => c.toUpperCase()).replace(/\b(Ap|Nas|Mcas|Afb|Wso|Intl|Faa)\b/g, m => m.toUpperCase()).replace(/\bArea\b/, 'area');
+
+// Nearby stations with a long record (30+ years) that are still reporting. Where an airport has a
+// "threaded" NWS climate record (ThreadEx — the official city record NWS climate reports use, often
+// going back to the 1800s), that record is used instead.
+async function climateStations(lat, lon, today) {
+  const key = `wx.climSt.${lat.toFixed(2)},${lon.toFixed(2)}`, hit = store.get(key);
+  if (hit?.list?.length && Date.now() - hit.at < 7 * 864e5) return hit.list;
+  const since = `${+today.slice(0, 4) - 30}${today.slice(4)}`;
+  let list = [];
+  for (const [deg, lagDays] of [[0.75, 10], [1.5, 10], [1.5, 60]]) {
+    const dl = deg / Math.cos(lat * Math.PI / 180), recent = isoAdd(today, -lagDays);
+    const j = await acis('StnMeta', { bbox: [lon - dl, lat - deg, lon + dl, lat + deg].map(x => x.toFixed(3)).join(','), elems: 'pcpn,maxt', meta: 'name,sids,ll,valid_daterange' });
+    const cur = [];
+    for (const m of j.meta || []) {
+      const [p, t] = m.valid_daterange || [];
+      if (!m.ll || !p?.length || !t?.length || p[1] < recent || t[1] < recent) continue;
+      const sids = m.sids || [], id = t => sids.find(x => x.endsWith(' ' + t))?.split(' ')[0];
+      cur.push({ sid: id(6) || sids[0].split(' ')[0], faa: id(3), name: nameCase(m.name), km: distKm(lat, lon, m.ll[1], m.ll[0]), start: p[0] > t[0] ? p[0] : t[0], pStart: p[0], end: p[1] });
+    }
+    const faas = [...new Set(cur.sort((a, b) => a.km - b.km).map(c => c.faa).filter(f => /^[A-Z0-9]{3}$/.test(f || '')))].slice(0, 25);
+    if (faas.length) {
+      const t = await acis('StnMeta', { sids: faas.map(f => f + 'thr').join(','), elems: 'pcpn,maxt', meta: 'name,sids,valid_daterange' }).catch(() => null);
+      for (const m of t?.meta || []) {
+        const id = (m.sids?.[0] || '').split(' ')[0], c = cur.find(x => x.faa === id.replace(/thr$/, '')), [p, tt] = m.valid_daterange || [];
+        if (c && p?.length && tt?.length && p[1] >= recent) Object.assign(c, { sid: id, name: nameCase(m.name), start: p[0] > tt[0] ? p[0] : tt[0], pStart: p[0], end: p[1], thr: true });
+      }
+    }
+    list = cur.filter(c => c.start <= since);
+    if (list.length) break;
+  }
+  // Default: the nearest station, unless an official city record is within 30 km more of it.
+  const near = list[0], thr = list.find(c => c.thr);
+  if (thr && near && thr !== near && thr.km <= near.km + 30) list = [thr, ...list.filter(c => c !== thr)];
+  list = list.slice(0, 6);
+  if (list.length) store.set(key, { at: Date.now(), list });
+  return list;
+}
+
+const climMemo = new Map();
+async function climateSeason(st, today) {
+  const mk = `${st.sid}|${today}`, m0 = climMemo.get(mk);
+  if (m0 && Date.now() - m0.at < 30 * 60e3) return m0.v;
+  const v = await climateSeasonFetch(st, today);
+  climMemo.set(mk, { at: Date.now(), v });
+  return v;
+}
+async function climateSeasonFetch(st, today) {
+  const y = +today.slice(0, 4), m = +today.slice(5, 7), wy = m >= 10 ? y : y - 1;
+  const wyStart = `${wy}-10-01`, prevStart = `${wy - 1}-10-01`, prevEnd = `${wy}-09-30`, jan1 = `${y}-01-01`;
+  const [obs, nrm] = await Promise.all([
+    acis('StnData', { sid: st.sid, sdate: prevStart, edate: today, elems: 'pcpn' }),
+    acis('StnData', { sid: st.sid, sdate: prevStart, edate: today, elems: [{ name: 'pcpn', normal: '1' }] }),
+  ]);
+  const O = obs.data || [], N = new Map((nrm.data || []).map(r => [r[0], acisNum(r[1])]));
+  const last = [...O].reverse().find(r => acisNum(r[1]) != null)?.[0] || today;
+  const sum = (rows, a, b) => { let t = 0, miss = 0; for (const [d, x] of rows) if (d >= a && d <= b) { const n = acisNum(x); if (n == null) miss++; else t += n; } return { t, miss }; };
+  const nsum = (a, b) => { let t = 0; for (const [d, n] of N) if (d >= a && d <= b && n != null) t += n; return t; };
+  const cur = sum(O, wyStart, last), prev = sum(O, prevStart, prevEnd), ytd = sum(O, jan1, last);
+  return { wy, last, season: cur.t, seasonMiss: cur.miss, seasonNormal: nsum(wyStart, last), fullNormal: nsum(prevStart, prevEnd),
+    prev: prev.miss > 15 ? null : prev.t, ytd: ytd.t, ytdNormal: nsum(jan1, last) };
+}
+
+// Records for today's calendar date (every year on record) and all-time extremes. Cached for a week (all-time) / a day (today's date).
+async function climateRecords(st, today) {
+  const mmdd = today.slice(5), key = `wx.climRec.${st.sid}`, hit = store.get(key, {});
+  const out = {};
+  // Today's date across all years: one value per year on this month/day.
+  if (hit.day?.date === today) out.day = hit.day;
+  else if (mmdd !== '02-29') {
+    const first = +st.start.slice(0, 4) + (st.start.slice(5) > mmdd ? 1 : 0), sdate = `${first}-${mmdd}`;
+    const one = name => acis('StnData', { sid: st.sid, sdate, edate: today, elems: [{ name, interval: [1, 0, 0], duration: 'dly' }] }).then(j => j.data || []);
+    const norm = name => acis('StnData', { sid: st.sid, sdate: today, edate: today, elems: [{ name, normal: '1' }] }).then(j => acisNum(j.data?.[0]?.[1])).catch(() => null);
+    const r = await Promise.allSettled([one('maxt'), one('mint'), one('pcpn'), norm('maxt'), norm('mint')]);
+    const ext = (rows, hi) => { let b = null; for (const [d, x] of rows || []) { if (d.slice(5) !== mmdd || d === today) continue; const n = acisNum(x); if (n != null && (b == null || (hi ? n > b.v : n < b.v))) b = { v: n, years: [d.slice(0, 4)] }; else if (n != null && b && n === b.v) b.years.push(d.slice(0, 4)); } return b; };
+    if (r[0].status === 'fulfilled' || r[1].status === 'fulfilled') {
+      out.day = { date: today, hi: ext(val(r[0]), true), lo: ext(val(r[1]), false), wet: ext(val(r[2]), true), nHi: val(r[3]), nLo: val(r[4]) };
+      if (out.day.wet && out.day.wet.v <= 0) out.day.wet = null;
+    }
+  }
+  // All-time extremes, and wettest/driest rain seasons from monthly totals.
+  if (hit.all && Date.now() - hit.all.at < 7 * 864e5) out.all = hit.all;
+  else {
+    const ex = (name, reduce) => acis('StnData', { sid: st.sid, sdate: 'por', edate: 'por', elems: [{ name, smry: { reduce, add: 'date' }, smry_only: 1 }] })
+      .catch(() => acis('StnData', { sid: st.sid, sdate: 'por', edate: 'por', elems: [{ name, smry: reduce, smry_only: 1 }] }))
+      .then(j => ({ v: acisNum(j.smry?.[0]), date: acisDate(j.smry?.[0]) }));
+    const months = acis('StnData', { sid: st.sid, sdate: (st.pStart || st.start).slice(0, 7), edate: today.slice(0, 7), elems: [{ name: 'pcpn', interval: [0, 1], duration: 1, reduce: 'sum', maxmissing: '3' }] }).then(j => j.data || []);
+    const r = await Promise.allSettled([ex('maxt', 'max'), ex('mint', 'min'), ex('pcpn', 'max'), months]);
+    const seasons = {};
+    for (const [d, x] of val(r[3]) || []) { const yy = +d.slice(0, 4), mo = +d.slice(5, 7), w = mo >= 10 ? yy : yy - 1, n = acisNum(x); (seasons[w] ||= { t: 0, n: 0, bad: false }); if (n == null) seasons[w].bad = true; else { seasons[w].t += n; seasons[w].n++; } }
+    const full = Object.entries(seasons).filter(([, s]) => s.n === 12 && !s.bad).map(([w, s]) => ({ w: +w, t: s.t }));
+    full.sort((a, b) => b.t - a.t);
+    out.all = { at: Date.now(), hi: val(r[0]), lo: val(r[1]), wet: val(r[2]), wetSeason: full[0] || null, drySeason: full[full.length - 1] || null, nSeasons: full.length };
+    if (![out.all.hi, out.all.lo, out.all.wet, out.all.wetSeason].some(Boolean)) delete out.all;
+  }
+  store.set(key, { day: out.day || hit.day, all: out.all || hit.all });
+  return out;
+}
+
+const seasonLabel = w => `${w}–${String(w + 1).slice(2)}`;
+async function fillClimate(v, token, pick) {
+  const box = () => (token === state.token ? $('#clim .climbody') : null);
+  const today = isoDay(v.tz), locKey = `${v.lat.toFixed(2)},${v.lon.toFixed(2)}`;
+  let list;
+  try { list = await climateStations(v.lat, v.lon, today); } catch { list = null; }
+  if (!box()) return;
+  if (!list?.length) { box().innerHTML = '<p class="fine">Couldn’t find a nearby long-record weather station for season totals and records. The links below have the NWS office’s own reports.</p>'; return; }
+  const chosen = store.get('wx.climPick', {}), sid = pick || chosen[locKey];
+  const st = list.find(s => s.sid === sid) || list[0];
+  if (pick) { chosen[locKey] = pick; store.set('wx.climPick', chosen); }
+  const picker = `<label class="climpick"><span class="fine">Station</span><select>${list.map(s => `<option value="${esc(s.sid)}"${s === st ? ' selected' : ''}>${esc(s.name)} · ${US() ? Math.round(s.km / 1.609) + ' mi' : Math.round(s.km) + ' km'}</option>`).join('')}</select></label>`;
+  box().innerHTML = `${picker}<p class="fine">Loading…</p>`;
+  const wire = () => { const sel = $('#clim select'); if (sel) sel.onchange = () => fillClimate(v, token, sel.value); };
+  wire();
+  const [sea, rec] = await Promise.allSettled([climateSeason(st, today), climateRecords(st, today)]);
+  if (!box()) return;
+  const S = val(sea), R = val(rec) || {}, html = [picker];
+  if (S) {
+    html.push(`<h3 class="climh">Rain season since Oct 1 <span class="fine">· through ${esc(prettyDate(S.last, false))}</span></h3><div class="grid">
+      ${tile('This season', climR(S.season), [S.seasonNormal != null ? `Normal to date ${climR(S.seasonNormal)}` : '', pctOf(S.season, S.seasonNormal)].filter(Boolean).join(' · '))}
+      ${tile(`Last season (${seasonLabel(S.wy - 1)})`, climR(S.prev), pctOf(S.prev, S.fullNormal))}
+      ${tile('Normal full season', climR(S.fullNormal), 'Oct 1 – Sep 30')}
+      ${tile(`Since Jan 1, ${S.last.slice(0, 4)}`, climR(S.ytd), [`Normal ${climR(S.ytdNormal)}`, pctOf(S.ytd, S.ytdNormal)].filter(Boolean).join(' · '))}
+    </div>${S.seasonMiss > 3 ? `<p class="fine">${S.seasonMiss} days are missing from this season’s record, so the total may be low.</p>` : ''}`);
+  }
+  const yrs = b => { if (!b) return ''; const y = [...b.years].reverse(); return y.slice(0, 2).join(', ') + (y.length > 2 ? ` +${y.length - 2} more` : ''); };
+  if (R.day) {
+    const d = R.day;
+    html.push(`<h3 class="climh">Records for ${esc(prettyDate(today, false))}</h3><div class="grid">
+      ${tile('Record high', climT(d.hi?.v), yrs(d.hi))}${tile('Record low', climT(d.lo?.v), yrs(d.lo))}
+      ${d.wet ? tile('Wettest on this date', climR(d.wet.v), yrs(d.wet)) : ''}${d.nHi != null ? tile('Normal high / low', `${climT(d.nHi)} / ${climT(d.nLo)}`, '') : ''}
+    </div>`);
+  }
+  if (R.all) {
+    const a = R.all, when = x => (x?.date ? prettyDate(x.date) : '');
+    html.push(`<h3 class="climh">All-time records <span class="fine">· since ${esc(st.start.slice(0, 4))}</span></h3><div class="grid">
+      ${tile('Hottest', climT(a.hi?.v), when(a.hi))}${tile('Coldest', climT(a.lo?.v), when(a.lo))}${tile('Wettest day', climR(a.wet?.v), when(a.wet))}
+      ${a.wetSeason ? tile('Wettest season', climR(a.wetSeason.t), seasonLabel(a.wetSeason.w)) : ''}${a.drySeason && a.nSeasons > 10 ? tile('Driest season', climR(a.drySeason.t), seasonLabel(a.drySeason.w)) : ''}
+    </div>`);
+  }
+  if (!S && !R.day && !R.all) html.push('<p class="fine">Couldn’t load climate data for this station right now. Try another station, or use the links below.</p>');
+  else html.push(`<p class="fine">${esc(st.name)}${st.thr ? ' (the official NWS city record, combining past station sites)' : ''}. Data: NOAA Regional Climate Centers (ACIS), the same source as NWS NOWData. Recent days may be preliminary.</p>`);
+  box().innerHTML = html.join('');
+  wire();
 }
 
 function links(v) {

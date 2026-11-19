@@ -12,6 +12,9 @@ No build step, no API keys. Hosted on GitHub Pages.
 - `scripts/` — helpers the workflows run
 - `locations.json` — your saved locations, tab names and tab order, shared by every device and browser you open the app in (written by the app itself; see below)
 
+## Rainfall & records
+Each U.S. location shows rain-season totals (since Oct 1, vs. normal), records for today's date and all-time records from the nearest long-record station, using NOAA's ACIS climate data service (the source behind NWS NOWData). Where an airport has an official threaded NWS city record (e.g. San Diego since 1850), that's used by default; a picker switches stations. Links go to the office's storm rainfall totals and newly-set record reports.
+
 ## Turning on summaries for a new forecast area
 When a location is in an NWS office that doesn't have summaries yet, the app shows a **Turn on summaries** button. If a GitHub token is saved in Settings → Summaries for new areas (fine-grained, this repo only, Actions: read and write), the button runs `enable-summaries.yml` directly in one tap. Otherwise it opens a prefilled GitHub issue titled `Enable summaries: <OFFICE>`; when the repo owner submits it, `.github/workflows/enable-summaries.yml` adds the office to `config.json` (focused on that location), saves its discussion, and closes the issue. The next hourly summary run writes the first summary. You can also run that workflow by hand from the Actions tab.
 
@@ -32,4 +35,4 @@ Saved locations, renamed tabs and tab order live in `locations.json` in this rep
 }
 ```
 
-Data: NWS (api.weather.gov), Open-Meteo, NOAA Tides & Currents, Iowa Environmental Mesonet, RainViewer, CARTO/OpenStreetMap.
+Data: NWS (api.weather.gov), NOAA Regional Climate Centers (ACIS), Open-Meteo, NOAA Tides & Currents, Iowa Environmental Mesonet, RainViewer, CARTO/OpenStreetMap.

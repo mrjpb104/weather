@@ -169,6 +169,13 @@ dl.jargon dd { margin: 0; color: var(--muted); }
 @media (min-width: 560px) { .tides { grid-template-columns: repeat(4, 1fr); } }
 .tides .tile .v { font-size: 16px; }
 
+/* Rainfall & records */
+.climpick { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; }
+.climpick select { flex: 1; min-width: 0; font: inherit; font-size: 14px; color: var(--ink); background: var(--chip); border: 1px solid var(--line); border-radius: 10px; padding: 6px 8px; }
+.climh { font-size: 14px; margin: 14px 0 8px; }
+.climh:first-of-type { margin-top: 4px; }
+.climlinks { margin-top: 12px; }
+
 /* Links */
 .links { display: flex; flex-wrap: wrap; gap: 8px; }
 .links a { text-decoration: none; background: var(--chip); border: 1px solid var(--line); border-radius: 10px; padding: 7px 10px; font-size: 14px; color: var(--ink); }
