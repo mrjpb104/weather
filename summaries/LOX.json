@@ -1,0 +1,29 @@
+{
+  "office": "LOX",
+  "office_name": "Los Angeles",
+  "afd_id": "e6e07466-d9f4-42bd-80cc-a7072d4c54e5",
+  "afd_issued": "2026-11-19T04:46:00Z",
+  "generated": "2026-11-19T06:25:10Z",
+  "headline": "A strong cold front sweeps into LA County Thursday morning with heavy downpours, a few hours of possible thunderstorms and gusty winds, under a Flood Watch everywhere except the Antelope Valley, before cool, dry weather returns Friday and Saturday.",
+  "sections": [
+    {
+      "title": "Today & Tonight",
+      "text": "The front was moving through the Central Coast Wednesday evening (northwest San Luis Obispo County already had 1.5–3 inches, most other places a half inch or less) and will cross southern Santa Barbara and Ventura counties overnight, then move through LA County, including the Glendale/Burbank area, Thursday morning and possibly into early afternoon, with the worst around 5–10 AM. Rain may fall at a half inch per hour or more, locally 1 inch per hour, with storm totals of 1–2 inches for most coast and valley areas, locally up to 3 inches, and 2–5 inches on south-facing slopes; forecasters think totals may come in slightly lower than advertised. Expect around 2–4 hours of possible thunderstorms (about a 20% chance at any spot) and a very small chance (5% or less) of a weak tornado, mainly in the LA Basin. Gusts can reach 35 mph in lower areas and 50 mph in the mountains under Wind Advisories through Thursday morning, and a Flood Watch runs through Thursday afternoon for everywhere but the Antelope Valley, so expect slick and at times impassable streets and freeways and avoid parking under trees."
+    },
+    {
+      "title": "Short Term",
+      "text": "Late in the storm on Thursday, snow levels drop enough for 3–6 inches mainly above 7,000 feet, too high to cause much trouble. Friday and Saturday turn dry with light offshore (land-to-sea) breezes and highs mostly in the 60s. A brief area of high pressure brings sunny skies Saturday, but temperatures stay 5–10 degrees below normal."
+    },
+    {
+      "title": "Long Term",
+      "text": "A weak system arrives Sunday, likely bringing rain to the Central Coast (up to a quarter inch) but only about a 40% chance of rain south of Point Conception, including LA County, where amounts would stay under a tenth of an inch; highs stay in the mid 60s. Monday is dry and mostly sunny with little temperature change. Another storm looks possible later Tuesday or Wednesday, with about a 20% chance it turns into a fairly sizable system."
+    }
+  ],
+  "coast": "Dangerous beach conditions continue into Friday, peaking Thursday, with High Surf Advisories for all beaches: large surf will bring very dangerous rip currents and hazardous jetties. Minor to moderate coastal flooding is possible, especially at Thursday morning's high tide (Coastal Flood Advisory 3–10 AM Thursday for the Central Coast), with seawater over low-lying beaches, walkways and parking lots and significant beach erosion; the Central Coast could see wave damage to piers, flooded roads, and big breaking waves at Morro Bay Harbor (and to a lesser extent Ventura Harbor). Offshore, Gale Warnings and Small Craft Advisories are up through Friday with south gusts over 35 knots and 10–15 foot seas, and possible thunderstorms over the water; conditions improve Friday and turn fairly mild Saturday. Extremely high, likely record-breaking tides arrive over Thanksgiving week (peaking Tuesday through Thanksgiving Day), and combined with new swells they will likely cause at least widespread moderate coastal flooding on all coasts, possibly significant if a bigger swell lines up with the tides.",
+  "watch_for": [
+    "Heavy downpours and street/freeway flooding Thursday morning in LA County, plus a small chance of thunderstorms or a weak tornado",
+    "Whether Sunday's light rain makes it south of Point Conception (about a 40% chance)",
+    "Record high tides Thanksgiving week and a possible larger storm around Tuesday–Thanksgiving"
+  ],
+  "confidence": "Forecasters are confident in the Thursday storm and dangerous ocean conditions though exact rain and wind-shift timing could be off by about 2 hours, confident in dry weather Friday–Saturday, and less certain about next week's storm because the computer models disagree."
+}
