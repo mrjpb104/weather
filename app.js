@@ -751,7 +751,7 @@ function render(v, loc) {
   if (v.notice) html.push(`<div class="note">${esc(v.notice)}</div>`);
   if (loc && state.justAdded === loc.id) {
     state.justAdded = null;
-    const st = summaryState(v);
+    const st = v.kind === 'us' ? summaryState(v) : null;
     if (st === 'off') html.push(`<section class="card sumcta top"><p>${ui('doc')}<span>This spot is in the NWS <b>${esc(areaName(v))}</b> forecast area, which doesn’t have plain-English discussion summaries yet.</span></p>${enableBtn(v, loc)}</section>`);
   }
 
@@ -1534,10 +1534,30 @@ async function rvFrames() {
 
 // ---------- Add / manage locations ----------
 let searchTimer = null;
+// "Add to" menu in the add dialog. A new group is named first, then created with the first place added to it.
+function fillAddTo(selected, newName) {
+  const sel = $('#addTo');
+  sel.innerHTML = `<option value="own">Its own tab</option>${state.groups.map(g => `<option value="${esc(g.id)}"${g.id === selected ? ' selected' : ''}>${esc(g.name)}</option>`).join('')}`
+    + (newName ? `<option value="new" data-name="${esc(newName)}" selected>New group: ${esc(newName)}</option>` : '') + '<option value="pick">＋ New group tab…</option>';
+  $('#addHint').innerHTML = newName ? `Search for the first place in <b>${esc(newName)}</b> and tap it. To add more places to it later, tap ＋ again while you’re on that tab.` : '';
+  sel.onchange = () => {
+    if (sel.value !== 'pick') return;
+    const name = askGroupName();
+    fillAddTo(name ? null : selected, name);
+    if (!name) sel.value = selected && state.groups.some(g => g.id === selected) ? selected : 'own';
+  };
+}
+function newGroupFlow() {
+  const name = askGroupName();
+  if (!name) return;
+  $('#dlgSettings').close();
+  openAdd();
+  fillAddTo(null, name);
+}
 function openAdd() {
   const d = $('#dlgAdd'), cur = groupOf(state.active);
   $('#addQuery').value = ''; $('#addResults').innerHTML = '';
-  $('#addTo').innerHTML = `<option value="own">Its own tab</option>${state.groups.map(g => `<option value="${esc(g.id)}"${g === cur ? ' selected' : ''}>${esc(g.name)}</option>`).join('')}<option value="new">New tab with other places…</option>`;
+  fillAddTo(cur?.id);
   d.showModal();
   setTimeout(() => $('#addQuery').focus(), 50);
 }
@@ -1567,8 +1587,9 @@ function addLocation(o) {
   const id = `loc-${Date.now().toString(36)}`;
   state.saved.push({ id, ...o });
   store.set('wx.saved', state.saved);
-  const to = $('#addTo')?.value || 'own';
-  if (to !== 'own') movePlace(id, to);
+  const sel = $('#addTo'), to = sel?.value || 'own';
+  if (to === 'new') movePlace(id, 'new', sel.selectedOptions[0]?.dataset.name);
+  else if (to !== 'own' && to !== 'pick') movePlace(id, to);
   state.justAdded = id;
   $('#dlgAdd').close();
   go(id);
@@ -1612,11 +1633,11 @@ function openSettings(section) {
   if (section === 'github') requestAnimationFrame(() => $('#ghHead').scrollIntoView({ block: 'start' }));
 }
 // Move a place into a group ('g-…'), onto its own tab ('own'), or into a new group ('new').
-function movePlace(id, target) {
+function movePlace(id, target, newName) {
   if (id === 'here' || !target) return false;
   let name = '';
   if (target === 'new') {
-    name = (prompt('Name for the new tab (e.g. San Diego)', '') || '').trim().slice(0, 40);
+    name = (newName || askGroupName() || '').slice(0, 40);
     if (!name) return false;
   }
   const from = groupOf(id), order = tabIds();
@@ -1637,7 +1658,8 @@ function movePlace(id, target) {
   saveOrder(newOrder.filter(x => groupById(x) || (placeById(x) && !groupOf(x))));
   return true;
 }
-const moveOptions = (id, includeOwn) => `<option value="">Move to…</option>${includeOwn ? '<option value="own">Its own tab</option>' : ''}${state.groups.filter(g => !g.members.includes(id)).map(g => `<option value="${esc(g.id)}">${esc(g.name)}</option>`).join('')}<option value="new">New tab…</option>`;
+const askGroupName = () => (prompt('Name for the new group tab (e.g. Los Angeles)', '') || '').trim();
+const moveOptions = (id, includeOwn) => `<option value="">Move to…</option>${includeOwn ? '<option value="own">Its own tab</option>' : ''}${state.groups.filter(g => !g.members.includes(id)).map(g => `<option value="${esc(g.id)}">${esc(g.name)}</option>`).join('')}<option value="new">New group tab…</option>`;
 
 function renderSaved() {
   const ul = $('#savedList');
@@ -1759,6 +1781,7 @@ function boot() {
   $('#btnSettings').onclick = openSettings;
   $('#addQuery').oninput = e => { clearTimeout(searchTimer); searchTimer = setTimeout(() => doSearch(e.target.value), 350); };
   $('#addHere').onclick = addHere;
+  $('#newGroup').onclick = newGroupFlow;
   $('#ghSave').onclick = saveGh;
   $('#ghToken').onkeydown = e => { if (e.key === 'Enter') saveGh(); };
   $('#ghRemove').onclick = () => { store.set('wx.ghToken', ''); try { localStorage.removeItem('wx.ghToken'); } catch { /* ignore */ } renderGh(); };

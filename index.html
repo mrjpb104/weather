@@ -18,9 +18,9 @@
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link rel="stylesheet" id="font-satoshi" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="style.css?v=20261119f">
-<link rel="stylesheet" href="themes.css?v=20261119f">
-<link rel="stylesheet" href="fonts.css?v=20261119f">
+<link rel="stylesheet" href="style.css?v=20261119g">
+<link rel="stylesheet" href="themes.css?v=20261119g">
+<link rel="stylesheet" href="fonts.css?v=20261119g">
 <script>
   // Fixed look: Live sky theme with the Satoshi font. Clear choices saved by the old pickers.
   document.documentElement.dataset.theme = 'sky';
@@ -43,6 +43,7 @@
     <button class="iconbtn" value="close" aria-label="Close">✕</button>
   </form>
   <label class="addto"><span>Add to</span><select id="addTo"></select></label>
+  <p class="fine" id="addHint"></p>
   <input id="addQuery" type="search" placeholder="City, ZIP code, or lat, lon" autocomplete="off" enterkeyhint="search">
   <button id="addHere" class="btn wide" type="button">📍 Save my current location</button>
   <ul id="addResults" class="results"></ul>
@@ -62,8 +63,9 @@
     </div>
   </div>
   <h3 id="locHead">Locations &amp; tabs</h3>
-  <p class="fine">Drag ⠿ (or use ↑ ↓) to change the order. To group places into one tab you swipe through (e.g. San Diego: Home, Downtown), use a place’s <b>Move to…</b> menu and pick <b>New tab…</b>, then move other places into it. Tip: press and hold a tab to jump here.</p>
+  <p class="fine">Drag ⠿ (or use ↑ ↓) to change the order. To make a tab you swipe through with several places (e.g. Los Angeles: Westside, Downtown, Valley), tap <b>＋ New group tab</b> below. You can also move a saved place into a group with its <b>Move to…</b> menu. Tip: press and hold a tab to jump here.</p>
   <ul id="savedList" class="saved"></ul>
+  <button id="newGroup" class="btn wide" type="button">＋ New group tab</button>
   <p class="fine" id="syncStatus"></p>
   <h3 id="ghHead">GitHub access</h3>
   <p class="fine" id="ghStatus"></p>
@@ -82,8 +84,8 @@
 </dialog>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="icons.js?v=20261119f"></script>
-<script src="fx.js?v=20261119f"></script>
-<script src="app.js?v=20261119f"></script>
+<script src="icons.js?v=20261119g"></script>
+<script src="fx.js?v=20261119g"></script>
+<script src="app.js?v=20261119g"></script>
 </body>
 </html>
