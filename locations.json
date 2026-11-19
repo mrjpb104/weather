@@ -17,13 +17,23 @@
       "cc": "US",
       "admin": "NY",
       "country": "United States"
+    },
+    {
+      "id": "loc-mwn3uptq",
+      "name": "Glendale",
+      "lat": 34.1481,
+      "lon": -118.2435,
+      "cc": "US",
+      "admin": "CA",
+      "country": "United States"
     }
   ],
   "order": [
     "here",
     "g-mwn3m489",
     "loc-mwk12vk8",
-    "loc-mwk6jjfn"
+    "loc-mwk6jjfn",
+    "g-mwn3uv5l"
   ],
   "labels": {},
   "groups": [
@@ -33,7 +43,14 @@
       "members": [
         "home"
       ]
+    },
+    {
+      "id": "g-mwn3uv5l",
+      "name": "Los Angeles",
+      "members": [
+        "loc-mwn3uptq"
+      ]
     }
   ],
-  "updated": "2026-11-19T05:17:19.399Z"
+  "updated": "2026-11-19T05:24:07.856Z"
 }
