@@ -1,29 +1,29 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": "1a0b39ec-8b78-4077-909c-83edebe9ce99",
-  "afd_issued": "2026-11-19T04:38:00Z",
-  "generated": "2026-11-19T05:25:00Z",
-  "headline": "Tonight's last showers fade, leaving Thursday through early Saturday dry and near normal with morning fog, before showers return Sunday and a stronger Tuesday storm brings wind, Cascade pass snow and a coastal flooding risk with next week's peak tides.",
+  "afd_id": "3bb3cb9c-7a8d-4f36-8496-1110c2fe2125",
+  "afd_issued": "2026-11-19T11:14:00Z",
+  "generated": "2026-11-19T12:25:10Z",
+  "headline": "Quiet, mostly cloudy weather with morning fog lasts through Friday, then showers return this weekend and a windy Tuesday storm combines with next week's highest tides to bring a coastal flooding risk.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A few showers linger across Western Washington this Wednesday evening as a weakening storm to the south drifts inland, but they should wind down overnight. Winds are mostly light east to northeast at 5 to 10 mph, easing further overnight, with a few gusts near 20 mph around Sea-Tac this evening. Clouds stay high enough that fog should be limited to isolated valleys and low-lying spots tonight."
+      "text": "A weakening storm over western Oregon keeps plenty of clouds over Western Washington Thursday, with a couple of light showers along the Strait of Juan de Fuca early and a few possible near the Cascade crest, but mostly just cloud cover. Morning fog, already dropping visibility under a mile in Tacoma and Olympia, may spread a bit but should clear by afternoon, and highs land a couple of degrees either side of 50. Skies clear tonight as high pressure builds in, bringing areas of fog by early Friday morning, including freezing fog in the South Puget Sound and southwest interior, with lows in the upper 20s and 30s."
     },
     {
       "title": "Short Term",
-      "text": "Thursday turns drier across the Strait shore and the Puget Sound lowlands as the moisture wrapping around the departing storm gets cut off, though a few lingering showers over the southern Cascades can't be ruled out; skies around Seattle should clear by late Thursday morning or afternoon. High pressure building overhead keeps Thursday and Friday quiet, with periods of morning fog and low clouds and cloudy afternoons. Temperatures stay near normal, with lowland highs in the upper 40s to low 50s and lows mostly in the 30s. Near-freezing temperatures early Friday morning could produce pockets of freezing fog in the southwest interior."
+      "text": "Friday stays dry under high pressure, though light winds make it hard to say when the fog will lift; it could linger into early afternoon, especially around the South Puget Sound, and highs reach the mid 40s to low 50s. A weak, weakening system moves in later Saturday with scattered showers. Snow levels drop below pass level, but moisture looks limited over the Cascades on Saturday, so new snow should be very light, if any."
     },
     {
       "title": "Long Term",
-      "text": "Saturday likely stays dry at least through the morning before high pressure shifts east. A slow-moving storm cut off from the main jet stream sets up offshore late Saturday, sending bands of moisture into Western Washington into Sunday with light rain showers in the lowlands, breezy east winds through the Cascade gaps, and snow levels around 2,000 to 2,500 feet giving the mountains a dusting. Monday may bring a brief lull before a stronger, more organized front arrives Tuesday, potentially bringing widespread breezy winds and snow over the Cascade passes. No river flooding is expected over the next 7 days."
+      "text": "A storm stalled off the coast Saturday night and Sunday sends a couple of weak disturbances through, keeping a chance of showers before it fades Sunday night. A warm front brushes the area Monday, followed by a weakening cold front Tuesday; a deep low (around 960 millibars, a strong storm) stays far enough northwest to keep the strongest winds along the coast Tuesday and Tuesday night, with breezy conditions in the interior as the front passes Tuesday night. Another system could approach Wednesday night into Thanksgiving, with models differing widely on its strength and track, though most stronger versions turn it north well offshore, which would limit local impacts. No river flooding is expected over the next 7 days."
     }
   ],
-  "coast": "Seas of 10 to 13 feet linger in the coastal waters this evening, with a Small Craft Advisory until 10 AM Thursday; seas drop toward 6 to 8 feet during Thursday. High pressure brings calmer conditions on the water Thursday and Friday. It turns active again this weekend into early next week as seas climb back above 10 feet; Monday into Tuesday is the windiest stretch, with gale-force gusts likely in the coastal waters and parts of the Strait of Juan de Fuca, a 40 to 50% chance of storm-force gusts in the outer coastal waters late Monday, and seas approaching 12 to 17 feet by midweek. Astronomical tides peak next week, raising the potential for coastal flooding, which the Tuesday storm's low pressure may make worse.",
+  "coast": "Seas of 10–11 feet this morning subside below 10 feet, letting the Small Craft Advisory for the coastal waters expire at 10 AM Thursday, and weak high pressure keeps the water fairly calm through Friday. A low spinning offshore this weekend brings rougher conditions: over 70% odds of small-craft-advisory winds on the coastal waters, 50–80% through the Strait of Juan de Fuca, a 30–45% chance of gales on the outer coastal waters, and seas of 10–15 feet. A stronger system Monday into Tuesday brings a 50–75% chance of gales on the coastal waters starting Monday morning, peaking Tuesday with gales very likely (90%+) and a 35–50% chance of storm-force winds; the Strait has a 65–75% chance of gales and a 35% chance of storm-force winds in its central and eastern parts, and outer-coast seas approach 20 feet. Next week also brings the month's highest tides, and the combination of wind, high tides and low pressure could cause coastal flooding starting as early as Tuesday.",
   "watch_for": [
-    "Freezing fog in the southwest interior early Friday morning.",
-    "Tuesday's stronger storm: widespread breezy winds and snow over the Cascade passes.",
-    "Coastal flooding risk next week as peak high tides coincide with the Tuesday storm."
+    "Freezing fog in the South Puget Sound and southwest interior early Friday morning, possibly lingering into early afternoon.",
+    "Tuesday's storm: gales likely on the coast and Strait, with a chance of storm-force winds and coastal flooding during next week's high tides.",
+    "The Wednesday night–Thanksgiving system, whose strength and track are still very uncertain."
   ],
-  "confidence": "Forecasters are confident in a quiet, mostly dry Thursday through Saturday morning; models continue to show Tuesday's system as stronger and more organized, though its exact wind, pass snow and coastal flooding impacts are still uncertain."
+  "confidence": "Forecasters are confident in quiet weather through Friday and in models agreeing on the weekend offshore low, increasingly confident in a windy Tuesday along the coast and Strait, but uncertain about Friday's fog timing and the Thanksgiving system."
 }
