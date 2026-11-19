@@ -1,0 +1,28 @@
+{
+  "office": "REV",
+  "office_name": "Reno",
+  "afd_id": "6b4c2d88-25a5-4eb8-89ea-0781545b9c2e",
+  "afd_issued": "2026-11-18T20:13:00Z",
+  "generated": "2026-11-19T07:26:20Z",
+  "headline": "A potent winter storm dumps 3–4 feet of snow on Mammoth Lakes and the Sierra through Friday morning, with ridgetop gusts near 100 mph and hazardous travel, followed by a brief, very cold break before more snow returns Saturday night.",
+  "sections": [
+    {
+      "title": "Today & Tonight",
+      "text": "A Winter Storm Warning is in effect until 4 AM Friday for the Sierra and northeastern California, and snow in Mono County ramps up Wednesday, with the heaviest rates of 2–3 inches per hour expected around 6–11 PM Wednesday (around Tahoe, 1–7 PM). By Friday morning Mammoth Lakes is expected to get 3–4 feet of snow, June Lake 2–3 feet, and US-395 in Mono County 6–12 inches, with 1–2 feet in the Tahoe Basin and upwards of 4 feet on Donner Pass along I-80. Ridgetop winds gust 90–100 mph, topping 100 mph late Wednesday night into Thursday morning, and snow levels stay below 6,000 feet for the whole storm, dropping below 5,000 feet late Wednesday night. In the Reno–Carson City–Minden area, a Winter Weather Advisory runs from 4 PM Wednesday to 7 PM Thursday, with rain mixing with and turning to snow Wednesday evening; valley gusts of 50–60 mph Wednesday morning ease to 30–40 mph through the afternoon and keep weakening overnight."
+    },
+    {
+      "title": "Short Term",
+      "text": "Snow showers continue Thursday, again heaviest in the afternoon and evening at 2–3 inches per hour in the Sierra, with a 15–20% chance of thunder along the Sierra Crest Thursday afternoon and locally up to 4 inches per hour in heavy snow bands; showers last through late Thursday night and may linger in the Sierra into Friday morning. Lower valley totals are 1–4 inches along the Sierra Front including Reno (a 30–50% chance of at least an inch there), 5–8 inches in Virginia City, 4–8 inches in Susanville and 1–4 inches in Cedarville, with little east of the Pine Nuts and Virginia Range, and the Thursday morning commute will likely be slick and icy even after the snow stops. Skies clear Friday afternoon, and Friday night into Saturday morning turns very cold, with lows in the single digits and teens in many mountain and valley spots: around 10–13 degrees in Reno and single digits in Truckee."
+    },
+    {
+      "title": "Long Term",
+      "text": "The next storm approaches Saturday afternoon and evening, with chances of snow returning to the Sierra, including Mammoth, and western Nevada Saturday night and continuing through Sunday and Monday, along with rain and snow showers in the valleys. This system looks weaker than the current one, with lower totals, but keeps temperatures colder than average. Another, potentially more impactful storm may bring more significant snow to northern California and the Sierra Tuesday into Wednesday, though computer models still disagree on its timing and strength, and the pattern looks active through Thanksgiving week."
+    }
+  ],
+  "watch_for": [
+    "Heavy snow of 2–3 inches per hour and 3–4 foot totals around Mammoth Lakes through Friday morning, with very difficult travel on Sierra roads and passes.",
+    "Ridgetop gusts of 90–100+ mph, strongest late Wednesday night into Thursday morning.",
+    "Timing and strength of the Saturday night–Monday storm and a potentially bigger one Tuesday into Wednesday."
+  ],
+  "confidence": "Forecasters are confident in heavy Sierra snow and strong ridgetop winds through Friday morning and in very cold temperatures Friday night, moderately confident in the weaker weekend storm, and less certain about the timing and strength of next week's system."
+}
