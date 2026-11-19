@@ -35,6 +35,15 @@
       "cc": "US",
       "admin": "CA",
       "country": "United States"
+    },
+    {
+      "id": "loc-mwn3zlma",
+      "name": "Los Angeles",
+      "lat": 34.0256,
+      "lon": -118.4071,
+      "cc": "US",
+      "admin": "CA",
+      "country": "United States"
     }
   ],
   "order": [
@@ -58,9 +67,10 @@
       "id": "g-mwn3uv5l",
       "name": "Los Angeles",
       "members": [
-        "loc-mwn3uptq"
+        "loc-mwn3uptq",
+        "loc-mwn3zlma"
       ]
     }
   ],
-  "updated": "2026-11-19T05:26:38.561Z"
+  "updated": "2026-11-19T05:27:48.903Z"
 }
