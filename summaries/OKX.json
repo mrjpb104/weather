@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "381d2e87-b61a-4bb2-8be0-3496914aa95e",
-  "afd_issued": "2026-11-19T05:55:00Z",
-  "generated": "2026-11-19T07:26:20Z",
-  "headline": "Sunny, dry and milder-than-normal weather lasts through Saturday, but a coastal storm is increasingly likely to bring a windy, soaking rain to New York City and the surrounding area Sunday afternoon into Monday morning.",
+  "afd_id": "c479ac63-d8da-4156-9e21-66d74b335a89",
+  "afd_issued": "2026-11-19T07:56:00Z",
+  "generated": "2026-11-19T08:25:08Z",
+  "headline": "Sunny, dry and milder-than-normal weather lasts through Saturday, but a coastal storm is increasingly likely to bring wind and a soaking rain to New York City and the surrounding area late Sunday into Monday, with some computer models showing enough rain for flooding.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Thursday is clear and mostly sunny in New York City under strong high pressure, with light west to west-northwest winds turning southwest this afternoon at under 10 mph and highs several degrees above normal. Some thin high clouds drift in late, and lows tonight are set mainly by heat escaping under the clear, calm skies. Patchy freezing fog is likely early this morning and again Thursday night in river valleys, sheltered inland spots and the Long Island Pine Barrens; a bit more low-level moisture Thursday night brings a low chance of black ice on bridges and overpasses."
+      "text": "Thursday is clear and mostly sunny in New York City under strong high pressure, with highs in the upper 50s to mid 60s, several degrees above normal, and light winds turning southwest this afternoon. A few thin high clouds drift in late, and a weak disturbance passing overhead tonight into Friday morning stays dry. With clear skies and light winds, patchy freezing fog is possible tonight in river valleys, sheltered inland spots and the Long Island Pine Barrens, bringing a low chance of black ice on bridges and overpasses."
     },
     {
       "title": "Short Term",
-      "text": "Friday and Saturday stay mostly sunny and dry, with highs in the upper 50s to mid 60s, several degrees above normal; a weak upper-level disturbance passing Thursday night into Friday morning won't bring rain. Nights gradually turn a few degrees milder than normal into the weekend, especially in the city and right along the coast. Fog is increasingly likely on clear nights in outlying areas, particularly river valleys, as the air slowly gets more humid."
+      "text": "Friday and Saturday stay mostly sunny and dry, with highs again in the upper 50s to mid 60s, several degrees above normal. Nights gradually turn a few to several degrees milder than normal into the weekend, especially in the city and right along the coast, though clear, calm nights will still let outlying areas cool off. As the air slowly gets more humid, fog becomes increasingly likely overnight in outlying areas, particularly river valleys."
     },
     {
       "title": "Long Term",
-      "text": "A low-pressure system forming off the Southeast coast is expected to move north to near Cape Hatteras Sunday morning and then pass over or near the area late Sunday into Monday morning; the National Hurricane Center gives it a 40% chance of becoming a tropical or subtropical system. If it tracks close, it could bring a windswept, soaking rain Sunday afternoon into Monday morning, with a 30–50% chance of at least 1 inch of rain in 24 hours, a 20–30% chance of 2 inches, under a 10% chance of 3–4 inches, and a low, localized flash flood threat. Winds could reach 20–30 mph with gusts of 35–40 mph if the storm passes over or near the coast, while a track farther southeast or east would limit wind impacts. Drier, seasonable weather is likely later Monday into early next week, with northwest gusts of 20–30 mph possible Monday."
+      "text": "A coastal storm is increasingly likely to affect the area late Sunday into Monday, with rain possible by Sunday and likely early Monday before conditions may improve Monday afternoon; it could have some tropical or subtropical traits, so the National Hurricane Center is worth checking. The wettest computer models show a swath of up to about 4 inches of rain from the Mid-Atlantic to southern New England, and since about 3 inches in 6 hours is enough to cause flooding here, that could mean widespread minor flooding and isolated flash flooding in the most flood-prone spots; the European model remains an outlier against this wetter scenario. Peak wind gusts are estimated at 30–40 mph, higher if the storm deepens and tracks close to the coast, with northwest gusts around 25–30 mph Monday as it pulls away."
     }
   ],
-  "coast": "Calm conditions continue on the waters through Sunday morning, with northwest to west winds under 15 knots and ocean seas no higher than 2–3 ft. Small Craft Advisory or possibly gale conditions could develop later Sunday into Monday, depending on the coastal storm's track and strength; the strongest winds (under a 20% chance of 39 mph sustained) are most likely over the ocean waters southeast of Long Island. Minor coastal flooding is possible early next week with the approaching new moon, with a greater threat if the storm tracks over or west of the area.",
+  "coast": "Winds and seas stay below Small Craft Advisory levels through Saturday under high pressure. Winds and waves build Sunday into Monday as the coastal storm approaches, with ocean seas reaching 5 ft or more by late Sunday and gale-force winds possible on all waters Monday, depending on the storm's track and strength (gales are now mentioned in the Hazardous Weather Outlook). Higher-than-usual tides around Tuesday's full moon could bring minor coastal flooding, depending on the storm's track and intensity; one coastal flood model ensemble already hints at minor flooding Sunday night.",
   "watch_for": [
     "The track and strength of the Sunday–Monday coastal storm, which will decide how much rain, wind and coastal flooding New York City gets.",
-    "Whether the low off the Southeast coast becomes tropical or subtropical (40% chance per the National Hurricane Center).",
-    "Patchy freezing fog and a low chance of black ice on bridges and overpasses in valleys and sheltered inland areas Thursday night."
+    "Heavy rain of up to about 4 inches in the wettest scenarios, which could cause widespread minor flooding and isolated flash flooding.",
+    "Patchy freezing fog and a low chance of black ice on bridges and overpasses in valleys and sheltered inland areas tonight."
   ],
-  "confidence": "Forecasters are confident in dry, mild weather through Saturday and that a coastal storm will form, but confidence is low on its exact track, strength, rain totals and wind impacts for Sunday into Monday."
+  "confidence": "Forecasters are confident in dry, mild weather through Saturday, but the late Sunday–Monday storm remains a forecast challenge, with uncertain track, timing, rain totals and wind as computer models still disagree."
 }
