@@ -26,6 +26,15 @@
       "cc": "US",
       "admin": "CA",
       "country": "United States"
+    },
+    {
+      "id": "loc-mwn3y3ga",
+      "name": "San Diego",
+      "lat": 32.725771,
+      "lon": -117.122454,
+      "cc": "US",
+      "admin": "CA",
+      "country": "United States"
     }
   ],
   "order": [
@@ -41,7 +50,8 @@
       "id": "g-mwn3m489",
       "name": "San Diego",
       "members": [
-        "home"
+        "home",
+        "loc-mwn3y3ga"
       ]
     },
     {
@@ -52,5 +62,5 @@
       ]
     }
   ],
-  "updated": "2026-11-19T05:24:30.791Z"
+  "updated": "2026-11-19T05:26:38.561Z"
 }
