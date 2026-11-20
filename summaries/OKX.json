@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": null,
-  "afd_issued": "2026-11-19T17:34:00Z",
-  "generated": "2026-11-19T18:25:20Z",
-  "headline": "Sunny, dry and milder-than-normal weather lasts through Saturday, then a coastal storm is looking more likely to bring wind and soaking rain to New York City and the surrounding area late Sunday into Monday, with the wettest computer models showing enough rain for flooding.",
+  "afd_id": "fea583e1-7c21-49c7-93bd-30b98cc11117",
+  "afd_issued": "2026-11-19T23:26:00Z",
+  "generated": "2026-11-20T00:25:55Z",
+  "headline": "Dry, mostly sunny and warmer than normal through Saturday, then a coastal storm likely brings rain and wind to New York City and the region Sunday into Monday, with potentially heavy rain and minor flooding if the wetter computer models are right.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Thursday afternoon stays mostly sunny and dry in New York City under strong high pressure, with light winds under about 10 mph turning southwest (possibly more southerly with a sea breeze) and a few thin high clouds drifting in late. A weak disturbance passes overhead tonight into Friday morning without rain, and clear skies with light winds let outlying areas get quite cold while the city stays milder. Patchy freezing fog is possible tonight in river valleys, sheltered inland spots and the Long Island Pine Barrens, bringing a low chance of black ice on bridges and overpasses."
+      "text": "Thursday night is clear with light winds under strong high pressure to the south, so outlying areas turn quite cold while New York City and other urban centers stay milder. Patchy fog may form in outlying areas, especially river valleys, with patchy freezing fog possible in river valleys, sheltered inland spots and the Long Island Pine Barrens. That brings a low chance of black ice on elevated surfaces such as bridges and overpasses."
     },
     {
       "title": "Short Term",
-      "text": "Friday stays sunny and dry, and the dry air lets temperatures climb quickly into the 60s. On Saturday, winds turn to blow in off the ocean as the high pressure moves offshore, so highs are lower than Friday but still several degrees above normal. As the air slowly gets more humid over the next few days, overnight fog becomes more likely in outlying areas, especially river valleys."
+      "text": "Friday is mostly sunny and dry, with very dry air letting temperatures climb quickly into the 60s. On Saturday the high moves offshore and winds turn off the ocean, so highs are lower but still several degrees above normal, and it stays dry. Rain chances increase Sunday as a coastal storm approaches, with its arrival most likely late Sunday."
     },
     {
       "title": "Long Term",
-      "text": "Forecasters are growing more confident that at least some rain falls sometime Sunday into Monday as a coastal storm moves in late Sunday, with rain and lower clouds possible Sunday, rain likely early Monday, and improvement possible Monday afternoon with northwest gusts around 25–30 mph. The storm could have some tropical or subtropical traits, so the National Hurricane Center is worth checking; the American and Canadian models favor a wet, single-storm scenario, with one AI-based model showing a swath of about 4 inches of rain from the Mid-Atlantic to southern New England, while the European model remains an outlier. Since about 3 inches in 6 hours is enough to cause flooding here, the wetter scenario could mean widespread minor flooding and isolated flash flooding in the most flood-prone spots. Peak wind gusts are estimated at 30–40 mph, but could be higher if the storm deepens and tracks close to the coast."
+      "text": "A coastal storm is increasingly likely to bring rain and wind late Sunday into Monday, possibly with some tropical or subtropical characteristics (the National Hurricane Center would cover those details). The wetter models, including the GFS and its AI version, show a single storm with the AI-GFS hinting at a swath of about 4 inches of rain from the Mid-Atlantic to southern New England; since roughly 3 inches in 6 hours causes flooding here, that could mean widespread minor flooding and isolated flash flooding in the most flood-prone spots, though the European model remains an outlier. Peak gusts are estimated at 30–40 mph, higher if the storm deepens and tracks close to the coast; rain likely continues early Monday with improvement possible Monday afternoon, northwest winds gusting 20–25 knots (about 25–30 mph), and drier weather with easing winds Tuesday."
     }
   ],
-  "coast": "Winds and seas stay below Small Craft Advisory levels through Saturday with high pressure nearby. Winds and waves build Sunday into Monday as the coastal storm approaches, with ocean seas reaching 5 ft or more by late Sunday and gale-force winds possible on all waters Monday, depending on the storm's track and strength. Higher-than-usual tides around Tuesday's full moon could bring minor coastal flooding depending on the storm's track and intensity, and one coastal flood model ensemble already hints at minor flooding Sunday night.",
+  "coast": "Winds and seas stay below Small Craft Advisory levels through Saturday with high pressure nearby. Waves and winds build Sunday into Monday as the coastal storm approaches: ocean seas could reach 5 feet or more by late Sunday, and gale-force winds (39 mph or more) are possible on all waters Monday, depending on the storm's track and strength. Higher-than-usual tides around Tuesday's full moon could bring minor tidal flooding depending on the storm's track and intensity, and one coastal flood model ensemble already hints at minor flooding by Sunday night.",
   "watch_for": [
-    "The track and timing of the late Sunday–Monday coastal storm, which will decide how much rain, wind and coastal flooding New York City gets.",
-    "Heavy rain of around 4 inches in the wettest scenarios, which could cause widespread minor flooding and isolated flash flooding.",
-    "Patchy freezing fog and a low chance of black ice on bridges and overpasses in valleys and sheltered inland areas tonight."
+    "The track and timing of the Sunday–Monday coastal storm, and whether rain totals approach the 3–4 inch range that could cause flooding.",
+    "Wind gusts of 30–40 mph Sunday night into Monday, possibly stronger if the storm tracks close to the coast.",
+    "Minor tidal flooding near Tuesday's full moon, and patchy freezing fog Thursday night."
   ],
-  "confidence": "Forecasters are confident in dry, mild weather through Saturday and increasingly confident in some rain Sunday into Monday, but the storm's track, timing, rain totals and winds remain uncertain."
+  "confidence": "Forecasters have high confidence in dry, mild weather through Saturday, growing confidence in at least some rain Sunday into Monday, and low confidence in the storm's exact track, timing and rain totals."
 }
