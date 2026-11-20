@@ -1,14 +1,14 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "e18d58b6-a5c1-4f85-964e-4c24aa41f705",
-  "afd_issued": "2026-11-20T04:15:00Z",
-  "generated": "2026-11-20T04:25:14Z",
+  "afd_id": "34d99239-d6fd-45de-b4b2-808feaff6a04",
+  "afd_issued": "2026-11-20T06:07:00Z",
+  "generated": "2026-11-20T07:25:14Z",
   "headline": "Thursday's storm is over, with clearing skies tonight and a cool, dry stretch Friday through Sunday afternoon with cold nights, before light rain chances Sunday night and Wednesday and a dry, warmer Thanksgiving.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Thursday's strong storm brought very heavy rain, with 2 to 3.5 inches at the wettest spots in LA and Ventura Counties and a peak of 2.26 inches in one hour over Mulholland Drive above Encino, a rate expected only about once in 100 years (Santa Barbara and San Luis Obispo Counties topped out around 4 to 5.7 inches). Apart from a few isolated showers in LA County this evening, the rain is over and skies are clearing. Thursday night will be chilly, with lows in the mid 30s to 40s in the valleys around Glendale, 30s common farther inland, and even near-coastal spots dropping to the mid 40s to near 50. Friday will be cool and dry, with highs mainly in the 50s and 60s, about 5 degrees below normal."
+      "text": "Thursday's strong storm brought very heavy rain, with 2 to 3.5 inches at the wettest spots in LA and Ventura Counties and a peak of 2.26 inches in one hour over Mulholland Drive above Encino, a rate expected only about once in 100 years (Santa Barbara and San Luis Obispo Counties topped out around 4 to 5.7 inches). Apart from a few isolated showers in LA County, the rain is over and skies are clearing. Thursday night will be chilly, with lows in the mid 30s to 40s in the valleys around Glendale, 30s common farther inland, and even near-coastal spots dropping to the mid 40s to near 50; there is a 20% chance of very low clouds or fog late tonight into Friday morning (about 2 to 8 AM) around Paso Robles, San Luis Obispo and Santa Maria. Friday will be cool and dry, with highs mainly in the 50s and 60s, about 5 degrees below normal."
     },
     {
       "title": "Short Term",
@@ -19,7 +19,7 @@
       "text": "The rest of Monday and Tuesday will be dry with a slow warming trend. Another weak system reaches California Wednesday, but computer models disagree on whether it brings any rain here; if it does it probably won't be much, though a small share of model runs show around a half inch. Thanksgiving Day is expected to be dry, with offshore winds pushing temperatures into the 70s."
     }
   ],
-  "coast": "Large surf will create very dangerous rip currents and hazardous conditions near jetties into Friday, with a High Surf Advisory until 11 AM Friday for some beaches and a Beach Hazards Statement through Friday afternoon for others; large breaking waves may hit Morro Bay Harbor, and to a lesser extent Ventura Harbor, through tonight. Ocean conditions stay dangerous tonight from gusty winds and large seas, with Small Craft Advisories ending between 3 AM and 9 PM Friday depending on the zone; conditions improve Friday and turn fairly mild Saturday, and a weak front Sunday into Monday should have minimal impact. A stronger cold front could bring wind and rain to the coastal waters Tuesday night into Wednesday, with large seas returning mid to late next week. Extremely high, likely record-breaking tides arrive Thanksgiving week (peaking Tuesday through Thanksgiving Day), and combined with increasingly likely large westerly swells (which could bring high surf to west-facing beaches) they will likely cause at least moderate, widespread coastal flooding on all coasts, with significant flooding possible if a larger swell lines up with the highest tides.",
+  "coast": "Elevated to high surf creates dangerous rip currents and beach conditions into Friday, with a High Surf Advisory for the Central Coast and Ventura County coast until 11 AM Friday and a Beach Hazards Statement through Friday afternoon for other beaches; even after the advisory ends, strong rip currents are likely on most west-facing beaches, and surf should be fairly small at most beaches by Saturday. Offshore, a large northwest swell plus wind-driven waves keep seas dangerous, subsiding below 10 feet late tonight, while gusty winds hold at Small Craft Advisory levels in the outer waters through tonight (advisories end between 3 AM and 9 PM Friday depending on the zone). Conditions turn fairly mild by Saturday, and a weak front Sunday into Monday should have minimal impact; a stronger cold front could bring wind and rain to the coastal waters Tuesday night into Wednesday, with large seas returning mid to late next week. Extremely high, likely record-breaking tides arrive Thanksgiving week (peaking Tuesday through Thanksgiving Day), and combined with increasingly likely large westerly swells that could bring high surf to west-facing beaches, they will likely cause at least moderate, widespread coastal flooding on all coasts, with significant flooding possible if a larger swell lines up with the highest tides.",
   "watch_for": [
     "Sub-freezing overnight lows this weekend in the Antelope Valley and interior San Luis Obispo County.",
     "Whether Wednesday's weak system brings any rain to LA County before a dry Thanksgiving.",
