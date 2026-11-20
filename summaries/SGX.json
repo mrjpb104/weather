@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "8eb5b813-ef0d-450a-8b4d-c3c3c4a8a4a5",
-  "afd_issued": "2026-11-20T09:30:00Z",
-  "generated": "2026-11-20T10:25:50Z",
-  "headline": "After a few last showers in San Diego County end Friday morning, expect a cool, dry weekend, only a slight chance of very light showers Sunday night into Monday, and a warming trend to above-normal temperatures by Thanksgiving and Friday.",
+  "afd_id": "554efc2c-69f3-43db-bc65-8ce688045ac8",
+  "afd_issued": "2026-11-20T13:10:00Z",
+  "generated": "2026-11-20T14:24:46Z",
+  "headline": "The last isolated showers over San Diego County end by mid-morning Friday, leading into a cool, dry weekend, a slight chance of very light showers Sunday night into Monday, and warming to above-normal temperatures for Thanksgiving and Friday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Isolated light showers lingering over San Diego County, including the coast, should end by mid-morning Friday as drier air moves in. The rest of Friday will be cool and dry, with highs in the 60s along the coast and in the valleys, 40s in the mountains, mid 50s in the high desert, and low 70s in the low desert. Friday night a weak disturbance passes to the north and east, and gusty west winds on the desert slopes of the mountains continue to ease."
+      "text": "Isolated light showers over San Diego County, including the coast, should end by mid-morning Friday as the storm system departs and drier air moves in; patchy fog in the Inland Empire can cut visibility below 2 miles until about 9 AM. The rest of Friday will be cool and dry, with highs in the 60s along the coast and in the valleys, 40s in the mountains, mid 50s in the high desert, and low 70s in the low desert. West winds gusting around 30–35 mph blow through mountain passes into the deserts until about 3 PM, and skies are mostly clear Friday night."
     },
     {
       "title": "Short Term",
-      "text": "A very light breeze from the land (offshore) Saturday morning makes Saturday slightly warmer and drier, and Sunday stays similar as the ocean breeze returns, with fair weather and some high clouds at times. Another weak storm system moves quickly through Sunday night into Monday morning, bringing a slight chance of light showers from the mountains west to the coast; about a quarter of computer model runs keep it completely dry, and any rain would likely be just a few hundredths of an inch. Snow levels would be near 6,500 feet, but with so little moisture only a few flurries are expected."
+      "text": "A very weak breeze from the land (offshore) Saturday morning makes Saturday slightly warmer and drier, and Sunday stays about the same as the ocean breeze returns, with fair weather and occasional high clouds. Another weak storm system passes quickly Sunday night into Monday morning, bringing a slight chance of light showers from the mountains west to the coast; about a quarter of computer model runs keep it completely dry, and any rain would likely be just a few hundredths of an inch. Snow levels would be near 6,500 feet, but with so little moisture only a few flurries are expected."
     },
     {
       "title": "Long Term",
-      "text": "High pressure brings drier, warmer weather late Monday and Tuesday, with another round of weak offshore breezes Tuesday morning. Wednesday is uncertain: one model shows a deep storm bringing much colder, wetter weather, but it is an outlier, and most forecasts aim the moisture at Northern California, so the official chance of rain is just 15–20%. High pressure then builds in, with weak offshore breezes possible as early as Thanksgiving morning and strengthening Friday; Thanksgiving highs are forecast 2 to 7 degrees above normal, warming to about 5 to 10 degrees above normal on Friday."
+      "text": "High pressure brings drier, warmer weather late Monday and Tuesday, with another round of weak offshore breezes Tuesday morning. Wednesday is uncertain: one model shows a deep storm bringing much colder, wetter weather, but it is an outlier, and most forecasts aim the moisture at Northern California, so the official chance of rain Wednesday is only 15–20%. After that, high pressure builds in, with weak offshore breezes possible as early as Thanksgiving morning and strengthening Friday; Thanksgiving highs are forecast 2 to 7 degrees above normal, warming to about 5 to 10 degrees above normal on Friday."
     }
   ],
-  "coast": "A northwest swell brings surf of 3–6 feet with sets to 7 feet on west-facing beaches into early Friday, with strong rip currents and minor coastal flooding during high tides (Beach Hazards Statement for the Orange and San Diego County coasts until 9 AM Friday). King Tides peak next week: tides above 7 feet are possible as early as Saturday, Nov. 21, and morning high tides may top 8 feet next Tuesday through Thursday, bringing widespread moderate impacts. For boaters, hazardous conditions continue Friday morning, with west winds gusting to about 30 mph (25 knots) and steep, choppy 5–8 foot seas slowly easing; a Small Craft Advisory runs until 9 PM Friday for waters 10 to 60 nautical miles offshore from San Mateo Point to the Mexican border, including San Clemente Island. No further marine hazards are expected through Tuesday.",
+  "coast": "Elevated surf continues at 3–5 feet with sets to 7 feet, highest on west-facing beaches, with strong rip currents and minor coastal flooding during high tides (Beach Hazards Statement for the Orange and San Diego County coasts until 9 AM Friday). King Tides peak next week: tides above 7 feet are possible as early as Saturday, Nov. 21, and morning high tides may top 8 feet next Tuesday through Thursday, bringing widespread moderate impacts. For boaters, winds and seas ease Friday morning but pick up again Friday afternoon and evening, especially well offshore; a Small Craft Advisory runs until 9 PM Friday for waters 10 to 60 nautical miles out from San Mateo Point to the Mexican border, including San Clemente Island. No further marine hazards are expected through Tuesday.",
   "watch_for": [
-    "King Tides: above 7 feet possible from Saturday and above 8 feet on morning high tides next Tuesday–Thursday.",
-    "Slight chance of light showers Sunday night into Monday morning, mountains to the coast.",
-    "Wednesday's system: most likely a low (15–20%) rain chance, but one outlier model shows a much colder, wetter storm."
+    "King Tides: above 7 feet possible from Saturday and above 8 feet on morning high tides next Tuesday–Thursday, with widespread moderate impacts.",
+    "Slight chance of light showers Sunday night into Monday morning, mountains to the coast (only a few hundredths of an inch if any).",
+    "Wednesday's system: most likely just a 15–20% rain chance, but one outlier model shows a much colder, wetter storm."
   ],
-  "confidence": "Forecasters are confident in the cool, dry weekend and warming trend toward Thanksgiving, less sure whether Sunday night–Monday brings any measurable rain, and have low confidence in the track and strength of Wednesday's system."
+  "confidence": "Forecasters are confident in the cool, dry weekend and the warm-up toward Thanksgiving, less sure whether Sunday night–Monday brings any measurable rain, and have low confidence in the track and strength of Wednesday's system."
 }
