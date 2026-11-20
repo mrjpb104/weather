@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "fea583e1-7c21-49c7-93bd-30b98cc11117",
-  "afd_issued": "2026-11-19T23:26:00Z",
-  "generated": "2026-11-20T00:25:55Z",
-  "headline": "Dry, mostly sunny and warmer than normal through Saturday, then a coastal storm likely brings rain and wind to New York City and the region Sunday into Monday, with potentially heavy rain and minor flooding if the wetter computer models are right.",
+  "afd_id": null,
+  "afd_issued": "2026-11-20T05:24:00Z",
+  "generated": "2026-11-20T06:25:04Z",
+  "headline": "Mostly sunny, dry and warmer than normal through Saturday, then a coastal storm is increasingly likely to bring rain and wind to New York City and the region late Sunday into Monday, with heavy rain and minor flooding possible if the wetter computer models are right.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Thursday night is clear with light winds under strong high pressure to the south, so outlying areas turn quite cold while New York City and other urban centers stay milder. Patchy fog may form in outlying areas, especially river valleys, with patchy freezing fog possible in river valleys, sheltered inland spots and the Long Island Pine Barrens. That brings a low chance of black ice on elevated surfaces such as bridges and overpasses."
+      "text": "Early Friday is clear with light winds, so outlying areas turn quite cold while New York City and other urban centers stay milder. Patchy fog may form before dawn in outlying areas, especially river valleys, with patchy freezing fog possible in river valleys, sheltered inland spots and the Long Island Pine Barrens, bringing a low chance of black ice on bridges and overpasses. Friday is mostly sunny and dry, with very dry air letting temperatures climb quickly into the 60s, and Friday night is clear and calm with more fog possible in outlying valleys."
     },
     {
       "title": "Short Term",
-      "text": "Friday is mostly sunny and dry, with very dry air letting temperatures climb quickly into the 60s. On Saturday the high moves offshore and winds turn off the ocean, so highs are lower but still several degrees above normal, and it stays dry. Rain chances increase Sunday as a coastal storm approaches, with its arrival most likely late Sunday."
+      "text": "On Saturday the high pressure moves offshore and winds turn off the ocean, so highs are lower than Friday but still several degrees above normal, and it stays dry and mostly sunny. Clouds and rain chances increase on Sunday as a coastal storm approaches, with the storm's main effects most likely arriving late Sunday."
     },
     {
       "title": "Long Term",
-      "text": "A coastal storm is increasingly likely to bring rain and wind late Sunday into Monday, possibly with some tropical or subtropical characteristics (the National Hurricane Center would cover those details). The wetter models, including the GFS and its AI version, show a single storm with the AI-GFS hinting at a swath of about 4 inches of rain from the Mid-Atlantic to southern New England; since roughly 3 inches in 6 hours causes flooding here, that could mean widespread minor flooding and isolated flash flooding in the most flood-prone spots, though the European model remains an outlier. Peak gusts are estimated at 30–40 mph, higher if the storm deepens and tracks close to the coast; rain likely continues early Monday with improvement possible Monday afternoon, northwest winds gusting 20–25 knots (about 25–30 mph), and drier weather with easing winds Tuesday."
+      "text": "A coastal storm is increasingly likely to bring rain and wind late Sunday into Monday, possibly with some tropical or subtropical characteristics (the National Hurricane Center would cover those details). The wetter models, including the GFS, its AI version and the Canadian model, show a single storm, with the AI-GFS hinting at a swath of about 4 inches of rain from the Mid-Atlantic to southern New England; since roughly 3 inches in 6 hours causes flooding here, that could mean widespread minor flooding and isolated flash flooding in the most flood-prone spots, though the European model remains an outlier. Peak gusts are estimated at 30–40 mph, higher if the storm deepens and tracks close to the coast; rain likely continues early Monday with improvement possible Monday afternoon and northwest winds gusting around 25–30 mph, then drier weather with easing winds Tuesday."
     }
   ],
   "coast": "Winds and seas stay below Small Craft Advisory levels through Saturday with high pressure nearby. Waves and winds build Sunday into Monday as the coastal storm approaches: ocean seas could reach 5 feet or more by late Sunday, and gale-force winds (39 mph or more) are possible on all waters Monday, depending on the storm's track and strength. Higher-than-usual tides around Tuesday's full moon could bring minor tidal flooding depending on the storm's track and intensity, and one coastal flood model ensemble already hints at minor flooding by Sunday night.",
   "watch_for": [
-    "The track and timing of the Sunday–Monday coastal storm, and whether rain totals approach the 3–4 inch range that could cause flooding.",
+    "The track and timing of the late Sunday–Monday coastal storm, and whether rain totals approach the 3–4 inch range that could cause flooding.",
     "Wind gusts of 30–40 mph Sunday night into Monday, possibly stronger if the storm tracks close to the coast.",
-    "Minor tidal flooding near Tuesday's full moon, and patchy freezing fog Thursday night."
+    "Minor tidal flooding near Tuesday's full moon, and patchy freezing fog with possible black ice early Friday."
   ],
   "confidence": "Forecasters have high confidence in dry, mild weather through Saturday, growing confidence in at least some rain Sunday into Monday, and low confidence in the storm's exact track, timing and rain totals."
 }
