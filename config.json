@@ -4,7 +4,8 @@
     "SEW",
     "OKX",
     "LOX",
-    "REV"
+    "REV",
+    "GSP"
   ],
   "home": {
     "lat": 33.14986,
@@ -31,6 +32,10 @@
     "REV": {
       "name": "Reno",
       "focus": "the area around Mammoth Lakes, CA (37.65, -119.03) first, then the rest of the forecast area briefly"
+    },
+    "GSP": {
+      "name": "Greenville-Spartanburg",
+      "focus": "the area around Current Location (Charlotte, NC) (35.22, -80.95) first, then the rest of the forecast area briefly"
     }
   }
 }
