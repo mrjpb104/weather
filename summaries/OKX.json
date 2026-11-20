@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": null,
-  "afd_issued": "2026-11-20T05:24:00Z",
-  "generated": "2026-11-20T06:25:04Z",
-  "headline": "Mostly sunny, dry and warmer than normal through Saturday, then a coastal storm is increasingly likely to bring rain and wind to New York City and the region late Sunday into Monday, with heavy rain and minor flooding possible if the wetter computer models are right.",
+  "afd_id": "bfa46d1f-3fb6-41f6-80c8-700819ea49fd",
+  "afd_issued": "2026-11-20T08:00:00Z",
+  "generated": "2026-11-20T09:25:08Z",
+  "headline": "Dry weather holds through Saturday, then forecasters are now more confident a coastal storm will bring a soaking rain and some wind to New York City and the region Sunday night into Monday, with a low-end flooding risk.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Early Friday is clear with light winds, so outlying areas turn quite cold while New York City and other urban centers stay milder. Patchy fog may form before dawn in outlying areas, especially river valleys, with patchy freezing fog possible in river valleys, sheltered inland spots and the Long Island Pine Barrens, bringing a low chance of black ice on bridges and overpasses. Friday is mostly sunny and dry, with very dry air letting temperatures climb quickly into the 60s, and Friday night is clear and calm with more fog possible in outlying valleys."
+      "text": "High pressure keeps Friday and Friday night dry and quiet around New York City. Some shallow fog may form early Friday morning in outlying spots such as central Long Island, locally thick enough to cut visibility sharply. Winds stay light from the west-southwest Friday, turning light north-northwest Friday night, with some outlying areas going nearly calm."
     },
     {
       "title": "Short Term",
-      "text": "On Saturday the high pressure moves offshore and winds turn off the ocean, so highs are lower than Friday but still several degrees above normal, and it stays dry and mostly sunny. Clouds and rain chances increase on Sunday as a coastal storm approaches, with the storm's main effects most likely arriving late Sunday."
+      "text": "Saturday stays dry under high pressure. Rain chances develop on Sunday as a coastal low approaches, and the storm is now expected to pass through or just east of the New York area Sunday night into Monday. The air with this storm is very moist for November, but the low is forecast to move north fairly quickly, around 20 knots (about 23 mph), which should limit how long the heaviest rain lasts. The region is under a marginal (low-end) risk of rain heavy enough to cause flooding, and flooding potential late Sunday into Monday has been added to the Weather Service's hazardous weather outlook."
     },
     {
       "title": "Long Term",
-      "text": "A coastal storm is increasingly likely to bring rain and wind late Sunday into Monday, possibly with some tropical or subtropical characteristics (the National Hurricane Center would cover those details). The wetter models, including the GFS, its AI version and the Canadian model, show a single storm, with the AI-GFS hinting at a swath of about 4 inches of rain from the Mid-Atlantic to southern New England; since roughly 3 inches in 6 hours causes flooding here, that could mean widespread minor flooding and isolated flash flooding in the most flood-prone spots, though the European model remains an outlier. Peak gusts are estimated at 30–40 mph, higher if the storm deepens and tracks close to the coast; rain likely continues early Monday with improvement possible Monday afternoon and northwest winds gusting around 25–30 mph, then drier weather with easing winds Tuesday."
+      "text": "Rain is likely early Monday, with improvement possible Monday afternoon and northwest winds gusting around 20–25 knots (roughly 25–30 mph); the latest models trend slightly lower on both rain amounts and wind because the storm looks weaker. Tuesday turns dry with weakening northwest winds. Another coastal storm is possible around Thanksgiving (Thursday), with about a 60 percent chance of precipitation, mostly rain, though some mixed precipitation is possible inland at the start; models disagree sharply on its track, from over Cape Cod to well south of the area, so uncertainty is very high."
     }
   ],
-  "coast": "Winds and seas stay below Small Craft Advisory levels through Saturday with high pressure nearby. Waves and winds build Sunday into Monday as the coastal storm approaches: ocean seas could reach 5 feet or more by late Sunday, and gale-force winds (39 mph or more) are possible on all waters Monday, depending on the storm's track and strength. Higher-than-usual tides around Tuesday's full moon could bring minor tidal flooding depending on the storm's track and intensity, and one coastal flood model ensemble already hints at minor flooding by Sunday night.",
+  "coast": "Winds and seas stay below Small Craft Advisory levels through Saturday. Seas build Sunday into Monday as the low approaches, possibly reaching 5 feet or more on the ocean by late Sunday, with small craft advisory or gale-force winds possible on all waters Monday depending on the storm's track and strength. Northwest winds behind the storm will likely reach Small Craft Advisory levels on Tuesday, especially on the ocean. A track along the coast would push water onshore ahead of Tuesday's full moon, but weaker winds may offset that; coastal flood guidance shows mostly a non-event, with minor flooding possible in the most vulnerable back-bay spots, and only the most extreme scenario brings Freeport to moderate flooding.",
   "watch_for": [
-    "The track and timing of the late Sunday–Monday coastal storm, and whether rain totals approach the 3–4 inch range that could cause flooding.",
-    "Wind gusts of 30–40 mph Sunday night into Monday, possibly stronger if the storm tracks close to the coast.",
-    "Minor tidal flooding near Tuesday's full moon, and patchy freezing fog with possible black ice early Friday."
+    "The exact track and strength of the Sunday night–Monday storm, which could still nudge rain, wind and coastal flooding up or down.",
+    "Possible flooding from heavy rain late Sunday into Monday in flood-prone spots.",
+    "A second, highly uncertain coastal storm around Thanksgiving."
   ],
-  "confidence": "Forecasters have high confidence in dry, mild weather through Saturday, growing confidence in at least some rain Sunday into Monday, and low confidence in the storm's exact track, timing and rain totals."
+  "confidence": "Confidence is high for dry weather through Saturday, increased (after models came together overnight) for a rainstorm Sunday night into Monday though details may still shift, and very low for the Thanksgiving storm."
 }
