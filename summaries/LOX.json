@@ -1,14 +1,14 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "4f1a87cd-37a5-4e25-a405-4f6233416585",
-  "afd_issued": "2026-11-20T10:30:00Z",
-  "generated": "2026-11-20T11:24:43Z",
+  "afd_id": "50732f63-764b-41e7-adea-716b22e48fe1",
+  "afd_issued": "2026-11-20T16:13:00Z",
+  "generated": "2026-11-20T17:24:48Z",
   "headline": "After Thursday's strong storm, expect a sunny, chilly and dry weekend with near-freezing inland mornings, then small rain chances Sunday night and Wednesday before a dry, slightly warmer-than-normal Thanksgiving.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday starts cold, with valley areas like Glendale waking up to the upper 30s to mid 40s and many interior spots near or at freezing. Despite plenty of sunshine, highs only reach the lower to mid 60s. The one exception to the quiet weather is a slight chance of a passing shower Friday morning on the Central Coast in strong north winds. Friday night will be chilly again."
+      "text": "Friday is clear to partly cloudy and cool after a cold start, with valley areas like Glendale waking up in the upper 30s to mid 40s and many interior spots near or at freezing. Highs only reach the mid 50s to mid 60s despite the sunshine. North winds gusting 25 to 35 mph in the usual wind-prone spots continue through the day but weaken this afternoon, and a few widely scattered, light showers are possible on the Central Coast with no problems expected. Friday night will be chilly again."
     },
     {
       "title": "Short Term",
@@ -16,14 +16,14 @@
     },
     {
       "title": "Long Term",
-      "text": "High pressure builds Monday, bringing sunny skies, light offshore (land-to-sea) winds and highs in the mid to upper 60s. Clouds increase Tuesday, mainly in San Luis Obispo and western Santa Barbara Counties, as a few spots warm to 70 or 71. Another system Tuesday night into Wednesday most likely brings about a quarter inch of rain to the Central Coast (a minority of model runs show a quarter to a half inch), with only a low chance of a tenth of an inch south of Point Conception; highs stay in the mid 60s to low 70s. Thanksgiving should be dry with offshore winds warming coast and valley highs to the lower to mid 70s, a degree or two above normal."
+      "text": "High pressure builds Monday, bringing sunny skies, light offshore (land-to-sea) winds and highs in the mid to upper 60s. Clouds increase Tuesday, mainly in San Luis Obispo and western Santa Barbara Counties, as a few spots warm to 70 or 71. Another system Tuesday night into Wednesday most likely brings about a quarter inch of rain to the Central Coast (some model runs show a quarter to a half inch), with only a low chance of a tenth of an inch south of Point Conception; highs stay in the mid 60s to low 70s. Thanksgiving should be dry with offshore winds warming coast and valley highs 3 to 6 degrees into the lower to mid 70s, a degree or two above normal."
     }
   ],
-  "coast": "Elevated to high surf brings dangerous rip currents and beach conditions Friday, with a High Surf Advisory for the Central Coast and Ventura County coast until 11 AM and a Beach Hazards Statement through Friday afternoon for other beaches; strong rip currents remain likely on most west-facing beaches even after the advisory ends, with fairly small surf at most beaches by Saturday. Offshore, a large northwest swell plus wind-driven waves keep seas dangerous Friday morning, easing below 10 feet by Friday evening or late Friday night, while Small Craft Advisories end between 3 AM and 9 PM Friday depending on the zone (outer waters stay windy through Friday night). Seas turn fairly mild by Saturday, a weak front Sunday into Monday should have little impact, and a stronger cold front could bring wind and rain to the waters Tuesday night into Wednesday, with large seas returning mid to late next week. Extremely high, likely record-breaking tides peak Tuesday through Thanksgiving Day, and combined with increasingly likely large westerly swells (good chance of high surf on west-facing beaches), they will likely cause at least moderate, widespread coastal flooding on all coasts, with significant flooding possible if a big swell lines up with the highest tides.",
+  "coast": "Elevated to high surf brings dangerous rip currents and beach conditions Friday, with a High Surf Advisory for the Central Coast and Ventura County coast until 11 AM and a Beach Hazards Statement until 3 PM for other beaches; strong rip currents remain likely on most west-facing beaches even after the advisory ends, and surf gradually drops to fairly small at most beaches by Saturday. Offshore, conditions are much improved from Thursday but stay hazardous for small boats through Friday night, with Small Craft Advisories ending between 11 AM Friday and 3 AM Saturday depending on the zone, before turning fairly mild Saturday. A weak front Sunday into Monday should have little impact, while a stronger cold front Tuesday night into Wednesday brings the best chance of wind and rain off the Central Coast, possible small-craft-level northwest to west winds south of Point Conception Wednesday and Wednesday night, and large seas returning mid to late next week. Extremely high, likely record-breaking tides peak Tuesday through Thanksgiving Day, and combined with increasingly likely large westerly swells (good chance of high surf on west-facing beaches), they will likely cause at least moderate, widespread coastal flooding on all coasts, with significant flooding possible Wednesday and Thursday if a big swell lines up with the highest tides.",
   "watch_for": [
     "Near- or below-freezing early mornings in interior areas Friday and Saturday.",
     "How much rain Wednesday's system brings south of Point Conception before a dry Thanksgiving.",
-    "Record-high tides Tuesday through Thanksgiving plus new large swells, raising the risk of widespread coastal flooding."
+    "Record-high tides Tuesday through Thanksgiving plus new large swells, raising the risk of widespread coastal flooding, especially Wednesday and Thursday."
   ],
-  "confidence": "Forecasters are confident in dry, cool weather through Sunday afternoon and in Sunday night's light rain being minor, with more uncertainty in Wednesday's rain amounts because model runs differ."
+  "confidence": "Forecasters say the current forecast has a good handle on the dry, cool weather through Sunday afternoon and that Sunday night's light rain should be minor, with more uncertainty in Wednesday's rain amounts because model runs differ."
 }
