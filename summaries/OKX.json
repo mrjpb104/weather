@@ -1,22 +1,22 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "bee8bc45-9990-4b59-8b43-711dac3535d9",
-  "afd_issued": "2026-11-20T14:42:00Z",
-  "generated": "2026-11-20T15:25:11Z",
+  "afd_id": "cd654e8d-1cf4-42c4-ba0a-0687fee22320",
+  "afd_issued": "2026-11-20T17:27:00Z",
+  "generated": "2026-11-20T18:25:29Z",
   "headline": "Dry, quiet weather holds through Saturday, then a coastal storm brings a soaking rain and some wind to New York City and the region Sunday into Monday, with a low-end flooding risk; another rainy coastal storm is possible around Thanksgiving but is highly uncertain.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High pressure keeps Friday dry and quiet across New York City and the surrounding area, with light west-southwest winds of about 10 mph or less this afternoon. Tonight stays dry, with winds turning light from the north or northwest and going nearly calm in outlying suburbs. No watches, warnings or advisories are in effect."
+      "text": "High pressure keeps Friday dry and quiet across New York City and the surrounding area, with light west-southwest winds under about 10 mph this afternoon. Friday night stays dry, with winds turning light from the north or northwest and going calm in many outlying areas. No watches, warnings or advisories are in effect."
     },
     {
       "title": "Short Term",
-      "text": "Saturday stays dry. A coastal low-pressure system brings rain Sunday, with the storm passing through or just east of the area Sunday night into Monday; the air will be very moist, but the storm moves north quickly (about 23 mph), which limits how long the heavy rain lasts. The area is under a low-end (level 1 of 4) risk of flooding rain, and forecasters have now added the potential for flooding late Sunday into Monday to their hazard outlook, though the latest trend is for slightly less rain and less wind than earlier forecasts. Rain continues early Monday with improvement possible in the afternoon and northwest gusts of about 25–30 mph, and Tuesday turns dry with weakening northwest winds."
+      "text": "Saturday stays dry, with east to southeast winds developing late in the afternoon. A coastal low-pressure system brings rain Sunday, with the storm passing through or just east of the area Sunday night into Monday; the air will be very moist, but the storm moves north quickly (about 23 mph), which limits how long the heavy rain lasts. The area is under a low-end (level 1 of 4) risk of flooding rain, and forecasters have added the potential for flooding late Sunday into Monday to their hazard outlook, though the latest trend is for slightly less rain and less wind than earlier forecasts. Rain continues early Monday with improvement likely in the afternoon and northwest-to-west gusts of about 25–30 mph, and Tuesday turns dry with weakening north-northwest winds."
     },
     {
       "title": "Long Term",
-      "text": "Another coastal storm could bring rain around Thanksgiving (Thursday), but the computer models disagree sharply on its track, ranging from over Cape Cod to well south of the area with strong high pressure holding over northern New England. The blended forecast puts rain chances around 60% for the event, mostly as rain, though some mixing with other precipitation is possible inland at the start. If it materializes, it looks like another wind-and-rain event."
+      "text": "Wednesday looks dry during the day, with clouds or rain possibly arriving Wednesday night. Another coastal storm could bring rain around Thanksgiving (Thursday), but the computer models disagree sharply on its track, ranging from over Cape Cod to well south of the area with strong high pressure holding over northern New England. The blended forecast puts the chance of rain around 60% for the event, mostly as rain, though some mixing with other precipitation types is possible inland at the start; if it materializes, it looks like another wind-and-rain event."
     }
   ],
   "coast": "Winds and seas stay below small-craft levels through Saturday. Seas on the ocean could build to 5 feet or more by the end of Sunday, and small-craft-advisory or even gale-force winds are possible on all waters Monday depending on the storm's track and strength; northwest winds behind the storm will likely reach small-craft levels Tuesday, especially on the ocean. With the full moon on Tuesday, minor coastal flooding is possible: a coastal track would push water onshore, but weaker winds may offset that, and most guidance shows little or no flooding except in the most vulnerable back-bay spots. The extreme high end of guidance touches moderate flooding at Freeport, but that is not what most guidance suggests.",
