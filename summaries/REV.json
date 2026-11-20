@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "8d1f74da-1f21-4989-9085-2d5444d05de2",
-  "afd_issued": "2026-11-20T12:21:00Z",
-  "generated": "2026-11-20T13:25:47Z",
-  "headline": "Snow bands are hitting the Reno–Carson City morning commute harder than expected (up to 1 inch, locally 3) before a dry, frigid Friday night, then a weaker storm brings wind and Sierra pass snow Saturday evening through Sunday ahead of a Monday–Tuesday break and possible Thanksgiving-week storms.",
+  "afd_id": "da7056d1-d655-4919-9da7-180be50f5fb3",
+  "afd_issued": "2026-11-20T21:42:00Z",
+  "generated": "2026-11-20T22:25:37Z",
+  "headline": "After a frigid, foggy break tonight into Saturday, a fast-moving storm brings 2–8 inches of Sierra snow Sunday and another arrives Tuesday night or Wednesday, so the best pre-Thanksgiving travel windows are Saturday and Monday afternoon through Tuesday evening.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "South of US-50, including the Mammoth area, isolated light snow showers linger into the afternoon before tapering off by evening, with a 5% chance of thunder along the Sierra crest. Farther north, a Winter Storm Warning runs until 10 AM for the Tahoe area and the northeastern California Sierra, with another 2–5 inches on the crest, up to 2 inches at Truckee and Lake Tahoe and up to 6 inches on higher peaks; a new Winter Weather Advisory covers Reno, Carson City and Minden until 10 AM, where snow bands (one fed by moisture off Lake Tahoe) are already dropping snow on north Reno, Washoe Valley and Carson City, with up to 1 inch and locally 3 inches under persistent bands, big differences over short distances, and poor visibility for the commute. Tonight turns dry and especially frigid, with lows in the single digits and teens, cold spots such as Bodie, Bridgeport, Truckee and the Carson Valley possibly dipping below zero, roads icing as daytime melt refreezes, and freezing fog possible in northeastern California and Sierra valleys, especially near Truckee."
+      "text": "Isolated snow showers linger this afternoon, including a band off Lake Tahoe affecting communities east of the lake, before the storm exits and skies clear tonight. With fresh snow, clear skies and light winds, lows plunge into the single digits in Sierra valleys, with a few below-zero readings in the coldest spots such as Bridgeport and Bodie, and even western Nevada valleys drop into the teens. Freezing fog has a 40% chance of forming in the Mono Lake Basin, Carson Valley and Carson Sink, and is likely (80% chance) in the Martis Valley around Truckee and I-80 and in the Sierra Valley."
     },
     {
       "title": "Short Term",
-      "text": "Saturday stays dry and chilly until the next storm arrives, offering a possible Sierra travel window if roads improve. This weekend's storm comes in two waves with increasing winds: the first brings rain and snow showers Saturday afternoon and evening, mainly from Tahoe northward, and the second, stronger and more widespread round arrives Sunday afternoon and evening. It is much weaker than the last storm, but there is a 40%+ chance of 6 inches of snow on passes such as Donner and Carson, while Sierra communities below 7,000 feet see lighter amounts (a 20–50% chance of 2 inches at lake level). Cold air keeps snow levels down to the valley floors, and Reno and other western Nevada towns have a 10–30% chance of a trace to an inch by Monday, when the storm departs."
+      "text": "Saturday is dry but cold, with highs about 15 degrees below normal and cold air trapped in the valleys, making it one of the best travel days. A fast-moving storm arrives Sunday (snow may start Saturday night at Sierra airports and late Sunday morning in western Nevada); it has little moisture and weak winds, so the cold air stays put with snow down to the valley floors, though in a warmer scenario snow levels could rise to about 5,000 feet by mid-afternoon Sunday. The likely range is 2 to 8 inches in the Sierra, far less than the recent storm but enough to make travel home Sunday evening difficult."
     },
     {
       "title": "Long Term",
-      "text": "Another break between storms is expected Monday and Tuesday, which may be the best travel window ahead of Thanksgiving. More storms are possible around the holiday, with a 40–60% chance the active, stormy pattern continues through Thanksgiving week. Confidence that far out is low, so holiday travelers should keep checking the latest forecast."
+      "text": "Monday afternoon through Tuesday evening is the best window to avoid snowy mountain drives before Thanksgiving. The midweek storm arrives sometime Tuesday night to early Wednesday with a decent supply of Pacific moisture but winds from the south, which raise temperatures and snow levels and limit how much snow spills east of the Sierra crest; it is not a major storm but will be disruptive during one of the year's busiest travel periods. The Friday after Thanksgiving looks clear, though about 70% of model scenarios hint at more Sierra snow sometime Saturday through Monday (Nov. 28–30)."
     }
   ],
   "watch_for": [
-    "Exactly where this morning's Reno–Carson City snow bands sit; amounts vary greatly over short distances until about 10 AM.",
-    "Icy roads overnight as melted snow refreezes, and freezing fog near Truckee and other Sierra valleys Friday night into Saturday.",
-    "Sunday afternoon and evening snow on Sierra passes such as Donner and Carson (40%+ chance of 6 inches), then more possible storms around Thanksgiving."
+    "Single-digit to below-zero lows and freezing fog in Sierra valleys tonight into Saturday, including the Mono Lake Basin and around Truckee.",
+    "Sunday's 2–8 inches of Sierra snow making Sunday evening travel difficult.",
+    "Timing of the midweek storm (Tuesday night to early Wednesday) and its higher snow levels during Thanksgiving travel."
   ],
-  "confidence": "Forecasters are confident in this morning's Sierra snow and the dry, very cold break that follows, uncertain about exactly where the Reno-area snow bands set up, moderately confident in the weekend storm's mountain snow, and have low confidence in storms around Thanksgiving."
+  "confidence": "Forecasters are confident in tonight's clearing and cold and in Sunday's modest snow, less sure of exactly when the midweek storm arrives, and see no clear dry or stormy periods in the uncertain outlook beyond Thanksgiving."
 }

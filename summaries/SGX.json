@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": null,
-  "afd_issued": "2026-11-20T17:55:00Z",
-  "generated": "2026-11-20T18:25:29Z",
-  "headline": "Showers end Friday morning, leaving a cool, dry weekend across coastal San Diego County, a slight chance of very light showers Sunday night into Monday, and warming to above-normal temperatures for Thanksgiving and Friday — while King Tides bring a Coastal Flood Watch to the coast starting late Sunday night.",
+  "afd_id": "8b83a7df-16b3-41cc-87c1-9b6c6e5c53ed",
+  "afd_issued": "2026-11-20T20:55:00Z",
+  "generated": "2026-11-20T22:25:37Z",
+  "headline": "A cool, dry weekend for coastal San Diego County gives way to a chance of light showers Sunday night into Monday morning, while rising King Tides bring a Coastal Flood Advisory starting Sunday morning and a Coastal Flood Watch through Thursday afternoon.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "The last isolated light showers over San Diego County end by mid-morning Friday as the storm system moves away and drier air moves in; after that, the chance of a stray shower near the coast into early afternoon is under 5%. The rest of Friday is cool and dry with partly to mostly cloudy skies near the coast, highs in the 60s along the coast and in the valleys, 40s in the mountains, mid 50s in the high desert and low 70s in the low desert. West winds gusting about 30–35 mph blow through mountain passes into the deserts until about 3 PM."
+      "text": "The storm that moved through Thursday keeps heading east, so Friday afternoon is dry, with clouds clearing from the coast to the foothills into the evening. Temperatures away from the coast run 5 to 10 degrees below normal. Tonight, north and east winds are breeziest along the coastal mountain slopes, with gusts mostly under 35 mph; west winds gusting about 30–35 mph through mountain passes into the deserts ease by about 3 PM."
     },
     {
       "title": "Short Term",
-      "text": "A very weak breeze from the land (offshore) Saturday morning makes Saturday slightly warmer and drier, and Sunday stays about the same as the ocean breeze returns, with fair weather and occasional high clouds. Another weak storm system passes quickly Sunday night into Monday morning with a slight chance of light showers from the mountains west to the coast; about a quarter of computer model runs keep it completely dry, and any rain would likely total just a few hundredths of an inch. Snow levels would be near 6,500 feet, but with so little moisture only a few flurries are expected."
+      "text": "Saturday and Sunday stay dry with light breezes from the land, and areas away from the coast stay 5 to 10 degrees below normal, with chilly mornings in the 30s in parts of the Inland Empire, below freezing in the high desert and in the teens around Big Bear Lake. A small piece of a larger Pacific Northwest storm brings a chance of light rain Sunday evening and night everywhere except the lower deserts, and showers may linger into Monday morning in southern San Diego County, including the metro area. Rain should total around a tenth of an inch, locally more in the mountains; with snow levels near 5,000 feet, San Bernardino Mountain communities have the best chance of accumulating snow, generally under an inch at places like Big Bear Lake."
     },
     {
       "title": "Long Term",
-      "text": "High pressure brings drier, warmer weather late Monday and Tuesday, with another round of weak offshore breezes Tuesday morning. Wednesday is uncertain: one model shows a deep storm bringing much colder, wetter weather, but it is an outlier, and most forecasts aim the moisture at Northern California, so the official chance of rain Wednesday is only 15–20%. High pressure then builds in, with weak offshore breezes possible as early as Thanksgiving morning and strengthening Friday; Thanksgiving highs are forecast 2 to 7 degrees above normal, warming to about 5 to 10 degrees above normal on Friday."
+      "text": "Tuesday stays cool and dry. Another storm approaches the Pacific Northwest early in the week, and it is unclear whether a piece of it breaks off and reaches Southern California or high pressure to the south keeps it to the north; if it arrives, light showers are possible closer to the coast sometime Wednesday into Thanksgiving morning. Otherwise, high pressure strengthens through the middle and end of the week, bringing drier weather and a warming trend with highs 5 to 10 degrees above normal."
     }
   ],
-  "coast": "Surf has eased a bit, with the highest sets up to 5–6 feet lingering Friday, and the Beach Hazards Statement has expired. King Tides peak next week: tides above 7 feet are possible as early as Saturday, Nov. 21, and morning high tides may top 8 feet next Tuesday through Thursday, bringing widespread moderate impacts; a Coastal Flood Watch is in effect for the Orange County and San Diego County coasts from late Sunday night through Friday afternoon (Nov. 27). For boaters, winds and seas stay rough well offshore into Friday evening, with gusts around 30–35 mph and choppy, locally steep seas of 6–8 feet; a Small Craft Advisory runs until 9 PM Friday for waters 10 to 60 nautical miles out from San Mateo Point to the Mexican border, including San Clemente Island. No further marine hazards are expected through Tuesday.",
+  "coast": "Morning high tides keep climbing, topping 7 feet by Sunday, and King Tides peak Wednesday, with morning high tides of 7.9–8.2 feet Tuesday through Thursday (forecasters nudged the tide forecast above the usual predictions based on recent observations). A Coastal Flood Advisory covers the Orange County and San Diego County coasts from 4 AM Sunday to 4 AM Tuesday, followed by a Coastal Flood Watch from late Monday night through Thursday afternoon. Surf stays around 3–5 feet through Wednesday, but a new swell arriving Wednesday into Thursday could bring notably higher surf starting Thursday, on top of the high tides. Offshore, gusts around 30–35 mph and choppy, locally steep 6–8 foot seas continue in the outer waters under a Small Craft Advisory until 9 PM Friday for waters 10 to 60 nautical miles out from San Mateo Point to the Mexican border, including San Clemente Island; no further marine hazards are expected through Tuesday, but the midweek storm and swell could bring hazardous winds and waves back Wednesday into Thursday.",
   "watch_for": [
-    "King Tides and the Coastal Flood Watch: above 7 feet possible from Saturday and above 8 feet on morning high tides next Tuesday–Thursday, with widespread moderate impacts.",
-    "Slight chance of light showers Sunday night into Monday morning, mountains to the coast (only a few hundredths of an inch if any).",
-    "Wednesday's system: most likely just a 15–20% rain chance, but one outlier model shows a much colder, wetter storm."
+    "King Tides: Coastal Flood Advisory Sunday to Tuesday morning, then a Coastal Flood Watch through Thursday afternoon, with morning tides near 8 feet and possibly bigger surf Thursday.",
+    "Light rain Sunday night into Monday morning (about a tenth of an inch) and light mountain snow above about 5,000 feet.",
+    "Whether the midweek system reaches the area with light coastal showers Wednesday into Thanksgiving morning."
   ],
-  "confidence": "Forecasters are confident in the cool, dry weekend and the warm-up toward Thanksgiving, less sure whether Sunday night–Monday brings any measurable rain, and have low confidence in the track and strength of Wednesday's system."
+  "confidence": "Forecasters are confident in the dry, cool weekend and note rain chances for Sunday night have ticked up slightly, but whether the midweek system reaches Southern California remains uncertain."
 }
