@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "8de05566-c1b8-4554-899c-991e4a483afc",
-  "afd_issued": "2026-11-19T20:39:00Z",
-  "generated": "2026-11-19T22:25:17Z",
-  "headline": "A potent winter storm keeps piling heavy snow on the Sierra, including the Mammoth area, through Friday morning, with a brief break before a weaker storm arrives Saturday afternoon or night and more storms possible Thanksgiving week.",
+  "afd_id": "b0225bfa-3565-48c6-9a04-fab87995d48e",
+  "afd_issued": "2026-11-20T10:49:00Z",
+  "generated": "2026-11-20T12:26:07Z",
+  "headline": "Light snow showers taper off today, followed by a frigid Friday night with lows in the single digits and teens, then a weaker storm brings more wind and Sierra snow Saturday evening through Sunday before a break Monday and Tuesday ahead of possible Thanksgiving-week storms.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Moderate to heavy snow showers continue in the Sierra Thursday, with another 1–2 feet possible along the eastern Sierra crest (a 70% chance of at least 12 inches there) and 6–12 more inches possible at Mammoth, Truckee and South Lake Tahoe through early Friday morning. Lake level at Tahoe picks up 2–6 inches, while western Nevada and northeast California valleys get up to 2 inches and areas above 5,000 feet 2–6 inches. Snow levels stay below 6,000 feet, west winds gust to 50–60 mph on Sierra ridges tonight into Friday morning, and gusty winds hit western Nevada valleys and northeast California. Winter Storm Warnings run until 4 AM Friday for parts of the Sierra and Winter Weather Advisories until 7 PM this evening elsewhere; snow showers turn more scattered by late evening, though lake-effect snow is possible on the south and southeast sides of Pyramid Lake and Lake Tahoe tonight into early Friday."
+      "text": "A Winter Storm Warning runs until 10 AM for the Tahoe area and the northeastern California Sierra as a final round of snow showers adds 2–5 inches along the Sierra crest, up to 2 inches at Truckee and Lake Tahoe and up to 6 inches on higher peaks, falling at up to a half inch to an inch an hour. South of US-50, including the Mammoth area, isolated light snow showers linger into the afternoon before tapering off by evening, and there is a 5% chance of thunder along the Sierra crest this afternoon. Around Reno, bands of light snow up to an inch could slow the morning commute along US-395 between Hallelujah Junction and Stead and on I-580/US-395 near Carson City; Reno and Sparks will most likely miss out, but a small shift in either band (about a 20% chance) could bring light snow there through about 10 AM. Tonight turns dry and especially frigid, with lows in the single digits and teens, cold spots such as Bodie, Bridgeport, Truckee and the Carson Valley possibly dipping below zero, roads icing as daytime melt refreezes, and freezing fog possible in northeastern California and Sierra valleys, especially near Truckee."
     },
     {
       "title": "Short Term",
-      "text": "Snow showers linger through late Friday morning, mainly around Tahoe, with up to 2–3 more inches in the Sierra and up to an inch in western Nevada; slush may turn to ice for the Friday morning commute, with lows in the teens in the Sierra and low to mid 20s in western Nevada. Friday stays very cold, about 15 degrees below average, and by Saturday morning lows drop to the single digits in the Sierra and low teens in western Nevada. A weaker storm moves in Saturday afternoon or night and lasts into early Monday, bringing 3–6 inches along the Sierra crest, up to 3 inches above 6,000 feet, and a trace to an inch even on valley floors including the Reno area, as the cold air keeps snow down to the valleys."
+      "text": "Saturday stays dry and chilly until the next storm arrives, offering a possible Sierra travel window if roads improve. This weekend's storm comes in two waves with increasing winds: the first brings rain and snow showers Saturday afternoon and evening, mainly from Tahoe northward, and the second, stronger and more widespread round arrives Sunday afternoon and evening. It is much weaker than the last storm, but there is a 40%+ chance of 6 inches of snow on passes such as Donner and Carson, while Sierra communities below 7,000 feet see lighter amounts (a 20–50% chance of 2 inches at lake level). Cold air keeps snow levels down to the valley floors, and Reno and other western Nevada towns have a 10–30% chance of a trace to an inch by Monday, when the storm departs."
     },
     {
       "title": "Long Term",
-      "text": "Cold, winter-like temperatures continue into early next week. The pattern stays unsettled through Thanksgiving week, with more storms that could affect holiday travel, but forecasters have low confidence in the details so far."
+      "text": "Another break between storms is expected Monday and Tuesday, which may be the best travel window ahead of Thanksgiving. More storms are possible around the holiday, with a 40–60% chance the active, stormy pattern continues through Thanksgiving week. Confidence that far out is low, so holiday travelers should keep checking the latest forecast."
     }
   ],
   "watch_for": [
-    "Hazardous Sierra travel through Friday morning from heavy snow and 50–60 mph ridge winds, plus icy roads on the Friday morning commute.",
-    "Snow totals from the Saturday night–Monday storm, including possible light snow on valley floors.",
-    "Timing and strength of storms during Thanksgiving travel week."
+    "Icy roads overnight as melted snow refreezes, and freezing fog near Truckee and other Sierra valleys Friday night into Saturday.",
+    "Sunday afternoon and evening snow on Sierra passes such as Donner and Carson (40%+ chance of 6 inches).",
+    "Additional storms around Thanksgiving; Monday and Tuesday look like the best travel window."
   ],
-  "confidence": "Forecasters are confident in heavy Sierra snow through Friday morning and a weaker storm late in the weekend, but have low confidence in the details for Thanksgiving week."
+  "confidence": "Forecasters are confident in this morning's Sierra snow and the dry, very cold break, less certain exactly where the Reno-area snow bands set up, moderately confident in the weekend storm's mountain snow, and have low confidence in storms around Thanksgiving."
 }
