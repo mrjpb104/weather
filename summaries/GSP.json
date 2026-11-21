@@ -1,28 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "9f73e9fa-dbee-400e-af9d-147c6ed0b1e6",
-  "afd_issued": "2026-11-20T18:19:00Z",
-  "generated": "2026-11-20T19:25:28Z",
-  "headline": "Rain chances have jumped for Saturday night, with Charlotte and areas along and east of I-77 now likely to get a beneficial half inch or more, followed by a very warm Monday and then much cooler weather and an uncertain storm chance heading into Thanksgiving.",
+  "afd_id": "e1541e73-ae4c-4aa8-b3d1-e95ba71921ef",
+  "afd_issued": "2026-11-20T23:52:00Z",
+  "generated": "2026-11-21T01:25:46Z",
+  "headline": "Welcome rain arrives Saturday afternoon and night, heaviest along and east of I-77 including Charlotte, followed by a very warm Monday and then a much cooler, unsettled Thanksgiving week.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday afternoon stays dry under high pressure, with mid- and high-level clouds slowly increasing and thickening through tonight. Northeast winds around 10 to 12 mph continue east of the mountains, with gusts near 20 to 25 mph becoming possible late tonight around Charlotte and the Piedmont. No watches, warnings or advisories are in effect."
+      "text": "High pressure keeps Friday evening dry across the region, including Charlotte. Clouds slowly thicken and lower overnight as a storm system organizes off the Southeast coast, with a steady northeast breeze. Lows stay a bit mild, about 5 or more degrees above normal."
     },
     {
       "title": "Short Term",
-      "text": "Saturday's highs return to near normal under thickening clouds as rain chances spread in from the south during the day, holding off until later in the afternoon around Charlotte. Saturday night is now the wettest period: rain is likely across the eastern half of the area and nearly certain along and east of I-77, including Charlotte, where half an inch or more is becoming more likely; most other areas should get about a tenth to a third of an inch. Rain tapers off Sunday morning and it turns a bit milder, though cool, damp air trapped against the mountains may hang on for part of the day along with low clouds. Monday looks quite warm, more than 10 degrees above normal as skies clear, with only a few light showers possible in the mountains Monday afternoon and evening; overnight lows stay at least 5 degrees above normal through early next week."
+      "text": "Saturday turns cloudier with gusty northeast winds after sunrise and highs near normal, and rain likely arrives in the Charlotte area by mid-afternoon. Rain becomes likely across the eastern half of the area Saturday night and near-certain along and east of I-77, including Charlotte; most places get 0.1–0.33 inch, but half an inch or more is increasingly likely along and east of I-77, a beneficial soaking. Rain tapers off Sunday morning, though low clouds and lingering cool air at the surface could hold temperatures down for part of the day, and Monday turns quite warm, 10 or more degrees above normal, as skies clear and winds blow downhill off the mountains, with only a few light showers possible in the mountains Monday afternoon and evening."
     },
     {
       "title": "Long Term",
-      "text": "A mostly dry cold front crosses Monday night into early Tuesday, bringing much cooler air, with temperatures near to below normal from Tuesday through the end of the week. Forecasters have low confidence from Wednesday on because the computer models disagree on the details of a complex, wavy jet stream pattern, though there is a weak signal for a storm that redevelops along the Southeast coast midweek. For now there is a chance of rain from Wednesday through at least the first part of Thanksgiving Day, and depending on timing, the mountains could see a brief period of wintry precipitation when it starts."
+      "text": "A mostly dry cold front Monday night into early Tuesday brings much cooler air, with temperatures near to below normal from Tuesday through the end of the week. Confidence is low from midweek on because of a complex pattern, but there is a weak signal for a storm that could redevelop along the coast, so there is a chance of rain Wednesday through at least the first part of Thanksgiving Day, with timing still unclear. Depending on timing, enough cold air could be in place for a brief period of wintry precipitation in the mountains at the start."
     }
   ],
   "watch_for": [
-    "How much rain reaches Charlotte Saturday night; amounts were raised sharply and half an inch or more is now favored along and east of I-77.",
-    "Low clouds and cool, damp conditions possibly lingering into Sunday.",
-    "Timing of a possible midweek storm around Thanksgiving, including brief wintry weather in the mountains."
+    "Saturday night rain totals along and east of I-77, including Charlotte, where half an inch or more is becoming more likely.",
+    "Timing of midweek rain chances heading into Thanksgiving Day.",
+    "Possible brief wintry precipitation in the mountains if the midweek storm arrives while cold air is in place."
   ],
-  "confidence": "Confidence is increasing in beneficial weekend rain for the Piedmont and in the warm Monday and cooldown Tuesday, but it is low for precipitation timing and type from Wednesday through Thanksgiving."
+  "confidence": "Forecasters are growing more confident in beneficial weekend rain and a warm Monday, but confidence is low from midweek through Thanksgiving because models disagree on the details."
 }
