@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "b8e5070a-ecf6-4f99-ba48-8e0ca7d9fc8e",
-  "afd_issued": "2026-11-21T07:43:00Z",
-  "generated": "2026-11-21T08:25:10Z",
-  "headline": "A quick-hitting coastal storm brings rain Sunday afternoon into Monday morning — 1–2 inches is possible, though the latest models favor the heaviest rain east of New York City — and another, potentially stronger coastal storm is possible Wednesday night into Thanksgiving.",
+  "afd_id": "e4b7a930-2a1d-478e-8e97-c2a922646ee3",
+  "afd_issued": "2026-11-21T11:20:00Z",
+  "generated": "2026-11-21T12:25:33Z",
+  "headline": "A coastal storm brings rain Sunday afternoon into Monday morning, possibly 1–2 inches though trends point to the heaviest rain east of New York City, and a potentially stronger coastal storm could arrive Wednesday night into Thanksgiving.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High pressure keeps New York City and the region dry and quiet through Saturday and Saturday night. Winds stay light, turning from the east-southeast at around 5 mph on Saturday. No watches, warnings or advisories are in effect."
+      "text": "High pressure keeps Saturday and Saturday night dry across New York City and the surrounding area. Winds are light from the northeast this morning, turning southeast this afternoon, then light again tonight. Forecasters made no significant changes overnight, and the trend has been toward a less impactful storm on Sunday."
     },
     {
       "title": "Short Term",
-      "text": "A low-pressure system moving up the coast could bring a few showers Sunday morning into early afternoon, with more widespread rain Sunday evening and overnight before it ends early Monday. Rainfall of 1–2 inches is possible across much of the area, with up to 3 inches locally if a persistent band of heavy rain sets up, and a few thunderstorms are possible; the overnight models shifted the storm slightly east, so the heaviest rain now looks more likely over eastern areas, and some models show a sharp cutoff with very little rain for NYC and points west. There is a low-end risk of flooding of city streets, poorly drained areas and small streams, and east winds of 10–15 mph Sunday night could gust to 25–30 mph along the coast (a small chance of 40–45 mph gusts in a small area farther east). Monday brings clearing with northwest gusts around 15–25 mph, and Tuesday looks quiet."
+      "text": "Low pressure moving up the coast may bring a few showers Sunday late morning into early afternoon, with more widespread rain Sunday evening and overnight, ending Monday morning. A widespread 1–2 inches remains possible, with locally up to 3 inches under a persistent heavy band, but the latest models shifted the heaviest rain east, and some show a sharp cutoff with very little rain for New York City and points west. There is a marginal risk of excessive rain, mainly minor urban, poor-drainage and small-stream flooding, and a few thunderstorms are possible, mainly in eastern areas. East winds increase Sunday night at 10–15 mph with gusts of 25–30 mph along the coast (a low chance of 40–45 mph gusts in a small area farther east), then turn northwest Monday with gusts near 20 mph."
     },
     {
       "title": "Long Term",
-      "text": "Wednesday daytime looks quiet, with a chance of light rain arriving Wednesday night. Models agree a potentially large coastal storm may develop Wednesday night into Thanksgiving Day, with the potential for stronger winds and more coastal flooding than Sunday's storm. The weather pattern is complex, so small changes could make big differences in the storm's strength, track and timing — it's one to keep watching."
+      "text": "Tuesday looks dry. Another, potentially large coastal storm is possible Wednesday night into Thanksgiving Day, with rain possible starting Wednesday night, and it could bring more wind and coastal flooding than the Sunday–Monday storm. The upper-level pattern is complex enough that small changes could make big differences in its strength, track and timing, so details are still too uncertain to pin down."
     }
   ],
-  "coast": "Coastal flooding from Sunday night's storm looks minimal because Monday morning's high tide comes after the storm has passed, though a few Long Island south shore back-bay spots could approach or just reach minor flood levels with the full moon approaching on Tuesday. The Wednesday night–Thanksgiving storm could bring more significant coastal flooding, depending on its track and strength. On the water, small-craft-advisory conditions are likely on most of the ocean waters, eastern Long Island Sound and the eastern Long Island bays Sunday night into Monday (more sheltered waters stay just below that level for now), with a chance of gales on the ocean and eastern Sound and bays Sunday night; rough ocean conditions likely last into at least Tuesday as waves are slow to settle, and gales are possible on all waters Wednesday night.",
+  "coast": "Coastal flooding looks minimal with Monday morning's high tide, since it comes after the storm passes, though a few Long Island south shore back bays could approach or touch minor flood levels; the full moon on Tuesday is boosting tides. Small Craft Advisory conditions are likely on most ocean waters, eastern Long Island Sound and the eastern Long Island bays Sunday night into Monday, with a chance of gales on the ocean and the eastern Sound and bays Sunday night depending on the storm's track; rough seas likely linger on the ocean into at least Tuesday. Gales are possible on all waters Wednesday night, and the midweek storm could bring more widespread coastal flooding depending on its track and strength.",
   "watch_for": [
-    "Where Sunday night's heaviest rain sets up: it currently favors eastern areas, but the storm could still shift the heavy rain back west toward NYC.",
-    "The storm's exact track, which decides how windy the coast gets Sunday night.",
-    "The Wednesday night–Thanksgiving coastal storm and its potential for strong winds and coastal flooding."
+    "How far west Sunday night's heavy rain reaches — New York City could get 1–2 inches or very little.",
+    "Possible minor urban and poor-drainage flooding Sunday night, mainly in eastern areas.",
+    "A possibly stronger coastal storm Wednesday night into Thanksgiving with wind and coastal flooding."
   ],
-  "confidence": "Forecasters are fairly confident in rain Sunday night into Monday but uncertain about where the heaviest rain and strongest winds fall, and the Thanksgiving storm's track and impacts remain highly uncertain."
+  "confidence": "Confidence is high in a dry Saturday and rain Sunday night, moderate on rain totals because of uncertainty in the storm's track, and low on the details of the Wednesday–Thanksgiving storm."
 }

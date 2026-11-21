@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "d1981b16-fdbd-4b6f-8c2e-60c7b0a55f27",
-  "afd_issued": "2026-11-21T09:17:00Z",
-  "generated": "2026-11-21T10:24:43Z",
-  "headline": "A sunny, cool and breezy Saturday gives way to a 25–50% chance of light showers Sunday night into Monday morning, while rising King Tides bring coastal flood alerts to the Orange and San Diego County coasts from Sunday through Thursday.",
+  "afd_id": "fbff947d-46e3-4eb9-80a1-50ae1cbd3917",
+  "afd_issued": "2026-11-21T11:56:00Z",
+  "generated": "2026-11-21T12:25:33Z",
+  "headline": "A sunny, cool and breezy Saturday gives way to a 25–50% chance of light showers Sunday night into early Monday, while rising King Tides bring coastal flood alerts to the Orange and San Diego County coasts from Sunday through Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Saturday is sunny and dry but cool, with highs near normal at the coast and 5 to 10 degrees below normal inland and in the valleys. Winds blowing off the land pick up through the morning, with peak gusts of 30–40 mph in the usual wind-prone passes and canyons such as the Cajon Pass and the northern Santa Ana Mountains. Saturday night stays dry and clear."
+      "text": "Saturday is sunny and dry but cool, with highs near normal at the coast and 5 to 10 degrees below normal inland and in the valleys. Winds blowing off the land are already gusting 25–30 mph in the Cajon Pass and northern Santa Ana Mountains and will peak around 30–40 mph this morning in the usual wind-prone passes and canyons. A few clouds over the foothills thin out this morning, and Saturday night stays dry."
     },
     {
       "title": "Short Term",
-      "text": "Ocean breezes return Sunday as the next weak storm approaches, arriving faster than earlier expected. There is a 25–50% chance of light showers from the mountains to the coast Sunday evening and night, tapering off by Monday morning; amounts stay light, with about a 25–40% chance of at least a tenth of an inch and a 10–25% chance of at least a quarter inch. Snow levels sit near 5,500–6,000 feet, with mountain snow generally under an inch. Monday afternoon and Tuesday are dry, and a light land breeze Tuesday morning warms areas west of the mountains to near or a couple of degrees below normal."
+      "text": "Ocean breezes return Sunday as the next weak storm arrives faster than earlier expected, with clouds gathering and a few showers possible near San Diego as early as Sunday morning. The main chance of light showers, 25–50% from the mountains to the coast, comes Sunday evening and night, tapering off by Monday morning; amounts stay light, with a 25–40% chance of at least a tenth of an inch and a 10–25% chance of at least a quarter inch. Snow levels sit near 5,500–6,000 feet, with mountain snow generally under an inch. Monday afternoon and Tuesday are dry, and a light land breeze Tuesday morning warms areas west of the mountains to near or a couple of degrees below normal."
     },
     {
       "title": "Long Term",
-      "text": "Wednesday is uncertain: most computer model runs (about 82%) keep the next disturbance weak and the weather dry, while a minority (about 18%) show a cooler day with a better chance of showers, and the trend has been toward drier. High pressure builds for Thanksgiving with another round of offshore winds, including a 50% chance of weak Santa Ana winds and a 10% chance of weak-to-moderate ones. Highs run 2 to 5 degrees above normal on Thanksgiving and 5 to 10 degrees above normal on Friday, then cool somewhat but stay dry on Saturday, with more rain possible the following week."
+      "text": "Wednesday is uncertain: most computer model runs (about 82%) keep the next disturbance weak and the weather dry with less cooling, while a minority (about 18%) show a cooler day with a better chance of showers, and the trend has been toward drier. High pressure builds for Thanksgiving with another round of offshore winds, including a 50% chance of weak Santa Ana winds and a 10% chance of weak-to-moderate ones. Highs run 2 to 5 degrees above normal on Thanksgiving and 5 to 10 degrees above normal on Friday, then cool but stay dry on Saturday, with more rain possible the following week."
     }
   ],
-  "coast": "Morning high tides climb above 7 feet by Sunday and peak with King Tides on Wednesday, reaching 7.9–8.2 feet each morning Tuesday through Thursday (forecasters raised the tide forecast above the usual predictions based on recent observations). A Coastal Flood Advisory covers the Orange County and San Diego County coasts from 4 AM Sunday to 4 AM Tuesday, followed by a Coastal Flood Watch from late Monday night through Thursday afternoon. Surf stays around 3–5 feet through Wednesday, but an incoming swell could bring notably higher surf starting Thursday, on top of the high tides. Offshore, the Small Craft Advisory expired at 9 PM Friday as winds and seas eased, and no marine hazards are expected through Tuesday; the midweek storm and swell could bring hazardous winds and waves back Wednesday into Thursday, though its track and strength are still uncertain.",
+  "coast": "Morning high tides climb above 7 feet by Sunday and peak with King Tides on Wednesday, reaching 7.9–8.2 feet each morning Tuesday through Thursday (forecasters raised the tide forecast above the usual predictions based on recent observations). A Coastal Flood Advisory covers the Orange County and San Diego County coasts from 4 AM Sunday to 4 AM Tuesday, followed by a Coastal Flood Watch from late Monday night through Thursday afternoon. Surf stays around 3–5 feet through Wednesday, but an incoming swell could bring notably higher surf starting Thursday, on top of the high tides. Offshore, no marine hazards are expected through Tuesday; the midweek storm and swell could bring hazardous winds and waves back Wednesday into Thursday, though its track and strength are still uncertain.",
   "watch_for": [
     "King Tides: Coastal Flood Advisory 4 AM Sunday to 4 AM Tuesday, then a Coastal Flood Watch through Thursday afternoon, with morning tides near 8 feet and possibly bigger surf Thursday.",
-    "Light showers Sunday evening into early Monday (25–50% chance), mostly under a quarter inch.",
-    "Whether Wednesday turns cooler with showers (minority outcome) and how strong Thanksgiving's Santa Ana winds get."
+    "Light showers Sunday into early Monday (25–50% chance), mostly under a quarter inch.",
+    "Whether Wednesday turns cooler with showers (the minority outcome) and how strong Thanksgiving's Santa Ana winds get."
   ],
-  "confidence": "Forecasters are confident in the cool, dry Saturday and the light showers Sunday night, less sure about Wednesday, and fairly confident in a warm, dry Thanksgiving and Friday, with wind strength the main question."
+  "confidence": "Forecasters are confident in the cool, dry Saturday and light showers Sunday night, less sure about Wednesday, and fairly confident in a warm, dry Thanksgiving and Friday, with wind strength the main question."
 }
