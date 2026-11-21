@@ -1,29 +1,29 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": "8aa4d024-1170-4e8e-9b82-c8c3be4bbd85",
-  "afd_issued": "2026-11-20T23:09:00Z",
-  "generated": "2026-11-21T00:25:10Z",
-  "headline": "Fog and possible freezing fog tonight into Saturday morning give way to light showers this weekend, then a stormy, wet and windy stretch starts Monday night with a series of storms and a coastal-flooding risk.",
+  "afd_id": "0432f642-68e3-4fb3-b1ff-3214994a1932",
+  "afd_issued": "2026-11-21T04:28:00Z",
+  "generated": "2026-11-21T05:25:03Z",
+  "headline": "Patchy fog, possibly freezing in spots, tonight into Saturday morning gives way to light showers this weekend, then a stormy, wet and windy stretch begins Monday night with a series of storms and a coastal-flooding risk.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High pressure sits overhead Friday evening and night, keeping things dry and calm, but the air is nearly saturated and a strong layer of warm air above the ground will trap moisture near the surface. Dense fog is expected to form again this evening across the Puget Sound lowlands and southwest interior, with freezing fog possible in places such as southern Puget Sound, the southwest interior and the Kitsap Peninsula. Lows range from the upper 20s to upper 30s, and the fog lingers into Saturday morning."
+      "text": "High pressure sits overhead Friday night, keeping things dry and calm, but the air is nearly saturated and a strong layer of warmer air above the ground will trap moisture near the surface. Fog is expected to form overnight, with freezing fog possible in places such as southern Puget Sound, the southwest interior and the Kitsap Peninsula; elsewhere, including around Sea-Tac (about a 30% chance of low clouds), breaks in the clouds and incoming high clouds may keep fog patchier than first expected. Lows range from the upper 20s to upper 30s."
     },
     {
       "title": "Short Term",
-      "text": "Saturday starts foggy, with the fog lifting by afternoon as a low-pressure system stalls off the Washington coast for much of the weekend. Light lowland rain showers and mountain snow showers return Saturday afternoon, with snow levels around 2,500 to 3,000 feet, and showers continue Sunday, though most of the rain stays offshore until steadier rain reaches the coast and Olympic Peninsula Sunday night. Rain amounts are not expected to cause problems. Temperatures stay near normal, with highs in the upper 40s to near 50 and lows in the 30s."
+      "text": "Saturday starts foggy, with any fog and low clouds gone by about 10 AM, as a low-pressure system stalls off the Washington coast for much of the weekend. Light lowland rain showers and mountain snow showers return Saturday afternoon, with snow levels around 2,500 to 3,000 feet, and showers continue Sunday, though most of the rain stays offshore until steadier rain reaches the coast and Olympic Peninsula Sunday night. Rain amounts are not expected to cause problems. Temperatures stay near normal, with highs in the upper 40s to near 50 and lows in the 30s."
     },
     {
       "title": "Long Term",
-      "text": "On Monday the offshore low gets swept into the broader flow as a large storm pattern covers the northeast Pacific, and a well-organized storm front is expected to strengthen offshore Monday night into Tuesday. That kicks off a parade of storms through the second half of next week, with widespread rain, mountain snow and breezy winds. Rivers will start to rise; no widespread river flooding is expected, but the Skokomish River will likely reach flood stage mid to late week."
+      "text": "On Monday the offshore low gets swept into a broad dip in the jet stream covering the northeast Pacific, and a well-organized storm front is expected to strengthen offshore Monday night into Tuesday. That opens the door to a parade of storms through the second half of next week, bringing widespread rain and breezy winds. Rivers will start to rise; no widespread river flooding is expected, but the Skokomish River will likely reach flood stage mid to late week."
     }
   ],
-  "coast": "High tides this weekend may bring minor coastal flooding to the Pacific Coast and the Strait of Juan de Fuca by Sunday, and the risk of minor coastal flooding and high surf returns next week as storms coincide with high tides. On the water, a Gale Warning runs from 10 PM tonight to 4 PM Saturday for the outer coastal waters north of James Island, Small Craft Advisories cover the rest of the coastal waters and the western and central Strait Saturday, and the eastern Strait (off Port Angeles and Sequim) has a Small Craft Advisory from 1 PM Saturday to 4 AM Sunday. Seas build to 8–13 feet Saturday and 11–14 feet Saturday night into Sunday, with winds rising again Sunday. A much stronger storm Monday into Tuesday brings a better than 80% chance of gales on the coastal waters and the Strait of Juan de Fuca through Tuesday evening, a 50–80% chance of storm-force gusts on the outer coastal waters late Monday through Tuesday, and seas of 15–20 feet by Tuesday (60–80% chance of topping 20 feet on the outermost waters); seas likely stay above 12–15 feet through the end of the week.",
+  "coast": "High tides this weekend may bring minor coastal flooding to the Pacific Coast and the Strait of Juan de Fuca by Sunday, and the risk of minor coastal flooding and high surf returns next week as storms coincide with high tides. On the water, a Gale Warning runs until 4 PM Saturday for the outer coastal waters (10–60 miles out) from Cape Flattery to James Island, Small Craft Advisories cover the rest of the coastal waters from 4 AM Saturday to 4 AM Sunday and the western and central Strait from 4 AM to 4 PM Saturday, and the eastern Strait (off Port Angeles and Sequim) has a Small Craft Advisory from 1 PM Saturday to 4 AM Sunday. Patchy fog is possible again on Puget Sound and the inland waters Saturday morning. Seas build to 8–13 feet Saturday and 11–14 feet Saturday night into Sunday, with winds rising again Sunday. A much stronger storm Monday into Tuesday brings a better than 80% chance of gales on the coastal waters and the Strait of Juan de Fuca through Tuesday evening, a 50–80% chance of storm-force gusts on the outer coastal waters late Monday through much of Tuesday, and seas of 15–20 feet by Tuesday (60–80% chance of topping 20 feet on the outermost waters); seas likely stay above 12–15 feet through the end of the week.",
   "watch_for": [
-    "Dense fog and possible freezing fog tonight into Saturday morning, especially south Puget Sound, the southwest interior and Kitsap Peninsula.",
+    "Fog and possible freezing fog tonight into Saturday morning, most likely in south Puget Sound, the southwest interior and Kitsap Peninsula.",
     "The Monday night–Tuesday storm: gales likely through the Strait of Juan de Fuca and possible storm-force gusts offshore.",
     "Minor coastal flooding with high tides from Sunday into next week, and the Skokomish River likely reaching flood stage mid to late week."
   ],
-  "confidence": "Forecasters are confident in tonight's fog and the light weekend showers, and highly confident (over 80%) in a strong, windy storm on the water Monday into Tuesday, while details of rain amounts later next week are less certain."
+  "confidence": "Forecasters are confident in the light weekend showers but only somewhat confident in how widespread tonight's fog and low clouds will be, and highly confident (over 80%) in a strong, windy storm on the water Monday into Tuesday."
 }
