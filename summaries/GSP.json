@@ -1,27 +1,27 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "3021dc8b-cfca-43c0-929f-b7973179e501",
-  "afd_issued": "2026-11-21T11:09:00Z",
-  "generated": "2026-11-21T12:25:33Z",
-  "headline": "Rain moves in this afternoon and evening with a likely tenth to half inch of much-needed rain tonight into early Sunday, followed by a very warm Monday and then a much cooler, unsettled stretch midweek.",
+  "afd_id": "35f6e5fd-8293-4ca5-b67a-c7298c27c13b",
+  "afd_issued": "2026-11-21T18:05:00Z",
+  "generated": "2026-11-21T19:26:28Z",
+  "headline": "Light rain spreads across the region this afternoon and tonight, bringing a much-needed 0.1 to 1 inch before tapering off Sunday morning, followed by cooler weather from Tuesday and rising rain chances Wednesday into Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Clouds thicken Saturday over the Charlotte area and the rest of the region, with highs near normal and northeast winds gusting around 20–30 mph east of the mountains. Rain spreads from south to north this afternoon into this evening, though its exact arrival time is uncertain. Rain becomes likely across most of the area Saturday night into early Sunday, with a beneficial 0.1–0.5 inch, the highest amounts in northeast Georgia and the western South Carolina Upstate."
+      "text": "Rain began this morning, but much of it is evaporating in dry air before reaching the ground; as the air moistens this evening and overnight, more of it will reach the ground in Charlotte and across the region, especially east of the mountains. Totals look like 0.10 to 1 inch, with the higher end wherever a heavier band sets up, currently most likely northeast Georgia and areas east of the mountains. Northeast winds gust roughly 15 to 30 mph east of the mountains through Sunday morning, while winds stay calm around Asheville."
     },
     {
       "title": "Short Term",
-      "text": "Rain chances diminish through Sunday as highs climb above normal. Monday is the warmest day of the week, with highs more than 10 degrees above normal as skies clear and winds coming down off the mountains warm the air, though a front could bring brief, light showers to the North Carolina mountains Monday afternoon and evening. That mostly dry cold front crosses Monday night into Tuesday, bringing much cooler air, with temperatures near to below normal from Tuesday on."
+      "text": "Rain tapers off Sunday morning and the storm is gone by Sunday night, with low clouds around Charlotte starting to improve Sunday afternoon after about 2 PM. A cold front approaches Monday into Monday night, bringing warmer daytime temperatures first, though it may fall apart over the mountains and some moisture lingers across most of the area from Monday on. Cooler air filters in on Tuesday."
     },
     {
       "title": "Long Term",
-      "text": "Temperatures stay near to below normal through the end of the week. The models disagree on a complex, highly amplified pattern from midweek on, but there is some agreement that a coastal low will develop off the Southeast coast Wednesday into Thursday, raising rain chances across much of the area, with amounts still uncertain. If enough cold air is in place early Wednesday, the North Carolina mountains could see some wintry precipitation at the start, with any accumulation likely minimal."
+      "text": "Cooler temperatures stay in place through the end of the week. A pattern change sends a storm system from the south toward the region midweek, possibly with two low-pressure centers interacting and a new low forming near the coast, raising rain chances Wednesday into Thursday with lingering chances through at least Friday. A more northern track would mean less impact, a stronger, more southern track more rain, and if enough cold air is in place the higher mountain elevations could see a burst of wintry precipitation; forecasters say there are too many uncertainties to pin down details."
     }
   ],
   "watch_for": [
-    "Rain arrival timing this afternoon and evening, with the heaviest amounts toward northeast Georgia and the western Upstate.",
-    "Rain chances and possible wintry precipitation in the North Carolina mountains Wednesday into Thursday."
+    "How much of tonight's rain actually reaches the ground, with the best chance of up to an inch in northeast Georgia and east of the mountains.",
+    "The track of the midweek storm Wednesday into Thursday, which decides between more rain, less impact, or a burst of wintry weather in the higher mountains."
   ],
-  "confidence": "Forecasters are fairly confident in tonight's rain, a warm Monday and the cooldown Tuesday, but confidence is low from midweek onward because the models disagree."
+  "confidence": "Forecasters expect rain tonight but amounts depend on how quickly the dry air moistens, and confidence in the midweek storm is low, with a lot likely to change."
 }

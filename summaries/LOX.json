@@ -1,10 +1,10 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "207a7506-7e12-46f8-91b4-7251483f4ce5",
-  "afd_issued": "2026-11-21T17:53:00Z",
-  "generated": "2026-11-21T18:25:16Z",
-  "headline": "A sunny but cool Saturday gives way to light rain Sunday evening around Los Angeles, then a weak midweek storm and a sunny, warmer Thanksgiving, with coastal flood alerts in place for much of the week.",
+  "afd_id": "4cf9f184-b8c6-48ff-8a82-48a57e773f50",
+  "afd_issued": "2026-11-21T18:03:00Z",
+  "generated": "2026-11-21T19:26:28Z",
+  "headline": "A sunny but cool Saturday gives way to light rain Sunday evening around Los Angeles and a sunny, warmer Thanksgiving, but forecasters have significant concern for moderate to major coastal flooding along the beaches during Thanksgiving week.",
   "sections": [
     {
       "title": "Today & Tonight",
@@ -19,11 +19,11 @@
       "text": "Tuesday stays dry but grows cloudier as the next weak storm approaches, with coast and valley highs in the upper 60s to lower 70s, about 2 to 4 degrees below normal. Rain arrives Tuesday night and ends by early Wednesday afternoon, with only a 20 to 30 percent chance south of Point Conception, including the Los Angeles area, and under a tenth of an inch if any; coastal San Luis Obispo County has a better than 70 percent chance (about 50 percent elsewhere on the Central Coast), with a tenth to a quarter inch there and up to half an inch north of Morro Bay. Thanksgiving and Black Friday are sunny, dry and warmer as high pressure builds, with possibly enough wind off the land for a moderate wind event; highs warm about 6 degrees on Thanksgiving and another 2 to 4 on Friday, reaching the 70s at all coasts and valleys, 5 to 10 degrees above normal."
     }
   ],
-  "coast": "Coastal flood alerts are in effect for much of Thanksgiving week. For the Central Coast, Ventura and Los Angeles county beaches, a Coastal Flood Advisory runs from 3 AM Monday to 3 AM Wednesday, followed by a Coastal Flood Watch from late Tuesday night through Thursday afternoon; the Santa Barbara South Coast and the islands are under a Coastal Flood Advisory from 3 AM Monday to 3 PM Thursday. Offshore, winds and seas stay below small craft advisory levels through the weekend. A significant west swell around 14 to 16 feet arrives midweek, bringing large, hazardous seas to the outer waters, and low-end advisory-level northwest to west winds are possible Wednesday and Wednesday night south of Point Conception after the storm passes.",
+  "coast": "Forecasters have significant concern for moderate to major coastal flooding during Thanksgiving week, from a combination of unusually high sea levels (warm ocean water expands), very high spring tides with the moon near its closest point, and a large, long-period west swell. For the Central Coast, Ventura and Los Angeles county beaches, a Coastal Flood Advisory runs from 3 AM Monday to 3 AM Wednesday, followed by a Coastal Flood Watch from late Tuesday night through Thursday afternoon, when the swell arrives; peak high tides come between 8:45 and 10 AM at about 8.2–8.6 feet for Los Angeles and Ventura and 7.9–8.2 feet on the Central Coast, with a reasonable worst case 0.3–0.5 feet higher. If upgraded to a warning, flooding could reach farther inland and damage coastal roads and buildings, with significant beach erosion; places of greatest concern include Santa Monica to Palos Verdes, Long Beach/Naples, Faria to Silver Strand Beach and Ventura Harbor, and Morro Bay, Pismo Beach, Oceano Dunes and the Cayucos, Avila and Pismo piers. The Santa Barbara South Coast (Santa Barbara to Rincon and Jalama Beach) and the islands are under a Coastal Flood Advisory from 3 AM Monday to 3 PM Thursday, elevated to high surf is likely all week, and more coastal alerts will likely be needed Friday. Offshore, winds and seas stay below small craft advisory levels through the weekend; a significant west swell around 14 to 16 feet arrives midweek with large, hazardous seas on the outer waters, and advisory-level northwest to west winds are possible Wednesday and Wednesday night south of Point Conception.",
   "watch_for": [
-    "The Coastal Flood Watch for Wednesday–Thursday, which could be upgraded as the big swell arrives.",
+    "Moderate to major coastal flooding: the Coastal Flood Watch for Wednesday–Thursday morning high tides (8:45–10 AM) could be upgraded to a warning as the big swell arrives.",
     "Light rain Sunday evening in Los Angeles County, around a tenth of an inch.",
     "A possible moderate offshore wind event on Thanksgiving and Friday."
   ],
-  "confidence": "Forecasters say they have a good handle on the sunny, cool weekend and light Sunday rain; they describe the midweek storm as weak and give no specific confidence for it or for the warm, dry Thanksgiving."
+  "confidence": "Forecasters say they have a good handle on the sunny, cool weekend and light Sunday rain; they describe the midweek storm as weak, and for the coast they say significant flooding impacts seem probable though exactly how the tides and swell line up is still somewhat uncertain."
 }
