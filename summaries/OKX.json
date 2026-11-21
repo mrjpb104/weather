@@ -1,22 +1,22 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": null,
-  "afd_issued": "2026-11-20T23:27:00Z",
-  "generated": "2026-11-21T00:25:10Z",
+  "afd_id": "754a7df3-5cb4-4aa7-b878-7be7c541bc18",
+  "afd_issued": "2026-11-21T05:22:00Z",
+  "generated": "2026-11-21T06:25:08Z",
   "headline": "A fast-moving coastal storm brings a soaking 1–3 inches of rain and some wind to New York City and the region Sunday afternoon into Monday morning, with another coastal storm possible Wednesday night into Thanksgiving.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High pressure stays in control Friday night, keeping New York City and the region dry and quiet. Winds are light from the north-northwest in the city and light and variable in outlying areas. No watches, warnings or advisories are in effect."
+      "text": "High pressure stays in control early Saturday through Saturday night, keeping New York City and the region dry and quiet. Winds are light from the north overnight, turning east to southeast at around 5 mph on Saturday. No watches, warnings or advisories are in effect."
     },
     {
       "title": "Short Term",
-      "text": "Saturday stays dry with light east to southeast winds. A low-pressure system moving up the coast brings rain starting as soon as early Sunday afternoon, with the heaviest Sunday night as the storm passes over or just southeast of eastern Long Island; expect 1–2 inches across the region and a stripe of close to 3 inches somewhere over Long Island, southern Connecticut and possibly New York City, where rain could fall at more than half an inch per hour for several hours, along with a few possible thunderstorms. Because the storm moves quickly, the main risk is minor flooding of streets, small streams and poorly drained areas rather than widespread flash flooding. If the storm's center crosses Long Island, eastern Long Island and southeast Connecticut could see south-southeast gusts of 45–55 mph Sunday night (with a few north gusts to 40 mph farther west), and rain lingers early Monday before improving in the afternoon with northwest to west gusts around 20–25 knots (about 25–30 mph)."
+      "text": "A low-pressure system moving up the coast brings rain starting as soon as early Sunday afternoon, with the heaviest Sunday night as the storm passes over or just southeast of eastern Long Island; expect 1–2 inches across the region and a stripe of close to 3 inches somewhere over Long Island, southern Connecticut and possibly New York City, where rain could fall at more than half an inch per hour for several hours, along with a few possible thunderstorms. Because the storm moves quickly, the main risk is minor flooding of streets, small streams and poorly drained areas rather than widespread flash flooding. If the storm's center crosses Long Island, eastern Long Island and southeast Connecticut could see south-southeast gusts of 45–55 mph Sunday night (with a few north gusts to 40 mph farther west); rain ends early Monday, followed by clearing and northwest gusts around 15–20 knots (about 15–25 mph), and Tuesday looks dry."
     },
     {
       "title": "Long Term",
-      "text": "Tuesday and Wednesday daytime look quiet. Another coastal storm is possible Wednesday night into Thanksgiving Day: the main European model tracks it southeast of Nantucket Thanksgiving night and the American model even farther offshore, which would limit strong winds to eastern Long Island and Connecticut, but most of the stronger model scenarios track it closer, bringing more direct impacts and a wider wind threat along the coast."
+      "text": "Wednesday daytime looks quiet, with a chance of light rain arriving Wednesday night. Another coastal storm is possible Wednesday night into Thanksgiving Day: the main European model tracks it southeast of Nantucket Thanksgiving night and the American model even farther offshore, which would limit strong winds to eastern Long Island and Connecticut, but most of the stronger model scenarios track it closer, bringing more direct impacts and a wider wind threat along the coast."
     }
   ],
   "coast": "Coastal flooding from Sunday night's storm looks minimal because the Monday morning high tide comes after the storm passes, with winds blowing offshore, though rough seas offshore slow drainage from the back bays and a few Long Island south shore spots could approach or reach minor flood levels. The Wednesday night–Thanksgiving storm comes right after Tuesday's full moon, so at least widespread minor coastal flooding is possible even if it stays offshore, and the reasonable worst case is moderate flooding over several high tides Wednesday into Friday. On the water, at least small-craft-advisory conditions are expected on all waters Sunday night, lingering on the ocean afterward in northwest winds; gales are possible on the ocean, eastern Long Island Sound and the bays Sunday night depending on the storm's track (a Gale Watch may become necessary), and on all waters Wednesday night.",
@@ -25,5 +25,5 @@
     "The storm's exact track, which decides whether eastern Long Island and southeast Connecticut get 45–55 mph gusts Sunday night.",
     "The track of the Wednesday night–Thanksgiving storm and its coastal flooding risk right after the full moon."
   ],
-  "confidence": "Forecasters made no significant changes and models agree well on Sunday–Monday's rain, though its winds depend on the exact track; the Thanksgiving storm's track and impacts are still uncertain."
+  "confidence": "Models agree well on Sunday–Monday's rain, though its winds depend on the exact track; the Thanksgiving storm's track and impacts are still uncertain."
 }

@@ -1,14 +1,14 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "542b2469-40d2-4d39-832a-480540d9b11e",
-  "afd_issued": "2026-11-21T00:23:00Z",
-  "generated": "2026-11-21T01:25:46Z",
-  "headline": "Clearing and cool for the weekend, a chance of light rain Sunday night into Monday morning, and rising King Tides with coastal flood alerts for the Orange and San Diego County coasts from Sunday through Thursday.",
+  "afd_id": "05816d25-2e01-4569-b32f-eaf05bf73c43",
+  "afd_issued": "2026-11-21T05:29:00Z",
+  "generated": "2026-11-21T06:25:08Z",
+  "headline": "Cool and dry for the weekend, a chance of light rain Sunday night into Monday morning, and rising King Tides bringing coastal flood alerts to the Orange and San Diego County coasts from Sunday through Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday evening is dry as Thursday's storm moves off to the east, with clouds clearing from the coast to the foothills. Tonight, north and east winds are breeziest along the coastal mountain slopes, with gusts mostly under 35 mph, including gusts of roughly 25–35 mph through the San Bernardino County foothills and Cajon Pass from about 10 PM to 8 AM Saturday. It turns chilly inland, with lows in the 30s in parts of the Inland Empire, below freezing in the high desert and in the teens around Big Bear Lake."
+      "text": "Friday night is dry as Thursday's storm moves off to the east, and the scattered clouds over the foothills thin out overnight. Brief north to northwest gusts of roughly 25–35 mph blow through the San Bernardino County foothills and Cajon Pass until about 7 AM Saturday, with somewhat weaker east to northeast gusts below the Santa Ana Mountains and other west-facing foothills. It turns chilly inland, with lows in the 30s in parts of the Inland Empire, below freezing in the high desert and in the teens around Big Bear Lake."
     },
     {
       "title": "Short Term",
@@ -19,7 +19,7 @@
       "text": "Tuesday stays cool and dry. Forecasters are unsure whether a piece of the next Pacific Northwest storm breaks off and reaches Southern California or whether high pressure to the south keeps it to the north; if it arrives, light showers are possible closer to the coast sometime Wednesday into Thanksgiving morning. Otherwise, high pressure strengthens through the middle and end of the week, bringing dry weather and a warming trend with highs 5 to 10 degrees above normal."
     }
   ],
-  "coast": "Morning high tides climb above 7 feet by Sunday and peak with King Tides on Wednesday, reaching 7.9–8.2 feet each morning Tuesday through Thursday (forecasters raised the tide forecast above the usual predictions based on recent observations). A Coastal Flood Advisory covers the Orange County and San Diego County coasts from 4 AM Sunday to 4 AM Tuesday, followed by a Coastal Flood Watch from late Monday night through Thursday afternoon. Surf stays around 3–5 feet through Wednesday, but an incoming swell could bring notably higher surf starting Thursday, on top of the high tides. Offshore, a Small Craft Advisory runs until 9 PM Friday for waters 10 to 60 nautical miles out from San Mateo Point to the Mexican border, including San Clemente Island, with gusts around 30–35 mph and choppy, locally steep 5–7 foot seas; no marine hazards are expected after that through Tuesday, but the midweek storm and swell could bring hazardous winds and waves back Wednesday into Thursday.",
+  "coast": "Morning high tides climb above 7 feet by Sunday and peak with King Tides on Wednesday, reaching 7.9–8.2 feet each morning Tuesday through Thursday (forecasters raised the tide forecast above the usual predictions based on recent observations). A Coastal Flood Advisory covers the Orange County and San Diego County coasts from 4 AM Sunday to 4 AM Tuesday, followed by a Coastal Flood Watch from late Monday night through Thursday afternoon. Surf stays around 3–5 feet through Wednesday, but an incoming swell could bring notably higher surf starting Thursday, on top of the high tides. Offshore, the Small Craft Advisory expired at 9 PM Friday as winds and seas ease, though the outer waters stay choppy this evening with gusts around 30–35 mph and steep 5–7 foot seas; no marine hazards are expected after that through Tuesday, but the midweek storm and swell could bring hazardous winds and waves back Wednesday into Thursday.",
   "watch_for": [
     "King Tides: Coastal Flood Advisory Sunday to Tuesday morning, then a Coastal Flood Watch through Thursday afternoon, with morning tides near 8 feet and possibly bigger surf Thursday.",
     "Light rain Sunday night into Monday morning (about a tenth of an inch) and light snow in the San Bernardino Mountains above about 5,000 feet.",
