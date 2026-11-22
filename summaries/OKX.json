@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "ddceffec-2631-4b03-aa71-c7112a0a14b0",
-  "afd_issued": "2026-11-21T20:21:00Z",
-  "generated": "2026-11-21T20:25:17Z",
-  "headline": "Rain moves in Sunday afternoon and turns heavy at times Sunday night, around an inch in New York City, and a potentially larger coastal storm Wednesday night through Friday could bring heavy rain, strong winds and widespread coastal flooding over Thanksgiving.",
+  "afd_id": "6be69eb2-8dff-4a96-9b13-7a9b4d3de642",
+  "afd_issued": "2026-11-22T00:27:00Z",
+  "generated": "2026-11-22T02:25:50Z",
+  "headline": "A rainstorm moving up the coast brings about an inch of rain to New York City Sunday afternoon into Monday morning, and a larger, more dangerous coastal storm is likely Wednesday night through Friday with heavy rain, strong east winds and widespread coastal flooding over Thanksgiving.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Saturday is unusually warm and dry under high pressure: JFK reached 65 degrees by 2 PM, one short of its 66-degree record for the date, and Islip tied its record of 65. Tonight stays dry."
+      "text": "Saturday was unusually warm, with JFK reaching 65 degrees by 2 PM, one shy of the date's record of 66, and Islip tying its record of 65. High pressure keeps Saturday night dry around New York City and the rest of the area, with winds turning light and variable overnight. Clouds lower on Sunday as low pressure approaches from the south, and a few showers are possible Sunday morning."
     },
     {
       "title": "Short Term",
-      "text": "Low pressure moving up the coast brings some light rain as early as late morning or early afternoon Sunday, picking up late in the day and turning moderate to heavy at times Sunday evening; Sunday highs could again challenge records (Islip forecast 65 vs. a record 64). New York City should get about an inch, with 1–2 inches widespread across southern Connecticut and Long Island, locally near 3 inches in eastern Long Island and southeast Connecticut (where a few thunderstorms are possible Sunday evening), and about a half to three-quarters of an inch well north and west. East winds of 10–15 mph with gusts of 25–30 mph are possible along the coast Sunday night, with a low chance of brief 40–45 mph gusts out east if the storm tracks close enough. Rain ends by Monday morning as winds turn northwest to west, gusting around 15–25 mph; Tuesday looks dry."
+      "text": "Low pressure passing just southeast of Long Island brings light rain as early as late Sunday morning or early afternoon, turning moderate to heavy at times late Sunday into Sunday evening. New York City should get about an inch, with 1–2 inches widespread across Long Island and southern Connecticut, locally close to 3 inches on eastern Long Island and southeastern Connecticut, and 1/2 to 3/4 inch well north and west of the city; a few thunderstorms are possible on eastern Long Island and southeastern Connecticut Sunday evening. East winds gust to 25–30 mph along the coast Sunday night, with a low chance of brief 40–45 mph gusts out east if the storm tracks closer. It will also be mild Sunday, with Islip forecast near 65 (record 64) and Bridgeport near 62; rain ends and conditions improve around daybreak Monday, followed by dry, breezy northwest-to-west winds Monday and a dry Tuesday."
     },
     {
       "title": "Long Term",
-      "text": "Computer models continue to agree on a potentially large coastal storm from Wednesday night into Thanksgiving Day and Friday, likely more impactful than Sunday's, with heavy rain and strong east to northeast winds. Gusts could reach roughly 40–50 mph (35–45 knots) around the New York City airports on Thursday. The upper-air pattern is complex enough that small changes could shift the storm's strength, track and timing a lot."
+      "text": "Computer models continue to agree on a potentially large, high-impact coastal storm from Wednesday night into Thanksgiving Day and Friday, likely stronger in wind and coastal flooding than Sunday's system. It would bring heavy rain and strong east-northeast winds, with rain arriving late Wednesday night and airport-area gusts possibly 40–50 mph on Thursday. The weather pattern is complex enough that small changes could shift the storm's strength, track and timing significantly, so this is worth monitoring closely, especially for Thanksgiving travel."
     }
   ],
-  "coast": "Coastal flooding with Sunday's storm looks minimal, since the biggest storm surge comes during the lower of the two high tides Sunday night; a few back-bay spots along the south shore of Nassau County could get close to minor flood levels Monday morning, but confidence is low. The Wednesday night–Friday storm is a bigger concern: high monthly tides mean many spots need less than a foot of surge to flood, and the current forecast supports widespread minor to moderate coastal flooding, possibly localized major flooding, plus beach flooding, erosion and overwash. On the water, Small Craft Advisories begin Sunday afternoon or evening and run to 6 AM Monday, with a Gale Watch Sunday evening through late Sunday night for the outer ocean waters and the nearshore ocean east of Moriches. Rough ocean seas linger into Monday night, then east-northeast winds ramp up Wednesday to gales Wednesday night and storm force on the ocean Thursday, with waves of 12–20 feet on the ocean (20–25 feet out east), 7–10 feet in Block Island Sound and 4–6 feet on Long Island Sound and at the entrance to New York Harbor.",
+  "coast": "Sunday night's storm poses only a minimal coastal flood threat because its highest surge comes during the lower of the two daily high tides; a few back-bay spots along Nassau County's south shore could approach minor flood levels Monday morning, but confidence is low and any flooding would be localized. The bigger concern is Wednesday night through Friday: tides are already running high around Tuesday's moon, many locations are less than a foot from minor flooding, and the current forecast supports widespread minor to moderate coastal flooding, possibly localized major flooding, along with beach flooding, erosion and overwash. On the water, Small Craft Advisories begin Sunday afternoon or evening and run to 6 AM Monday for New York Harbor, Long Island Sound, the bays and near-shore ocean waters, with a Gale Watch Sunday evening through late Sunday night for the ocean waters east of Moriches and farther offshore. Rough ocean seas linger into Monday night, with only a brief lull Tuesday afternoon and night before winds build again Wednesday to gale force Wednesday night and storm force on the ocean Thursday; waves could reach 12–20 feet on the ocean (20–25 feet out east), 7–10 feet on Block Island Sound and 4–6 feet on Long Island Sound and the entrance to New York Harbor.",
   "watch_for": [
-    "Sunday's storm track: a track farther west would mean more rain and wind for the city, farther east much less.",
-    "The Wednesday night–Friday coastal storm, which could bring widespread minor to moderate coastal flooding, heavy rain and strong winds over Thanksgiving travel.",
-    "Possible heavy downpours (up to 2 inches in 3 hours) in southeast Connecticut late Sunday evening."
+    "Wednesday night–Friday coastal storm: heavy rain, strong east winds, and widespread minor to moderate (possibly major) coastal flooding over Thanksgiving; track and timing could still change.",
+    "Sunday afternoon–night rain: about an inch in NYC, 1–3 inches on Long Island and southern Connecticut; the storm's exact track will decide how heavy the rain and wind get.",
+    "Possible minor back-bay flooding on Nassau County's south shore Monday morning (low confidence)."
   ],
-  "confidence": "Forecasters are confident in rain Sunday afternoon into Monday morning but less sure of the exact storm track and wind, and while models agree on a significant storm Wednesday night through Friday, its details are still uncertain."
+  "confidence": "Confidence is moderate for Sunday's rain, with model disagreement on the storm's track affecting how far west the heavier rain and wind reach; models agree a major coastal storm is likely Wednesday night through Friday, but its exact strength, track and timing remain uncertain."
 }
