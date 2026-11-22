@@ -1,14 +1,14 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "c2167e23-fd33-4463-b408-9ec483a73d2f",
-  "afd_issued": "2026-11-21T21:31:00Z",
-  "generated": "2026-11-21T22:25:20Z",
+  "afd_id": "8416aa18-b60f-483a-93b4-7c1a4858911e",
+  "afd_issued": "2026-11-22T03:16:00Z",
+  "generated": "2026-11-22T04:25:09Z",
   "headline": "Light rain arrives Sunday afternoon and night around Los Angeles (a quarter inch or less), a warm, dry Thanksgiving follows, but forecasters have significant concern for moderate to major coastal flooding and big surf at the beaches during Thanksgiving week.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Saturday afternoon and Saturday night stay dry and on the cool side across the region. Skies are clear at the Los Angeles-area airports, including Burbank next to Glendale, with no low clouds at the coast this morning and only light breezes, and that clear, dry weather is expected to hold through Sunday morning."
+      "text": "Saturday night stays dry and on the cool side across the region, with clear skies and no low clouds at the coast this evening. Skies should stay clear at the Los Angeles-area airports, including Burbank next to Glendale, through Sunday morning, with light northeast breezes possible near LAX from about 1 to 8 AM. Rain then begins on the Central Coast Sunday morning and spreads toward Los Angeles later in the day."
     },
     {
       "title": "Short Term",
@@ -25,5 +25,5 @@
     "High surf of 15–20 feet or more on the Central Coast Wednesday, and possible warning-level surf on the Ventura coast.",
     "Timing and amount of Wednesday's rain, since computer models disagree a bit (one is slower and wetter)."
   ],
-  "confidence": "Forecasters see no major changes in their thinking for the short term or the extended outlook, with computer models broadly agreeing through next week; for the coast they say significant flooding impacts seem probable, though exactly how the tides and swell line up is still somewhat uncertain."
+  "confidence": "Forecasters have good confidence in clear skies through Sunday morning and see no major changes for the rest of the week, with computer models broadly agreeing; for the coast they say significant flooding impacts seem probable, though exactly how the tides and swell line up is still somewhat uncertain."
 }
