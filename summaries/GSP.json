@@ -1,27 +1,27 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "ce7b18e9-ddee-455e-b360-e7bb2f4f0494",
-  "afd_issued": "2026-11-22T06:46:00Z",
-  "generated": "2026-11-22T08:25:17Z",
-  "headline": "Light showers linger Sunday and dense fog may form early Monday, then a warm Monday (low 60s to low 70s) gives way to cooler weather from Tuesday on, with widespread, mostly beneficial rain likely Wednesday into Thursday.",
+  "afd_id": "520e4587-8b56-4ae5-b1b0-c549f6433e0e",
+  "afd_issued": "2026-11-22T11:35:00Z",
+  "generated": "2026-11-22T12:26:18Z",
+  "headline": "Showers wind down Sunday and dense fog is likely by early Monday, followed by a warm Monday (highs in the 60s to near 70s), a cooler, more seasonable rest of the week, and increasingly likely widespread rain Wednesday into Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Charlotte and across the region, a cool, damp layer of air trapped against the mountains keeps skies cloudy with scattered light showers overnight and through much of Sunday, and lingering gusty winds in the South Carolina Upstate ease by mid to late morning. Showers wind down by Sunday evening as that cool air erodes, the rain-producing lift shuts off and dry conditions return. With clouds thinning, light winds and leftover low-level moisture, widespread patchy to dense fog is increasingly likely Sunday night into daybreak Monday, possibly with very low visibility."
+      "text": "Light showers continue on and off through much of Sunday across the area as east-southeast winds push moist air up over a layer of cool air trapped against the mountains; around Charlotte, light rain could linger until roughly 11 AM–2 PM, with low clouds and patchy reduced visibility. Gusty winds across the South Carolina Upstate this morning ease by late morning, and clouds may briefly lift this afternoon and early evening. By Sunday evening the cool-air layer breaks down as high pressure moves well offshore and the coastal low heads toward New England. With calm winds, clearing skies and lingering moisture, widespread patchy to dense fog is likely tonight into daybreak Monday, and the chance of dense fog has increased."
     },
     {
       "title": "Short Term",
-      "text": "Once Monday's fog lifts, the day turns noticeably warm ahead of a cold front, with highs in the low 60s to low 70s and a few spots in the southern Upstate nearing the mid 70s. The front crosses Monday night into Tuesday morning mostly dry, apart from a few mountain showers mainly along the Tennessee border. A large high-pressure system then spreads in, bringing dry, cooler northeast winds and more typical late-November temperatures Tuesday."
+      "text": "Monday will be noticeably warm ahead of a cold front, with highs in the low 60s to low 70s and a few spots in the southern Upstate nearing the mid 70s. The front crosses the area Monday night into Tuesday morning mostly dry, apart from a few mountain showers mainly along the Tennessee border. Tuesday turns cooler as a large high-pressure system settles over the Midwest and then moves toward the Mid-Atlantic and New England, setting up dry, cool northeast winds and another layer of cool air banked against the mountains, with dry weather lasting through Tuesday."
     },
     {
       "title": "Long Term",
-      "text": "Cool, seasonable air stays in place through the rest of the week as another wedge of cool air sets up east of the mountains. Rain chances keep trending up for midweek: a storm system from the south is expected to form along the Carolina coast and strengthen as it moves up the coast, pushing plenty of moist ocean air inland, and confidence is increasing in widespread rain Wednesday into Thursday. For now it looks like a beneficial rain with no hazards expected, though that could change as computer models settle on how the storm develops."
+      "text": "A well-defined storm system is expected Wednesday into Thursday as a disturbance from the southern Plains helps a low form and strengthen along the Carolina coast, driving moist air inland, and confidence continues to increase that widespread rain will return across the area, with rain chances trending up. For now it looks like a beneficial rain with no hazards expected, but that could change as computer models come into better agreement. Temperatures stay cooler and more seasonable through the rest of the week."
     }
   ],
   "watch_for": [
-    "Dense fog Sunday night into Monday morning could make for a slow, low-visibility commute.",
-    "Wednesday–Thursday storm: widespread rain is increasingly likely; currently no hazards expected, but details could change as models come into agreement."
+    "Dense fog late tonight into daybreak Monday.",
+    "How much rain the Wednesday–Thursday storm brings, and whether any hazards develop as forecasts come into better agreement."
   ],
-  "confidence": "Forecasters sound fairly settled on Sunday's showers ending and a warm Monday, and the odds of dense fog Monday morning have gone up; confidence is increasing in widespread rain Wednesday into Thursday, but how the midweek storm evolves, and whether it brings any hazards, is still uncertain."
+  "confidence": "Forecasters are confident in lingering showers today, fog early Monday, a warm Monday and a cooler, dry Tuesday, with growing but not complete confidence in widespread rain Wednesday into Thursday since models still differ on how the storm comes together."
 }
