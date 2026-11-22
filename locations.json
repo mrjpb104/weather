@@ -62,6 +62,15 @@
       "cc": "US",
       "admin": "CA",
       "country": "United States"
+    },
+    {
+      "id": "loc-mwsd7v2k",
+      "name": "Nuremberg",
+      "lat": 49.45421,
+      "lon": 11.07752,
+      "cc": "DE",
+      "admin": "Bavaria",
+      "country": "Germany"
     }
   ],
   "order": [
@@ -99,5 +108,5 @@
       ]
     }
   ],
-  "updated": "2026-11-19T06:43:22.093Z"
+  "updated": "2026-11-22T21:45:01.380Z"
 }
