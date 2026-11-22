@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "c6b5946a-ea50-49b9-8490-4abf6ed566b5",
-  "afd_issued": "2026-11-21T21:35:00Z",
-  "generated": "2026-11-21T22:25:20Z",
-  "headline": "A weak storm brings light snow and a rain-snow mix to the Sierra and western Nevada Sunday with minor travel impacts, Monday into Tuesday is the best window for Thanksgiving travel, and a wetter storm follows Tuesday night or Wednesday.",
+  "afd_id": "73a8a40e-9d5f-4163-92dd-70d858fb4e31",
+  "afd_issued": "2026-11-22T09:57:00Z",
+  "generated": "2026-11-22T11:25:58Z",
+  "headline": "Light rain and snow wind down Sunday night, Monday into Tuesday afternoon is the best window for holiday travel through the mountains, a weaker storm brings light snow Tuesday night or Wednesday, and Thanksgiving looks dry and mild.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Saturday stays mostly dry but well below normal, with highs in the mid 30s to mid 40s under increasing clouds; the discussion doesn't single out Mammoth Lakes. Tonight, northeast California and far northwest Nevada have a 30 to 70 percent chance of light snow showers with little or no accumulation, while southwest winds over Sierra ridgetops gust to 50 to 70 mph from this evening into Sunday morning and Lake Tahoe gusts to about 25 mph make for choppy water. The extra clouds keep overnight lows about 10 degrees warmer than last night."
+      "text": "A weak Pacific storm brings periods of light rain and snow through Sunday evening before showers clear out later tonight, with only minor travel impacts in the Sierra. Snow totals are meager: up to 2 inches along the Sierra crest, especially around the Tahoe Basin, with a 10 percent chance of 2 to 4 inches on the highest peaks by Monday morning; elsewhere, including the Mammoth Lakes area, expect a trace to an inch under heavier snow showers. Valley floors see a rain-snow mix with, at most, a trace on grass or elevated surfaces, and Reno has a 20 to 30 percent chance of a light rain-snow mix between about 2 and 6 PM. As skies clear tonight, pockets of freezing fog may form in northeast California and eastern Sierra valleys into early Monday, with low clouds and patchy fog possible in Reno and the Carson Valley."
     },
     {
       "title": "Short Term",
-      "text": "On Sunday, snow showers spread into the Sierra and western Nevada by late morning and afternoon, continuing into the evening before tapering off overnight, and a band of showers may set up along I-80 from about 10 AM to 6 PM, which could make travel there hazardous. The Sierra crest picks up 1 to 3 inches of new snow by Monday morning, with a 20 to 40 percent chance of more than 3 inches, and Lake Tahoe and foothill towns like Virginia City could see a few tenths of an inch. Snow levels rise to about 4,500 to 5,000 feet Sunday afternoon, so valleys see rain or a rain-snow mix before turning back to snow in the evening; Reno-Sparks isn't expected to get much if any accumulation, but it can't be ruled out, and roads may be slick overnight once temperatures drop below freezing. High pressure brings drier weather Monday into early Tuesday, the best time to travel before the holiday, though leftover slick roads and freezing fog on the cold Monday and Tuesday mornings call for caution."
+      "text": "High pressure brings a dry break Monday into Tuesday afternoon, the best window for holiday travel through the mountains. Winds pick up Tuesday ahead of the next storm, with southwest gusts of 25 to 35 mph near the Oregon border and across eastern Sierra valleys and ridgetop gusts up to 80 mph at times, affecting backcountry and lake recreation and making for bumpy flights. The next storm, which has trended much weaker, arrives Tuesday night into Wednesday: there is a 70 percent chance of 2 to 3 inches along the Sierra crest, a 70 to 90 percent chance of 1 to 2 inches at pass level, and a 60 to 90 percent chance of at least a trace at Truckee and lake level and along and west of US-395 in Mono County, including Mammoth Lakes. Snow levels rise from 5,000–5,500 feet to near 7,000 feet during the storm, so snow should switch to rain below the Sierra passes sometime Wednesday, while western Nevada valleys likely see only rain, if showers make it past the mountains at all (10 percent chance of light valley snow Wednesday morning)."
     },
     {
       "title": "Long Term",
-      "text": "Another storm moves through late Tuesday into Wednesday, though computer models disagree on timing; it looks wetter but a bit warmer, so heavier snow may be limited to higher elevations, and forecasters are watching whether winter weather alerts will be needed. Behind it, high pressure returns for warmer and drier weather by Thanksgiving Day. Precipitation chances come back late Friday into the following weekend."
+      "text": "A quick disturbance passing to the north brings low shower chances near the Oregon border on Thanksgiving Day; otherwise Thanksgiving and the Friday after are expected to be dry and mild. Unsettled weather looks likely to close out November and start December, with another storm possible next weekend (November 28–29)."
     }
   ],
   "watch_for": [
-    "A band of snow and rain showers along I-80 Sunday from about 10 AM to 6 PM, with slick roads Sunday night.",
-    "Freezing fog and lingering slick roads on the cold Monday and Tuesday mornings.",
-    "Timing and snow levels for the wetter Tuesday night–Wednesday storm, and possible winter weather alerts."
+    "Freezing fog in eastern Sierra valleys and around Truckee tonight into early Monday.",
+    "Gusty winds Tuesday (25–35 mph in valleys, up to 80 mph on ridgetops) and light mountain snow Tuesday night into Wednesday during busy holiday travel.",
+    "Another possible storm next weekend, November 28–29."
   ],
-  "confidence": "Forecasters describe Sunday's storm as weak, with snow totals trending slightly lower, and expect a dry break Monday into early Tuesday, but say there is still considerable uncertainty about the timing and impacts of the midweek storm."
+  "confidence": "Forecasters are confident in light snow totals with today's storm and a dry Monday–Tuesday break, note the midweek storm has trended much weaker with some uncertainty about how far showers reach into western Nevada, and favor a dry, mild Thanksgiving with storms possible again next weekend."
 }
