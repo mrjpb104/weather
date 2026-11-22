@@ -1,27 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "35f6e5fd-8293-4ca5-b67a-c7298c27c13b",
-  "afd_issued": "2026-11-21T18:05:00Z",
-  "generated": "2026-11-21T19:26:28Z",
-  "headline": "Light rain spreads across the region this afternoon and tonight, bringing a much-needed 0.1 to 1 inch before tapering off Sunday morning, followed by cooler weather from Tuesday and rising rain chances Wednesday into Thursday.",
+  "afd_id": "4245b558-6304-44ba-9e15-1ec21613db75",
+  "afd_issued": "2026-11-21T23:55:00Z",
+  "generated": "2026-11-22T00:25:47Z",
+  "headline": "Much-needed light rain of 0.10 to 1 inch falls tonight before tapering off Sunday morning, dense fog is increasingly likely early Monday, and cooler weather from Tuesday comes with rising rain chances Wednesday into Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Rain began this morning, but much of it is evaporating in dry air before reaching the ground; as the air moistens this evening and overnight, more of it will reach the ground in Charlotte and across the region, especially east of the mountains. Totals look like 0.10 to 1 inch, with the higher end wherever a heavier band sets up, currently most likely northeast Georgia and areas east of the mountains. Northeast winds gust roughly 15 to 30 mph east of the mountains through Sunday morning, while winds stay calm around Asheville."
+      "text": "Bands of rain from a strengthening low off the Carolina coast keep spreading across Charlotte and much of the region this evening and tonight, especially east of the mountains. Early rain mostly evaporated in dry air, but as the air moistens more of it will reach the ground overnight, with totals of 0.10 to 1 inch and the higher end wherever a heavier band sets up, currently most likely northeast Georgia and areas east of the mountains. Clouds lower through the night, becoming very low by daybreak, with northeast winds."
     },
     {
       "title": "Short Term",
-      "text": "Rain tapers off Sunday morning and the storm is gone by Sunday night, with low clouds around Charlotte starting to improve Sunday afternoon after about 2 PM. A cold front approaches Monday into Monday night, bringing warmer daytime temperatures first, though it may fall apart over the mountains and some moisture lingers across most of the area from Monday on. Cooler air filters in on Tuesday."
+      "text": "Rain tapers off Sunday morning and the storm is gone by Sunday night, though low clouds will be hard to clear outside the mountains Sunday until winds turn more northerly late in the day. Widespread dense fog is increasingly likely early Monday morning, possibly cutting visibility very low. A cold front approaches Monday into Monday night, bringing warmer daytime temperatures first, though it may break apart over the mountains and some moisture lingers across most of the area. Cooler air filters in on Tuesday."
     },
     {
       "title": "Long Term",
-      "text": "Cooler temperatures stay in place through the end of the week. A pattern change sends a storm system from the south toward the region midweek, possibly with two low-pressure centers interacting and a new low forming near the coast, raising rain chances Wednesday into Thursday with lingering chances through at least Friday. A more northern track would mean less impact, a stronger, more southern track more rain, and if enough cold air is in place the higher mountain elevations could see a burst of wintry precipitation; forecasters say there are too many uncertainties to pin down details."
+      "text": "Cooler temperatures stay in place through the end of the week. A pattern change sends a storm system from the south toward the region midweek, possibly with two low-pressure areas rotating around each other and a new low forming near the coast, raising rain chances Wednesday into Thursday with lingering chances through at least Friday. A more northern track would mean less impact, a stronger, more southern track would bring more rain, and if enough cold air is in place the higher mountain elevations could see a burst of wintry precipitation; forecasters say there are too many uncertainties to pin down details."
     }
   ],
   "watch_for": [
-    "How much of tonight's rain actually reaches the ground, with the best chance of up to an inch in northeast Georgia and east of the mountains.",
+    "Dense fog early Monday morning, which could make the morning commute hazardous.",
+    "How much rain actually reaches the ground tonight, with the best chance of up to an inch in northeast Georgia and east of the mountains.",
     "The track of the midweek storm Wednesday into Thursday, which decides between more rain, less impact, or a burst of wintry weather in the higher mountains."
   ],
-  "confidence": "Forecasters expect rain tonight but amounts depend on how quickly the dry air moistens, and confidence in the midweek storm is low, with a lot likely to change."
+  "confidence": "Forecasters expect rain tonight but amounts depend on how fast the dry air moistens, confidence in Monday morning fog has increased, and confidence in the midweek storm is low, with a lot likely to change."
 }

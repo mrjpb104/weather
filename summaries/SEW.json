@@ -1,29 +1,29 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": "97018e82-eb24-4555-8501-cf75eff85060",
-  "afd_issued": "2026-11-21T19:08:00Z",
-  "generated": "2026-11-21T20:25:17Z",
-  "headline": "Light rain and mountain snow arrive this afternoon and evening, but the bigger story is a stormier stretch starting Tuesday with repeated rounds of rain, mountain snow, gusty winds and a growing coastal flooding threat.",
+  "afd_id": "1420e49f-6d2a-4d2b-ac6c-79f92d13a837",
+  "afd_issued": "2026-11-21T23:50:00Z",
+  "generated": "2026-11-22T00:25:47Z",
+  "headline": "Light showers continue through Sunday, then a much stormier stretch begins Tuesday with repeated rounds of rain, mountain snow and gusty winds, plus a growing coastal flooding threat.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Morning fog, freezing in spots where temperatures sat near freezing, gradually burns off Saturday as mid- and high-level clouds increase over the north Olympic Peninsula and Puget Sound lowlands. Highs reach the mid 40s to near 50. Light rain reaches the coast this afternoon and spreads into the interior this evening, with light snow in the mountains."
+      "text": "A slow-moving low-pressure system parked offshore keeps spinning periods of light rain showers into the north Olympic Peninsula, the Strait shoreline and the Puget Sound lowlands this evening and tonight, with light snow in the mountains. Clouds thicken and lower overnight, especially in the south interior. Lows fall into the 30s to low 40s."
     },
     {
       "title": "Short Term",
-      "text": "A low-pressure system parked offshore keeps light rain going into Sunday, but amounts stay small: a tenth to a quarter inch along the coast and only a few hundredths inland, with many interior spots staying dry. Snow levels hover around 2,000–3,000 feet, giving the Cascade passes less than half an inch of snow. Monday brings another round of precipitation focused mainly on the Olympic Peninsula, with 4–8 inches of snow possible in the Olympic Mountains. Highs Sunday and Monday are in the mid 40s to low 50s."
+      "text": "Light showers linger into Sunday as a blocking pattern keeps the weather stuck in place. Sunday night into Monday the rain turns steadier, starting over the Olympics and spreading inland, with snow levels starting around 2,000–3,000 feet and rising Monday; a Winter Weather Advisory runs from 6 PM Sunday to 4 PM Monday for the Olympics, including Hurricane Ridge, where 5–10 inches of snow is forecast. A brief break is possible Monday evening before the next front arrives late Monday night into Tuesday. Highs stay near normal in the upper 40s to low 50s, with lows in the 30s to low 40s."
     },
     {
       "title": "Long Term",
-      "text": "A deepening low offshore Monday night into Tuesday turns the pattern much more active, sending several storm systems across western Washington. Expect multiple rounds of widespread lowland rain, mountain snow and gusty winds starting Tuesday and lasting through the second half of the week. Rivers will start to rise; widespread river flooding is not expected, but the Skokomish River will likely reach flood stage late in the week."
+      "text": "The offshore low deepens Tuesday and sends a series of storm systems across western Washington, bringing multiple rounds of widespread lowland rain, mountain snow and gusty winds from Tuesday through the second half of the week. Rivers will start to rise; widespread river flooding is not expected, but the Skokomish River will likely reach minor flood stage around midweek onward."
     }
   ],
-  "coast": "High monthly tides could bring some minor coastal flooding along the Pacific coast and the Strait of Juan de Fuca by Sunday. Tuesday's storm brings another round of high surf to the coast, and high tides combined with the stormy weather raise the coastal flood threat later in the week, especially on the Pacific coast during high surf. On the water, winds of about 23–35 mph (20–30 knots) affect the coastal waters and the east Strait of Juan de Fuca today into Sunday, with Small Craft Advisories for the Strait and coastal waters (until 4 PM today for the central and west Strait, until 4 AM Sunday for the east Strait and coastal waters) and a Gale Warning until 4 PM today for the outer waters from Cape Flattery to James Island. Gale-force gusts are likely in the coastal waters and part of the east Strait Monday through Wednesday, with a 20–40% chance of storm-force gusts; seas build from 8–12 feet today to 16–20 feet Monday before easing to 10–14 feet late in the week.",
+  "coast": "Larger high tides plus storm surge and wave action bring coastal flood concerns back to the Pacific coast with Sunday's high tide, and forecasters say a High Surf Advisory is warranted for Sunday morning's high tide (conditions on the north coast are more marginal). Water levels climb further Monday onward, and Tuesday's storm brings another round of high surf. Confidence is growing that moderate to major coastal flooding could occur along parts of the Grays Harbor County coast during the Tuesday and Wednesday high tides. Tides also rise significantly along the Strait of Juan de Fuca and Puget Sound shorelines from Tuesday onward, and impacts there will be closely monitored. On the water, a Small Craft Advisory runs until 10 AM Sunday for the coastal waters and the east Strait, with seas building to about 12–14 feet by early Sunday. Widespread advisory-strength winds return late Sunday, with a 40–60% chance of gales Monday night into Tuesday and a 30% chance of storm-force gusts over the outer coastal waters; another storm late Wednesday brings perhaps the best chance of storm-force winds offshore. Seas above 16 feet are likely Tuesday and Wednesday, with about a 40% chance of 20-foot seas and confused, mixed swell.",
   "watch_for": [
-    "Possible minor coastal flooding along the Strait of Juan de Fuca and Pacific coast by Sunday, with a larger coastal flood threat Tuesday onward.",
+    "Possible moderate to major coastal flooding on the Grays Harbor County coast with the Tuesday and Wednesday high tides, and rising tides along the Strait of Juan de Fuca and Puget Sound later in the week.",
     "The stormy stretch from Tuesday through late week: widespread rain, mountain snow and gusty winds.",
-    "The Skokomish River, which will likely reach flood stage late in the week."
+    "The Skokomish River, likely reaching minor flood stage around midweek."
   ],
-  "confidence": "Forecasters are confident in light, mostly coastal rain through Sunday and in a turn to a much stormier pattern from Tuesday, though they give few specifics yet on amounts and wind strength for later in the week."
+  "confidence": "Forecasters are confident in light showers through Sunday, the Olympics snow Sunday night into Monday and a turn to a stormier pattern from Tuesday, while coastal flooding along the Strait and Puget Sound later in the week remains less certain."
 }
