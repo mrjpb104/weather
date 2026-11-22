@@ -1,29 +1,29 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "7156cee5-9584-4262-bcf2-fdad8274613f",
-  "afd_issued": "2026-11-22T16:47:00Z",
-  "generated": "2026-11-22T18:25:54Z",
-  "headline": "Light rain spreads south through the region today and tonight (under a tenth of an inch for Los Angeles County), more spotty light rain is possible Tuesday night into Wednesday, and Thanksgiving and Black Friday look sunny and warm, with Friday about 10 degrees above normal, while coastal flood and high surf alerts run through Thursday.",
+  "afd_id": null,
+  "afd_issued": "2026-11-22T21:24:00Z",
+  "generated": "2026-11-22T22:26:11Z",
+  "headline": "A weak cold front brings a chance of light showers to Los Angeles County late tonight (a quarter inch or less), followed by a warm, dry Monday and Tuesday, another mostly-missed light rain chance Tuesday night into Wednesday, and a warm, dry Thanksgiving and Black Friday, while coastal flood and high surf alerts run through Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Showers are reaching the Central Coast this morning as a weak front arrives, and the rain spreads south and east across the region through tonight. Around Glendale and the rest of Los Angeles and Ventura counties, rain chances don't begin until this afternoon and are lower, and any rain should be very light, under 0.10 inch; San Luis Obispo and Santa Barbara counties have the best chance, likely around a quarter inch or less. No flooding problems are expected from the rain. Highs Sunday will mostly be in the mid 50s to upper 60s, about 3 to 6 degrees below normal."
+      "text": "A weak cold front is moving through, already bringing light showers to San Luis Obispo and Santa Barbara counties this afternoon. Around Glendale and the rest of Los Angeles and Ventura counties, showers are possible late this evening and overnight, with a 20 to 40 percent chance near the coast. Any rain will be light, around a quarter inch or less, with the highest totals likely in Santa Barbara County, and no flooding problems are expected."
     },
     {
       "title": "Short Term",
-      "text": "Monday looks very nice as weak high pressure builds in, with mostly sunny skies, a light breeze off the land, and highs up a degree or two but still a couple of degrees below normal. Tuesday brings partly cloudy skies (mostly cloudy on the Central Coast in the afternoon) and highs 2 to 4 degrees warmer, in the upper 60s to lower 70s across most coasts and valleys, with offshore breezes not strong enough to cause problems. Tuesday night turns mostly cloudy as the next storm approaches, with rain likely in coastal San Luis Obispo County and a 40 percent chance reaching western Santa Barbara County by dawn Wednesday; amounts stay under a tenth of an inch except up to a quarter inch on the northwest tip of San Luis Obispo County."
+      "text": "Monday and Tuesday turn warm and dry as high pressure builds overhead, strongest on Monday. Light offshore northeast breezes develop, strongest Tuesday morning but well below advisory levels, and highs peak Tuesday in the upper 60s to mid 70s across the coasts and coastal valleys. Another weak system Tuesday night and Wednesday morning only grazes San Luis Obispo and Santa Barbara counties with a quarter inch of rain or less, while Ventura and Los Angeles counties have less than a 15 percent chance of measurable rain; Wednesday actually warms a bit for most areas."
     },
     {
       "title": "Long Term",
-      "text": "The storm moves through quickly Wednesday morning and falls apart, giving the Central Coast a 20 to 30 percent chance of light rain (under a tenth of an inch) and areas south of Point Conception, including Los Angeles County, less than a 10 percent chance; skies clear and highs warm 1 to 3 degrees in the afternoon. Thanksgiving Day and Black Friday look spectacular as strong high pressure builds in with offshore winds, bringing sunny skies and locally breezy mornings, with 3 to 6 degrees of warming Thanksgiving and another 2 to 4 degrees Friday, when highs reach the mid 70s to low 80s, about 10 degrees above normal; there is only a low chance of advisory-level wind gusts Friday. A fast-moving disturbance brings a 20 to 30 percent chance of light rain (under a tenth of an inch), mainly to the Central Coast, on Saturday, while winds turning onshore and more clouds cool highs by about 5 degrees."
+      "text": "Thanksgiving Day and Black Friday look warm and dry under strong high pressure with weak offshore winds, and the chance of advisory-level winds is very low. Highs peak Friday in the 70s to lower 80s along the coast and in the coastal valleys and the mid 60s to lower 70s inland, about 4 to 8 degrees above normal. Another weak system crosses Saturday and Sunday, with timing still uncertain, bringing generally under a quarter inch of rain (up to 0.75 inch in far northwest San Luis Obispo County near Rocky Butte) and cooling highs back into the 60s to around 70."
     }
   ],
-  "coast": "A Coastal Flood Advisory runs from 3 AM Monday to 3 AM Wednesday for the Central Coast, Ventura County and Los Angeles County beaches, followed by a Coastal Flood Watch for those same beaches from late Tuesday night through Thursday afternoon. The Santa Barbara County south coast area is under a Coastal Flood Advisory from 3 AM Monday to 3 PM Thursday, and a High Surf Advisory covers the Central Coast beaches until 3 PM Thursday. Offshore, winds and seas stay below small craft advisory levels through Tuesday; the two storms (Sunday into Sunday night, and Wednesday) bring the best rain chances to the waters north of Point Conception, low-end advisory-level northwest to west winds are possible Wednesday and Wednesday night south of Point Conception, and a significant west swell of around 14–16 feet arrives midweek with large, hazardous seas on the outer waters.",
+  "coast": "A Coastal Flood Advisory runs from 3 AM Monday to 3 AM Wednesday for several stretches of coast, followed by a Coastal Flood Watch for those same beaches from late Tuesday night through Thursday afternoon; other coastal areas are under a Coastal Flood Advisory from 3 AM Monday to 3 PM Thursday, and a High Surf Advisory runs until 3 PM Thursday for some beaches. Offshore, winds and seas stay below small craft advisory levels through Tuesday. The two systems (today into tonight, and Wednesday) bring their best rain chances to the waters north of Point Conception, low-end advisory-level northwest to west winds are possible Wednesday and Wednesday night south of Point Conception, and a significant west swell of around 14 to 16 feet arrives midweek with large, hazardous seas on the outer waters.",
   "watch_for": [
-    "Coastal flooding and high surf through Thursday: a Coastal Flood Watch late Tuesday night through Thursday afternoon for Los Angeles, Ventura and Central Coast beaches as a big west swell arrives midweek.",
-    "Light rain chances today and tonight and again Tuesday night into Wednesday, mostly on the Central Coast.",
-    "How breezy the offshore winds get on the warm Thanksgiving and Black Friday mornings (low chance of advisory-level gusts Friday)."
+    "Coastal flooding and high surf through Thursday as a big west swell arrives midweek (Coastal Flood Watch late Tuesday night through Thursday afternoon).",
+    "Light showers late tonight in Los Angeles and Ventura counties (20 to 40 percent chance near the coast).",
+    "Timing of the weak weekend system that cools temperatures back down."
   ],
-  "confidence": "Forecasters say the forecast is on track for today's light rain and are confident in mostly light amounts, a pleasant Monday and Tuesday, and a dry, warm Thanksgiving and Black Friday."
+  "confidence": "Forecasters report no major changes from earlier thinking and are confident in light rain amounts, a warm dry Monday and Tuesday, and a warm dry Thanksgiving, with less certainty about the timing of next weekend's weak system."
 }
