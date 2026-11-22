@@ -1,18 +1,18 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "8416aa18-b60f-483a-93b4-7c1a4858911e",
-  "afd_issued": "2026-11-22T03:16:00Z",
-  "generated": "2026-11-22T04:25:09Z",
-  "headline": "Light rain arrives Sunday afternoon and night around Los Angeles (a quarter inch or less), a warm, dry Thanksgiving follows, but forecasters have significant concern for moderate to major coastal flooding and big surf at the beaches during Thanksgiving week.",
+  "afd_id": "a8c2bcc7-ca35-4152-9ec2-5c6040edd7f8",
+  "afd_issued": "2026-11-22T04:58:00Z",
+  "generated": "2026-11-22T06:25:29Z",
+  "headline": "Showers spread across the region overnight into Sunday, with brief heavy downpours possible near the coast and the LA Basin Sunday afternoon (around a quarter inch), a warm, dry Thanksgiving follows, but forecasters have significant concern for moderate to major coastal flooding and big surf during Thanksgiving week.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Saturday night stays dry and on the cool side across the region, with clear skies and no low clouds at the coast this evening. Skies should stay clear at the Los Angeles-area airports, including Burbank next to Glendale, through Sunday morning, with light northeast breezes possible near LAX from about 1 to 8 AM. Rain then begins on the Central Coast Sunday morning and spreads toward Los Angeles later in the day."
+      "text": "A few showers have formed along a weakening front in northwestern San Luis Obispo County Saturday evening and are expected to spread across the region overnight into Sunday. Some showers could be stronger near the coast, with brief heavy downpours and totals around a quarter inch, but they should weaken a lot as they move inland, and many interior spots may stay dry. Overnight lows drop into the 30s in the interior, and frost alerts may be needed for the Antelope Valley; skies at the Burbank and LAX airports should stay mostly clear through Sunday morning."
     },
     {
       "title": "Short Term",
-      "text": "A weak storm brings rain to the Central Coast Sunday morning, spreading south and east into Ventura and Los Angeles counties, including the Glendale area, Sunday afternoon and Sunday night. Most places are likely to get measurable rain, though chances are noticeably lower in the Antelope Valley, and totals are a quarter inch or less, with the most in San Luis Obispo County. High pressure keeps Monday and most of Tuesday dry, with a couple of degrees of warming Sunday and Monday, then a light wind off the land on Tuesday warms highs west of the mountains to the upper 60s to mid 70s. The next storm reaches northern areas late Tuesday, bringing a tenth of an inch or less to San Luis Obispo County by Tuesday evening."
+      "text": "Showers continue Sunday and Sunday night as the weak storm works south and east, and by Sunday afternoon some heavier ones could reach the Ventura County coast and the LA Basin, including the Glendale area. Most places are likely to get measurable rain, though chances are noticeably lower in the Antelope Valley; totals are mostly a quarter inch or less, with the most in San Luis Obispo County and possibly a bit more right at the coast. High pressure keeps Monday and most of Tuesday dry and cool, with a couple of degrees of warming Sunday and Monday, then a light wind off the land on Tuesday warms highs west of the mountains to the upper 60s to mid 70s. The next storm reaches northern areas late Tuesday, bringing a tenth of an inch or less to San Luis Obispo County by Tuesday evening."
     },
     {
       "title": "Long Term",
@@ -23,7 +23,7 @@
   "watch_for": [
     "Coastal flooding: the Coastal Flood Watch for Wednesday–Thursday morning high tides (8:45–10 AM) could be upgraded to a warning as the big swell arrives.",
     "High surf of 15–20 feet or more on the Central Coast Wednesday, and possible warning-level surf on the Ventura coast.",
-    "Timing and amount of Wednesday's rain, since computer models disagree a bit (one is slower and wetter)."
+    "Brief heavy downpours near the coast Sunday, which could push rain totals a bit higher there; plus the timing and amount of Wednesday's rain, where computer models disagree a bit."
   ],
-  "confidence": "Forecasters have good confidence in clear skies through Sunday morning and see no major changes for the rest of the week, with computer models broadly agreeing; for the coast they say significant flooding impacts seem probable, though exactly how the tides and swell line up is still somewhat uncertain."
+  "confidence": "Forecasters see no major changes to the week's outlook and computer models broadly agree, though Sunday's coastal rain totals may need to be nudged up; for the coast they say significant flooding impacts seem probable, though exactly how the tides and swell line up is still somewhat uncertain."
 }
