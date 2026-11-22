@@ -1,27 +1,27 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "520e4587-8b56-4ae5-b1b0-c549f6433e0e",
-  "afd_issued": "2026-11-22T11:35:00Z",
-  "generated": "2026-11-22T12:26:18Z",
-  "headline": "Showers wind down Sunday and dense fog is likely by early Monday, followed by a warm Monday (highs in the 60s to near 70s), a cooler, more seasonable rest of the week, and increasingly likely widespread rain Wednesday into Thursday.",
+  "afd_id": "6263ac66-f330-4ee1-a036-20d2d7caaf81",
+  "afd_issued": "2026-11-22T18:39:00Z",
+  "generated": "2026-11-22T19:25:22Z",
+  "headline": "Showers end this evening and fog is likely for the Monday morning commute, then a warm Monday (70s in the Piedmont) gives way to a cooler week, with rain likely Wednesday into Thanksgiving Day and a period of heavy rain possible Wednesday night.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Light showers continue on and off through much of Sunday across the area as east-southeast winds push moist air up over a layer of cool air trapped against the mountains; around Charlotte, light rain could linger until roughly 11 AM–2 PM, with low clouds and patchy reduced visibility. Gusty winds across the South Carolina Upstate this morning ease by late morning, and clouds may briefly lift this afternoon and early evening. By Sunday evening the cool-air layer breaks down as high pressure moves well offshore and the coastal low heads toward New England. With calm winds, clearing skies and lingering moisture, widespread patchy to dense fog is likely tonight into daybreak Monday, and the chance of dense fog has increased."
+      "text": "Drizzle and light showers around Charlotte and much of the area taper off from southwest to northeast through Sunday afternoon and evening as a low off the Carolina coast moves north, though low clouds hang on overnight. With moist air and light winds, fog is likely to become widespread toward dawn Monday; forecasters aren't yet sure it will be widely dense, but drivers should expect locally dense fog during the Monday morning commute, slow down and leave extra space."
     },
     {
       "title": "Short Term",
-      "text": "Monday will be noticeably warm ahead of a cold front, with highs in the low 60s to low 70s and a few spots in the southern Upstate nearing the mid 70s. The front crosses the area Monday night into Tuesday morning mostly dry, apart from a few mountain showers mainly along the Tennessee border. Tuesday turns cooler as a large high-pressure system settles over the Midwest and then moves toward the Mid-Atlantic and New England, setting up dry, cool northeast winds and another layer of cool air banked against the mountains, with dry weather lasting through Tuesday."
+      "text": "Fog and clouds clear from the foothills and Piedmont Monday morning, and highs reach the 70s across most of the Piedmont, including Charlotte — about 10 degrees above normal — with a few sprinkles possible in the afternoon ahead of a cold front; along the North Carolina–Tennessee border, clouds and scattered showers persist much of the day with temperatures similar to Sunday. Mountain showers fade Monday evening, and cooler air brings Tuesday highs slightly below normal under strong high pressure, with Wednesday morning lows a little below normal."
     },
     {
       "title": "Long Term",
-      "text": "A well-defined storm system is expected Wednesday into Thursday as a disturbance from the southern Plains helps a low form and strengthen along the Carolina coast, driving moist air inland, and confidence continues to increase that widespread rain will return across the area, with rain chances trending up. For now it looks like a beneficial rain with no hazards expected, but that could change as computer models come into better agreement. Temperatures stay cooler and more seasonable through the rest of the week."
+      "text": "Rain becomes likely Wednesday as cool air stays wedged against the mountains while moist air rides over it, making Wednesday the coolest day of the week with highs mainly in the upper 40s to low 50s (colder if rain starts early); it should be all rain except perhaps brief snow or sleet with little or no accumulation above about 6,000 feet. Rain chances peak above 75% for nearly the whole area late Wednesday night into early Thanksgiving morning, when moisture runs near twice normal and a period of heavy rain looks likely, though chances of 1 inch in 6 hours or 2 inches in 24 hours are low for now and the flood risk looks low. Rain tapers from southwest to northeast on Thanksgiving Day with highs near normal in the Piedmont; a little light snow or rime ice is possible along the Tennessee border Thursday night without meaningful accumulation, and Friday and Saturday look dry with near-normal temperatures."
     }
   ],
   "watch_for": [
-    "Dense fog late tonight into daybreak Monday.",
-    "How much rain the Wednesday–Thursday storm brings, and whether any hazards develop as forecasts come into better agreement."
+    "Locally dense fog for the Monday morning commute.",
+    "Rain amounts Wednesday night into Thanksgiving morning — heavy rain is likely for a time, and the low flood risk could rise as more detailed models come in."
   ],
-  "confidence": "Forecasters are confident in lingering showers today, fog early Monday, a warm Monday and a cooler, dry Tuesday, with growing but not complete confidence in widespread rain Wednesday into Thursday since models still differ on how the storm comes together."
+  "confidence": "Forecasters are fairly confident in showers ending tonight, a warm Monday and a cooler Tuesday, and confidence is increasing in rain Wednesday into early Thursday, though how heavy it gets and whether dense fog becomes widespread Monday morning are still uncertain."
 }
