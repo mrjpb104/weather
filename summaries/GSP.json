@@ -1,28 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "ac65b763-99bd-4c10-bfb2-3fe0f6f1f71c",
-  "afd_issued": "2026-11-23T05:33:00Z",
-  "generated": "2026-11-23T06:25:21Z",
-  "headline": "After a foggy Monday morning commute and a mild Monday, confidence is growing that a significant storm hits Wednesday into Thanksgiving Thursday with possible locally heavy rain and gusty winds that could cause power outages and holiday travel trouble.",
+  "afd_id": "b7124b75-08e5-465b-92da-d3f804b8cef2",
+  "afd_issued": "2026-11-23T11:36:00Z",
+  "generated": "2026-11-23T12:25:25Z",
+  "headline": "After a foggy Monday morning commute and a mild Monday, confidence is increasing that a significant storm hits Wednesday into Thanksgiving Thursday with possible locally heavy rain and gusty winds that could cause power outages during holiday travel.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Areas of fog, some possibly dense, are likely overnight and could affect the Monday morning commute around Charlotte and elsewhere, with fog lifting by about 9–11 AM and low clouds by about 10 AM to noon; leftover light rain southeast of Hickory and northwest of Charlotte should fade over the next few hours. The layer of cold air trapped against the mountains breaks up Monday as winds turn west-southwest, and with some sunshine highs reach the mid 60s to low 70s. A cold front crosses the area late Monday afternoon through early Tuesday morning, with winds east of the mountains turning north, then northeast Monday night and picking up."
+      "text": "A Dense Fog Advisory runs until 9 AM Monday for the North Carolina foothills and parts of the North Carolina Piedmont around Charlotte, with patchy, locally dense fog also in the North Carolina mountain valleys and the South Carolina Upstate; fog should lift around 9 AM, though low clouds may linger until about 9–11 AM. The layer of cold air trapped against the mountains breaks up Monday as winds turn west-southwest, and with some sunshine highs reach the mid 60s to low 70s. A cold front crosses the area late Monday afternoon through early Tuesday morning, with winds east of the mountains turning north and picking up Monday night."
     },
     {
       "title": "Short Term",
-      "text": "Tuesday is dry and notably cooler, with highs near normal for late November and breezy winds developing, and cold air settles in against the mountains again Tuesday night under high pressure moving east into the Mid-Atlantic. A storm forming near Florida's Atlantic coast is expected to strengthen rapidly and lift across the region Wednesday into Thanksgiving Thursday; depending on its track, part of the area could get a band of locally heavy rain with several inches not out of the question. Because the ground is dry, most of that rain would be beneficial, but a focused heavy band could cause localized flooding. Wind gusts of 30–40 mph are plausible with isolated power outages, and in a reasonable worst case gusts could top 50 mph with more outages, making for a potentially messy Thanksgiving holiday."
+      "text": "Tuesday is dry and notably cooler, with highs near normal for late November and breezy winds developing, and cold air settles in against the mountains again Tuesday night as high pressure moves east into the Mid-Atlantic. A storm forming near Florida's Atlantic coast is expected to strengthen rapidly and lift across the region Wednesday into Thanksgiving Thursday, bringing widespread rain; depending on its track, part of the area could get a band of locally heavy rain with several inches not out of the question. Because the ground is dry, most of that rain would be beneficial, but a focused heavy band could cause localized flooding. Wind gusts of 30–40 mph are plausible with isolated power outages, and in a reasonable worst case gusts could reach 50 mph with more outages, making for a potentially messy Thanksgiving holiday."
     },
     {
       "title": "Long Term",
-      "text": "A much drier and quieter pattern returns Friday through the weekend, with drier conditions starting Thursday night. Gusty winds may continue into Friday as the storm pulls away."
+      "text": "Drier conditions return Thursday night, and a much drier and quieter pattern settles in Friday through the weekend. Gusty winds may continue into Friday as the storm pulls away."
     }
   ],
   "watch_for": [
-    "The storm's track Wednesday–Thursday: the most-supported scenario (mainly European models) pulls the low farther inland with the biggest impacts for the western Carolinas and northeast Georgia, while the least-supported one (mainly the American model) keeps it along the coast with limited impacts here.",
-    "Gusts of 30–40 mph, possibly 50+ mph, and isolated power outages Wednesday into Thursday, plus possible localized flooding under any heavy rain band.",
-    "Locally dense fog during the Monday morning commute."
+    "The storm's track Wednesday–Thursday: the most-supported scenario (mainly European models) slows the storm and pulls it farther inland with the biggest impacts for the western Carolinas and northeast Georgia, while the least-supported one (mainly the American model) keeps it along the coast with limited impacts here.",
+    "Gusts of 30–40 mph, possibly up to 50 mph, and power outages Wednesday into Thursday, plus possible localized flooding under any heavy rain band.",
+    "Dense fog during the Monday morning commute until about 9 AM."
   ],
-  "confidence": "Forecasters are increasingly confident a significant storm affects the area Wednesday into Thursday, but its exact track, rain totals and wind strength are far from certain; they are confident in a foggy, mild Monday, a cooler Tuesday and a drier pattern Friday through the weekend."
+  "confidence": "Confidence is increasing that a significant storm affects the area Wednesday into Thursday, but its exact track, rain totals and wind strength are far from certain; forecasters are confident in a foggy then mild Monday, a cooler Tuesday and a drier pattern Friday through the weekend."
 }
