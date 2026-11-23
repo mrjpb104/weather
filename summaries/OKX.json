@@ -1,14 +1,14 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "172e7e01-439c-473a-8c1e-ac607f1ff918",
-  "afd_issued": "2026-11-23T07:24:00Z",
-  "generated": "2026-11-23T08:24:49Z",
+  "afd_id": "3f5c2e3e-c8ec-44c4-a933-7342a7580c38",
+  "afd_issued": "2026-11-23T08:41:00Z",
+  "generated": "2026-11-23T09:24:47Z",
   "headline": "A warm Monday in the 60s gives way to a cold, dry Tuesday and Wednesday, then a large coastal storm on Thanksgiving brings 1–2 inches of rain, east-northeast gusts of 35–45 mph (possibly 50 mph at the coast) and widespread coastal flooding.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Sunday night's low is moving away to the northeast past Montauk, and any lingering light rain on Long Island's North and South Forks should end by daybreak Monday. Monday is dry and still well above normal, with highs in the 60s even as a cold front crosses in the afternoon, bringing west to northwest gusts around 15–20 mph into the evening. Record highs for the date are mostly around 70 (72 at Central Park, 74 at Newark, 70 at LaGuardia), and forecasters think records are unlikely Monday, although Islip has tied or broken its record each of the last four days."
+      "text": "Sunday night's low continues to pull away Monday morning, and early clouds clear out by late morning, leaving a dry day. Monday stays unseasonably warm, with highs in the 60s even as a cold front crosses in the afternoon, turning winds from west to northwest with gusts near 20 mph behind it. Record highs for the date are mostly around 70 (72 at Central Park, 74 at Newark, 70 at LaGuardia), and records look unlikely Monday, although Islip has tied or broken its record each of the last four days. Monday night is dry with northwest breezes gusting around 15 mph."
     },
     {
       "title": "Short Term",
@@ -25,5 +25,5 @@
     "Thanksgiving winds gusting 35–45 mph, possibly 50 mph at the coast, strongest Thursday afternoon and evening.",
     "Rain totals of 1–2 inches Thursday, with a 20–30 percent chance of more than 2.5 inches near the coast."
   ],
-  "confidence": "Forecasters see no significant changes and are confident in a warm Monday and cold, dry Tuesday and Wednesday, with continued confidence in a large Thanksgiving coastal storm, though its exact track and timing (recently slowed a bit) still affect rain and wind details."
+  "confidence": "Forecasters report no significant changes: confidence is high in a warm Monday and a cold, dry Tuesday and Wednesday, and continues to grow for a large Thanksgiving coastal storm, though its exact track and timing (slowed a bit in the latest guidance) still affect the rain and wind details."
 }
