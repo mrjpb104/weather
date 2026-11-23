@@ -1,27 +1,27 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "6263ac66-f330-4ee1-a036-20d2d7caaf81",
-  "afd_issued": "2026-11-22T18:39:00Z",
-  "generated": "2026-11-22T19:25:22Z",
-  "headline": "Showers end this evening and fog is likely for the Monday morning commute, then a warm Monday (70s in the Piedmont) gives way to a cooler week, with rain likely Wednesday into Thanksgiving Day and a period of heavy rain possible Wednesday night.",
+  "afd_id": "ff641649-2f69-4c65-86b3-1c6322ba8ac0",
+  "afd_issued": "2026-11-22T23:22:00Z",
+  "generated": "2026-11-23T00:26:01Z",
+  "headline": "Watch for fog on the Monday morning commute before a warm Monday in the 70s, then rain becomes likely Wednesday and peaks Wednesday night into Thanksgiving morning before a dry, near-normal end to the week.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Drizzle and light showers around Charlotte and much of the area taper off from southwest to northeast through Sunday afternoon and evening as a low off the Carolina coast moves north, though low clouds hang on overnight. With moist air and light winds, fog is likely to become widespread toward dawn Monday; forecasters aren't yet sure it will be widely dense, but drivers should expect locally dense fog during the Monday morning commute, slow down and leave extra space."
+      "text": "Fog looks likely to become widespread across the region overnight, with visibilities dropping toward dawn Monday. Forecasters aren't yet confident dense fog will be widespread, but drivers around Charlotte and elsewhere should watch for locally dense fog during the Monday morning commute, slow down and leave extra space; visibility could drop to around 2 miles at Charlotte and 1–2 miles at other airports from about 4 to 9 AM."
     },
     {
       "title": "Short Term",
-      "text": "Fog and clouds clear from the foothills and Piedmont Monday morning, and highs reach the 70s across most of the Piedmont, including Charlotte — about 10 degrees above normal — with a few sprinkles possible in the afternoon ahead of a cold front; along the North Carolina–Tennessee border, clouds and scattered showers persist much of the day with temperatures similar to Sunday. Mountain showers fade Monday evening, and cooler air brings Tuesday highs slightly below normal under strong high pressure, with Wednesday morning lows a little below normal."
+      "text": "Fog and clouds clear from the foothills and Piedmont Monday morning, and highs reach the 70s across most of the Piedmont, including Charlotte, about 10 degrees above normal, with a few sprinkles or light showers possible in the afternoon ahead of a cold front. Along the North Carolina–Tennessee border, clouds and scattered showers linger much of Monday with temperatures similar to Sunday's. Cooler air follows: Tuesday's highs are slightly below normal as strong high pressure builds in from the Midwest, and Wednesday morning lows are a bit below normal."
     },
     {
       "title": "Long Term",
-      "text": "Rain becomes likely Wednesday as cool air stays wedged against the mountains while moist air rides over it, making Wednesday the coolest day of the week with highs mainly in the upper 40s to low 50s (colder if rain starts early); it should be all rain except perhaps brief snow or sleet with little or no accumulation above about 6,000 feet. Rain chances peak above 75% for nearly the whole area late Wednesday night into early Thanksgiving morning, when moisture runs near twice normal and a period of heavy rain looks likely, though chances of 1 inch in 6 hours or 2 inches in 24 hours are low for now and the flood risk looks low. Rain tapers from southwest to northeast on Thanksgiving Day with highs near normal in the Piedmont; a little light snow or rime ice is possible along the Tennessee border Thursday night without meaningful accumulation, and Friday and Saturday look dry with near-normal temperatures."
+      "text": "Rain chances climb through Wednesday as moisture rides up over a layer of cold air trapped against the mountains, making Wednesday the coolest day of the week, with highs mainly in the upper 40s to low 50s, perhaps colder if rain starts earlier. Rain chances peak above 75% for virtually the whole area late Wednesday evening into early Thanksgiving morning, when a period of heavy rain looks likely, though the chance of 1 inch in 6 hours or 2 inches in 24 hours is low and the flooding risk looks low but worth watching; it should be all rain except brief snow or sleet at the start above about 6,000 feet, with minimal accumulation. Rain tapers from southwest to northeast on Thanksgiving Day, with highs back near normal in the Piedmont, and some light snow or rime ice is possible along the NC/TN border Thursday night without significant accumulation. Friday through Sunday looks dry with near-normal temperatures."
     }
   ],
   "watch_for": [
-    "Locally dense fog for the Monday morning commute.",
-    "Rain amounts Wednesday night into Thanksgiving morning — heavy rain is likely for a time, and the low flood risk could rise as more detailed models come in."
+    "Locally dense fog during the Monday morning commute.",
+    "Heavy rain Wednesday night into Thanksgiving morning; flooding risk is low but could rise as higher-detail models come into range."
   ],
-  "confidence": "Forecasters are fairly confident in showers ending tonight, a warm Monday and a cooler Tuesday, and confidence is increasing in rain Wednesday into early Thursday, though how heavy it gets and whether dense fog becomes widespread Monday morning are still uncertain."
+  "confidence": "Forecasters are confident in fog Monday morning, a warm Monday and a rainy Wednesday into Thanksgiving, with the storm track agreed on by most models, but less certain how heavy the rain gets and whether dense fog becomes widespread."
 }
