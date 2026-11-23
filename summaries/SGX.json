@@ -1,14 +1,14 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "692a65fb-4a52-4770-86ae-4794267a0a2d",
-  "afd_issued": "2026-11-23T10:53:00Z",
-  "generated": "2026-11-23T11:25:07Z",
+  "afd_id": "28271dfb-fca3-4308-a865-be6f1a71375f",
+  "afd_issued": "2026-11-23T16:05:00Z",
+  "generated": "2026-11-23T17:24:53Z",
   "headline": "Record-breaking King Tides plus a big incoming swell bring major, locally extreme coastal flooding to the Orange and San Diego County beaches through Friday, while inland Thanksgiving and Friday turn dry and warm, in the low to mid 80s in the warmest spots, with gusty northeast winds.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Light showers linger into Monday morning, mainly along the San Diego County coast (including Carlsbad) and across southern San Diego County from the coast to the mountains, tapering off from north to south between about 4 and 10 AM. Rain totals stay mostly under 0.10 inch, with isolated spots near 0.25 inch. Clouds gradually clear through the day, leaving only a few high, thin clouds Monday night."
+      "text": "A few showers may linger past sunrise Monday morning, mainly along the San Diego County coast (including Carlsbad) and across southern San Diego County from the coast to the mountains. Rain totals stay mostly under 0.10 inch, with isolated spots near 0.25 inch. Scattered mid-level clouds last into early afternoon, then only a few high, thin clouds after about 1 PM and into Monday night, with no significant wind."
     },
     {
       "title": "Short Term",
@@ -16,14 +16,14 @@
     },
     {
       "title": "Long Term",
-      "text": "Thanksgiving and Friday are dry and warmer, with northeast winds gusting to 35 mph along and below the coastal mountain slopes. Thanksgiving warms 5 to 10 degrees from the coast to the coastal slopes, with the warmest inland coastal areas, western valleys and lower deserts in the low 80s; Friday adds another few to 5 degrees, reaching the low to mid 80s there. Sea breezes return Saturday, cooling highs about 5 degrees, and Sunday cools another 5 degrees near the coast (5 to 10 in the mountains), with highs in the low 70s from the coast to the western valleys and mid to upper 60s in the far inland valleys. The next chance of rain comes late Sunday into Monday: about a 50 percent chance of measurable rain from the coast to the mountains, with a 10–15 percent chance of half an inch or more near the coast and about 25 percent in the mountains."
+      "text": "Thanksgiving and Friday are dry and warmer, with northeast winds gusting to 35 mph along and below the coastal mountain slopes. Thanksgiving warms 5 to 10 degrees from the coast to the coastal slopes, with the warmest inland coastal areas, western valleys and lower deserts in the low 80s; Friday adds another few to 5 degrees, reaching the low to mid 80s there. Sea breezes return Saturday, cooling highs about 5 degrees, and Sunday cools another 5 degrees near the coast (5 to 10 in the mountains), with highs in the low 70s from the coast to the western valleys and mid to upper 60s in the far inland valleys. The next chance of rain comes late Sunday into next Monday: about a 50 percent chance of measurable rain from the coast to the mountains, with a 10–15 percent chance of half an inch or more near the coast and about 25 percent in the mountains."
     }
   ],
-  "coast": "Coastal flooding is the big hazard this week on the Orange County and San Diego County coasts. Morning high tides are climbing (7.35 feet at La Jolla on Sunday) and will reach 7.9–8.3 feet Tuesday through Thursday, peaking Wednesday, about 1.1–1.2 feet above normal predictions, and will likely break the all-time tide records set in late October. Surf stays around 2–5 feet through Wednesday morning, then a large, long-period west swell arrives late Wednesday into Thursday, bringing 6–8 foot breakers Thursday with sets of 10–12 feet on exposed west-facing beaches, lowering to 3–6 feet Friday. A Coastal Flood Advisory (moderate to locally major flooding) runs until 4 AM Tuesday, followed by a Coastal Flood Warning from 4 AM Tuesday to 1 PM Friday, with major coastal flooding likely and locally extreme flooding expected Thursday. For boaters, no marine hazards are expected through Tuesday; Wednesday afternoon into Thursday brings combined seas of 8–12 feet and northwest winds of about 23–29 mph (20–25 knots) near San Clemente Island Wednesday afternoon and evening, hazardous for small craft, with seas falling below 10 feet by Thursday evening.",
+  "coast": "Coastal flooding is the big hazard this week on the Orange County and San Diego County coasts. Morning high tides are climbing (7.35 feet at La Jolla on Sunday) and will reach 7.9–8.3 feet Tuesday through Thursday, peaking Wednesday, about 1.1–1.2 feet above normal predictions, and will likely break the all-time tide records set in late October. Surf stays around 2–5 feet through Wednesday morning, then a large, long-period west swell (8–9 feet every 18–19 seconds) arrives late Wednesday into Thursday, bringing 6–8 foot breakers Thursday with sets of 10–12 feet on exposed west-facing beaches, lowering to 3–6 feet Friday. A Coastal Flood Advisory (moderate to locally major flooding) runs until 4 AM Tuesday, followed by a Coastal Flood Warning from 4 AM Tuesday to 1 PM Friday, with major coastal flooding likely and locally extreme flooding expected Thursday. For boaters, no marine hazards are expected through Tuesday; Wednesday afternoon into Thursday brings combined seas of 8–12 feet and northwest winds of about 23–29 mph (20–25 knots) near San Clemente Island Wednesday afternoon and evening, hazardous for small craft, with seas falling below 10 feet by Thursday evening.",
   "watch_for": [
     "Major, locally extreme coastal flooding: Coastal Flood Advisory until 4 AM Tuesday, then a Coastal Flood Warning from 4 AM Tuesday to 1 PM Friday, worst Thursday when record tides meet 10–12 foot surf sets.",
     "Gusty northeast winds to 35 mph below the coastal mountain slopes on Thanksgiving and Friday.",
-    "The roughly 50 percent chance of rain late next Sunday into Monday."
+    "The roughly 50 percent chance of rain late Sunday into next Monday."
   ],
-  "confidence": "Forecasters sound confident in clearing today, a dry, warm Tuesday through Friday and likely record tides with major coastal flooding, while next Sunday–Monday's rain is only about a coin flip."
+  "confidence": "Forecasters sound confident in the lingering showers ending this morning, a dry, warm Tuesday through Friday and likely record tides with major coastal flooding, while the Sunday–Monday rain is only about a coin flip."
 }
