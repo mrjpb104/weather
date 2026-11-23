@@ -1,18 +1,18 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "a0847862-e411-4968-afe6-39b3cc3d12c2",
-  "afd_issued": "2026-11-23T11:56:00Z",
-  "generated": "2026-11-23T12:25:25Z",
+  "afd_id": "89312484-42da-4146-833c-a73949271266",
+  "afd_issued": "2026-11-23T14:46:00Z",
+  "generated": "2026-11-23T16:24:36Z",
   "headline": "A warm Monday in the 60s gives way to a cold, dry Tuesday and Wednesday, then a large coastal storm on Thanksgiving brings 1–2 inches of rain, east-northeast gusts of 35–45 mph (possibly 50 mph at the coast) and widespread coastal flooding.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Monday stays dry and unseasonably warm around New York City, with highs in the 60s even as a cold front crosses in the afternoon and turns winds from west to northwest, gusting near 20 mph behind it. Record highs for the date are mostly around 70 (72 at Central Park, 74 at Newark, 70 at LaGuardia, 71 at JFK), and records look unlikely Monday, although Islip has tied or broken its record each of the last four days. Lingering low clouds keep improving Monday morning, and Monday night is clear and dry as high pressure builds in behind the front."
+      "text": "Monday stays dry and unseasonably warm around New York City, with highs in the 60s even as a cold front crosses in the afternoon and turns winds from west to northwest, gusting 15–20 mph behind it. Record highs for the date are mostly around 70 (72 at Central Park, 74 at Newark, 70 at LaGuardia, 71 at JFK), and records look unlikely Monday, although Islip has tied or broken its record each of the last four days. Monday night stays clear and dry as high pressure builds in behind the front."
     },
     {
       "title": "Short Term",
-      "text": "Tuesday and Wednesday turn much colder and stay dry as an unusually strong area of high pressure builds from the Great Lakes into the Northeast. Highs struggle to get out of the 40s, and overnight lows fall mostly below freezing, except in the New York City metro area Wednesday morning. Tuesday brings northwest breezes gusting near 20 mph; clouds thicken Wednesday night, with a slight chance of rain late and east-northeast winds gusting 20–30 mph, strongest in the city and along the coast."
+      "text": "Tuesday and Wednesday turn much colder and stay dry as an unusually strong area of high pressure builds from the Great Lakes into the Northeast. Highs struggle to get out of the 40s, and overnight lows fall mostly below freezing, except in the New York City metro area Wednesday morning. Tuesday brings northwest breezes gusting near 20 mph; clouds lower Wednesday night, with a slight chance of rain late and east-northeast winds gusting 20–30 mph, strongest in the city and along the coast."
     },
     {
       "title": "Long Term",
@@ -25,5 +25,5 @@
     "Thanksgiving winds gusting 35–45 mph, possibly 50 mph at the coast, strongest Thursday afternoon and evening.",
     "Rain totals of 1–2 inches Thursday, with a 20–30 percent chance of more than 2.5 inches near the coast."
   ],
-  "confidence": "Forecasters report no significant changes: they are confident in a warm Monday and a cold, dry Tuesday and Wednesday, and confidence continues in a large Thanksgiving coastal storm, though its track and slightly slower timing still affect the rain and wind details."
+  "confidence": "Forecasters report no significant changes: they are confident in a warm Monday and a cold, dry Tuesday and Wednesday, and confidence continues in a large Thanksgiving coastal storm, though its exact track and slightly slower timing still affect the rain and wind details."
 }
