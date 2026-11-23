@@ -1,22 +1,22 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": null,
-  "afd_issued": "2026-11-22T20:22:00Z",
-  "generated": "2026-11-22T21:25:02Z",
-  "headline": "Light showers tonight into Monday morning give way to a dry, warming week, but the bigger story is the coast: record-breaking King Tides plus a building swell bring major, locally extreme coastal flooding to the Orange and San Diego County beaches Tuesday through Friday, while Thanksgiving and Friday turn 5 to 15 degrees warmer than normal with possible weak Santa Ana winds.",
+  "afd_id": "e654348f-ae64-479a-a968-02827d0b57f8",
+  "afd_issued": "2026-11-23T00:45:00Z",
+  "generated": "2026-11-23T02:25:47Z",
+  "headline": "Light showers tonight into early Monday give way to a dry, warming week, but the bigger story is the coast: record-breaking King Tides plus a building swell bring major, locally extreme coastal flooding to the Orange and San Diego County beaches Tuesday through Friday, while Thanksgiving and Friday turn 5 to 15 degrees warmer than normal with possible weak Santa Ana winds.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Sunday afternoon stays dry around coastal Carlsbad and the rest of the coast and valleys, with highs similar to Saturday and clouds increasing, including lower clouds around 3,500–5,000 feet over the coast and valleys. A weakening disturbance brings scattered light showers tonight into early Monday, starting near the coast as early as 6–7 PM, with the steadiest pockets of rain most likely between about midnight and 4 AM. Rain falls at 0.10 inch per hour or less, and totals stay at 0.20 inch or less. In the mountains, a dusting of snow is possible above about 6,000–6,500 feet."
+      "text": "Clouds thicken across the coast and valleys this evening from south to north as a weakening disturbance moves through. Scattered light showers reach the coast around coastal Carlsbad by about 8–9 PM Sunday, with the most shower activity from about 10 PM to 3 AM; rain falls at 0.10 inch per hour or less and totals stay at 0.20 inch or less. A few showers may reach the San Diego County inland valleys and foothills between about 11 PM and 6 AM, while other inland areas will likely stay completely dry. In the mountains, a dusting of snow is possible above about 6,000–6,500 feet."
     },
     {
       "title": "Short Term",
-      "text": "Showers taper off Monday morning, generally between about 6 and 10 AM, then a brief build of high pressure brings a few degrees of warming. Tuesday is warm and dry. A weak disturbance passes over California Wednesday, but the forecast keeps trending dry, with little change in temperatures from Tuesday to Wednesday at the coast and in the valleys."
+      "text": "Showers clear Orange County by about 2 AM Monday and taper off in San Diego County from north to south between about 3 and 10 AM, leaving clear skies Monday afternoon with some high clouds later. A brief build of high pressure then brings a few degrees of warming, and Tuesday is warm and dry. A weak disturbance passes over California Wednesday, but the forecast keeps trending dry, with little change in temperatures from Tuesday to Wednesday at the coast and in the valleys."
     },
     {
       "title": "Long Term",
-      "text": "Thanksgiving Thursday and Friday turn warmer and drier as high pressure sits over California and winds blow offshore (from the land toward the sea), with highs 5 to 15 degrees above average. Friday looks warmest, with a 70–90 percent chance of 80 degrees or higher in the coastal areas, valleys and lower deserts, but no chance of 90 at this time. One wind model gives a 60–75 percent chance of a weak Santa Ana wind event and a 25–30 percent chance of weak-to-moderate Santa Ana winds; the stronger outcome depends on where a low-pressure system to our east ends up, and the scenario favoring stronger winds (the low over northern Mexico) is the least likely, at about 18 percent. By Saturday the high pressure gets pushed east by an approaching storm system, bringing gradual cooling Saturday into next Sunday and slight chances of rain as early as Sunday; about 60 percent of model runs bring that system into Northern California, the scenario most likely to give Southern California light rain."
+      "text": "Thanksgiving Thursday and Friday turn warmer and drier as high pressure sits over California and winds blow offshore (from the land toward the sea), with highs 5 to 15 degrees above average. Friday looks warmest, with a 70–90 percent chance of 80 degrees or higher across the coastal areas, valleys and lower deserts, but no chance of 90 at this time. One wind model gives a 60–75 percent chance of a weak Santa Ana wind event and a 25–30 percent chance of weak-to-moderate Santa Ana winds; stronger winds depend on a low-pressure system to our east setting up over northern Mexico, which only about 18 percent of model runs show. By Saturday an approaching storm system likely pushes the high pressure east, bringing gradual cooling Saturday into next Sunday and slight chances of rain as early as Sunday; about 60 percent of model runs bring that system into Northern California, the scenario most likely to give Southern California light rain."
     }
   ],
   "coast": "Coastal flooding is the main hazard this week for the Orange County and San Diego County coasts. Morning high tides are climbing (7.35 feet at La Jolla today), with the highest tides Tuesday through Thursday and the King Tides peaking Wednesday; morning high tides of 7.9–8.3 feet are expected Tuesday through Thursday, which will likely break again the all-time tide records set in late October. Surf stays around 3–5 feet through Wednesday, then a new swell sharply raises it late Wednesday into Thursday, with 6–8 foot breakers Thursday and sets of 10 feet or more on west-facing beaches, easing to a still-elevated 5–8 feet Friday. A Coastal Flood Advisory (moderate to locally major flooding) runs until 4 AM Tuesday, followed by a Coastal Flood Warning from 4 AM Tuesday to 1 PM Friday, with major coastal flooding expected and locally extreme flooding Thursday. For boaters, no marine hazards are expected through Tuesday; the incoming system Wednesday afternoon into Thursday brings hazardous conditions in the outer waters, with gusts of about 23–29 mph (20–25 knots) and seas of 8–12 feet, locally up to 14 feet, diminishing Thursday into Friday.",
@@ -25,5 +25,5 @@
     "How strong Thursday–Friday's offshore winds get (60–75% chance of weak Santa Ana winds, 25–30% chance of weak-to-moderate) and how warm Friday turns out.",
     "Whether next weekend's system brings any rain by Sunday."
   ],
-  "confidence": "Forecasters are confident about tonight's light showers, a dry Tuesday–Wednesday, and warmer, drier weather Thursday–Friday, but less sure how strong the Santa Ana winds get and have low confidence in details of possible rain early next week."
+  "confidence": "Forecasters are confident about tonight's light showers, a dry Tuesday–Wednesday, and warmer, drier weather Thursday–Friday, but less sure how strong the Santa Ana winds get and have low confidence in the details of possible rain early next week."
 }

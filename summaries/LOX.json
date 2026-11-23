@@ -1,29 +1,29 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": null,
-  "afd_issued": "2026-11-22T21:24:00Z",
-  "generated": "2026-11-22T22:26:11Z",
-  "headline": "A weak cold front brings a chance of light showers to Los Angeles County late tonight (a quarter inch or less), followed by a warm, dry Monday and Tuesday, another mostly-missed light rain chance Tuesday night into Wednesday, and a warm, dry Thanksgiving and Black Friday, while coastal flood and high surf alerts run through Thursday.",
+  "afd_id": "c395909f-29b7-4a56-bba9-c442fff66e7a",
+  "afd_issued": "2026-11-23T00:41:00Z",
+  "generated": "2026-11-23T02:25:47Z",
+  "headline": "A weak cold front brings a chance of light showers to Los Angeles County tonight (a quarter inch or less), followed by a warm, dry Monday and Tuesday, another light rain chance Tuesday night into Wednesday mainly north of Point Conception, and a warm, dry Thanksgiving and Black Friday, while coastal flood and high surf alerts run through Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A weak cold front is moving through, already bringing light showers to San Luis Obispo and Santa Barbara counties this afternoon. Around Glendale and the rest of Los Angeles and Ventura counties, showers are possible late this evening and overnight, with a 20 to 40 percent chance near the coast. Any rain will be light, around a quarter inch or less, with the highest totals likely in Santa Barbara County, and no flooding problems are expected."
+      "text": "A weak cold front is moving through, already bringing light showers to San Luis Obispo and Santa Barbara counties. Around Glendale and the rest of Los Angeles and Ventura counties, showers are possible late this evening and overnight, with a 20 to 40 percent chance at coastal and valley locations such as Burbank and LAX, though timing could be off by a couple of hours. Any rain will be light, around a quarter inch or less, with the highest totals likely in Santa Barbara County, and no flooding problems are expected."
     },
     {
       "title": "Short Term",
-      "text": "Monday and Tuesday turn warm and dry as high pressure builds overhead, strongest on Monday. Light offshore northeast breezes develop, strongest Tuesday morning but well below advisory levels, and highs peak Tuesday in the upper 60s to mid 70s across the coasts and coastal valleys. Another weak system Tuesday night and Wednesday morning only grazes San Luis Obispo and Santa Barbara counties with a quarter inch of rain or less, while Ventura and Los Angeles counties have less than a 15 percent chance of measurable rain; Wednesday actually warms a bit for most areas."
+      "text": "Monday and Tuesday turn warm and dry as high pressure builds overhead, strongest on Monday, with light northeast winds possible early Monday morning. Light offshore northeast breezes are strongest Tuesday morning but stay well below advisory levels, and highs peak Tuesday in the upper 60s to mid 70s across the coasts and coastal valleys. Another weak system Tuesday night and Wednesday morning only grazes San Luis Obispo and Santa Barbara counties with a quarter inch of rain or less, while Ventura and Los Angeles counties have less than a 15 percent chance of measurable rain; Wednesday actually warms a bit for most areas."
     },
     {
       "title": "Long Term",
-      "text": "Thanksgiving Day and Black Friday look warm and dry under strong high pressure with weak offshore winds, and the chance of advisory-level winds is very low. Highs peak Friday in the 70s to lower 80s along the coast and in the coastal valleys and the mid 60s to lower 70s inland, about 4 to 8 degrees above normal. Another weak system crosses Saturday and Sunday, with timing still uncertain, bringing generally under a quarter inch of rain (up to 0.75 inch in far northwest San Luis Obispo County near Rocky Butte) and cooling highs back into the 60s to around 70."
+      "text": "Thanksgiving Day and Black Friday look warm and dry under strong high pressure with weak offshore northeast winds, and the chance of advisory-level winds is very low. Highs peak Friday in the 70s to lower 80s along the coast and in the coastal valleys and the mid 60s to lower 70s inland, about 4 to 8 degrees above normal. Another weak system crosses Saturday and Sunday, with timing still uncertain, bringing generally under a quarter inch of rain (up to 0.75 inch in far northwest San Luis Obispo County near Rocky Butte) and cooling highs back into the 60s to around 70."
     }
   ],
-  "coast": "A Coastal Flood Advisory runs from 3 AM Monday to 3 AM Wednesday for several stretches of coast, followed by a Coastal Flood Watch for those same beaches from late Tuesday night through Thursday afternoon; other coastal areas are under a Coastal Flood Advisory from 3 AM Monday to 3 PM Thursday, and a High Surf Advisory runs until 3 PM Thursday for some beaches. Offshore, winds and seas stay below small craft advisory levels through Tuesday. The two systems (today into tonight, and Wednesday) bring their best rain chances to the waters north of Point Conception, low-end advisory-level northwest to west winds are possible Wednesday and Wednesday night south of Point Conception, and a significant west swell of around 14 to 16 feet arrives midweek with large, hazardous seas on the outer waters.",
+  "coast": "A Coastal Flood Advisory runs from 3 AM Monday to 3 AM Wednesday for several stretches of coast, followed by a Coastal Flood Watch for those same beaches from late Tuesday night through Thursday afternoon; other coastal areas are under a Coastal Flood Advisory from 3 AM Monday to 3 PM Thursday, and a High Surf Advisory runs until 3 PM Thursday for some beaches. Offshore, winds and seas stay below small craft advisory levels through Tuesday. The two systems (tonight, and Wednesday) bring their best rain chances to the waters north of Point Conception, low-end advisory-level northwest to west winds are possible Wednesday and Wednesday night south of Point Conception, and a significant west swell of around 14 to 16 feet arrives midweek with large, hazardous seas on the outer waters.",
   "watch_for": [
     "Coastal flooding and high surf through Thursday as a big west swell arrives midweek (Coastal Flood Watch late Tuesday night through Thursday afternoon).",
-    "Light showers late tonight in Los Angeles and Ventura counties (20 to 40 percent chance near the coast).",
+    "Light showers tonight in Los Angeles and Ventura counties (20 to 40 percent chance at coastal and valley spots, timing uncertain by a couple of hours).",
     "Timing of the weak weekend system that cools temperatures back down."
   ],
-  "confidence": "Forecasters report no major changes from earlier thinking and are confident in light rain amounts, a warm dry Monday and Tuesday, and a warm dry Thanksgiving, with less certainty about the timing of next weekend's weak system."
+  "confidence": "Forecasters report no major changes from earlier thinking and are confident in light rain amounts, a warm dry Monday and Tuesday, and a warm dry Thanksgiving, with only moderate confidence in the exact timing of tonight's showers and less certainty about the timing of next weekend's weak system."
 }
