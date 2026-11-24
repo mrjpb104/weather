@@ -1,22 +1,22 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "b26b5077-3d8f-467b-8e99-837e04a7d87a",
-  "afd_issued": "2026-11-24T05:28:00Z",
-  "generated": "2026-11-24T06:25:25Z",
-  "headline": "Forecasters are confident a significant storm brings a cold, rainy and windy stretch from Wednesday afternoon through at least Thanksgiving morning, with several inches of rain likely and gusts of 30 to 40 mph (possibly 40 to 50 mph) that could cause isolated power outages around Charlotte and the region.",
+  "afd_id": "9e34aa21-5c4a-4904-ba08-1ce552e32bb8",
+  "afd_issued": "2026-11-24T11:20:00Z",
+  "generated": "2026-11-24T12:25:16Z",
+  "headline": "Forecasters are confident a significant storm brings a cold, rainy and windy stretch from Wednesday afternoon through at least Thanksgiving morning around Charlotte and the region, with several inches of rain likely and gusts of 30 to 40 mph (possibly 40 to 50 mph) that could cause isolated power outages.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Tuesday stays dry around Charlotte and across the area. Clouds thicken by daybreak and stay mostly cloudy around Charlotte and the South Carolina Upstate, while western North Carolina clears out during the day. Northeast winds pick up with modest gusts from late morning; around Charlotte the gusts ease from early evening into late tonight, then return early Wednesday morning."
+      "text": "Tuesday stays dry around Charlotte and across the area, with clouds lingering over the South Carolina Upstate while western North Carolina clears out during the day. Northeast winds bring light gusts east of the mountains; around Charlotte the gusts take a longer break from early evening into late tonight. Clouds increase again late tonight, and stronger gusts around 30 to 35 mph develop by early Wednesday morning at most spots outside Asheville and Hickory."
     },
     {
       "title": "Short Term",
-      "text": "High pressure over New England wedges cold air against the mountains by Wednesday morning, so Wednesday and Thursday stay chilly, with highs struggling to get out of the 40s. Rain spreads in from the southeast by Wednesday afternoon as a strengthening low-pressure system develops off the Atlantic coast, and it will be cold, rainy and windy from Wednesday afternoon through at least Thursday morning, with a very strong easterly wind just above the ground passing over Wednesday night. Several inches of rain looks likely at a minimum, which on its own would not be a major flooding concern, but if the low tracks farther inland a band of locally heavy rain could set up over the area, and rain falling as fast as 3 inches an hour could cause some flooding. Gusts of at least 30 to 40 mph are expected, with isolated power outages possible, and 40 to 50 mph in the higher-end inland-track scenario; most rain moves out by late Thursday afternoon."
+      "text": "Spotty showers could reach Charlotte Wednesday morning (about a 30 percent chance between 7 AM and 1 PM), then rain spreads in from the southeast by Wednesday afternoon as a strong low-pressure system develops off the Southeast coast and cold air stays wedged against the mountains, keeping highs Wednesday and Thursday stuck in the 40s. It will be cold, rainy and windy from Wednesday afternoon through at least Thursday morning, with a very strong easterly wind just above the ground passing over Wednesday night. Several inches of rain look likely at a minimum, which alone would not be a major flooding concern, but if the low tracks farther inland a band of locally heavy rain could set up over the area, and rain falling up to 3 inches an hour could cause some flooding. Gusts of at least 30 to 40 mph are expected, with isolated power outages possible, and 40 to 50 mph in the higher-end inland-track scenario; most rain moves out by late Thursday afternoon."
     },
     {
       "title": "Long Term",
-      "text": "A brief round of showers, possibly snow showers, could hit the mountains late Thursday into Friday, though confidence is low on how much moisture will be left. Gusty winds continue Thursday night into Friday even as skies dry out. Quiet weather returns for most of the weekend."
+      "text": "Drier weather returns Thursday night into Friday, though gusty winds continue. A brief round of showers, possibly snow showers, could hit the mountains late Thursday into Friday, but confidence is low on how much moisture will be left. Quiet weather returns for most of the weekend."
     }
   ],
   "watch_for": [
@@ -24,5 +24,5 @@
     "Wind gusts of 30 to 40 mph Wednesday night into Thursday morning, with isolated power outages possible.",
     "Possible mountain snow showers late Thursday into Friday."
   ],
-  "confidence": "Confidence is high that a significant storm arrives Wednesday into Thursday but low on exact rainfall amounts and how strong the winds get, which depend on the storm's track; confidence is also low on the Friday mountain showers, while Tuesday and the weekend look quiet."
+  "confidence": "Confidence remains high that a significant storm hits Wednesday into Thursday but low on exact rainfall amounts and how strong the winds get, which depend on the storm's track; confidence is also low on the Friday mountain showers, while Tuesday and the weekend look quiet."
 }
