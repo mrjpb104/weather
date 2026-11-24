@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": null,
-  "afd_issued": "2026-11-24T09:46:00Z",
-  "generated": "2026-11-24T10:25:00Z",
-  "headline": "Dry pre-Thanksgiving travel and a dry, mild holiday weekend around Mammoth Lakes and the Sierra, with gusty ridge-top winds Tuesday night and a possible return of winter storms on the passes as soon as Sunday night or Monday.",
+  "afd_id": "1f0432e5-652e-4d1c-855a-f0f97a983929",
+  "afd_issued": "2026-11-24T21:48:00Z",
+  "generated": "2026-11-24T22:25:18Z",
+  "headline": "Dry, warmer weather and good travel conditions around Mammoth Lakes and across the Sierra through Thanksgiving and Saturday, before rain and high-elevation snow return Sunday into Monday and a stronger, colder storm likely brings wintry travel to the Sierra next Tuesday night into Wednesday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Patchy freezing fog in some eastern California valleys fades by late Tuesday morning. A weakening Pacific storm brings ridge-top wind gusts of 50–70 mph from late Tuesday morning through early Wednesday morning, but it falls apart as it reaches the Sierra, so the chance of any measurable rain or snow from I-80 south, including Mammoth Lakes, is below 10 percent. In northeast California and far northwest Nevada, a few light rain and snow showers are possible late Tuesday night into early Wednesday, with only a 20 percent or less chance of more than a trace."
+      "text": "A Pacific storm reaching the northern California coast falls apart as it moves inland, so Mammoth Lakes and the rest of the Sierra stay dry; only northeast California and far northern Washoe County near the Oregon border have a low (10–20 percent) chance of light showers into Wednesday morning. Stronger winds around 10,000 feet may cause bumpy air and turbulence this evening from about 7 PM to midnight. Pockets of freezing fog are possible overnight in the Mono Lake Basin, Martis Valley and Sierra Valley, with dense freezing fog likely around Truckee from about 10 PM tonight to 7 AM Wednesday and patchy shallow fog possible around South Lake Tahoe."
     },
     {
       "title": "Short Term",
-      "text": "The storm's leftovers exit east Wednesday, leaving dry conditions for the busy travel period leading into Thanksgiving. From Thanksgiving through Friday, building high pressure brings warmer weather with highs in the 50s in most areas; cold air trapped in the valleys means Sierra communities and lower valleys see similar highs, while some spots above that cold layer could top 60 degrees. Freezing fog is likely in Truckee on Thursday and Friday mornings, and haze may build up around Reno those mornings."
+      "text": "A strong area of high pressure builds over the West from Wednesday through Saturday, keeping the region dry with favorable travel conditions for Thanksgiving. Cold air stays trapped in the lower valleys with light winds, bringing more chances for freezing fog in the Mono Lake Basin, Martis Valley and Sierra Valley (including Truckee on Thursday and Friday mornings) and some haze around Reno, Carson City and Minden those mornings. Even so, it warms up compared with the recent cold, with highs in the 50s in both western Nevada and Sierra valleys and lows staying above freezing in warmer valleys and on mid-slopes by the weekend."
     },
     {
       "title": "Long Term",
-      "text": "Saturday stays dry and mild, and winds ahead of the next Pacific storm could push more valley spots to 60 degrees or higher, with only a low (up to 20 percent) chance of light showers near the Oregon border around Friday night. The next storm could bring winter conditions to the main Sierra passes as soon as Sunday, though it is trending weaker and a bit later, more likely Sunday night or Monday, so holiday travelers should keep winter gear handy. The overall trend favors a stronger storm by the start of December and an active, stormy pattern through the first week of the month."
+      "text": "Another round of moisture arrives late Sunday into Monday, with a 50–80 percent chance of rain or snow in the Sierra and northeast California and 20–50 percent in western Nevada. Snow levels stay fairly high, generally near or above 7,000 feet (around 6,500 feet near the Oregon border), but snow could still affect Sierra passes, so travelers heading home at the end of the holiday weekend should be prepared, and stronger ridge-top winds could affect backcountry recreation. A stronger and colder storm is increasingly likely next Tuesday night into Wednesday, with 90 percent of model runs showing at least some rain or snow in the Sierra and western Nevada, rising forecast amounts, and snow levels anywhere from about 4,500 to 6,500 feet, so plan for wintry weather if crossing the Sierra next week."
     }
   ],
   "watch_for": [
-    "Timing of the late-weekend storm, which could bring winter driving conditions to the Sierra passes as soon as Sunday night or Monday.",
-    "Ridge-top wind gusts of 50–70 mph late Tuesday morning through early Wednesday.",
-    "A stronger storm and more active pattern possible in the first week of December."
+    "Snow on Sierra passes Sunday night into Monday for travelers returning from the holiday weekend.",
+    "A stronger, colder storm next Tuesday night into Wednesday, with snow levels possibly as low as 4,500 feet.",
+    "Freezing fog in the Mono Lake Basin, Martis Valley and Sierra Valley in the overnight and morning hours."
   ],
-  "confidence": "Forecasters are confident in dry travel weather through Wednesday and a dry, mild Thanksgiving through Saturday, but uncertain about the timing and strength of the late-weekend storm and the stormier pattern into early December."
+  "confidence": "Forecasters are confident in dry weather through Saturday, fairly confident in Sunday–Monday's rain and high-elevation snow, and increasingly confident in a stronger storm next Tuesday night into Wednesday, though how low the snow will fall is still uncertain."
 }
