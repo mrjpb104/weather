@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "2f80cf20-81c3-4238-9151-9f6db43730af",
-  "afd_issued": "2026-11-24T11:39:00Z",
-  "generated": "2026-11-24T13:27:36Z",
-  "headline": "After two cold, dry days, a strong Thanksgiving storm brings 1–2 inches of rain, east wind gusts up to 60 mph in New York City and Long Island, and widespread coastal flooding Thursday into Friday.",
+  "afd_id": "66a28e15-821a-4fe3-974a-17525629fc8d",
+  "afd_issued": "2026-11-24T17:48:00Z",
+  "generated": "2026-11-24T18:25:15Z",
+  "headline": "After two cold, dry days, a strong Thanksgiving storm brings 1–2 inches of rain, damaging east wind gusts up to 60 mph in New York City and Long Island, and widespread coastal flooding Thursday into Friday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Tuesday is much cooler and dry under a very strong area of high pressure building from the Great Lakes into New England, with highs only in the upper 40s. It turns breezy from mid-morning into early afternoon, with gusts around 25–30 mph near the city and coast easing by late afternoon. Tuesday night is the coldest of the season so far: mid to upper 20s inland, upper 20s to low 30s in most other spots, and mid 30s in New York City."
+      "text": "Tuesday stays dry and much cooler under a very strong area of high pressure building from the Great Lakes into New England, with highs only in the upper 40s. North-northwest winds stay gusty this afternoon, gusting around 25–35 mph (isolated gusts near 40 mph around the city's airports) until about 3–5 PM, then easing to light winds overnight. Tuesday night is the coldest of the season so far: mid to upper 20s inland, upper 20s to low 30s in most other spots, and mid 30s in New York City."
     },
     {
       "title": "Short Term",
-      "text": "Wednesday is similar, with highs in the upper 40s, but clouds increase late in the day and Wednesday night isn't quite as cold as east winds pick up ahead of a storm coming up from the Carolina coast. On Thanksgiving (Thursday) rain spreads in from the south in the morning (or afternoon if the storm is slower), becoming steadier and heavier into the afternoon and evening, with 1–2 inches expected and isolated amounts up to 3 inches; the storm moves fast enough to prevent significant flooding, though minor street and poor-drainage flooding is possible. A High Wind Watch runs from 10 AM Thursday to 1 AM Friday for New York City, Long Island, and eastern Essex, eastern Union and Hudson counties in New Jersey, for east gusts up to 60 mph, most likely in the afternoon and early evening; Connecticut, interior northeast New Jersey and the Lower Hudson Valley may later need a Wind Advisory. The rain tapers late Thursday night into early Friday, and after a lull, west winds gust to 25–35 mph Friday behind the storm."
+      "text": "Wednesday is similar, with highs in the upper 40s and winds turning northeast, but clouds increase late in the day and Wednesday night isn't as cold as east winds pick up ahead of a storm coming north from the Carolina coast. On Thanksgiving (Thursday) rain spreads in from the south in the morning (or the afternoon if the storm is slower), becoming steadier and heavier into the afternoon and evening, with 1–2 inches expected and isolated amounts up to 3 inches; the storm moves fast enough to prevent significant flooding, though minor street and poor-drainage flooding is possible. A High Wind Watch runs from 10 AM Thursday to 1 AM Friday for New York City, Long Island, and eastern Essex, eastern Union and Hudson counties in New Jersey, for east gusts up to 60 mph, most likely in the afternoon and early evening; Connecticut, interior northeast New Jersey and the Lower Hudson Valley aren't in the watch for now but may need a Wind Advisory. Rain tapers late Thursday night into early Friday, winds ease briefly, then west winds gust to 25–35 mph on Friday behind the storm."
     },
     {
       "title": "Long Term",
-      "text": "Breezy west winds continue Saturday, gusting to roughly 25–35 mph as conditions slowly settle down. The discussion says little about Sunday and beyond."
+      "text": "Gusty west winds continue Saturday, gusting to roughly 25–35 mph with some clouds possible, before settling down. Sunday looks calmer, with light southwest winds and good flying weather; the discussion says little else about the weekend."
     }
   ],
-  "coast": "With Tuesday's full moon, tides are already high and many spots are less than a foot from minor flood levels, so localized minor coastal flooding is possible at Wednesday morning's high tide. More widespread minor to moderate coastal flooding is expected with the high tides Thursday and Friday, and the most vulnerable spots along the south shore back bays and western Great South Bay could reach major flood levels; how bad it gets depends on the storm's exact track and timing, which controls how long the onshore east-northeast winds last before turning south-southwest. Beach flooding, erosion and overwash (waves washing over dunes) are possible, with overwash looking isolated for now. For boaters, a Small Craft Advisory runs on the ocean until 6 PM Tuesday; after a lull Wednesday, a Storm Watch covers all waters from Thursday morning through late Thursday night for gale- to storm-force gusts, with waves of 15–20 feet on the ocean (occasionally 20–25 feet out east), 7–10 feet on Long Island Sound and around 10 feet on western Block Island Sound. Gale-force gusts are possible Friday and Friday night, and seas may still be 5–8 feet on the ocean Saturday.",
+  "coast": "With Tuesday's full moon, tides are already high and many spots are less than a foot from minor flood levels, so localized minor coastal flooding is possible at Wednesday morning's high tide. More widespread minor to moderate coastal flooding is expected with the high tides Thursday and Friday, and the most vulnerable spots along the south shore back bays and western Great South Bay could reach major flood levels; how bad it gets depends on the storm's exact track and timing, which controls how long the onshore east-northeast winds last before turning south-southwest. Beach flooding, erosion and overwash (waves washing over dunes) are possible, with overwash looking isolated for now. For boaters, a Small Craft Advisory runs on the ocean until 6 PM Tuesday with 5-foot seas; after a lull Wednesday, a Storm Watch covers all waters from Thursday morning through late Thursday night for gale- to possibly storm-force gusts, with waves of 15–20 feet on the ocean (occasionally 20–25 feet out east), 7–10 feet on Long Island Sound and around 10 feet on western Block Island Sound. Gale-force gusts are possible Friday and Friday night, especially on the ocean, and seas may still be 5–8 feet on the ocean Saturday as winds subside.",
   "watch_for": [
-    "Damaging east wind gusts up to 60 mph in NYC and Long Island Thursday afternoon and evening; the watch could be upgraded or expanded inland.",
+    "Damaging east wind gusts up to 60 mph in NYC and Long Island Thursday afternoon and evening; the watch could be expanded inland or advisories added.",
     "Minor to moderate, locally major, coastal flooding at Thursday and Friday high tides (minor possible as early as Wednesday morning), especially along the south shore back bays.",
-    "Exact Thanksgiving timing of the rain and strongest winds, which could shift a few hours later."
+    "Exact Thanksgiving timing of the rain and strongest winds, which could arrive a few hours later than expected."
   ],
-  "confidence": "Forecasters are confident in the cold, dry weather through Wednesday and in the storm's overall track and impacts, but less sure about exactly when the strongest winds and heaviest rain arrive Thursday and how severe the coastal flooding will be."
+  "confidence": "Forecasters are confident in the cold, dry weather through Wednesday and in the storm's overall track and impacts, but less sure exactly when the strongest winds and heaviest rain arrive Thursday and how severe the coastal flooding will be."
 }
