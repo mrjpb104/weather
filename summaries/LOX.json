@@ -1,18 +1,18 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "2e78fca2-7c85-488c-a82c-319593b39ef8",
-  "afd_issued": "2026-11-24T12:07:00Z",
-  "generated": "2026-11-24T13:27:36Z",
-  "headline": "Dry and warming through the week, with Santa Ana-type winds peaking on Thanksgiving and Glendale and the rest of the LA basin reaching the low to mid 80s on Black Friday, while a huge swell and very high tides bring significant coastal flooding to the beaches Wednesday and Thursday.",
+  "afd_id": "fe5532ae-1972-4094-b963-d7a07ddc0fe8",
+  "afd_issued": "2026-11-24T16:56:00Z",
+  "generated": "2026-11-24T17:25:00Z",
+  "headline": "Dry and warming through the week, with Santa Ana-type winds peaking on Thanksgiving (wind advisories likely in the usual spots) and Glendale and the rest of the LA basin reaching the low to mid 80s on Black Friday, while a huge swell and very high tides bring significant coastal flooding to the beaches Wednesday and Thursday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Tuesday is mild and dry around Glendale and across Los Angeles County, with light offshore (northeasterly) winds; Burbank-area winds are not expected to be an issue. It was a cold start in the Antelope Valley, where a Freeze Warning for lows of 28 to 32 degrees runs until 8 AM, and fog around Paso Robles and the Salinas Valley should clear by late morning. A weakening cold front brushes the Central Coast Tuesday night into Wednesday morning, but it looks even drier now: just a 20 percent chance of a shower along the Central Coast with 0.05 inch or less, and most places will see no measurable rain."
+      "text": "Tuesday is mild and dry around Glendale and across Los Angeles County, with offshore (northeasterly) winds picking up this morning in the usual Santa Ana wind spots, though no advisories are expected; winds should not be an issue at Burbank or LAX. Temperatures keep warming, with some increasing high clouds through Wednesday morning from a storm moving into Northern California. That storm's weakening cold front brushes the Central Coast Tuesday night into Wednesday morning, but only a 20 percent chance of a shower is expected there (20–30 percent around Paso Robles and San Luis Obispo after about 2 AM), with 0.05 inch or less, and most places will see no measurable rain."
     },
     {
       "title": "Short Term",
-      "text": "Offshore winds and a warming trend continue Wednesday and Thanksgiving Thursday. Northeast winds peak on Thanksgiving, possibly reaching low-end wind advisory levels in the usual wind-prone spots such as the western San Gabriel Mountains above the Glendale area and the Santa Susana Mountains, while Santa Barbara sees gusty downslope evening winds on Wednesday that should stay below advisory levels. Skies stay dry away from the Central Coast."
+      "text": "Offshore winds and a warming trend continue Wednesday and Thanksgiving Thursday. No wind advisories are expected Wednesday, but they are likely Thursday as the offshore push strengthens, mainly low-end advisories in wind-prone areas such as the western San Gabriel Mountains above the Glendale area and the Santa Susana Mountains. Santa Barbara sees gusty downslope evening winds on Wednesday that should stay below advisory levels, and skies stay dry."
     },
     {
       "title": "Long Term",
@@ -22,8 +22,8 @@
   "coast": "A large, long-period west swell arrives Tuesday and peaks Wednesday and Thursday, combining with very high tides to bring significant surf and significant coastal flooding. The worst is expected on the Central Coast and Ventura County beaches, with somewhat smaller but still concerning issues elsewhere: many strong rip currents nearly everywhere, strong along-shore currents, a risk of sneaker waves, heavy shore break, beach erosion and possible breaking waves at harbor entrances. Central Coast beaches have a Coastal Flood Advisory and High Surf Advisory until 6 AM Wednesday, then a Coastal Flood Warning and High Surf Warning from 6 AM Wednesday to noon Thursday. Ventura County beaches have a Coastal Flood Advisory until 8 AM Wednesday and a High Surf Advisory from 9 PM Tuesday to 8 AM Wednesday, then a Coastal Flood Warning and High Surf Warning from 8 AM Wednesday to noon Thursday. The Malibu coast and Los Angeles County beaches have a Coastal Flood Advisory until 8 AM Wednesday, a Coastal Flood Watch from Wednesday morning through Thursday morning, and a High Surf Advisory from 6 AM Wednesday to 9 PM Thursday; the Santa Barbara south coast has a Coastal Flood Advisory until noon Thursday and a High Surf Advisory from 6 AM Wednesday to noon Thursday. For boaters, Small Craft Advisories run from 9 PM Tuesday (3 AM Wednesday for some waters) to 3 PM Thursday, with seas peaking at 14 to 18 feet on the outer waters Wednesday and Wednesday night and 13 to 16 feet north of Point Sal Wednesday. Closer in, there is a 50 to 60 percent chance of advisory-level winds in the western Santa Barbara Channel Wednesday and a 50 to 70 percent chance of advisory-level northeast winds from Ventura to Santa Monica Thursday; Friday and Saturday bring lighter winds, though seas may stay at advisory levels offshore (60 to 80 percent chance) and north of Point Sal (40 to 60 percent).",
   "watch_for": [
     "Coastal flood and high surf warnings Wednesday into Thursday, worst on the Central Coast and Ventura County beaches, with a Coastal Flood Watch for Los Angeles County beaches.",
-    "Thanksgiving offshore winds possibly reaching advisory levels in the western San Gabriel and Santa Susana Mountains.",
+    "Likely Thanksgiving wind advisories in the western San Gabriel and Santa Susana Mountains.",
     "A possibly wetter, near-atmospheric-river storm next Tuesday into Wednesday, with 1 to 3 inches possible on mountain slopes."
   ],
-  "confidence": "Forecasters are confident in the dry, warm stretch through Saturday and have trimmed the Tuesday-night rain chance further, while Sunday's light rain and especially the stronger storm next Tuesday and Wednesday remain less certain."
+  "confidence": "Forecasters are confident in the dry, warm, breezy stretch through Saturday, while Sunday's light rain and especially the stronger storm next Tuesday and Wednesday remain less certain."
 }
