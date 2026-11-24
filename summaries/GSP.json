@@ -1,22 +1,22 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "5f0890c1-ed1c-4163-832c-fc6eabf67944",
-  "afd_issued": "2026-11-23T18:56:00Z",
-  "generated": "2026-11-23T20:25:14Z",
+  "afd_id": "c8c41a3a-7baf-4c07-9df2-8814288d592d",
+  "afd_issued": "2026-11-23T23:26:00Z",
+  "generated": "2026-11-24T00:24:46Z",
   "headline": "A significant storm is increasingly likely Wednesday into Thanksgiving morning, with widespread rain (possibly 2–3 inches in the eastern Upstate and North Carolina Piedmont around Charlotte) and 30–40 mph gusts that could knock out power and topple tents and holiday decorations.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A cold front is moving through Monday afternoon, and there is a 20–30% chance of a few showers along it through late evening, with temperatures staying above normal into the evening. Clouds fill back in Monday night and linger into part of Tuesday. Lows Monday night fall to about normal in the mountains but stay above normal in the Piedmont, and the showers should end before it gets cold enough for any snow or sleet in the mountains."
+      "text": "A cold front is moving through Monday evening, and there is a 20–30% chance of a few showers along it through late evening; temperatures stay above normal into the evening. Around Charlotte, winds swing around to the north and northeast overnight and clouds fill back in for a time, and the showers should end before it gets cold enough for any snow or sleet in the mountains. Lows fall to about normal in the mountains but stay above normal in the Piedmont."
     },
     {
       "title": "Short Term",
-      "text": "Tuesday is near normal for late November as high pressure passes to the north, then a strong wedge of cold air settles in against the mountains for a raw, chilly Wednesday: most places northwest of I-85 stay in the 40s (except the western mountain valleys), with winds already 10–15 mph in the morning and increasing, and only light rain during the day — the chance of wintry weather in the mountains has dropped and snow is ruled out. Widespread rain develops late Wednesday as a low forms near the coast, peaking in the predawn hours of Thanksgiving with a strong easterly wind just above the ground; gusts of 30–40 mph are a fairly good bet area-wide late Wednesday through Thursday morning, stronger gusts over 40 mph would mean more power outages, and ridgetops could see far higher winds than spots even 1,000 feet lower. In a reasonable high-end case, storm totals reach 3–4 inches along the east-facing Blue Ridge Escarpment and 2–3 inches in the eastern Upstate and North Carolina Piedmont, with less likely west of the Escarpment, in the western Upstate and in northeast Georgia; so far there is little sign of a significant flood risk. Rain tapers off from south to north during Thanksgiving Day as highs warm back to near normal in the Piedmont (a bit below in the mountains), but gusts of 20–30 mph can continue, so anything anchored on Wednesday should stay secured through Thursday."
+      "text": "Tuesday is near normal for late November as high pressure passes to the north, with north-northeast gusts of about 17–29 mph around Charlotte and east of the mountains from daybreak into the evening and clouds breaking up in the afternoon. A strong wedge of cold air settles in against the mountains for a raw, chilly Wednesday: most places northwest of I-85 stay in the 40s (except the western mountain valleys), winds are already 10–15 mph in the morning and increasing, rain during the day is light, and the chance of wintry weather in the mountains has dropped, with snow ruled out. Widespread rain develops late Wednesday as a low forms near the coast, peaking in the predawn hours of Thanksgiving with a strong easterly wind just above the ground; gusts of 30–40 mph are a fairly good bet area-wide late Wednesday through Thursday morning, stronger gusts over 40 mph would mean more power outages, and ridgetops could see far higher winds than spots even 1,000 feet lower. In a reasonable high-end case, storm totals reach 3–4 inches along the east-facing Blue Ridge Escarpment and 2–3 inches in the eastern Upstate and North Carolina Piedmont, with less likely west of the Escarpment, in the western Upstate and in northeast Georgia; so far there is little sign of a significant flood risk."
     },
     {
       "title": "Long Term",
-      "text": "Showers may linger along the North Carolina–Tennessee border through Friday, where rain could change to light snow or rime ice with accumulations under 2 inches possible. Gusts on those mountain slopes may stay 25–35 mph through Friday morning, near 40 mph at the highest elevations. The weekend looks quiet, with highs rising slightly above normal."
+      "text": "Rain tapers off from south to north during Thanksgiving Day as highs warm back to near normal in the Piedmont (a bit below in the mountains), but gusts of 20–30 mph can continue, so anything anchored on Wednesday should stay secured through Thursday. Showers may linger along the North Carolina–Tennessee border through Friday, where rain could change to light snow or rime ice with accumulations under 2 inches possible, and gusts on those mountain slopes may stay 25–35 mph through Friday morning, near 40 mph at the highest elevations. The weekend looks quiet, with highs rising slightly above normal."
     }
   ],
   "watch_for": [
@@ -24,5 +24,5 @@
     "Wind gusts of 30–40 mph (possibly over 40 mph) late Wednesday through Thursday morning, with possible power outages — secure tents and holiday decorations.",
     "Possible light snow or rime ice along the North Carolina–Tennessee border on Friday."
   ],
-  "confidence": "Forecasters are increasingly confident a significant storm hits Wednesday into Thursday but have low confidence in exact rain amounts and wind strength because small shifts in the storm's track could change impacts either way; confidence is good for a showery Monday afternoon, a near-normal Tuesday and a quiet weekend."
+  "confidence": "Forecasters are increasingly confident a significant storm hits Wednesday into Thursday but have low confidence in exact rain amounts and wind strength because small shifts in the storm's track could change impacts either way; confidence is good for a quiet evening, a near-normal Tuesday and a quiet weekend."
 }

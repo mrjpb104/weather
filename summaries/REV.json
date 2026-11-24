@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "0b6ad491-5001-468a-b8eb-d2a019a13cbf",
-  "afd_issued": "2026-11-23T09:36:00Z",
-  "generated": "2026-11-23T10:25:32Z",
-  "headline": "Dry weather through Tuesday afternoon gives the best Sierra travel window before a weak storm brings light pass-level snow and ridgetop gusts up to 80 mph Tuesday night into Wednesday, while Thanksgiving looks dry and mild and the Mammoth Lakes area should stay dry all week.",
+  "afd_id": "eec9020b-9dd9-49a8-b393-eccfeff52c6c",
+  "afd_issued": "2026-11-23T22:54:00Z",
+  "generated": "2026-11-24T00:24:46Z",
+  "headline": "A weak, fizzling storm brings breezy winds and only light snow north of Lake Tahoe Tuesday night into Wednesday, leaving Mammoth Lakes and the rest of the eastern Sierra south of Tahoe mostly dry, before calm, dry and increasingly mild weather takes over for Thanksgiving and the weekend.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Freezing fog is possible early Monday in northeast California and eastern Sierra valleys, including along I-80 near Truckee, with low visibility and slick roads for the morning commute before the fog clears around 9 to 10 AM. After that, Monday and Monday night are dry and cool under high pressure, including around Mammoth Lakes and the rest of Mono County, with high clouds increasing in the afternoon."
+      "text": "After a cold morning with patches of freezing fog, Monday afternoon and Monday night stay dry around Mammoth Lakes and across the region, with light breezes. Mid- and high-level clouds increase from the afternoon on ahead of a weak approaching storm."
     },
     {
       "title": "Short Term",
-      "text": "Tuesday stays dry through the afternoon, the best window for crossing the Sierra before a weak storm brings snow showers from Lassen County to the Tahoe Basin Tuesday evening into Wednesday morning. Expect up to an inch of snow along the Sierra crest and at pass level, with only a 10 percent chance of 2 to 4 inches on the highest peaks and Donner Pass by midday Wednesday; Truckee and Tahoe have a 10 percent chance of a trace on grass. Mono County, including Mammoth Lakes, and western Nevada should stay dry, sheltered by the mountains. Winds pick up Tuesday afternoon, with southwest gusts of 25 to 35 mph near the Oregon border, 20 to 30 mph in eastern Sierra valleys, and up to 80 mph on ridgetops, making for rough backcountry and lake conditions and bumpy flights into Wednesday morning."
+      "text": "Tuesday is dry and a few degrees milder as high pressure passes through, with highs in the upper 30s to mid 40s for eastern Sierra communities like Mammoth Lakes and northeast California, and mid 40s to low 50s in the western Nevada valleys. A weak storm that looks less impressive with each model run moves through Tuesday night into Wednesday morning: very little or no precipitation is expected south of Lake Tahoe, including Mammoth Lakes, or in western Nevada. North of Tahoe, totals are generally 0.10 inch or less, with the most (0.10–0.15 inch) around Lassen Volcanic National Park and only a trace to 1 inch of snow above 6,500 feet there; western Lassen County has a 10–20 percent chance of light rain or snow by late Tuesday evening. Southwest winds pick up Tuesday afternoon from Tahoe northward, with bumpy flying conditions over the mountains and around Reno into Tuesday night and a 15 percent chance of light snow showers lowering visibility around Truckee and South Lake Tahoe."
     },
     {
       "title": "Long Term",
-      "text": "Thanksgiving Day looks dry and mild under high pressure, aside from a 10 to 20 percent chance of rain near the Oregon border, with highs in the upper 40s and 50s and lows in the 20s and 30s early Friday. Friday and most of Saturday stay dry before another, warmer storm becomes more likely Sunday into Monday, with snow in the mountains and rain in the valleys, which could affect post-holiday travel. Computer models suggest a stormy pattern continuing into next week, but confidence is low that far out."
+      "text": "From late Wednesday into the weekend, high pressure builds over the West, bringing calm, dry weather, with temperatures back to normal by Thanksgiving and above normal into the weekend. Under that high pressure, cold air will get trapped in the valleys each night, with temperature inversions (cold, stagnant air near the ground under warmer air) strengthening into the weekend. Computer models suggest a more active, stormy pattern could set up Sunday into early next week, but rain, mountain snow and wind details are very uncertain."
     }
   ],
   "watch_for": [
-    "Freezing fog and slick roads Monday morning near Truckee and in other eastern Sierra valleys until about 9 to 10 AM.",
-    "Tuesday night into Wednesday morning: up to an inch of snow at Sierra pass level, gusty winds and ridgetop gusts up to 80 mph.",
-    "A warmer storm possible Sunday into Monday that could affect post-holiday travel."
+    "Breezy southwest winds and light snow showers north of Lake Tahoe Tuesday night into Wednesday morning, with a small chance of reduced visibility near Truckee and South Lake Tahoe.",
+    "Strengthening valley inversions (trapped cold, stagnant air) from Thanksgiving into the weekend.",
+    "A possibly stormier pattern Sunday into next week, with rain, mountain snow and wind details still uncertain."
   ],
-  "confidence": "Forecasters are confident the midweek storm will be weak and that Thanksgiving will be dry, and have low confidence in the details of the stormy pattern late this weekend and into next week."
+  "confidence": "Forecasters are confident the midweek storm will be weak and that Thanksgiving through Saturday will be dry and mild, and have low confidence in the details of a possibly stormy pattern starting Sunday."
 }
