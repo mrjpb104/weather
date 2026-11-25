@@ -1,14 +1,14 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "77c9b4d4-aba6-432b-a775-fdb938e039a3",
-  "afd_issued": "2026-11-25T09:05:00Z",
-  "generated": "2026-11-25T10:25:28Z",
+  "afd_id": "ddf3a920-3428-4e94-89a4-e96fbc87a95f",
+  "afd_issued": "2026-11-25T11:21:00Z",
+  "generated": "2026-11-25T12:25:07Z",
   "headline": "Dry, warm and breezy through Friday with gusty north-northeast winds Thursday and highs in the mid 80s in the LA valleys, while very high tides and a big swell bring a significant coastal flooding threat Wednesday and Thursday; light rain is possible Sunday night into Monday and a stronger storm is likely next Tuesday into Wednesday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Glendale and the LA basin, Wednesday and Wednesday night stay dry as a weakening cold front fizzles; only the Central Coast may see a few early-morning showers, with under 0.05 inch. Offshore winds from the north and east build through the day Wednesday in the usual Santa Ana wind spots of LA and Ventura Counties."
+      "text": "Around Glendale and the LA basin, Wednesday and Wednesday night stay dry and clear as a weakening cold front fizzles; only the Central Coast may see a few early-morning showers, with under 0.05 inch. Offshore winds from the north and east build through the day Wednesday in the usual Santa Ana wind spots of LA and Ventura Counties."
     },
     {
       "title": "Short Term",
@@ -25,5 +25,5 @@
     "Gusty north winds Thursday in the LA valleys and mountains; the Wind Advisory may be expanded to the Santa Clarita, San Fernando and Simi Valleys.",
     "The likely Tuesday–Wednesday storm: 1–2+ inches of rain with possible heavy downpours, flooding concerns and thunderstorms."
   ],
-  "confidence": "Forecasters are confident in the dry, warm, windy weather through Friday and the coastal flooding threat; the Sunday night–Monday light rain and the stronger midweek storm are less certain but the latter looks likely."
+  "confidence": "Forecasters describe the dry, warm, windy weather through Friday and the coastal flooding threat with confidence; the Sunday night–Monday light rain and the stronger Tuesday–Wednesday storm are further out and less certain, though the latter is called likely."
 }
