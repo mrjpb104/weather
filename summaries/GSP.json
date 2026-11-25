@@ -1,28 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "c50a3d6f-b907-45ab-be1a-c20d47ec99b8",
-  "afd_issued": "2026-11-25T11:39:00Z",
-  "generated": "2026-11-25T13:25:41Z",
-  "headline": "A strong storm brings widespread rain and frequent 30–45 mph wind gusts to the whole region, including Charlotte, from Wednesday afternoon through Thursday morning under an area-wide Wind Advisory.",
+  "afd_id": "78a65c1b-7d06-46ac-80d8-b4664f345151",
+  "afd_issued": "2026-11-25T18:52:00Z",
+  "generated": "2026-11-25T20:25:36Z",
+  "headline": "Rain and frequent gusts up to about 40–45 mph hit the region including Charlotte tonight into Thanksgiving morning under a Wind Advisory until 10 AM Thursday, though rain totals and flood risk have trended down.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Charlotte and the Piedmont, gusty northeast winds continue under thick clouds Wednesday, and rain is now arriving a bit later than expected, spreading from south to north through the day, becoming widespread by this evening and continuing through tonight. A Wind Advisory for the entire area runs from noon Wednesday to 10 AM Thursday, with frequent 30–45 mph gusts from this afternoon through Thursday morning, peaking near 45 mph in most places and higher above 3,500 feet in the mountains. Those gusts can blow over holiday decorations, tents, canopies and outdoor cooking appliances (keep a fire extinguisher handy) and cause a few power outages. Temperatures are running warmer than forecast and stay above freezing once rain begins, holding steady or rising tonight, so no wintry weather is expected."
+      "text": "Steady rain has already reached metro Charlotte Wednesday afternoon and will spread west and northwest across the region, becoming nearly certain everywhere by midnight; it stays warm enough for all rain, though afternoon temperatures are running cooler than earlier forecast. Northeast winds are already gusting up to 40 mph, and the Wind Advisory continues until 10 AM Thursday, with gusts probably no stronger than 45 mph away from the highest mountain peaks (mountain valleys in the Tennessee-border counties and Buncombe County are left out because the strongest gusts there stay above 3,500 feet). Gusts can blow over holiday decorations, tents, canopies and outdoor cookers (keep a fire extinguisher handy) and cause a few power outages. Expected rain amounts have dropped because the storm's center should track farther east; locally heavy rain is possible mainly along and east of I-77, but the flood risk is low (a Marginal, level 1 of 4, risk), aside from some poor-drainage flooding where leaves clog storm drains."
     },
     {
       "title": "Short Term",
-      "text": "Rain tapers off from southwest to northeast on Thanksgiving Day, with storm totals of 1 to 2 inches across much of the North Carolina Piedmont (including the Charlotte area) and foothills; the flood risk is low, with a Marginal (level 1 of 4) risk of excessive rain over most of the area. Winds ease noticeably Thursday morning, then turn gusty again Thursday afternoon and stay that way through Friday, though likely below advisory strength except possibly on the high mountains. Thursday afternoon temperatures rebound to within a few degrees of normal before turning colder Thursday night. Near the Tennessee border, light rain or snow showers Thursday night may bring a wintry mix, snow or rime ice, with a decent chance continuing there Friday but only minimal accumulation."
+      "text": "On Thanksgiving morning the storm passes east and north, winds drop off substantially for a while and shift to the northwest and west, and clouds start to break late in the day. Gusts return Thursday afternoon and stay frequent through Thursday night and Friday until around sunset, but only at 25 to 35 mph, below advisory level, with no new advisory planned. Thursday evening, rain wrapping around the storm turns to snow showers along the Tennessee border, with an inch or less of snow there while areas east of the mountain crest likely stay dry. Friday is cold, about 10 degrees below normal, feeling like a typical winter day."
     },
     {
       "title": "Long Term",
-      "text": "Drier weather returns Thursday night into Saturday, and temperatures trend warmer over the weekend. A fast-moving cold front may sweep through late Sunday into early Monday with some rain, and it should be warm enough that any precipitation falls only as rain."
+      "text": "High pressure brings a quieter Saturday with temperatures warming back to normal. A strong storm passes well to the northwest across the Midwest and Great Lakes Sunday into Monday morning, sending a weakening cold front through Sunday night or early Monday; rain chances may be somewhat higher than some guidance shows, but amounts should stay under a quarter inch everywhere except southwest North Carolina. Temperatures stay near normal from Monday on."
     }
   ],
   "watch_for": [
-    "Wind gusts of 30–45 mph area-wide from noon Wednesday through 10 AM Thursday — secure decorations, tents and outdoor cookers.",
-    "A narrow band of heavier rain could form west of the storm's track that models may not capture well, locally raising totals.",
-    "Light snow, wintry mix or rime ice near the Tennessee border Thursday night into Friday."
+    "Wind gusts up to 40–45 mph until 10 AM Thursday — secure decorations, tents and outdoor cookers.",
+    "Any westward shift in the storm's track, which could bring heavier rain back into play east of I-77.",
+    "Snow showers near the Tennessee border Thursday evening, with up to an inch possible."
   ],
-  "confidence": "Forecasters are confident in the strong storm and its winds Wednesday into Thursday, less sure about exactly when rain arrives and any localized heavy rain band, and the late-Sunday cold front is still a developing scenario in the long-range guidance."
+  "confidence": "Forecasters say the overall storm scenario is on track and are confident in the winds through Thursday morning, with rain amounts the main uncertainty depending on the storm's exact track; the rest of the period looks relatively benign."
 }
