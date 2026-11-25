@@ -1,28 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "aca13303-ad27-43c7-ada7-8b4809911db0",
-  "afd_issued": "2026-11-24T19:07:00Z",
-  "generated": "2026-11-24T20:26:01Z",
-  "headline": "A significant storm brings widespread rain and frequent 30–35 mph gusts (peaks near 40 mph) around Charlotte from Wednesday afternoon into Thanksgiving morning, strong enough to topple tents and holiday decorations and cause isolated power outages, though rain totals have come down and the flood risk looks low.",
+  "afd_id": "3db1a2da-27e9-45b6-bbe2-0ffe1711435f",
+  "afd_issued": "2026-11-24T23:44:00Z",
+  "generated": "2026-11-25T00:25:48Z",
+  "headline": "A significant storm Wednesday into Thanksgiving brings widespread rain (an inch or less around Charlotte, 1–2 inches along the Blue Ridge Escarpment) and frequent 30–40 mph gusts that can topple tents and holiday decorations, with stronger mountain-ridge gusts of 50 mph or more under a Wind Advisory.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Strong high pressure building in from the north is bringing gusty northeast winds and much drier air on Tuesday, with dry weather around Charlotte today and tonight. Gusts may ease for a while this afternoon and evening, though occasional gusts near 17–21 mph are possible into tonight, and winds may pick up overnight in western parts of the area. Clouds thicken from south to north tonight, and lows drop into the mid to upper 30s across most of the Piedmont, with a few spots near I-40 and mountain valleys near the Blue Ridge Escarpment dipping below freezing."
+      "text": "Tonight clouds thicken from south to north around Charlotte and the Piedmont, with gusty northeast winds as strong high pressure builds down the East Coast. Temperatures fall into the mid to upper 30s across most of the Piedmont, and a few spots near I-40 and in mountain valleys near the Blue Ridge Escarpment could drop below freezing."
     },
     {
       "title": "Short Term",
-      "text": "Cold air wedged against the east side of the mountains dominates Wednesday into Thanksgiving morning while a low-pressure system forms off Florida late Wednesday and tracks north. Rain chances rise from south to north on Wednesday: around Charlotte showers could start as early as 8–9 AM, with steadier rain Wednesday afternoon, and a brief trace of sleet, snow or freezing rain is possible Wednesday morning where it is still cold enough, which could slick only bridges and overpasses. Widespread rain falls Wednesday evening and overnight, tapering off from southwest to northeast on Thanksgiving, with 1–2 inches along the Blue Ridge Escarpment but an inch or less for many Piedmont spots including the Charlotte area; the flood risk is low (the lowest \"marginal\" risk level). Around Charlotte and the Piedmont, frequent 30–35 mph gusts are expected Wednesday afternoon through Thursday morning, peaking near 40 mph, while higher mountain peaks could see 50 mph or more under a Wind Advisory from noon Wednesday to 10 AM Thursday for Avery County and elevations above 3,500 feet in Buncombe, northern Jackson and the counties bordering Tennessee; winds may ease Thursday afternoon as temperatures return to within a few degrees of normal."
+      "text": "Rain chances spread from south to north on Wednesday, mostly spotty and light during the day around Charlotte before steadier rain arrives in the evening; a brief trace of sleet, snow or freezing rain is possible early Wednesday where it's still near freezing, but only bridges and overpasses would likely get slick. In the Piedmont, frequent 30–35 mph gusts (peaking near 40 mph) are expected from Wednesday afternoon through Thursday morning, strong enough to blow over holiday decorations, tents and canopies and possibly cause isolated power outages; secure outdoor cooking appliances and keep a fire extinguisher handy. Rain continues Wednesday night and tapers from southwest to northeast on Thanksgiving, totaling an inch or less in much of the Piedmont and 1–2 inches along the Blue Ridge Escarpment, with a low flood risk (a Marginal, level 1 of 4, risk of excessive rain). In the mountains, a Wind Advisory runs from noon Wednesday to 10 AM Thursday for Avery County and elevations above 3,500 feet in Buncombe, northern Jackson and the counties bordering Tennessee, where ridgetop gusts of 50 mph or more could cause power outages; after a lull and near-normal temperatures Thursday afternoon, gusty winds return Thursday night through Friday, with a slight chance of light snow, wintry mix or rime ice near the Tennessee border Thursday night through Friday night."
     },
     {
       "title": "Long Term",
-      "text": "Gusty winds return Thursday night and continue through Friday as colder air moves in behind the storm, with high-mountain gusts possibly near advisory strength but a lower threat than Wednesday night and Thursday. Light precipitation along the Tennessee border Thursday night could change to a wintry mix, snow or rime ice (frost that forms on trees and surfaces in freezing fog), with a slight chance continuing there through Friday night and any accumulations looking light. Temperatures warm over the weekend, with a small chance of rain around Sunday."
+      "text": "Temperatures trend warmer over the weekend. A fast-moving disturbance could bring a small chance of rain around Sunday, with only rain expected since the wetter scenarios are also the warmer ones."
     }
   ],
   "watch_for": [
-    "Wind gusts of 30–40 mph around Charlotte Wednesday afternoon through Thursday morning: secure tents, canopies and holiday decorations, and keep outdoor cookers (fryers, grills) stable with a fire extinguisher handy.",
-    "A trace of sleet or freezing rain Wednesday morning in the coldest spots, which could slick bridges and overpasses on a big travel day.",
-    "A possible narrow band of heavy rain west of the storm's track that models may not capture well."
+    "Wind gusts of 30–40 mph in the Piedmont and 50+ mph on mountain ridges Wednesday afternoon through Thursday morning; the Wind Advisory could expand to lower elevations.",
+    "A trace of freezing rain, sleet or snow early Wednesday could make bridges and overpasses slick on a busy travel day.",
+    "A narrow band of heavier rain west of the storm's track could locally raise rain totals."
   ],
-  "confidence": "Confidence remains high that the storm hits Wednesday into Thursday, with rain totals trending lower; the storm's exact track (near the coast or farther inland near Raleigh) is still uncertain, the Wednesday-morning wintry threat is low, and confidence is lower on light wintry precipitation near the Tennessee border Thursday night into Friday and on rain chances Sunday."
+  "confidence": "Forecasters are highly confident in the Wednesday–Thursday storm and its gusty winds, less certain about the storm's exact track and rain totals, and the weekend outlook carries only small rain chances."
 }
