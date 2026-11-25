@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "f6cabd43-1029-4284-b58f-c1bb80c9463d",
-  "afd_issued": "2026-11-25T18:22:00Z",
-  "generated": "2026-11-25T19:25:19Z",
-  "headline": "Record King Tides plus a big incoming swell bring moderate to major coastal flooding through Friday, locally extreme at Thursday morning's high tide, while inland it turns warm and gusty for Thanksgiving; showers are possible Sunday night into Monday and a stronger, possibly soaking storm may arrive around next Tuesday and Wednesday.",
+  "afd_id": "d194c752-3aae-430e-ada5-4d440b6ebf41",
+  "afd_issued": "2026-11-25T21:20:00Z",
+  "generated": "2026-11-25T22:25:48Z",
+  "headline": "Record King Tides and a big west swell bring moderate to major coastal flooding through Friday, locally extreme at Thursday morning's high tide, while inland Thanksgiving and Friday turn warm and gusty; after a dry weekend, a stronger, colder storm next Tuesday through Thursday has a good chance of bringing an inch or more of rain and gusty winds.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High clouds from a storm passing to the north spread over the area Wednesday, then clear Wednesday night. Highs stay about the same as Tuesday, mostly in the 70s along the coast and in the valleys, with the mid to upper 70s in inland coastal spots and the western valleys. Northeast winds start picking up around 4 to 7 PM Wednesday below the mountain passes and canyons, with gusts of roughly 30 to 40 mph there continuing through Thursday afternoon."
+      "text": "High clouds cover much of the area Wednesday afternoon, then clear from west to east. Dry winds blowing out from the interior (offshore winds) strengthen, with northeast gusts of roughly 30 to 40 mph starting around 4 to 7 PM Wednesday below the mountain passes and canyons and continuing through Thursday afternoon."
     },
     {
       "title": "Short Term",
-      "text": "High pressure overhead and dry winds blowing out from the interior (offshore flow) bring warming for Thanksgiving and Friday, with northeast to east winds gusting 35 to 45 mph along and below the coastal slopes of the mountains. Thanksgiving highs climb 4 to 8 degrees, reaching the low to mid 80s in inland coastal areas and the western valleys, as much as 12 to 18 degrees above average, with little change Friday. The mountains and high desert warm about another 5 degrees on Friday, and high clouds increase again Friday night."
+      "text": "Thanksgiving and Friday stay dry with weak to locally moderate Santa Ana winds, gusting 35 to 45 mph in the mountains, foothills and passes, with the 45 mph gusts limited to the usual wind-prone spots. These are the warmest days of the week, 5 to 15 degrees above average, with highs west of the mountains (coast and valleys) from the mid to upper 70s up to the mid 80s, warmest on Friday. Saturday stays dry and a bit cooler than Friday, but still 5 to 12 degrees above average."
     },
     {
       "title": "Long Term",
-      "text": "High pressure weakens Saturday and the cooler ocean breeze returns, dropping coast and valley highs 4 to 8 degrees to the mid 70s to around 80, with steady cooling through Tuesday to the mid 60s in the far inland valleys and around 70 at the coast. A fast-moving storm crossing California Sunday brings a chance of showers Sunday night and Monday. A stormier pattern may follow, with a storm around Tuesday and Wednesday that could bring strong winds and heavy rain: from Tuesday morning through Thursday night the chance of 1 inch or more from the coast to the mountains is 75 to 85 percent in Orange and southwestern San Bernardino counties and about 60 percent in southern San Diego County, while the chance of 3 inches or more is 5 to 10 percent near the coast and 25 to 35 percent in the mountains."
+      "text": "Cooling becomes more noticeable early next week as a stormier pattern settles over the West. The first rain chance has been pushed later and now arrives as early as Monday, mostly light, with snow only above about 8,000 feet. A stronger, colder storm Tuesday through possibly Thursday (Dec 1 to 3) could bring more substantial rain and gusty winds from the coast to the deserts: the chance of 1 inch or more is 75 to 85 percent in Orange County, the western Inland Empire, northern San Diego County and the San Bernardino Mountains and 60 to 75 percent elsewhere in and west of the mountains, while the chance of 2 inches or more is 25 to 35 percent for the coast and valleys and 60 to 75 percent in the San Bernardino County mountains (25 to 35 percent chance of 3 inches or more there). Gusts over 35 mph have a 50 to 65 percent chance along the coast and 30 to 50 percent in the valleys, mountains and deserts could see gusts over 50 mph, and snow levels could drop below 7,000 feet."
     }
   ],
   "coast": "The La Jolla tide gauge hit 8.11 feet Wednesday morning, preliminarily breaking the record set October 27, and King Tides continue through Thursday, reaching about 8 feet Thursday morning (running 1.1 to 1.2 feet above normal predictions). Surf of 3 to 5 feet Wednesday morning builds as a long-period west swell (7 to 9 feet every 16 to 18 seconds) arrives late Wednesday afternoon, producing 6 to 8 foot breakers Thursday with 10 to 12 foot sets on exposed west-facing beaches, then 3 to 7 feet Friday; a High Surf Advisory covers San Diego County beaches from 1 PM Wednesday to 4 AM Friday. The record tides plus big surf bring moderate to major coastal flooding, locally extreme at Thursday morning's high tide, under a Coastal Flood Warning for the Orange and San Diego County coasts until 1 PM Friday. Offshore, combined seas of 8 to 12 feet and northwest gusts near 20 knots in the far outer waters Wednesday afternoon bring a Small Craft Advisory for the outer waters from San Mateo Point to the Mexican border (10 to 60 miles out, including San Clemente Island) until 10 AM Thursday, with seas falling below 10 feet by Thursday evening.",
   "watch_for": [
     "Thursday morning's high tide, when locally extreme coastal flooding is expected on top of 6–8 foot surf",
-    "Gusty east winds of 35–45 mph below the mountain passes Thanksgiving and Friday",
-    "Timing, track and rain totals for next Tuesday–Wednesday's possible strong storm"
+    "Santa Ana gusts of 35–45 mph in the foothills and passes Thanksgiving and Friday",
+    "Timing and rain totals for next Tuesday–Thursday's colder storm, which could bring 1–2+ inches and strong winds"
   ],
-  "confidence": "Forecasters present the warm, breezy stretch through Friday and the weekend cooling without major doubts, but confidence is lower in the timing, track and details of next week's storms."
+  "confidence": "Forecasters are confident in the dry, warm, breezy stretch through Saturday, but timing and rain amounts for next week's storms remain uncertain, and the first rain chance has already shifted later."
 }
