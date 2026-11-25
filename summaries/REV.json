@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "1f0432e5-652e-4d1c-855a-f0f97a983929",
-  "afd_issued": "2026-11-24T21:48:00Z",
-  "generated": "2026-11-24T22:25:18Z",
-  "headline": "Dry, warmer weather and good travel conditions around Mammoth Lakes and across the Sierra through Thanksgiving and Saturday, before rain and high-elevation snow return Sunday into Monday and a stronger, colder storm likely brings wintry travel to the Sierra next Tuesday night into Wednesday.",
+  "afd_id": "6a21c05a-c892-44fb-aa1f-b90fc47c2c1b",
+  "afd_issued": "2026-11-25T10:19:00Z",
+  "generated": "2026-11-25T11:26:40Z",
+  "headline": "Dry, mild weather and good travel around Mammoth Lakes and across the Sierra last through Saturday, then rain and high-elevation snow return Sunday into Monday, with a potentially stronger, colder storm bringing winter travel conditions to the Sierra as December begins.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A Pacific storm reaching the northern California coast falls apart as it moves inland, so Mammoth Lakes and the rest of the Sierra stay dry; only northeast California and far northern Washoe County near the Oregon border have a low (10–20 percent) chance of light showers into Wednesday morning. Stronger winds around 10,000 feet may cause bumpy air and turbulence this evening from about 7 PM to midnight. Pockets of freezing fog are possible overnight in the Mono Lake Basin, Martis Valley and Sierra Valley, with dense freezing fog likely around Truckee from about 10 PM tonight to 7 AM Wednesday and patchy shallow fog possible around South Lake Tahoe."
+      "text": "A weakening Pacific storm falls apart as it reaches the Sierra, so Mammoth Lakes and most of the region stay dry; only northeast California north of I-80 could see a few sprinkles or high-elevation flurries through mid-morning, with about a 20 percent chance of a few hundredths of an inch in far western Lassen County. Thick clouds move off to the east Wednesday, allowing a slight warmup with highs in the upper 40s to mid 50s. High thin clouds return Wednesday night, and freezing fog may form again after about midnight around Truckee. No advisories are in effect."
     },
     {
       "title": "Short Term",
-      "text": "A strong area of high pressure builds over the West from Wednesday through Saturday, keeping the region dry with favorable travel conditions for Thanksgiving. Cold air stays trapped in the lower valleys with light winds, bringing more chances for freezing fog in the Mono Lake Basin, Martis Valley and Sierra Valley (including Truckee on Thursday and Friday mornings) and some haze around Reno, Carson City and Minden those mornings. Even so, it warms up compared with the recent cold, with highs in the 50s in both western Nevada and Sierra valleys and lows staying above freezing in warmer valleys and on mid-slopes by the weekend."
+      "text": "High pressure keeps Thanksgiving through Saturday mainly dry with periods of high thin clouds and favorable travel across the Sierra and western Nevada. Patchy freezing fog is likely each morning before 9 AM along I-80 near Truckee and the Martis Valley (60 to 80 percent chance at Truckee), and cold air trapped in the valleys may bring hazy mornings around Reno, Carson City and Minden. Afternoons warm above late-November averages, with highs mainly in the 50s to near 60 in the lower elevations and Sierra communities. Far northeastern California and northwestern Nevada north of Susanville and Gerlach have a 15 to 25 percent chance of light rain showers Friday night."
     },
     {
       "title": "Long Term",
-      "text": "Another round of moisture arrives late Sunday into Monday, with a 50–80 percent chance of rain or snow in the Sierra and northeast California and 20–50 percent in western Nevada. Snow levels stay fairly high, generally near or above 7,000 feet (around 6,500 feet near the Oregon border), but snow could still affect Sierra passes, so travelers heading home at the end of the holiday weekend should be prepared, and stronger ridge-top winds could affect backcountry recreation. A stronger and colder storm is increasingly likely next Tuesday night into Wednesday, with 90 percent of model runs showing at least some rain or snow in the Sierra and western Nevada, rising forecast amounts, and snow levels anywhere from about 4,500 to 6,500 feet, so plan for wintry weather if crossing the Sierra next week."
+      "text": "A more active storm pattern returns Sunday, with rain, higher-elevation snow and gusty winds Sunday into Monday, most likely Sunday afternoon and evening (50 to 90 percent chance in the Sierra and northeast California, 20 to 60 percent in western Nevada). This storm is fairly mild, with snow levels near or above 7,000 to 7,500 feet, but snow could still affect the higher Sierra passes, so allow extra time for travel home after the holiday weekend. More storms are lined up for the first days of December and look likely to bring bigger impacts, with snow levels mostly 5,500 to 6,500 feet and some colder scenarios down to 4,500 to 5,000 feet, so plan for winter driving conditions in the Sierra next week."
     }
   ],
   "watch_for": [
-    "Snow on Sierra passes Sunday night into Monday for travelers returning from the holiday weekend.",
-    "A stronger, colder storm next Tuesday night into Wednesday, with snow levels possibly as low as 4,500 feet.",
-    "Freezing fog in the Mono Lake Basin, Martis Valley and Sierra Valley in the overnight and morning hours."
+    "Snow on the higher Sierra passes Sunday afternoon and evening during return holiday travel",
+    "Timing and amounts for the early-December storms, which could bring lower snow levels",
+    "Morning freezing fog along I-80 near Truckee through Saturday"
   ],
-  "confidence": "Forecasters are confident in dry weather through Saturday, fairly confident in Sunday–Monday's rain and high-elevation snow, and increasingly confident in a stronger storm next Tuesday night into Wednesday, though how low the snow will fall is still uncertain."
+  "confidence": "Confidence is high in dry weather through Saturday and fairly good for the Sunday–Monday storm, but forecast models still disagree on the timing and amounts of the early-December storms."
 }
