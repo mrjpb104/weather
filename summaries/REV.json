@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "6a21c05a-c892-44fb-aa1f-b90fc47c2c1b",
-  "afd_issued": "2026-11-25T10:19:00Z",
-  "generated": "2026-11-25T11:26:40Z",
-  "headline": "Dry, mild weather and good travel around Mammoth Lakes and across the Sierra last through Saturday, then rain and high-elevation snow return Sunday into Monday, with a potentially stronger, colder storm bringing winter travel conditions to the Sierra as December begins.",
+  "afd_id": "94ea2e36-ee3b-4b0e-a882-86e82e5c82dd",
+  "afd_issued": "2026-11-25T22:03:00Z",
+  "generated": "2026-11-25T23:25:10Z",
+  "headline": "Dry, mild weather holds around Mammoth Lakes and across the Sierra through Saturday, then a relatively warm storm brings rain and high-elevation snow to the eastern Sierra Sunday into Monday, with stronger storms likely next week.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A weakening Pacific storm falls apart as it reaches the Sierra, so Mammoth Lakes and most of the region stay dry; only northeast California north of I-80 could see a few sprinkles or high-elevation flurries through mid-morning, with about a 20 percent chance of a few hundredths of an inch in far western Lassen County. Thick clouds move off to the east Wednesday, allowing a slight warmup with highs in the upper 40s to mid 50s. High thin clouds return Wednesday night, and freezing fog may form again after about midnight around Truckee. No advisories are in effect."
+      "text": "The rest of Wednesday stays dry with light winds across the eastern Sierra, including the Mammoth Lakes area, and western Nevada. Skies turn mostly cloudy tonight. Cold air trapped in the lower valleys each morning may lead to poor air circulation and some degraded air quality, and there is a 20 percent chance of freezing fog tonight around Truckee and the Martis Valley. No advisories are in effect."
     },
     {
       "title": "Short Term",
-      "text": "High pressure keeps Thanksgiving through Saturday mainly dry with periods of high thin clouds and favorable travel across the Sierra and western Nevada. Patchy freezing fog is likely each morning before 9 AM along I-80 near Truckee and the Martis Valley (60 to 80 percent chance at Truckee), and cold air trapped in the valleys may bring hazy mornings around Reno, Carson City and Minden. Afternoons warm above late-November averages, with highs mainly in the 50s to near 60 in the lower elevations and Sierra communities. Far northeastern California and northwestern Nevada north of Susanville and Gerlach have a 15 to 25 percent chance of light rain showers Friday night."
+      "text": "Thanksgiving Thursday looks dry with near-average temperatures and clouds increasing through the day. Friday warms to 4 to 8 degrees above average, with highs in the low to mid 50s in Sierra valleys and the upper 50s to lower 60s in western Nevada, under mostly cloudy skies that continue through the weekend. Winds strengthen over the Sierra ridgetops Friday night into Saturday, with gusts of 50 to 60 mph, while morning haze may build in the valleys around Reno, Carson City and Minden."
     },
     {
       "title": "Long Term",
-      "text": "A more active storm pattern returns Sunday, with rain, higher-elevation snow and gusty winds Sunday into Monday, most likely Sunday afternoon and evening (50 to 90 percent chance in the Sierra and northeast California, 20 to 60 percent in western Nevada). This storm is fairly mild, with snow levels near or above 7,000 to 7,500 feet, but snow could still affect the higher Sierra passes, so allow extra time for travel home after the holiday weekend. More storms are lined up for the first days of December and look likely to bring bigger impacts, with snow levels mostly 5,500 to 6,500 feet and some colder scenarios down to 4,500 to 5,000 feet, so plan for winter driving conditions in the Sierra next week."
+      "text": "A second burst of ridgetop wind arrives Sunday morning ahead of the next storm, which brings rain and snow chances to the eastern Sierra starting Sunday afternoon into Monday. This first storm is fairly warm, with snow levels around 7,500 to 8,000 feet Sunday, lowering to near 7,500 feet by Monday morning; passes above 7,500 feet have a 20 percent chance of up to 2 inches of snow, so allow extra time traveling home after the holiday weekend even if roads are only wet or slushy. A more active pattern follows, with a potentially bigger storm Tuesday and Wednesday (snow levels around 5,500 to 6,500 feet) and possibly a colder storm with lower snow levels by next weekend, so plan for winter driving conditions in the Sierra next week."
     }
   ],
   "watch_for": [
-    "Snow on the higher Sierra passes Sunday afternoon and evening during return holiday travel",
-    "Timing and amounts for the early-December storms, which could bring lower snow levels",
-    "Morning freezing fog along I-80 near Truckee through Saturday"
+    "Snow on Sierra passes above 7,500 feet Sunday afternoon into Monday during return holiday travel",
+    "Timing and amounts for the Tuesday–Wednesday storm and a possibly colder storm next weekend",
+    "Ridgetop wind gusts of 50 to 60 mph Friday night into Saturday and again Sunday morning"
   ],
-  "confidence": "Confidence is high in dry weather through Saturday and fairly good for the Sunday–Monday storm, but forecast models still disagree on the timing and amounts of the early-December storms."
+  "confidence": "Confidence is high in dry, mild weather through Saturday and reasonable for the Sunday–Monday storm, but timing and precipitation amounts for next week's storms remain uncertain, though their impacts are expected to exceed the Sunday–Monday system."
 }
