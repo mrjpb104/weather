@@ -1,28 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": null,
-  "afd_issued": "2026-11-25T08:07:00Z",
-  "generated": "2026-11-25T08:25:00Z",
-  "headline": "A strong storm brings widespread rain and damaging wind gusts of 30–45 mph to the whole region from noon Wednesday through Thursday morning, with a Wind Advisory now covering every county including Charlotte.",
+  "afd_id": "c50a3d6f-b907-45ab-be1a-c20d47ec99b8",
+  "afd_issued": "2026-11-25T11:39:00Z",
+  "generated": "2026-11-25T13:25:41Z",
+  "headline": "A strong storm brings widespread rain and frequent 30–45 mph wind gusts to the whole region, including Charlotte, from Wednesday afternoon through Thursday morning under an area-wide Wind Advisory.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Charlotte and the Piedmont, gusty northeast winds continue under thick clouds as rain spreads from south to north, likely arriving sometime mid-morning (roughly 8–11 AM) and becoming widespread by this evening, continuing through tonight. A Wind Advisory for the entire area runs from noon Wednesday to 10 AM Thursday, with frequent 30–45 mph gusts from this afternoon through Thursday morning, peaking near 45 mph in most places and higher above 3,500 feet in the mountains. Those gusts can blow over holiday decorations, tents, canopies and outdoor cooking appliances (keep a fire extinguisher handy) and cause a few power outages. Temperatures stay above freezing once precipitation begins and hold steady or rise tonight, so no wintry weather is expected."
+      "text": "Around Charlotte and the Piedmont, gusty northeast winds continue under thick clouds Wednesday, and rain is now arriving a bit later than expected, spreading from south to north through the day, becoming widespread by this evening and continuing through tonight. A Wind Advisory for the entire area runs from noon Wednesday to 10 AM Thursday, with frequent 30–45 mph gusts from this afternoon through Thursday morning, peaking near 45 mph in most places and higher above 3,500 feet in the mountains. Those gusts can blow over holiday decorations, tents, canopies and outdoor cooking appliances (keep a fire extinguisher handy) and cause a few power outages. Temperatures are running warmer than forecast and stay above freezing once rain begins, holding steady or rising tonight, so no wintry weather is expected."
     },
     {
       "title": "Short Term",
-      "text": "Rain tapers off from southwest to northeast on Thanksgiving Day, with storm totals of 1 to 2 inches across much of the North Carolina Piedmont (including the Charlotte area) and foothills; the flood risk is low, with a Marginal (level 1 of 4) risk of excessive rain over most of the area. Winds ease noticeably Thursday morning, then turn gusty again Thursday afternoon and stay that way through Friday, though likely below advisory strength except possibly on the high mountains. Thursday afternoon temperatures rebound to within a few degrees of normal before turning colder Thursday night. Near the Tennessee border, light rain Thursday night may change to a wintry mix, snow or rime ice, with a decent chance continuing there Friday but only minimal accumulation."
+      "text": "Rain tapers off from southwest to northeast on Thanksgiving Day, with storm totals of 1 to 2 inches across much of the North Carolina Piedmont (including the Charlotte area) and foothills; the flood risk is low, with a Marginal (level 1 of 4) risk of excessive rain over most of the area. Winds ease noticeably Thursday morning, then turn gusty again Thursday afternoon and stay that way through Friday, though likely below advisory strength except possibly on the high mountains. Thursday afternoon temperatures rebound to within a few degrees of normal before turning colder Thursday night. Near the Tennessee border, light rain or snow showers Thursday night may bring a wintry mix, snow or rime ice, with a decent chance continuing there Friday but only minimal accumulation."
     },
     {
       "title": "Long Term",
-      "text": "Temperatures trend warmer over the weekend. A fast-moving cold front may sweep through late Sunday into early Monday with some rain, and it should be warm enough that any precipitation falls only as rain."
+      "text": "Drier weather returns Thursday night into Saturday, and temperatures trend warmer over the weekend. A fast-moving cold front may sweep through late Sunday into early Monday with some rain, and it should be warm enough that any precipitation falls only as rain."
     }
   ],
   "watch_for": [
-    "Wind gusts of 30–45 mph area-wide from noon Wednesday through 10 AM Thursday — secure decorations, tents and outdoor cookers before Thanksgiving preparations.",
+    "Wind gusts of 30–45 mph area-wide from noon Wednesday through 10 AM Thursday — secure decorations, tents and outdoor cookers.",
     "A narrow band of heavier rain could form west of the storm's track that models may not capture well, locally raising totals.",
     "Light snow, wintry mix or rime ice near the Tennessee border Thursday night into Friday."
   ],
-  "confidence": "Forecasters are increasingly confident in the strong storm and its winds Wednesday into Thursday, less sure about the exact rain onset timing and any localized heavy rain band, and the late-Sunday cold front is still a developing scenario in the long-range outlook."
+  "confidence": "Forecasters are confident in the strong storm and its winds Wednesday into Thursday, less sure about exactly when rain arrives and any localized heavy rain band, and the late-Sunday cold front is still a developing scenario in the long-range guidance."
 }
