@@ -1,28 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "0e0a18ba-c035-4a23-8b97-461a2e00e75b",
-  "afd_issued": "2026-11-26T11:18:00Z",
-  "generated": "2026-11-26T12:25:54Z",
-  "headline": "Thanksgiving's strong storm is moving past, with gusts easing and the Wind Advisory around Charlotte ending by 10 AM as rain tapers off, but gusty southwest winds return this afternoon into a chilly Friday before a milder weekend and a cold front bringing rain, now trending heavier, Sunday afternoon into early Monday.",
+  "afd_id": "ec694503-8005-42b8-9050-514fd7c24460",
+  "afd_issued": "2026-11-26T18:56:00Z",
+  "generated": "2026-11-26T20:25:51Z",
+  "headline": "Gusty winds and a chilly Friday follow today's storm, with light snow and a bit of freezing drizzle near the Tennessee border tonight, then a quick warm-up and a fast shot of rain on Sunday evening.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A strong low pressure system moves onshore along the Carolina coast this Thanksgiving morning and lifts north of the Carolinas tonight. Around Charlotte, gusty northeast winds linger through daybreak and can still knock down tents and holiday decorations or cause isolated power outages, but gusts drop off substantially as the storm passes east, and the Wind Advisory expires at 10 AM (it may be canceled early). Rain tapers off later this morning and afternoon with little more heavy rain expected, though leaf-clogged storm drains could cause localized flooding; low clouds and reduced visibility hang on until late afternoon or early evening, and rain may linger near Asheville into the early evening. Winds turn southwest and become gusty again this afternoon and tonight, gusting 25 to 35 mph (below advisory level), while rain wrapping around the storm turns to snow showers along the North Carolina–Tennessee border this evening."
+      "text": "Around Charlotte, low clouds, patchy fog and occasional light rain hang on through the afternoon, then gusty southwest winds take over by late afternoon and help clear out the fog. Gusts of 25 to 35 mph peak this evening into the early overnight, with occasional gusts near 40 mph in parts of the North Carolina Piedmont and the high mountains, enough to blow around loose objects and cause scattered power outages, though just short of Wind Advisory levels. In the mountains, rain or snow becomes likely this evening as colder air arrives, with 1 to 2 inches of snow mostly on the higher peaks of western Graham and Macon Counties and possible slick high-elevation roads; light freezing rain or drizzle is also possible overnight in the North Carolina counties along the Tennessee border, even in the valleys."
     },
     {
       "title": "Short Term",
-      "text": "Snow showers near the Tennessee border tonight into Friday should leave less than an inch at most spots, with isolated 1 to 3 inches possible, while areas east of the mountain crest stay dry. Friday is cool, with highs about 10 degrees below normal, a lingering low gray cloud deck, and frequent southwest gusts of 25 to 35 mph that ease Friday evening. Saturday is dry and quiet as high pressure returns and temperatures warm back to near normal."
+      "text": "Friday stays breezy, with winds slowly easing through the day, and it will be chilly under lingering clouds, with highs about 10 degrees below normal and lows Friday night about 5 degrees below normal. Saturday turns dry, and temperatures climb quickly into the weekend ahead of the next cold front. That fast-moving front brings more gusty winds and rain to everyone Sunday evening, with about 0.1 to 0.33 inch in the eastern half of the area, including the Charlotte region, and 0.25 to 0.5 inch in the western half; brief snow showers are possible on the highest peaks along the Tennessee–North Carolina border late Sunday night."
     },
     {
       "title": "Long Term",
-      "text": "Another strong storm tracks northeast across the Midwest and lower Great Lakes Sunday into Monday morning, pushing a cold front through the area with a brief round of rain Sunday afternoon into early Monday. Rain chances and amounts have trended higher as more moisture is expected ahead of the front, but excessive rainfall looks unlikely. Dry high pressure follows, with temperatures near normal from Monday onward."
+      "text": "Monday through Thursday look dry across the region. Temperatures should stay close to normal, mostly within 2 to 3 degrees of average, after the Sunday front passes."
     }
   ],
   "watch_for": [
-    "Strong gusts until about 10 AM Thursday that can topple tents and decorations or cause isolated outages",
-    "Southwest gusts of 25–35 mph Thursday afternoon through Friday; no new advisory is planned unless forecasts trend stronger",
-    "Rain from Sunday's cold front, with chances and amounts trending higher"
+    "Strong gusts near 40 mph this evening in the NC Piedmont and mountains, with possible scattered power outages",
+    "Slick high-elevation roads and possible light freezing drizzle near the Tennessee border tonight into Friday",
+    "Timing of Sunday evening's fast-moving rain and gusty winds"
   ],
-  "confidence": "Forecasters say Thanksgiving's forecast is mostly unchanged and snow near the Tennessee border should be minimal, while rain chances and amounts for the Sunday cold front have been trending upward."
+  "confidence": "Forecasters are fairly confident in the gusty winds and light mountain snow tonight and in rain for everyone Sunday evening, with dry, near-normal weather expected next week."
 }
