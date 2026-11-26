@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "d5457f8f-f6b2-4d91-ab6f-15838459b3a3",
-  "afd_issued": "2026-11-26T10:04:00Z",
-  "generated": "2026-11-26T11:26:00Z",
-  "headline": "Dry, mild weather and good holiday travel conditions hold around Mammoth Lakes and across the Sierra through Saturday, then rain and high-elevation snow arrive later Sunday, with a stronger storm and lower snow levels Monday night into Tuesday.",
+  "afd_id": "e9f43ac2-c95d-4ef0-90bf-740c6fc81654",
+  "afd_issued": "2026-11-26T20:18:00Z",
+  "generated": "2026-11-26T21:25:17Z",
+  "headline": "Dry, mild weather holds around Mammoth Lakes and across the Sierra through Sunday morning, then a weak storm Sunday night into Monday brings strong ridge winds and high-elevation snow, with a possibly stronger but very uncertain storm Monday night into Tuesday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Thanksgiving stays dry across the eastern Sierra, including the Mammoth Lakes area, and western Nevada, with high pressure overhead and light winds. High and mid-level clouds stream in from the Pacific, and temperatures run warmer than average, with highs in the mid 50s to lower 60s in most areas. Cold air trapped in the valleys each morning may reduce air quality and build haze, and freezing fog is expected around Truckee early this morning and again late tonight. No advisories are in effect."
+      "text": "Thanksgiving stays dry and mild across the eastern Sierra, including the Mammoth Lakes area, and western Nevada, with highs in the 50s areawide under cloudy skies. Fog-prone Sierra valleys may see freezing fog form by morning, though the high clouds may limit how much, so use low beams and take care driving in low visibility. No advisories are in effect."
     },
     {
       "title": "Short Term",
-      "text": "Friday and Saturday stay dry with highs in the mid 50s to lower 60s in most areas, about 5 to 10 degrees above late-November averages. Friday morning is chilly, with lows mainly in the mid 20s to mid 30s, then thicker clouds keep the next two nights milder. A weak disturbance passing to the north brings west wind gusts up to 60 mph on Sierra ridges Friday into Friday night, and a few light showers near the Oregon border Friday night (only a 20 to 35 percent chance of a tenth of an inch north of Cedarville)."
+      "text": "Friday and Saturday stay dry and mild, with highs in the 50s areawide and cloudy skies, and dry weather lasts into Sunday morning. Freezing fog is again possible in Sierra valleys each morning, with about a 20 percent chance around Truckee Friday morning and a better chance Saturday morning. The only exception to the dry weather is a 20 percent or lower chance of light showers near the Oregon border Friday afternoon and evening, and Sierra ridge gusts may pick up Friday but stay under 45 mph."
     },
     {
       "title": "Long Term",
-      "text": "Rain and high-elevation snow return Sunday, now a bit later, with the best chances later Sunday afternoon through late evening and snow levels around 7,500 to 8,000 feet; this first storm is light, with only a 10 to 25 percent chance of 2 inches or more at main pass levels, but allow extra time on Sierra passes heading home from the holiday weekend, and winds pick up on Sierra ridges Sunday and Sunday night. A potentially more impactful storm arrives by late Monday and continues through Tuesday or Tuesday night, with heavier Sierra snow and snow levels dropping to 5,500 to 6,500 feet, though snow amounts vary widely depending on its track. More storms could follow later next week into the first weekend of December, possibly after a 1 to 3 day break, so plan for periods of winter driving conditions in the Sierra next week."
+      "text": "Sierra ridgetop gusts of 45 to 60 mph return Sunday morning, ease during the day, then peak at 60 to 80 mph late Sunday night through Monday morning. A relatively weak low-pressure system Sunday night into Monday brings snow only above about 8,000 feet, with 1 to 4 inches on the highest Sierra peaks, rain lower down of up to 0.4 inch in the Tahoe Basin (locally more along the crest), and just a trace to a couple hundredths of an inch along the Sierra Front and in northeastern California. A colder, potentially stronger storm may arrive late Monday night into Tuesday night, with snow levels above 7,500 feet at first dropping to near 7,000 feet by Tuesday afternoon, but models are split about evenly between a wet and a dry outcome, and recent trends have kept leaning drier."
     }
   ],
   "watch_for": [
-    "Sierra ridge wind gusts up to 60 mph Friday into Friday night",
-    "Snow on Sierra passes later Sunday afternoon and evening during return holiday travel",
-    "Track and snow amounts for the stronger Monday night–Tuesday storm"
+    "Sierra ridgetop gusts of 60 to 80 mph late Sunday night into Monday morning",
+    "Whether the Monday night–Tuesday storm turns wet or mostly misses to the south",
+    "Morning freezing fog in Sierra valleys, especially Saturday"
   ],
-  "confidence": "Confidence is high in dry, mild weather through Saturday; Sunday's light storm is trending later, and snow amounts for the Monday–Tuesday storm and timing of later storms remain uncertain."
+  "confidence": "Confidence is high in dry, mild weather through Sunday morning, moderate for the weak Sunday night–Monday system, and low for the Monday night–Tuesday storm, which is more than five days out with models split on how wet it will be."
 }
