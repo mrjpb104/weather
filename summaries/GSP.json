@@ -1,28 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "9ec02ebe-25b5-4718-a704-9a3a74a74a13",
-  "afd_issued": "2026-11-26T05:53:00Z",
-  "generated": "2026-11-26T07:25:33Z",
-  "headline": "A strong storm brings rain and northeast gusts up to about 40–45 mph around Charlotte and the region early Thanksgiving under a Wind Advisory until 10 AM, then winds pick back up from the southwest Thursday afternoon and a cold, breezy Friday follows before a milder weekend.",
+  "afd_id": "be85375e-2e24-4920-8f17-2f6e975b4e59",
+  "afd_issued": "2026-11-26T07:38:00Z",
+  "generated": "2026-11-26T08:25:08Z",
+  "headline": "Thanksgiving's strong storm is moving past, with the Wind Advisory around Charlotte and the region ending by 10 AM and rain tapering off, but gusty southwest winds return this afternoon into a cold Friday before a milder weekend and a cold front bringing rain, now trending heavier, late Sunday into early Monday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Rain spreads across the region early Thanksgiving morning, staying all rain, and lingers through at least daybreak, possibly into mid-morning east of the mountains including Charlotte. Northeast winds are already gusting up to 40 mph and the Wind Advisory runs until 10 AM; gusts likely top out near 45 mph away from the highest peaks but can blow over holiday decorations, tents, canopies and outdoor cookers (keep a fire extinguisher handy) and cause a few power outages. Winds drop off for a while late morning into early afternoon as the storm passes to the east, then turn southwest and become gusty again Thursday afternoon and night, with low clouds hanging on through early evening. Rain totals have trended down and the flood risk is low (a Marginal, level 1 of 4, risk), aside from some poor-drainage flooding where leaves clog storm drains, mainly along and east of I-77; Thursday evening, rain wrapping around the storm turns to snow showers along the Tennessee border."
+      "text": "A strong low pressure system moves onshore along the Carolina coast this Thanksgiving morning and lifts north tonight. Strong gusts early this morning can still knock down tents and holiday decorations and cause isolated power outages, but winds should ease substantially as the storm passes to the east, and the Wind Advisory expires at 10 AM (it may be canceled early). Rain tapers off later this morning, possibly lingering to mid-morning around Charlotte and east of the mountains, and little more heavy rain is expected, though leaf-clogged storm drains could cause some localized poor-drainage flooding. Winds turn southwest and become gusty again this afternoon and tonight, gusting 25 to 35 mph, below advisory level, while low clouds hang on into early evening and rain wrapping around the storm turns to snow showers along the North Carolina–Tennessee border this evening."
     },
     {
       "title": "Short Term",
-      "text": "Snow showers near the Tennessee border Thursday night into Friday should add up to an inch or less, while areas east of the mountain crest most likely stay dry. Friday is cold, about 10 degrees below normal, feeling like a typical winter day, with frequent west to southwest gusts of 25 to 35 mph lasting until around sunset, below advisory level, and a gray low-cloud deck possibly lingering; breezy conditions continue into Friday night. Saturday turns dry and quieter under high pressure with temperatures warming back to normal."
+      "text": "Snow showers near the Tennessee border tonight into Friday should leave less than an inch at most spots, with isolated 1 to 3 inches possible, while areas east of the mountain crest stay dry. Friday is cool, with highs about 10 degrees below normal, frequent southwest gusts of 25 to 35 mph easing Friday evening, and a gray low-cloud deck possibly lingering. Saturday is dry and quiet as high pressure returns and temperatures warm back to near normal."
     },
     {
       "title": "Long Term",
-      "text": "A strong storm passes well to the northwest across the Midwest and Great Lakes Sunday into Monday morning, sending a weakening cold front through Sunday afternoon into Sunday night or early Monday with a brief shot of rain. Rain chances may run somewhat higher than some guidance shows, but amounts should stay under a quarter inch everywhere except southwest North Carolina. Temperatures stay near normal from Monday onward."
+      "text": "Another strong storm tracks northeast across the Midwest and lower Great Lakes Sunday into Monday morning, pushing a cold front through the area Sunday afternoon into early Monday. Rain chances and amounts have trended higher with more moisture ahead of the front, but excessive rainfall looks unlikely. Dry high pressure follows, with temperatures near normal from Monday onward."
     }
   ],
   "watch_for": [
-    "Wind gusts up to 40–45 mph until 10 AM Thursday — secure decorations, tents and outdoor cookers",
-    "Renewed southwest gusts of 25–35 mph Thursday afternoon through Friday",
-    "Snow showers near the Tennessee border Thursday evening into Friday, with up to an inch possible"
+    "Strong gusts until about 10 AM Thursday that can topple tents and decorations or cause isolated outages",
+    "Southwest gusts of 25–35 mph Thursday afternoon through Friday; an advisory isn't planned unless forecasts trend stronger",
+    "Rain from Sunday's cold front, trending heavier late Sunday into early Monday"
   ],
-  "confidence": "Forecasters say the storm is behaving as expected and the overall scenario is on track, with a low flood risk unless the storm's track shifts west; the weekend and early next week look relatively quiet."
+  "confidence": "Forecasters say Thanksgiving's forecast is mostly unchanged and the snow near the Tennessee border should be minimal, while rain amounts for the Sunday night front are still trending upward."
 }
