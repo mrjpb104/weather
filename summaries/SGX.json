@@ -1,28 +1,28 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "f8c7b23c-f442-4049-b645-7b89f2bfd176",
-  "afd_issued": "2026-11-25T23:23:00Z",
-  "generated": "2026-11-26T00:25:40Z",
-  "headline": "Record King Tides and a big west swell bring moderate to major coastal flooding through Friday morning, locally extreme at Thursday morning's high tide, while Thanksgiving and Friday turn warm, dry and gusty; after the weekend, a stronger, colder storm next Tuesday through Thursday has a good chance of bringing an inch or more of rain and strong winds.",
+  "afd_id": "6f71b566-4c00-4ac2-ac92-11cc494ab0bd",
+  "afd_issued": "2026-11-26T06:04:00Z",
+  "generated": "2026-11-26T07:25:33Z",
+  "headline": "Record King Tides and big surf bring moderate to major coastal flooding Thanksgiving morning (locally extreme at high tide) while Thursday and Friday turn warm, dry and breezy; a colder, stormier pattern next Tuesday through Thursday has a good chance of bringing an inch or more of rain and strong winds.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High clouds over much of the area Wednesday afternoon clear out from west to east this evening, leaving mostly clear skies overnight. Dry northeast winds blowing out from the interior (offshore winds) strengthen tonight, with gusts of roughly 30 to 40 mph along the coastal mountain slopes and through the passes, continuing through Thursday afternoon."
+      "text": "Lingering high clouds clear out from west to east overnight, leaving mostly clear skies through Thanksgiving afternoon. Dry northeast winds blowing out from the interior gust roughly 30 to 40 mph along the coastal mountain slopes and through the passes overnight, easing around noon Thursday, while weak to locally moderate Santa Ana gusts of 35 to 45 mph continue in the mountains, foothills and passes (45 mph mainly in the usual wind-prone spots). Thanksgiving is one of the two warmest days of the week, 5 to 15 degrees above average, with highs west of the mountains from the mid to upper 70s up to the mid 80s; another band of high clouds moves in Thursday night."
     },
     {
       "title": "Short Term",
-      "text": "Thanksgiving and Friday stay dry with weak to locally moderate Santa Ana winds, gusting 35 to 45 mph in the mountains, foothills and passes, with 45 mph gusts limited to the usual wind-prone spots. These are the warmest days of the week, 5 to 15 degrees above average, with highs west of the mountains (coast and valleys) from the mid to upper 70s up to the mid 80s, warmest on Friday. Saturday is a bit cooler than Friday but still 5 to 12 degrees above average."
+      "text": "Friday stays dry with more weak to locally moderate Santa Ana winds and is the warmest day of the week, with coast and valley highs again in the mid 70s to mid 80s. Winds gradually turn back onshore over the weekend, and Saturday is cooler than Friday but still 5 to 12 degrees above average, with the cooling trend continuing into Sunday and next week."
     },
     {
       "title": "Long Term",
       "text": "Cooling becomes more noticeable early next week as a persistent stormy dip in the jet stream settles over the West. The first rain chance has been pushed later and now arrives as early as Monday, mostly light, with snow only above about 8,000 feet. A stronger, colder storm Tuesday through possibly Thursday (Dec 1 to 3) could bring more substantial rain: the chance of 1 inch or more is 75 to 85 percent in Orange County, the western Inland Empire, northern San Diego County and the San Bernardino Mountains and 60 to 75 percent elsewhere in and west of the mountains, while the chance of 2 inches or more is 25 to 35 percent for the coast and valleys and 60 to 75 percent in the San Bernardino County mountains (25 to 35 percent chance of 3 inches or more there). Gusty winds could reach from the coast to the deserts, with a 50 to 65 percent chance of gusts over 35 mph along the coast, 30 to 50 percent in the valleys, possible gusts over 50 mph in the mountains and deserts, and snow levels possibly dropping below 7,000 feet."
     }
   ],
-  "coast": "The La Jolla tide gauge hit 8.11 feet Wednesday morning, preliminarily breaking the record set October 27, and King Tides continue through Thursday, reaching about 8 feet Thursday morning (tides are running 1.1 to 1.2 feet above normal predictions). A long-period west swell (7 to 9 feet every 16 to 18 seconds) arriving now produces 6 to 8 foot breakers tonight into Thursday, with 10 to 12 foot sets on exposed west-facing beaches, easing to 3 to 7 feet Friday; a High Surf Advisory covers San Diego County beaches until 4 AM Friday. The record tides plus big surf bring moderate to major coastal flooding, locally extreme at Thursday morning's high tide, under a Coastal Flood Warning for the Orange and San Diego County coasts until 1 PM Friday. Offshore, combined seas of 8 to 12 feet in the outer waters south of San Clemente Island, plus northwest gusts near 20 knots in the far outer waters this evening, bring a Small Craft Advisory for the waters from San Mateo Point to the Mexican border (10 to 60 miles out, including San Clemente Island) until 10 AM Thursday; seas fall below 8 feet by Thursday evening.",
+  "coast": "The La Jolla tide gauge hit 8.11 feet Wednesday morning, preliminarily breaking the record set October 27, and King Tides continue through Thursday, reaching about 8 feet Thursday morning (tides are running 1.1 to 1.2 feet above normal predictions). A long-period west swell (7 to 9 feet every 16 to 18 seconds) produces 6 to 8 foot breakers Thursday, with 10 to 12 foot sets on exposed west-facing beaches, easing to 3 to 7 feet Friday; a High Surf Advisory covers San Diego County beaches until 4 AM Friday. The record tides plus big surf bring moderate to major coastal flooding, locally extreme at Thursday morning's high tide, under a Coastal Flood Warning for the Orange and San Diego County coasts until 1 PM Friday. Offshore, combined seas of 8 to 11 feet in the outer waters south of San Clemente Island, plus northwest gusts near 20 knots in the far outer waters, bring a Small Craft Advisory for the waters from San Mateo Point to the Mexican border (10 to 60 miles out, including San Clemente Island) until 10 AM Thursday; seas fall below 8 feet by Thursday evening.",
   "watch_for": [
-    "Thursday morning's high tide, when locally extreme coastal flooding is expected on top of 6–8 foot surf",
-    "Santa Ana gusts of 35–45 mph in the foothills and passes Thanksgiving and Friday",
+    "Thanksgiving morning's high tide, when locally extreme coastal flooding is expected on top of 6–8 foot surf",
+    "Santa Ana gusts of 35–45 mph in the foothills and passes Thursday and Friday",
     "Timing and rain totals for next Tuesday–Thursday's colder storm, which could bring 1–2+ inches and strong winds"
   ],
   "confidence": "Forecasters are confident in the dry, warm, breezy stretch through Saturday, but timing and rain amounts for next week's storms remain uncertain, and the first rain chance has already shifted later."
