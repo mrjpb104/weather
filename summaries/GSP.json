@@ -1,18 +1,18 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "ec694503-8005-42b8-9050-514fd7c24460",
-  "afd_issued": "2026-11-26T18:56:00Z",
-  "generated": "2026-11-26T20:25:51Z",
-  "headline": "Gusty winds and a chilly Friday follow today's storm, with light snow and a bit of freezing drizzle near the Tennessee border tonight, then a quick warm-up and a fast shot of rain on Sunday evening.",
+  "afd_id": "067e3fdb-6cb3-4a59-bf34-5c29e6fd4ada",
+  "afd_issued": "2026-11-26T23:47:00Z",
+  "generated": "2026-11-27T00:25:34Z",
+  "headline": "Gusty winds and a chilly, cloudy Friday follow today's storm, with light snow and possible freezing drizzle near the Tennessee border tonight, then a quick warm-up and a fast shot of rain Sunday evening.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Charlotte, low clouds, patchy fog and occasional light rain hang on through the afternoon, then gusty southwest winds take over by late afternoon and help clear out the fog. Gusts of 25 to 35 mph peak this evening into the early overnight, with occasional gusts near 40 mph in parts of the North Carolina Piedmont and the high mountains, enough to blow around loose objects and cause scattered power outages, though just short of Wind Advisory levels. In the mountains, rain or snow becomes likely this evening as colder air arrives, with 1 to 2 inches of snow mostly on the higher peaks of western Graham and Macon Counties and possible slick high-elevation roads; light freezing rain or drizzle is also possible overnight in the North Carolina counties along the Tennessee border, even in the valleys."
+      "text": "Around Charlotte, low clouds hang on tonight as light rain and drizzle taper off, while gusty southwest winds peak this evening into the early overnight at 25 to 35 mph, with occasional gusts near 40 mph in parts of the North Carolina Piedmont and the high mountains. That is enough to blow around loose objects and cause scattered power outages, though just short of Wind Advisory levels. In the mountains, snow becomes likely this evening as colder air arrives, with 1 to 2 inches mostly on the higher elevations of western Graham and Macon Counties and possible slick high-elevation roads; light freezing rain or drizzle is also possible overnight in the North Carolina counties along the Tennessee border, even in the valleys."
     },
     {
       "title": "Short Term",
-      "text": "Friday stays breezy, with winds slowly easing through the day, and it will be chilly under lingering clouds, with highs about 10 degrees below normal and lows Friday night about 5 degrees below normal. Saturday turns dry, and temperatures climb quickly into the weekend ahead of the next cold front. That fast-moving front brings more gusty winds and rain to everyone Sunday evening, with about 0.1 to 0.33 inch in the eastern half of the area, including the Charlotte region, and 0.25 to 0.5 inch in the western half; brief snow showers are possible on the highest peaks along the Tennessee–North Carolina border late Sunday night."
+      "text": "Friday stays breezy and cloudy, with winds slowly easing through the day after another uptick in gusts in the afternoon, and it will be chilly, with highs about 10 degrees below normal and lows Friday night about 5 degrees below normal. Saturday turns dry, and temperatures climb quickly into the weekend ahead of the next cold front. That fast-moving front brings more gusty winds and rain to everyone Sunday afternoon and evening, with about 0.1 to 0.33 inch in the eastern half of the area, including the Charlotte region, and 0.25 to 0.5 inch in the western half; brief snow showers are possible on the highest peaks along the Tennessee–North Carolina border late Sunday night."
     },
     {
       "title": "Long Term",
@@ -20,9 +20,9 @@
     }
   ],
   "watch_for": [
-    "Strong gusts near 40 mph this evening in the NC Piedmont and mountains, with possible scattered power outages",
+    "Gusts near 40 mph this evening in the NC Piedmont and mountains, with possible scattered power outages",
     "Slick high-elevation roads and possible light freezing drizzle near the Tennessee border tonight into Friday",
-    "Timing of Sunday evening's fast-moving rain and gusty winds"
+    "Timing of Sunday's fast-moving rain and gusty winds"
   ],
-  "confidence": "Forecasters are fairly confident in the gusty winds and light mountain snow tonight and in rain for everyone Sunday evening, with dry, near-normal weather expected next week."
+  "confidence": "Forecasters are fairly confident in the gusty winds and light mountain snow tonight, in rain for everyone Sunday evening, and in dry, near-normal weather next week."
 }

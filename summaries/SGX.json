@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "70eb3a9a-9cca-442a-b17c-e340f0dc5ff0",
-  "afd_issued": "2026-11-26T19:49:00Z",
-  "generated": "2026-11-26T20:25:51Z",
-  "headline": "Record King Tides and high surf keep coastal flooding going into Friday during a warm, breezy, dry stretch, before a strong Pacific storm next Tuesday and Wednesday likely brings moderate to heavy rain from the coast to the mountains.",
+  "afd_id": "8e09923f-cd47-4888-b327-b68059ca4bdf",
+  "afd_issued": "2026-11-26T23:41:00Z",
+  "generated": "2026-11-27T00:25:34Z",
+  "headline": "King Tides and elevated surf keep coastal flooding going through Friday morning during a warm, dry stretch, before a strong Pacific storm next Tuesday and Wednesday likely brings moderate to heavy rain from the coast to the mountains.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Thanksgiving is sunny and warm as high pressure builds overhead, with highs 10 to 15 degrees above normal, in the low to mid 80s at the coast and in the valleys (low 60s to low 70s in the mountains). Dry northeast to east winds gusting 25 to 40 mph below the passes and canyons and along the coastal mountain slopes ease through the afternoon, dying down around 2 PM. High clouds drift in this evening into early Friday with lighter winds."
+      "text": "Thanksgiving evening is clear and mild along the coast and in the valleys after a warm afternoon with highs in the low to mid 80s, 10 to 15 degrees above normal. The northeast winds that blew earlier keep weakening into this evening, with only light offshore breezes overnight. Skies stay mostly clear with just a few high clouds."
     },
     {
       "title": "Short Term",
-      "text": "Friday is the warmest day, again in the low to mid 80s at the coast, in the valleys and in the low deserts, with light offshore winds in the morning giving way to a sea breeze in the afternoon. Over the weekend the high pressure breaks down as a storm passes well to the north toward the Pacific Northwest, so the ocean breeze returns and temperatures gradually cool on Saturday and Sunday, though highs stay several degrees above normal. Expect some high clouds at times, with rain chances low until Sunday night."
+      "text": "Friday is the warmest day, with highs again in the low to mid 80s at the coast, in the valleys and in the low deserts, low 60s to low 70s in the mountains and mid 60s to low 70s in the high desert; light offshore winds in the morning give way to an afternoon sea breeze. Over the weekend the high pressure overhead breaks down as a storm passes well to the north into the Pacific Northwest, so the ocean breeze returns and temperatures gradually cool on Saturday and Sunday, though highs stay several degrees above normal. Expect some high clouds at times."
     },
     {
       "title": "Long Term",
-      "text": "Sunday night and Monday bring some subtropical moisture and a 25 to 50 percent chance of showers from the mountains westward, but amounts look light, a tenth of an inch or less. A strong Pacific storm then moves through California Tuesday into Wednesday with gusty southwest to west winds and widespread rain; the moisture plume ranges in the models from too weak to count as an atmospheric river (a long, narrow stream of tropical moisture) to a moderate one. Rough rain totals over the two days run about 1.5 to 3 inches from the mountains westward and 2.5 to 4 inches on the coastal mountain slopes, with snow only above about 6,500 to 8,000 feet and a slight chance of thunderstorms, mainly from the coast into the valleys. Cooling continues inland through Wednesday, and light showers could linger into Thursday (10 to 20 percent chance)."
+      "text": "Sunday night and Monday bring some subtropical moisture and a 25 to 50 percent chance of showers from the mountains westward, but amounts look light, a tenth of an inch or less. A strong Pacific storm then moves through California Tuesday into Wednesday with gusty southwest to west winds and widespread rain; the moisture plume ranges in the models from too weak to count as an atmospheric river (a long, narrow stream of tropical moisture) to a moderate one, which is why rain totals vary so much. Rough two-day totals run about 1.5 to 3 inches from the mountains westward and 2.5 to 4 inches on the coastal mountain slopes, with snow only above about 6,500 to 8,000 feet and a slight chance of thunderstorms, mainly from the coast into the valleys. Cooling spreads inland through Wednesday, and light showers could linger into Thursday (10 to 20 percent chance)."
     }
   ],
-  "coast": "King Tides continue: the La Jolla tide gauge hit 8.11 feet Wednesday morning, preliminarily breaking the all-time record set just last month on October 27, and this morning's high tide peaked just below 8 feet, with tides running 1.1 to 1.2 feet above normal predictions. A long-period west swell (7 to 9 feet every 16 to 18 seconds) is producing 6 to 8 foot breakers with 10 to 12 foot sets on exposed west-facing beaches, easing to 3 to 5 feet with sets to 7 feet on Friday; a High Surf Advisory covers San Diego County beaches until 4 AM Friday. The record tides plus big surf bring moderate to major coastal flooding, locally extreme this morning, under a Coastal Flood Warning for the Orange and San Diego County coasts until 1 PM Friday. Offshore, seas of 7 to 10 feet in the outer waters south of San Clemente Island drop below 8 feet by this evening, and thunderstorms are possible over the coastal waters with next Tuesday–Wednesday's storm.",
+  "coast": "A long-period west swell (7 to 9 feet every 16 to 18 seconds) is producing 6 to 8 foot breakers with local 10 to 12 foot sets on exposed west-facing beaches this evening, under a High Surf Advisory for San Diego County beaches until 4 AM Friday; surf drops to 3 to 5 feet Friday, with sets to 7 feet on Saturday. Friday's 10 AM high tide is forecast around 7.6 to 7.7 feet, with tides running about a foot above normal predictions, so the King Tides plus surf bring moderate coastal flooding Friday morning under a Coastal Flood Warning for the Orange and San Diego County coasts until 1 PM Friday. Minor coastal flooding is possible Saturday morning where surf is elevated (high tide near 7 feet), with tides falling below 7 feet Sunday. Seas drop below 8 feet this evening, with no hazardous boating conditions through the weekend, and thunderstorms are possible over the coastal waters with next Tuesday–Wednesday's storm.",
   "watch_for": [
-    "Coastal flooding with Friday morning's King Tide, under a Coastal Flood Warning until 1 PM Friday",
+    "Moderate coastal flooding with Friday morning's 10 AM King Tide, under a Coastal Flood Warning until 1 PM Friday",
     "Rain totals and timing for next Tuesday–Wednesday's storm, which could range from modest to a moderate atmospheric river",
     "A slight chance of thunderstorms near the coast and valleys with that storm"
   ],
-  "confidence": "Confidence is high in the warm, dry stretch through the weekend, while next Tuesday–Wednesday's storm is leaning toward moderate to heavy rain but its timing, track and rain totals are still uncertain."
+  "confidence": "Confidence is high in the warm, dry stretch through the weekend, while next Tuesday–Wednesday's storm is leaning toward moderate to heavy rain but its track, timing and rain totals are still uncertain."
 }
