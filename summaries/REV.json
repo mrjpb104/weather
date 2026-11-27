@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "804e49a2-65ae-498e-89a3-ba6b2974e615",
-  "afd_issued": "2026-11-27T21:11:00Z",
-  "generated": "2026-11-27T22:25:29Z",
-  "headline": "Mild weather lasts into Sunday, then very strong winds and a pair of storms Sunday through early Wednesday bring Sierra snow with snow levels falling to around 7,000 to 7,500 feet from Tahoe southward along the Sierra, so plan for winter driving above that.",
+  "afd_id": "a0196862-ee74-4090-9ca4-9432de1038f6",
+  "afd_issued": "2026-11-27T22:25:00Z",
+  "generated": "2026-11-27T23:25:11Z",
+  "headline": "Mild weather lasts into Sunday, then very strong winds and a pair of storms Sunday through early Wednesday bring Sierra snow, with snow levels falling to around 7,000 to 7,500 feet from Tahoe south along the Sierra by Monday, so plan for winter driving above that.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday afternoon stays mild and cloudy across the eastern Sierra, including the Mammoth Lakes area, and western Nevada, with highs in the mid 50s to lower 60s. A system brushing by to the north brings a 20 to 30 percent chance of showers along the Oregon border this evening and kicks up Sierra winds, with gusts of 55 to 65 mph this evening into Saturday morning."
+      "text": "Friday stays mild and cloudy across the eastern Sierra, including the Mammoth Lakes area, and western Nevada, with temperatures in the mid 50s to lower 60s. A system brushing past to the north brings a 20 to 30 percent chance of showers along the Oregon border this evening into early Saturday morning, and it stirs up Sierra winds, with gusts of 55 to 65 mph this evening into Saturday morning."
     },
     {
       "title": "Short Term",
-      "text": "Saturday stays mild with highs in the mid 50s to lower 60s, though Sunday cools in northeast California and the northern Sierra. Strong winds arrive Sunday morning and last into Monday morning, with Sierra ridge gusts over 80 mph and valley gusts of 40 to 45 mph, and Lake Wind Advisories for choppy water on Lake Tahoe and Pyramid Lake. Rain and snow reach the Sierra midday Sunday with snow only above 8,000 to 8,500 feet at first; snow levels fall Sunday night into Monday to 7,000 to 7,500 feet for the Tahoe Basin and south along the Sierra (as low as 6,500 feet in northeast California), while western Nevada gets little from this first wave. Amounts are lighter than recent storms, but drivers above the snow level should expect winter conditions and have vehicles winter-ready."
+      "text": "Saturday stays mild with temperatures in the mid 50s to lower 60s, though Sunday turns cooler in northeast California and the northern Sierra. Strong winds arrive Sunday morning and last into Monday morning, with Sierra ridge gusts over 80 mph, valley gusts of 40 to 45 mph, and Lake Wind Advisories for Lake Tahoe and Pyramid Lake. Rain and snow reach the Sierra midday Sunday with snow only above 8,000 to 8,500 feet at first, and a small (15 percent) chance of lightning around Truckee and Tahoe; snow levels fall Sunday night into Monday to 7,000 to 7,500 feet for the Tahoe Basin and south along the Sierra (as low as 6,500 feet in northeast California), while western Nevada gets little from this first wave. Amounts will be lighter than recent storms, but anyone traveling above the snow level should expect winter driving and have their vehicle winter-ready."
     },
     {
       "title": "Long Term",
-      "text": "A second, reinforcing storm drops in from the north Pacific Monday night into Tuesday, lowering snow levels to 5,000 to 5,500 feet in northeast California and around 6,000 to 6,500 feet in the Tahoe Basin, with precipitation lingering into early Wednesday. Snow stays on the lighter side: up to 18 inches on the highest Sierra peaks, 6 to 10 inches on Mt. Rose and 1 to 3 inches at Virginia City, with only slushy accumulations on cars and elevated surfaces at Lake Tahoe level. Latest guidance steers the storm's center toward the southern end of the Sierra, which would limit moisture from Tahoe northward; forecasters are holding off on any storms beyond Tuesday because computer models disagree on timing, position and strength."
+      "text": "A second, reinforcing storm drops in from the north Pacific by Tuesday morning, lowering snow levels to 5,000 to 5,500 feet in northeast California and around 6,000 to 6,500 feet in the Tahoe Basin, with rain and snow lingering into early Wednesday. Snow stays on the lighter side: up to 18 inches on the highest Sierra peaks, 6 to 10 inches on Mt. Rose and 1 to 3 inches at Virginia City, with only slushy accumulation on cars and raised walkways at Lake Tahoe level and wet roads. The latest computer models steer the storm's center toward the southern end of the Sierra, which would limit moisture from Tahoe northward; forecasters are holding off on any storms beyond Tuesday because the models disagree on timing, position and strength."
     }
   ],
   "watch_for": [
-    "Sierra ridge gusts over 80 mph and valley gusts of 40 to 45 mph Sunday into Monday morning",
+    "Sierra ridge gusts over 80 mph and valley gusts of 40 to 45 mph Sunday into Monday morning, with Lake Wind Advisories on Tahoe and Pyramid Lake",
     "Falling snow levels and winter driving in the Sierra Sunday night through Tuesday",
     "Where Tuesday's storm center tracks, which affects how much falls from Tahoe northward"
   ],
-  "confidence": "Confidence is good through the weekend and is growing for the Tuesday storm, but forecasters are reserving judgment on anything after Tuesday because models disagree."
+  "confidence": "Confidence is good through the weekend and growing for the Tuesday storm, but forecasters are reserving judgment on anything after Tuesday because the models disagree."
 }
