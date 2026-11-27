@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "bad9497b-d8b2-401c-b743-7032fa791afa",
-  "afd_issued": "2026-11-27T17:43:00Z",
-  "generated": "2026-11-27T19:25:49Z",
-  "headline": "Friday is the warmest day of the stretch, with highs around 80 at the coast and in the 80s inland, before a cooling trend leads into a strong Pacific storm Tuesday and Wednesday that has a better than 90 percent chance of bringing 1 inch or more of rain from the coast to the mountains, along with strong winds and possible thunderstorms.",
+  "afd_id": "940717bd-e752-476b-a76c-de449a7960e8",
+  "afd_issued": "2026-11-27T21:22:00Z",
+  "generated": "2026-11-27T22:25:29Z",
+  "headline": "Friday is the last very warm day before a cooling, dry weekend, and then a strengthening storm fed by a weak to moderate atmospheric river (a long plume of Pacific moisture) is increasingly likely to bring heavy rain, wind, possible thunderstorms and flash-flood risk Tuesday into Wednesday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "High pressure overhead keeps the warming going Friday, with highs 12 to 18 degrees above average from the coast to the coastal mountain slopes: around 80 near the coast and in the 80s in the valleys and inland coastal areas. The lower deserts also reach the 80s, and the mountains run from the lower 60s to lower 80s. High clouds move in Friday evening, which should keep low coastal clouds from becoming widespread overnight, though patchy low clouds are still possible (about a 40 percent chance near San Diego)."
+      "text": "High pressure overhead gives coastal and valley areas, including Carlsbad, one last very warm, dry day Friday under mostly clear skies. High clouds thicken Friday evening, which should keep low coastal clouds from becoming widespread overnight, though patchy low clouds are possible (about a 40 percent chance near San Diego and 25 percent near Santa Ana late tonight)."
     },
     {
       "title": "Short Term",
-      "text": "Over the weekend the high pressure weakens and ocean breezes return and strengthen, so temperatures cool Saturday and Sunday while staying above average. By Sunday, highs at the coast and in the valleys are mostly in the 70s, around 80 in the lower deserts, and in the lower 50s to lower 70s in the mountains. High clouds Saturday morning thin out Saturday afternoon into Sunday."
+      "text": "Saturday brings more high clouds and cooling as the high pressure weakens, mainly in the western valleys, where highs drop into the 70s to near 80. Cooling spreads inland Sunday with stronger ocean breezes and breezier conditions in the mountains and deserts, where mountain highs stay in the 50s and 60s. Light showers become possible late Sunday night into Monday morning, but most areas from the coast to the coastal mountain slopes get about a quarter inch or less, and temperatures cool to within about 5 degrees of normal."
     },
     {
       "title": "Long Term",
-      "text": "Clouds increase Sunday night and Monday with a chance of showers late Sunday night and Monday, though the chance of a quarter inch or more of rain through Monday afternoon stays below 25 percent. Rain chances rise Monday night ahead of a strong Pacific storm, with the biggest impacts currently timed for around Tuesday morning, bringing heavy rain, strong winds and a chance of thunderstorms. Through Wednesday night the chance of 1 inch or more of rain is above 90 percent from the coast to the mountains; the chance of 3 inches or more is 40 to 50 percent in far northern San Diego County (including the Carlsbad area) and 25 to 35 percent in far southern San Diego County, and in Orange and southwestern San Bernardino Counties it ranges from 35 to 45 percent near the coast to 60 to 70 percent in the mountains. Snow levels stay mostly above 8,000 feet through Tuesday, and rain continues Tuesday night into Wednesday before tapering off Wednesday night and Thursday as the storm moves farther inland and east."
+      "text": "Heavier rain arrives late Monday night or Tuesday morning as a deepening storm pulls in a weak to locally moderate atmospheric river, sweeping northwest to southeast Tuesday and ending sometime Wednesday morning or afternoon. Early estimates are 1 inch or more and locally near 3 inches west of the mountains (highest in the LA basin), around half an inch in the lower deserts with some spots over an inch, and higher totals in the high desert; thunderstorms are more likely than usual, raising the risk of flash flooding, and strong winds are expected, most impactful near the coast though speeds are uncertain. Snow levels start above 8,000 feet Tuesday morning and fall to around 6,000 feet, bringing a chance of snow to the San Bernardino Mountain villages. After a brief dry break later Wednesday into early Thursday, a weak low pressure system may bring more cool, showery weather late next week."
     }
   ],
-  "coast": "Friday's 10 AM King Tide peaks around 7.6 to 7.7 feet, running about a foot above normal predictions, and combined with elevated surf it brings moderate coastal flooding Friday morning under a Coastal Flood Warning for the Orange and San Diego County coasts until 1 PM Friday. A long-period west swell is producing 3 to 5 foot breakers with local sets to 6 feet on exposed west-facing beaches Friday, building Saturday to 4 to 7 feet with sets to 8 feet on exposed west-facing beaches and near piers, highest in the morning and early afternoon; a Beach Hazards Statement runs from 1 PM Friday through Saturday afternoon. Saturday's high tide near 7 feet brings minor to locally moderate coastal flooding Saturday morning, and high tides drop below 7 feet Sunday. No hazardous boating conditions are expected through Monday, but Tuesday's storm brings southwest winds with widespread gusts of 30 to 35 knots (about 35 to 40 mph) Tuesday morning through Wednesday morning, steep, choppy high seas, a 40 to 50 percent chance of storm-force gusts Tuesday morning and afternoon, and high surf.",
+  "coast": "High tides keep dropping this weekend, to around 7 feet Saturday and below 7 feet Sunday, running about a foot above normal predictions; Saturday morning's high tide plus elevated surf brings minor to locally moderate coastal flooding. A long-period west swell produces 3 to 5 foot breakers with sets to 6 feet on exposed west-facing beaches Friday, building Saturday to 4 to 7 feet with sets to 8 feet on exposed west-facing beaches and near piers, highest in the morning and early afternoon, under a Beach Hazards Statement for the Orange and San Diego County coasts through Saturday afternoon. No hazardous boating conditions are expected through Monday, but southwest winds build Tuesday with widespread gusts of 30 to 35 knots (about 35 to 40 mph) Tuesday morning through Wednesday morning, steep, choppy high seas, and a 40 to 50 percent chance of storm-force gusts Tuesday morning and afternoon.",
   "watch_for": [
-    "Moderate coastal flooding around Friday's 10 AM King Tide (Coastal Flood Warning until 1 PM), and minor to locally moderate flooding again Saturday morning",
-    "Timing and rain totals for the Tuesday–Wednesday storm, with a 40 to 50 percent chance of 3 inches or more in northern San Diego County",
-    "Strong winds and a chance of thunderstorms with that storm on Tuesday"
+    "Rain totals and thunderstorm/flash-flood risk with Tuesday–Wednesday's storm, which could still shift in track and strength",
+    "Strong winds Tuesday, especially near the coast",
+    "Minor to locally moderate coastal flooding and big surf Saturday morning"
   ],
-  "confidence": "Forecasters are confident in the warm, dry weather through the weekend and give a better than 90 percent chance that the Tuesday–Wednesday storm brings at least an inch of rain, but its exact timing could still shift and whether totals reach 3 inches or more remains uncertain."
+  "confidence": "Forecasters are confident in the dry, cooling weekend and unusually confident this far out in the timing of the Tuesday–Wednesday storm, but rain totals, wind speeds and impacts are still uncertain, as is the pattern late next week."
 }

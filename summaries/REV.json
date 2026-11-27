@@ -1,28 +1,28 @@
 {
   "office": "REV",
   "office_name": "Reno",
-  "afd_id": "7aaea18b-7831-4a41-915b-798e0a25a366",
-  "afd_issued": "2026-11-27T09:50:00Z",
-  "generated": "2026-11-27T11:26:00Z",
-  "headline": "Mild, dry weather holds across the eastern Sierra, including the Mammoth Lakes area, through Sunday morning, then a windy storm Sunday evening brings rain and high-elevation snow, followed by a second storm Monday night into Tuesday whose track is still very uncertain.",
+  "afd_id": "804e49a2-65ae-498e-89a3-ba6b2974e615",
+  "afd_issued": "2026-11-27T21:11:00Z",
+  "generated": "2026-11-27T22:25:29Z",
+  "headline": "Mild weather lasts into Sunday, then very strong winds and a pair of storms Sunday through early Wednesday bring Sierra snow with snow levels falling to around 7,000 to 7,500 feet from Tahoe southward along the Sierra, so plan for winter driving above that.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday stays mild and dry across the eastern Sierra, including the Mammoth Lakes area, and western Nevada, with highs above late-November averages, mainly mid 50s to lower 60s, under thickening high and mid-level clouds. Patchy freezing fog around Truckee clears by about 7 to 8 AM, and valley temperature inversions may slightly reduce visibility this morning. West winds pick up on Sierra ridges later today and especially tonight, gusting 55 to 65 mph, while there's only a 20 percent or lower chance of light showers near the Oregon border tonight."
+      "text": "Friday afternoon stays mild and cloudy across the eastern Sierra, including the Mammoth Lakes area, and western Nevada, with highs in the mid 50s to lower 60s. A system brushing by to the north brings a 20 to 30 percent chance of showers along the Oregon border this evening and kicks up Sierra winds, with gusts of 55 to 65 mph this evening into Saturday morning."
     },
     {
       "title": "Short Term",
-      "text": "Saturday stays dry and mild with highs in the mid 50s to lower 60s, and the chance of freezing fog drops below 30 percent Saturday morning. Gusty winds return to higher elevations Saturday night ahead of the next storm, and Sunday cools 5 to 10 degrees in the Sierra and northeast California. Winds peak late Sunday afternoon through Sunday night and mix down to lower elevations: Sierra ridge gusts top 80 mph, southwest gusts reach 30 to 40 mph in valleys, with a 30 to 60 percent chance of gusts above 40 mph near the US-395/I-580 corridor, and Lake Tahoe turns choppy. Snow levels above 8,000 to 8,500 feet limit snow to the higher peaks around Tahoe (1 to 4 inches) and maybe Mt. Rose Summit (up to 2 inches), while a short burst of heavier rain, with a 15 to 20 percent chance of thunder, targets western Lassen County south to the Tahoe Basin Sunday evening; holiday travelers should expect wet, windy roads with ponding water, and most of western Nevada sees only brief showers Sunday evening."
+      "text": "Saturday stays mild with highs in the mid 50s to lower 60s, though Sunday cools in northeast California and the northern Sierra. Strong winds arrive Sunday morning and last into Monday morning, with Sierra ridge gusts over 80 mph and valley gusts of 40 to 45 mph, and Lake Wind Advisories for choppy water on Lake Tahoe and Pyramid Lake. Rain and snow reach the Sierra midday Sunday with snow only above 8,000 to 8,500 feet at first; snow levels fall Sunday night into Monday to 7,000 to 7,500 feet for the Tahoe Basin and south along the Sierra (as low as 6,500 feet in northeast California), while western Nevada gets little from this first wave. Amounts are lighter than recent storms, but drivers above the snow level should expect winter conditions and have vehicles winter-ready."
     },
     {
       "title": "Long Term",
-      "text": "After a short break Monday during the day, the next storm brings rising rain and mountain snow chances by late Monday afternoon or evening, continuing Monday night, with rain reaching farther into western Nevada than Sunday's storm and Sierra snow levels mainly 7,000 to 7,500 feet. The main storm center follows Tuesday, but its track is uncertain, ranging from a decent hit for the Sierra to a nearly complete miss, especially from Tahoe northward, if it drops farther south across California. Forecasters note that recent storms since the Nov. 18–20 storm have underperformed or fallen apart; beyond Tuesday, more storms are possible through the first weekend of December, with the chance of a 2 to 3 day break between them."
+      "text": "A second, reinforcing storm drops in from the north Pacific Monday night into Tuesday, lowering snow levels to 5,000 to 5,500 feet in northeast California and around 6,000 to 6,500 feet in the Tahoe Basin, with precipitation lingering into early Wednesday. Snow stays on the lighter side: up to 18 inches on the highest Sierra peaks, 6 to 10 inches on Mt. Rose and 1 to 3 inches at Virginia City, with only slushy accumulations on cars and elevated surfaces at Lake Tahoe level. Latest guidance steers the storm's center toward the southern end of the Sierra, which would limit moisture from Tahoe northward; forecasters are holding off on any storms beyond Tuesday because computer models disagree on timing, position and strength."
     }
   ],
   "watch_for": [
-    "Sierra ridge gusts over 80 mph and valley gusts above 40 mph near US-395/I-580 late Sunday into Sunday night",
-    "Wet, windy roads for Sunday evening holiday travel in the Sierra and northeast California",
-    "Whether Tuesday's storm hits the Sierra or mostly misses to the south"
+    "Sierra ridge gusts over 80 mph and valley gusts of 40 to 45 mph Sunday into Monday morning",
+    "Falling snow levels and winter driving in the Sierra Sunday night through Tuesday",
+    "Where Tuesday's storm center tracks, which affects how much falls from Tahoe northward"
   ],
-  "confidence": "Confidence is high in mild, dry weather through Sunday morning and in a windy, wet Sunday evening, but lower for Tuesday's storm, whose track ranges from a decent Sierra hit to a near miss."
+  "confidence": "Confidence is good through the weekend and is growing for the Tuesday storm, but forecasters are reserving judgment on anything after Tuesday because models disagree."
 }
