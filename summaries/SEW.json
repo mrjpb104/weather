@@ -1,29 +1,29 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": "484c2bab-7c56-4291-8d1e-4f416ee472c3",
-  "afd_issued": "2026-11-27T03:31:00Z",
-  "generated": "2026-11-27T04:25:07Z",
-  "headline": "Showers fade tonight and a weak system brings light rain Friday before a mostly dry Saturday, but high-tide coastal flooding remains a threat into the weekend and an unsettled, uncertain pattern returns next week.",
+  "afd_id": "23c773bd-90b8-49f9-ad94-e0a5637eeb7f",
+  "afd_issued": "2026-11-27T09:51:00Z",
+  "generated": "2026-11-27T11:26:00Z",
+  "headline": "A weak system brings light rain Friday and a short dry break Saturday, but a Sunday night–Monday storm could bring strong winds if it comes ashore over Washington, and its track is still very uncertain.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Lingering light showers are possible this Thursday evening across the lowlands and Cascades, including a band of showers over Puget Sound where winds from the north and south meet, before tapering off overnight. Winds stay breezy this evening with gusts to about 20 mph, then gradually ease. In the mountains, a Winter Storm Warning continues until 4 AM Friday for the Whatcom and Skagit County Cascades, with another 6 inches of snow above 4,000 feet."
+      "text": "Friday starts much quieter than Thanksgiving, with just a few spotty showers and lighter winds. Light rain spreads north into western Washington from a stalled front over Oregon, arriving roughly 6 to 11 AM across the region and around 10 AM to noon in the Seattle area, and it will be much lighter than Thanksgiving morning's rain, with occasional heavier showers. Cooler air means some light snow in the Cascade passes, but not enough for any advisories, and winds ease through the day. A brief dry spell begins late tonight."
     },
     {
       "title": "Short Term",
-      "text": "A weak disturbance brings another round of light rain to the lowlands starting Friday morning and continuing into the afternoon, with light snow in the mountains, generally 1 to 2 inches over Snoqualmie and Stevens Passes. Conditions dry out Friday evening as high pressure builds in, and Saturday should be mostly dry. The high moves east Saturday night, opening the door to more rain as the next system approaches. After the recent strong storm dropped 3 to 6 inches of rain on the coast and 9 to 11 inches in the Olympic Mountains, the Skokomish River peaked just below major flood stage Thursday afternoon and should fall below flood stage by late Friday."
+      "text": "A weak area of high pressure slides across the region late Friday night into Saturday for a short break from the recent stormy weather. A new system develops offshore Sunday and spreads rain inland across western Washington during the day. Parts of western Washington will likely turn windy by Sunday night, but how windy depends on the storm's path, which computer models have not settled on."
     },
     {
       "title": "Long Term",
-      "text": "The break is brief: a disturbance offshore Sunday could spread some rain across the region, and another low pressure system is on track for Monday, though computer models disagree on its path (the European model brings it ashore over Washington, while the American GFS model takes it north into British Columbia). Another dry break is favored Wednesday as high pressure builds back in. None of next week's systems look especially strong, but the extended forecast remains fairly uncertain, and the Skokomish River could rise again with more rain."
+      "text": "The track of the low pressure system Sunday night into Monday is the big question for wind: model outcomes range from a weakening storm heading into northern Vancouver Island to a concerning European model run showing a strong storm making landfall over Grays Harbor County early Monday morning and moving northeast across western Washington. By the middle of next week the storm track shifts south into California, favoring somewhat quieter weather here, though not entirely dry as systems heading into British Columbia clip the area. The Skokomish River should drop below flood stage tonight, but it could rise again next week with more rain."
     }
   ],
-  "coast": "Astronomical tides peaked Thursday, but coastal flooding remains a threat into the weekend, with the worst expected along the north interior shorelines and lesser impacts elsewhere; more coastal flooding is possible next week with high tides. A Coastal Flood Warning runs 5 to 11 AM Friday for the San Juan Islands, and a Coastal Flood Advisory covers the same hours for Puget Sound shorelines from Olympia to western Whatcom County, including Seattle, Everett, eastern Kitsap County, Island County and Hood Canal. A separate Coastal Flood Advisory runs 11 AM to 7 PM Friday for the northern Washington coast and the Grays Harbor County coast. On the water, Small Craft Advisories end at 10 PM tonight for Puget Sound, Hood Canal and the central and east Strait of Juan de Fuca, and at 4 PM Friday for the west entrance of the Strait, the Grays Harbor bar and the coastal waters, where seas should drop below 10 feet by midday Friday. High pressure eases winds and seas over the weekend except in the Strait of Juan de Fuca, where a westerly surge of wind is likely; the next significant storm Monday into Tuesday will likely bring new wind headlines, with seas possibly building to 15 to 20 feet by early Tuesday before calmer conditions midweek.",
+  "coast": "Coastal flooding remains a threat into the weekend, with the worst expected along the north interior shorelines and lesser impacts elsewhere, and more coastal flooding is possible next week with high tides. A Coastal Flood Warning runs 5 to 11 AM Friday for the San Juan Islands, and a Coastal Flood Advisory covers the same hours for Puget Sound and Hood Canal shorelines from Olympia to western Whatcom County, including Seattle, Everett, eastern Kitsap County and Island County. A separate Coastal Flood Advisory runs 11 AM to 7 PM Friday for the northern Washington coast and the Grays Harbor County coast. On the water, Small Craft Advisories continue until 4 PM Friday for the coastal waters, the Grays Harbor bar and the west entrance of the Strait of Juan de Fuca, mainly for seas of 10 to 15 feet that drop below 10 feet by Friday evening and to 4 to 6 feet over the weekend. Winds and seas ease over the weekend except in the Strait of Juan de Fuca, where a westerly push of wind is likely; Monday into Tuesday's storm will bring rising winds and seas building to 15 to 18 feet, with wind strength depending on its exact track.",
   "watch_for": [
+    "The track of the Sunday night–Monday storm, which could bring strong winds if it comes ashore over Grays Harbor County",
     "Coastal flooding at Friday's high tides: 5 to 11 AM around the San Juans and Puget Sound shorelines, and 11 AM to 7 PM on the outer coast",
-    "The path of Monday's low pressure system, which models still disagree on",
     "Possible renewed rises on the Skokomish River next week"
   ],
-  "confidence": "Forecasters say the near-term forecast is on track for fading showers tonight, light rain Friday and a mostly dry Saturday, but confidence is low from Sunday into next week because models disagree on the track of the next systems."
+  "confidence": "Confidence is good in light rain Friday and a mostly dry Saturday, but low for Sunday night into Monday because models disagree on the track and strength of the next storm, with somewhat quieter weather favored by midweek."
 }
