@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": null,
-  "afd_issued": "2026-11-27T17:37:00Z",
-  "generated": "2026-11-27T18:25:59Z",
-  "headline": "Friday's coastal flooding winds down this afternoon after one more minor round along western Long Island Sound, then a breezy, showery Friday gives way to a quiet weekend before about a half inch of rain Sunday night into early Monday.",
+  "afd_id": "c7b9dd31-4cd3-4d37-bf9d-c3e402cd7637",
+  "afd_issued": "2026-11-27T20:12:00Z",
+  "generated": "2026-11-27T21:25:22Z",
+  "headline": "A breezy, seasonable weekend around New York City gives way to a fast-moving storm late Sunday night into Monday morning, bringing up to a half inch of rain and west wind gusts of 30 to 40 mph on Monday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday brings light rain and scattered showers around New York City as a storm passes well to the northwest through northern New York, with the best chances north and west of the city and a few showers possible this afternoon into early evening. Southwest winds gust 20 to 30 mph, strongest in the city and near the coast. Tonight winds turn more westerly and ease a bit, though gusts around 20 to 25 mph are still possible in the city, and skies are most likely to clear this evening and overnight."
+      "text": "A band of showers sweeps west to east across the city and surrounding area Friday afternoon into early evening as an upper-level storm passes to the north and west. Southwest winds stay gusty, about 20 to 30 mph and strongest near the coast, turning more westerly overnight. Expect plenty of clouds with some breaks tonight, and the wind and clouds keep it mild for late November, with lows mainly around 40, about 5 to 8 degrees above normal."
     },
     {
       "title": "Short Term",
-      "text": "Saturday brings west winds gusting about 20 to 30 mph from mid-morning, possibly with some low clouds in the afternoon, before winds ease Saturday evening and night. Sunday looks dry and quiet. Rain returns Sunday night, most likely after midnight, as low pressure tracks from the eastern Great Lakes into northern New England, possibly with a second, smaller low crossing the area; expect about a half inch, not enough to cause flooding, with a slight chance of thunder and south winds gusting about 25 to 35 mph late Sunday night."
+      "text": "Saturday stays breezy with west wind gusts of 20 to 30 mph (strongest near the coast during the day), plenty of clouds with breaks, and highs in the lower 50s, slightly above normal; skies clear late Saturday afternoon into the evening as winds ease. Sunday is a bit warmer and less windy under high pressure. A strengthening storm passing to the north then drags a cold front through late Sunday night into Monday morning, bringing a period of moderate rain totaling a half inch or less, with most of it over by Monday afternoon. South winds pick up Sunday night and swing to the west on Monday with gusts of 30 to 40 mph, possibly reaching marginal Wind Advisory levels."
     },
     {
       "title": "Long Term",
-      "text": "Rain may linger east of the city after sunrise Monday, but conditions improve through the day as winds swing around to the west and gust about 30 to 40 mph. Winds die down Monday night, and Tuesday and Wednesday look quiet. The discussion gives no temperature details."
+      "text": "Winds gradually die down Monday night. Tuesday and Wednesday look quiet and dry. The discussion gives no temperature details for midweek."
     }
   ],
-  "coast": "High tide has largely passed on Long Island's south shore and around New York Harbor, where some leftover minor flooding is possible as water recedes; the approaching high tide along western Long Island Sound (coastal Westchester, the North Shore and coastal Connecticut) brings another round of minor coastal flooding. Coastal Flood Advisories end between noon and 4 PM Friday depending on location. Beach flooding and dune erosion continue through early afternoon, with 8 to 12 foot breaking waves gradually shrinking through the day. On the water, a Gale Warning covers the ocean and a Small Craft Advisory covers the Sound, harbor and bays until 6 AM Saturday, with leftover swell making the entrances to Long Island Sound and New York Harbor rough much of Friday; small craft conditions are likely on the ocean Saturday (possibly the Sound and bays too), all waters settle below advisory levels Sunday, and gales are expected on the ocean again Sunday night into Monday, with a few gale-force gusts possible on the Sound and bays.",
+  "coast": "All coastal flood alerts have expired. On the water, a Gale Warning continues for much of the ocean until 6 AM Saturday as southwest-to-west winds blow, except from Sandy Hook to Fire Island Inlet within 20 miles of shore, where gusts are mostly near 30 knots with a few to 35. Ocean seas of 12 to 16 feet slowly subside through Saturday night. Small Craft Advisories cover the remaining waters until 6 PM Saturday or 1 AM Sunday depending on the area, with small craft conditions on all waters Saturday and on the ocean into Saturday night. Conditions calm briefly late Saturday night into Sunday before gales become possible again late Sunday night into Monday ahead of the strong front.",
   "watch_for": [
-    "Minor coastal flooding at this afternoon's high tide along western Long Island Sound",
-    "Timing of Sunday night's rain, with a slight chance of thunder and gusty winds",
-    "Gusty west winds Monday and gales returning on the ocean Sunday night into Monday"
+    "Rain timing late Sunday night into Monday morning, mainly before Monday afternoon",
+    "West wind gusts of 30 to 40 mph Monday, which could prompt a Wind Advisory",
+    "Gales possible again on the ocean late Sunday night into Monday"
   ],
-  "confidence": "Forecasters are fairly confident in today's showers and about a half inch of rain Sunday night, but less certain about a possible second low then and how much wind it brings, which for now looks minimal."
+  "confidence": "Forecasters are confident in a breezy, seasonable weekend; for Monday the storm looks fast-moving enough to keep rain at a half inch or less for now, though whether winds reach advisory levels is uncertain."
 }
