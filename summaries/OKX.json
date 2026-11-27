@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "be8d7320-48ba-4b8a-8ac7-a349f556b067",
-  "afd_issued": "2026-11-27T01:33:00Z",
-  "generated": "2026-11-27T03:25:21Z",
-  "headline": "Thanksgiving night's major coastal storm keeps high winds, heavy rain and moderate to major coastal flooding going in New York City until about midnight, then winds ease and a mild, cloudy, showery Friday follows.",
+  "afd_id": "e88de271-4d50-48e7-9213-84599e8cbb59",
+  "afd_issued": "2026-11-27T05:45:00Z",
+  "generated": "2026-11-27T07:26:02Z",
+  "headline": "The major coastal storm's worst wind and rain are winding down early Friday, leaving a mild, cloudy Friday with a few showers and lingering minor to locally moderate coastal flooding at the morning high tide.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A storm moving north through the Mid-Atlantic, pressed against unusually strong high pressure to the northeast, keeps heavy rain and high winds over New York City through the first half of tonight, with the heaviest rain and strongest winds arriving together this evening and even a rumble of thunder possible. Gusts of about 45 to 60 mph are likely in the city and along the coast until around 10 PM, with a few higher gusts possible, before winds ease as a warm front moves in; a High Wind Warning covers the city, Long Island and the New Jersey waterfront until 1 AM Friday, and a Wind Advisory for areas north and west of the city and inland Connecticut now also ends at 1 AM. Rain totals of 1 to 2 inches are still expected, locally up to 3 inches, but the fast-moving storm should keep rates under an inch an hour, so flooding should be mainly minor nuisance flooding with a low chance of flash flooding. Temperatures climb into the 50s overnight behind the warm front, fog is possible as winds briefly calm, and then south winds gradually pick back up."
+      "text": "In the early hours of Friday the storm's rain and wind ease as a warm front lifts north through New York City; the High Wind Warning and Wind Advisories end at 1 AM. Temperatures climb into the 50s overnight, and fog may form for a while as winds briefly calm, mainly outside the city, before south winds pick back up. Friday stays cloudy with a chance of showers as the storm's upper-level low passes to the northwest, with the best chances north and west of the city; highs reach the mid to upper 50s (possibly cooler under the clouds and showers), with south-southwest winds gusting 25 to 30 mph. Showers may linger over Long Island and Connecticut into Friday evening, then winds turn southwest and stay gusty overnight."
     },
     {
       "title": "Short Term",
-      "text": "Friday stays cloudy with a chance of showers as the storm's upper-level low passes to the northwest, with the best chances north and west of the city. Highs reach the mid to upper 50s, though some guidance runs cooler because of the clouds and showers, and south-southwest winds gust 25 to 30 mph, turning west after midnight Friday night. Saturday looks dry with west winds gusting about 25 to 30 mph, easing Saturday night."
+      "text": "Saturday looks dry as the storm moves off through northern New England, with west winds gusting about 25 to 30 mph that ease Saturday night. Sunday looks dry and calmer. The discussion gives no temperature details for the weekend."
     },
     {
       "title": "Long Term",
-      "text": "Sunday looks dry, then showers are likely after midnight Sunday night as a front arrives. A chance of showers lingers Monday morning, with southwest winds gusting about 25 to 30 mph that turn west in the afternoon and northwest Monday night. Tuesday looks dry; the discussion gives no temperature details for Sunday through Tuesday."
+      "text": "Showers are likely after midnight Sunday night as a front arrives, with a chance of showers lingering Monday morning. Monday's southwest winds gust about 25 to 30 mph, turning west in the afternoon and northwest Monday night. Tuesday looks dry."
     }
   ],
-  "coast": "Storm-force east-northeast winds through the first half of tonight are driving a 3 to 4 foot storm surge, so widespread moderate to major coastal flooding is likely with tonight's high tide, and forecast water levels have ticked up a bit; Coastal Flood Warnings run until 6 AM Friday for New York City, Long Island, coastal New Jersey and coastal Connecticut except the southeastern part of the state. Significant impacts are expected around Peconic Bay, with surge funneling toward the Peconic River, and along the western Long Island Sound shoreline where high water combines with big waves, while surge up the Hackensack, Hudson and Passaic rivers brings minor to moderate flooding, and heavy rain at high tide could worsen coastal street flooding. For Friday morning's high tide winds turn southwest and widespread minor flooding is likely, locally moderate in the back bays of Long Island's south shore; the earlier Coastal Flood Watches there are now Coastal Flood Advisories, and advisories cover all coastal areas from 6 AM Friday until between noon and 4 PM depending on location. Ocean beaches see 8 to 12 foot breaking waves with widespread beach flooding, dune erosion and possible localized overwashes flooding roads and buildings behind the dunes, while the western Sound and Long Island's forks see 3 to 6 foot breakers with dune erosion, splashover and possible isolated damage to shoreline and marina structures. On the water a Storm Warning runs until 1 AM Friday, with ocean seas near 20 feet, waves near 10 feet on the Sound and at the New York Harbor entrance, and gusts often 60 to 70 mph this evening; a southwest gale is likely on the ocean Friday, easing to small-craft-advisory levels Saturday and likely below that Sunday, with southwest to west gales possible on the ocean again Monday.",
+  "coast": "Coastal Flood Warnings run until 6 AM Friday for New York City, Long Island, coastal New Jersey and coastal Connecticut except the southeastern part of the state, after last night's 3 to 4 foot storm surge brought moderate to major flooding, including surge up the Hackensack, Hudson and Passaic rivers. For Friday morning's high tide winds turn southwest, so widespread minor flooding is likely, locally moderate in the back bays of Long Island's south shore; Coastal Flood Advisories cover coastal areas from 6 AM Friday until between noon and 4 PM depending on location. Ocean beaches see 8 to 12 foot breaking waves with beach flooding, dune erosion and possible localized overwashes at high tide that can flood roads and buildings behind the dunes, while the western Sound and Long Island's forks see 3 to 6 foot breakers with dune erosion, splashover and possible isolated damage to shoreline and marina structures. On the water the Storm Warning ends at 1 AM Friday, but a southwest gale is likely on the ocean Friday (Gale Warning until 6 AM Saturday) with a Small Craft Advisory on the Sound, harbor and bays until 6 AM Saturday; winds ease Saturday, are likely below advisory levels Sunday, and southwest to west gales are possible on the ocean again Monday.",
   "watch_for": [
-    "Tonight's high tide, with moderate to major coastal flooding and heavy rain worsening street flooding",
-    "Strongest wind gusts until around 10 PM, with warnings ending at 1 AM",
-    "Possible fog overnight as winds calm behind the warm front"
+    "Friday morning's high tide, with minor to locally moderate flooding, especially Long Island's south shore back bays",
+    "Patchy fog early Friday as winds calm behind the warm front",
+    "Showers late Sunday night into Monday morning, with gusty winds Monday"
   ],
-  "confidence": "Forecasters are confident in tonight's high winds, heavy rain and coastal flooding, less sure about overnight fog, and note Friday could turn out cooler than forecast under clouds and showers."
+  "confidence": "Forecasters are confident the storm winds down early Friday, are less sure about early-morning fog and cloud details, and note Friday could run cooler than forecast under clouds and showers."
 }
