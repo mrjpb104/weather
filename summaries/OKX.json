@@ -1,18 +1,18 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "6df1f94f-d90f-482a-8b10-45b988953e2d",
-  "afd_issued": "2026-11-27T09:37:00Z",
-  "generated": "2026-11-27T11:26:00Z",
+  "afd_id": "cc968576-6649-43f7-8913-80470ae8fea1",
+  "afd_issued": "2026-11-27T11:44:00Z",
+  "generated": "2026-11-27T12:25:20Z",
   "headline": "Friday morning's high tide brings one last round of mostly minor coastal flooding, then a breezy, showery Friday gives way to a dry weekend before about a half inch of rain Sunday night into early Monday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday brings light rain and scattered showers around New York City as the storm's center passes well to the northwest through northern New York, with the best chances north and west of the city. Low clouds that brought poor visibility early are improving, and winds turn southwest and gust 20 to 30 mph through the day. A few showers could linger over Long Island and Connecticut into early Friday evening, then it dries out overnight with southwest gusts around 20 mph. No adverse weather impacts are expected on land beyond the morning coastal flooding."
+      "text": "Friday brings light rain and scattered showers around New York City, with a few showers this morning and another round possible this afternoon, as the storm's center passes well to the northwest through northern New York; the best chances are north and west of the city. Low clouds are slowly improving but should hang around much of the day, and southwest winds gust 20 to 30 mph. Friday night stays breezy with southwest gusts around 20 to 25 mph and possibly a brief break in the clouds late. No adverse weather impacts are expected on land beyond the morning coastal flooding."
     },
     {
       "title": "Short Term",
-      "text": "Saturday looks dry with west winds gusting 20 to 25 mph that ease Saturday night, and Sunday looks dry and calmer. Rain returns Sunday night, most likely after midnight, as low pressure tracks from the eastern Great Lakes into northern New England, possibly with a second, smaller low crossing the area. Expect about a half inch, not enough to cause flooding, with a slight chance of thunder and some gusty winds, though wind impacts look minimal for now. The discussion gives no temperature details."
+      "text": "Saturday looks dry with west winds gusting 20 to 25 mph that ease Saturday night, and Sunday looks dry. Rain returns Sunday night, most likely after midnight, as low pressure tracks from the eastern Great Lakes into northern New England, possibly with a second, smaller low crossing the area. Expect about a half inch, not enough to cause flooding, with a slight chance of thunder and some gusty winds, though wind impacts look minimal for now. The discussion gives no temperature details."
     },
     {
       "title": "Long Term",
@@ -25,5 +25,5 @@
     "Timing of Sunday night's rain, with a slight chance of thunder and gusty winds",
     "Gales returning on the ocean Sunday night into Monday"
   ],
-  "confidence": "Forecasters saw no major changes in the latest guidance for Friday's coastal flooding and have low confidence in any moderate flooding, are fairly confident in Sunday night's roughly half-inch of rain, and are less certain about wind details with the possible second low."
+  "confidence": "Forecasters saw no major changes in the latest guidance for Friday's coastal flooding and have low confidence in any moderate flooding, expect roughly a half inch of rain Sunday night, and are less certain about wind details with the possible second low."
 }

@@ -1,14 +1,14 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "f20c0769-6a7b-4a55-9489-43fbdea95f4e",
-  "afd_issued": "2026-11-27T07:23:00Z",
-  "generated": "2026-11-27T08:25:22Z",
-  "headline": "Gusty southwest winds of 30 to 40 mph continue Friday with light snow near the Tennessee border, then a quick weekend warm-up leads to a fast-moving band of rain and wind Sunday into early Monday.",
+  "afd_id": "58cb9e12-b41b-477a-86b9-94b3b28e7af1",
+  "afd_issued": "2026-11-27T11:49:00Z",
+  "generated": "2026-11-27T12:25:20Z",
+  "headline": "Gusty southwest winds of 30 to 40 mph continue Friday with light wintry weather near the Tennessee border, then a quick weekend warm-up leads to a fast-moving band of rain and wind Sunday into early Monday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Charlotte and the rest of the lower elevations, Friday stays windy with southwest gusts of 30 to 40 mph and occasional higher gusts, just below Wind Advisory levels but strong enough to blow around loose objects and cause localized power outages. Winds ease Friday evening, and low clouds gradually lift and break up in the afternoon and evening, though the cloud deck may be stubborn. In the North Carolina mountains, snow is likely through Friday morning, with 1 to 3 inches (locally more) on the higher elevations of western Graham and Macon Counties and slick high-elevation roads, plus possible light freezing rain or drizzle near the Tennessee border, even in the valleys, with negligible ice. Mountain winds pick up again Friday night, with gusts over 40 mph likely above 3,500 feet, especially in the northern North Carolina mountains, into early Saturday."
+      "text": "Around Charlotte and the rest of the lower elevations, Friday stays windy with southwest gusts of 30 to 40 mph and occasional higher gusts, just below Wind Advisory levels but strong enough to blow around loose objects and cause localized power outages. Winds ease Friday evening, though some lighter gusts linger, and low clouds may be stubborn before gradually lifting and breaking up in the afternoon and evening. In the North Carolina mountains near the Tennessee border, snow with possible sleet and light freezing drizzle continues into Friday evening, with 1 to 3 inches (locally more) on the higher elevations of western Graham and Macon Counties this morning, slick high-elevation roads and negligible ice. Mountain winds pick up again Friday night, with gusts over 40 mph likely above 3,500 feet, especially in the northern North Carolina mountains, into early Saturday."
     },
     {
       "title": "Short Term",
@@ -21,8 +21,8 @@
   ],
   "watch_for": [
     "Gusts of 30 to 40 mph Friday, and over 40 mph in the high mountains Friday night, with possible localized power outages",
-    "Slick high-elevation roads and light freezing drizzle near the Tennessee border Friday morning",
+    "Slick high-elevation roads and light freezing drizzle near the Tennessee border Friday",
     "Sunday's fast-moving rain and gusty winds, with amounts trending a bit higher in the west"
   ],
-  "confidence": "Forecasters are confident in Friday's gusty winds staying just below advisory levels, in rain for everyone late Sunday, and in dry weather Monday through Thursday."
+  "confidence": "Forecasters made no major changes and are confident in Friday's gusty winds staying just below advisory levels, in rain for everyone late Sunday, and in dry weather Monday through Thursday."
 }
