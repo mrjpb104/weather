@@ -1,29 +1,29 @@
 {
   "office": "SEW",
   "office_name": "Seattle",
-  "afd_id": null,
-  "afd_issued": "2026-11-28T04:56:00Z",
-  "generated": "2026-11-28T05:25:41Z",
-  "headline": "Friday's rain has moved out, and a dry but foggy, cloudy Saturday comes before rain returns Sunday and a Monday storm whose uncertain track will decide whether strong winds stay on the coast or reach the Strait and Puget Sound areas.",
+  "afd_id": "47377f3c-7134-454e-aca7-274df5d2d8c6",
+  "afd_issued": "2026-11-28T11:02:00Z",
+  "generated": "2026-11-28T11:25:43Z",
+  "headline": "Saturday is a dry, foggy-then-cloudy break before rain returns Sunday and a windy, wetter low pressure system moves in Monday, bringing gusts in the 30s and 40s mph and another round of coastal flooding risk around Puget Sound.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday's light lowland rain and mountain snow have moved off to the east, and skies are clearing for a while Friday evening. With light winds and lots of leftover moisture, fog and low clouds are already forming and will thicken overnight into Saturday morning. Fog is very likely in the southern interior (70 to 90 percent chance) and possible around Puget Sound (25 to 40 percent), with better odds in river valleys."
+      "text": "Saturday is dry under weak high pressure, but fog and low clouds cover much of the lowlands, including the Puget Sound area, Saturday morning, clearing around noon before high and mid-level clouds move in for a mostly cloudy afternoon. Highs reach near 50. Saturday night stays dry with increasing high clouds."
     },
     {
       "title": "Short Term",
-      "text": "Saturday is a dry break as weak high pressure builds overhead; morning fog clears by afternoon, but skies stay overcast as higher clouds move in, and north to northeast breezes pick up. The high pressure moves east Sunday, and a developing storm offshore spreads rain inland across Western Washington. Parts of the region will likely turn windy by Sunday night, but how windy, and where, depends on the storm's path. The Skokomish River should drop below flood stage early Saturday."
+      "text": "A low pressure system off the coast brings mostly light rain Sunday, then wetter, windier weather Monday as the storm moves inland. From Sunday through Monday, expect another 1 to 2 inches of rain on the coast and up to an inch in the interior lowlands, including around the Strait and Puget Sound; snow stays at high elevations in the Cascades (above about 4,000 feet), with rain in the Olympics. Typical gusts Monday are in the 30s and 40s mph, with the strongest gusts reaching the 50s along the coast and in the northwest interior. More rain will keep the Skokomish River high with a chance of renewed flooding Sunday night and Monday, and rain and wind ease Monday night as the storm weakens and moves north into British Columbia."
     },
     {
       "title": "Long Term",
-      "text": "Computer models still disagree on Monday's storm: the American model takes a weakening low into British Columbia, which would keep the strongest winds mostly along the coast, while the European model brings a deep low ashore toward Western Washington, which would push strong winds into the interior, including the Strait and Puget Sound lowlands. Model ensembles hint at quieter weather by midweek as high pressure builds and the storm track shifts south into California. The Skokomish could rise again next week with more rain, but no river flooding is expected elsewhere over the next 7 days."
+      "text": "Tuesday brings a break in the weather under weak high pressure. A weak, falling-apart system brings a chance of rain Wednesday and Thursday. Low pressure passes to the south late in the week, keeping western Washington mainly dry Friday, with temperatures close to average throughout."
     }
   ],
-  "coast": "Coastal flooding remains a threat this weekend, worst along the north interior shorelines. A Coastal Flood Advisory runs 6 to 11 AM Saturday for the Seattle, Everett, Shoreline/Lynnwood, Kitsap, Pierce and south King, Skagit, Whatcom and San Juan shorelines (the Strait shore around Sequim and Port Angeles is not in it), and a Coastal Flood Watch covers San Juan County Sunday morning; more coastal flooding is possible next week with very high tides, especially Monday. On the water, a Small Craft Advisory for the coastal waters ends at 10 PM Friday; winds stay light into Saturday morning, turn easterly Saturday afternoon through Sunday, then southeasterly Sunday night, with localized small-craft-advisory gusts possible Saturday night and especially Sunday at the western entrance of the Strait and the southern coastal waters. Monday's storm brings a 75 to 95 percent chance of gale-force gusts over the coastal waters and 40 to 70 percent over the interior waters, plus a 20 to 40 percent chance of storm-force gusts on the coastal waters; seas of 5 to 8 feet Saturday and Sunday build to 15 to 18 feet Monday, and winds ease Tuesday but stay elevated at times through the week.",
+  "coast": "A Coastal Flood Advisory is in effect from 6 to 11 AM Saturday for minor flooding at high tide along Puget Sound and the northern inland waters, including Seattle, Everett, eastern Kitsap County, the Pierce and south King County lowlands, western Skagit and Whatcom counties and the San Juan Islands. A Coastal Flood Watch covers the San Juan Islands for Sunday morning's high tide, with minor to moderate flooding possible, and lower pressure, stronger winds and rain bring another coastal flooding threat around Monday's high tide; high astronomical tides keep the threat going Tuesday. On the water, east winds develop Saturday afternoon and continue Sunday, with locally advisory-level gusts possible Sunday at the western entrance to the Strait of Juan de Fuca and on the southern coastal waters. South winds peak Monday, with a 75 to 95 percent chance of gale-force gusts on the coastal waters, 40 to 70 percent on the interior waters, and a 20 to 40 percent chance of storm-force gusts offshore; seas of 5 to 8 feet Saturday and Sunday build to 15 to 18 feet Monday, and winds stay elevated at times through the week.",
   "watch_for": [
-    "The track of Monday's storm, which decides whether strong winds stay on the coast or reach the interior lowlands",
-    "Fog Saturday morning, most likely in the southern interior and river valleys",
-    "Coastal flooding Saturday morning and again Monday, worst along the north interior shorelines"
+    "Track and strength of Monday's storm, which decides how strong the winds get",
+    "Coastal flooding at high tides Sunday (San Juans) and Monday around Puget Sound",
+    "Renewed Skokomish River flooding Sunday night and Monday"
   ],
-  "confidence": "Confidence is good in tonight's drying and a dry Saturday, but low for Sunday night and Monday because models disagree on the storm's track and strength, with quieter weather favored by midweek."
+  "confidence": "Forecasters are confident in a dry Saturday and in Monday's wind and rain arriving, but the exact track and strength of Monday's storm remain uncertain, and the Wednesday–Thursday rain chances depend on a weak, disorganized system."
 }

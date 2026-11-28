@@ -1,14 +1,14 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "2ae3331a-86bf-4476-b4d4-24098c8cfc43",
-  "afd_issued": "2026-11-28T10:01:00Z",
-  "generated": "2026-11-28T10:25:22Z",
+  "afd_id": "e459bf1c-0337-4e2e-adeb-d262d9a11f5b",
+  "afd_issued": "2026-11-28T10:32:00Z",
+  "generated": "2026-11-28T11:25:43Z",
   "headline": "A warm, dry weekend gives way to a strong storm fed by a weak to locally moderate atmospheric river (a long plume of Pacific moisture) that is likely to bring at least an inch of rain from the coast to the mountains, possible thunderstorms, gusty winds and mountain snow Tuesday into Wednesday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Saturday stays dry and warmer than normal under high pressure, with highs in the mid to upper 70s across most of the coast and valleys, including the Carlsbad area. The low deserts reach the upper 70s to low 80s, the High Desert the low 70s, and the mountains the 50s and 60s. Saturday night stays dry."
+      "text": "Saturday stays dry and warmer than normal under high pressure, with highs in the mid to upper 70s across much of the coast and valleys, including the Carlsbad area. The low deserts reach the upper 70s to low 80s, the High Desert the low 70s, and the mountains the 50s and 60s. High clouds increase Saturday, and low clouds form along the coast late Saturday night, but it stays dry."
     },
     {
       "title": "Short Term",
@@ -16,14 +16,14 @@
     },
     {
       "title": "Long Term",
-      "text": "Tuesday into Wednesday, a strong storm drops in from the northwest, bringing widespread moderate to heavy rain, gusty winds, mountain snow and a greater-than-usual chance of thunderstorms, ending sometime Wednesday morning or afternoon; Tuesday looks like the coolest day of the week. At least 1 inch of rain is likely from the coast to the mountains, with a 40 to 50 percent chance of more than 3 inches along the coast and valleys and 70 to 80 percent in the mountains from Tuesday morning through Thursday morning; the deserts will likely get at least half an inch, with a 40 to 50 percent chance of more than an inch in the low deserts and 60 to 70 percent in the High Desert. Gusts over 35 mph on Tuesday have a 60 to 70 percent chance near the coast and 40 to 60 percent farther inland, and with soaked soils, downed branches and toppled shallow-rooted trees are possible; snow levels start above 8,000 feet Tuesday morning and fall to around 6,500 feet Tuesday night into Wednesday morning, so prepare for flooding and snow impacts at 6,500 feet and above. After a brief dry break later Wednesday into early Thursday, the pattern stays unsettled with more chances of cool, wet weather late in the week, and temperatures stay below normal inland through Saturday."
+      "text": "Tuesday into Wednesday, a strong storm drops in from the northwest, bringing widespread moderate to heavy rain, gusty winds, mountain snow and a greater-than-usual chance of thunderstorms (helped by warmer-than-normal ocean water), ending sometime Wednesday morning or afternoon; Tuesday looks like the coolest day of the week. At least 1 inch of rain is likely from the coast to the mountains, with a 40 to 50 percent chance of more than 3 inches along the coast and valleys and 70 to 80 percent in the mountains from Tuesday morning through Thursday morning; the deserts will likely get at least half an inch, with a 40 to 50 percent chance of more than an inch in the low deserts and 60 to 70 percent in the High Desert. Gusts over 35 mph on Tuesday have a 60 to 70 percent chance near the coast and 40 to 60 percent farther inland, and with soaked soils, downed branches and toppled shallow-rooted trees are possible; snow levels start above 8,000 feet Tuesday morning and fall to around 6,500 feet Tuesday night into Wednesday morning, so prepare for flooding and snow impacts at 6,500 feet and above. After a brief dry break later Wednesday into early Thursday, the pattern stays unsettled with more chances of cool, wet weather late in the week, and temperatures stay 3 to 7 degrees below normal inland through Saturday."
     }
   ],
-  "coast": "High tides keep dropping this weekend, from around 7 feet Saturday to below 7 feet Sunday, running about a foot above normal predictions. A reinforcing long-period west swell builds surf Saturday to 4 to 7 feet with sets to 8 feet on exposed west-facing beaches and near piers, highest in the morning and early afternoon, and combined with the high tide brings minor to locally moderate coastal flooding Saturday morning; a Beach Hazards Statement is in effect for the Orange and San Diego County coasts through Saturday afternoon. No hazardous boating conditions are expected through Monday, but southwest winds build Tuesday, with widespread gusts of 30 to 35 knots (about 35 to 40 mph) Tuesday morning through Wednesday morning, steep, choppy seas, a 20 to 30 percent chance of storm-force gusts Tuesday morning and afternoon, and a slight chance of thunderstorms over the water Tuesday.",
+  "coast": "High tides keep dropping through Monday, from around 7 feet Saturday morning to below 7 feet Sunday, running about a foot above normal predictions. A long-period west swell brings 4 to 6 foot surf with sets to 8 feet on exposed west-facing beaches Saturday, easing Saturday evening to 3 to 5 feet Sunday; together with the high tide this brings minor to locally moderate coastal flooding Saturday morning, and a Beach Hazards Statement is in effect for the Orange and San Diego County coasts through Saturday afternoon. No hazardous boating conditions are expected through Monday, but southwest winds build Tuesday, with widespread gusts of 30 to 35 knots (about 35 to 40 mph) Tuesday morning through Wednesday morning, steep, choppy seas, a 20 to 30 percent chance of storm-force gusts Tuesday morning and afternoon, and a slight chance of thunderstorms over the water Tuesday.",
   "watch_for": [
     "Rain totals, flooding and thunderstorm chances with the Tuesday–Wednesday storm",
     "Gusty winds Tuesday on saturated ground, which could bring down branches and trees",
-    "Coastal flooding and high surf Saturday morning"
+    "Snow levels in the mountains Tuesday night into Wednesday"
   ],
-  "confidence": "Forecasters are confident in the dry, warm weekend and fairly confident in a significant Tuesday–Wednesday storm, but exact rain totals and snow levels are still being refined, and the weather late next week is less certain."
+  "confidence": "Forecasters are confident in the dry, warm weekend and fairly confident in a significant Tuesday–Wednesday storm, with growing confidence in the atmospheric river, but exact rain totals and snow levels are still being refined, and late next week is less certain."
 }
