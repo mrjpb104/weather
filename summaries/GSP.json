@@ -1,18 +1,18 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "11912a8e-07c7-4a54-b681-7ef0db7873a6",
-  "afd_issued": "2026-11-27T19:08:00Z",
-  "generated": "2026-11-27T20:25:48Z",
-  "headline": "Friday's gusty winds die down tonight and the weekend warms up, before a strong cold front brings a burst of rain and gusty winds Sunday afternoon into early Monday.",
+  "afd_id": "95ecf2e1-ba03-4e47-b8a2-6cc997730921",
+  "afd_issued": "2026-11-27T23:26:00Z",
+  "generated": "2026-11-28T00:25:57Z",
+  "headline": "Gusty winds die down tonight and the weekend warms up, before a strong cold front brings a burst of rain, possibly heavy, and gusty winds Sunday afternoon into early Monday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Charlotte and the rest of the Piedmont, southwest wind gusts of 25 to 30 mph (briefly higher) are possible through sunset Friday, then winds gradually ease tonight as clouds thin out after dark, especially east of the mountains. In the North Carolina mountains along the Tennessee border, very light snow showers and flurries may continue into tonight; this morning's accumulations were mostly under 1 inch (up to 2 inches in the most favored spots), and any additional snow should be no more than that."
+      "text": "Around Charlotte and the rest of the Piedmont, Friday's gusty west-southwest winds weaken and turn light overnight, and clouds keep clearing out this evening, especially east of the mountains. In the North Carolina mountains along the Tennessee border, very light snow showers and flurries may continue for several more hours into tonight; this morning's accumulations were mostly under 1 inch (up to 2 inches in the most favored spots), and any additional snow should be no more than that."
     },
     {
       "title": "Short Term",
-      "text": "Saturday is dry and a bit breezy, with gusts likely staying under 20 mph and highs back near normal; Sunday starts a few degrees warmer. A cold front then sweeps through Sunday afternoon into Sunday night, led by a strong band of winds about a mile up and plenty of Gulf moisture, bringing a period of rain that could be heavy at times Sunday afternoon and evening. Flooding isn't a big concern because the rain moves through quickly and storm totals of 2 inches look unlikely, but gusts could top 30 mph in lower elevations and reach 40 to 45 mph on ridgetops. Thunderstorms look limited, though a low-end severe storm threat with strong, twisting winds can't be ruled out, and light snow may develop along the North Carolina–Tennessee border early Monday with little accumulation expected."
+      "text": "Saturday is dry with just thin high clouds and a light breeze, with gusts likely staying under 20 mph and highs back near normal; Sunday starts a few degrees warmer. A cold front then sweeps through Sunday afternoon into Sunday night, led by a strong band of winds about a mile up and plenty of Gulf moisture, bringing a period of rain that could be heavy at times Sunday afternoon and evening. Flooding isn't a big concern because the rain moves through quickly and storm totals of 2 inches look unlikely, but gusts could top 30 mph in lower elevations and reach 40 to 45 mph on ridgetops. Thunderstorms look limited, though a low-end severe storm threat with strong, shifting winds aloft can't be ruled out, and light snow may develop along the North Carolina–Tennessee border early Monday with little accumulation expected."
     },
     {
       "title": "Long Term",
@@ -24,5 +24,5 @@
     "A small chance of severe storms Sunday that forecasters are still monitoring",
     "Timing of rain from next week's system, possibly as early as Thursday night"
   ],
-  "confidence": "Forecasters made no major changes and are fairly confident in calming winds tonight and Sunday's front, are still watching storm details for Sunday, and have low confidence in the late-week system."
+  "confidence": "Forecasters are fairly confident in calming winds tonight and Sunday's front, are still watching thunderstorm details for Sunday as newer high-resolution models come in, and have low confidence in the late-week system."
 }
