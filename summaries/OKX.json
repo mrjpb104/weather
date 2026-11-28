@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "3dfce04a-a3da-487c-976c-fa75276dc99d",
-  "afd_issued": "2026-11-28T06:53:00Z",
-  "generated": "2026-11-28T07:25:51Z",
-  "headline": "After a breezy, seasonable Saturday and a quiet Sunday around New York City, a fast-moving storm brings a soaking 0.75 to 1 inch of rain and gusty winds late Sunday night into Monday.",
+  "afd_id": "7fe7952c-a976-455a-bf1f-6366212a1f79",
+  "afd_issued": "2026-11-28T08:49:00Z",
+  "generated": "2026-11-28T09:24:51Z",
+  "headline": "A dry, breezy, seasonable Saturday and a quiet Sunday around New York City give way to a quick-hitting storm with 0.75 to 1 inch of rain and gusty winds late Sunday night into Monday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Saturday stays dry and breezy with seasonable temperatures across the city and surrounding area, caught between low pressure departing to the north and high pressure to the south, with gusts of 25 to 30 mph. Plenty of clouds hang around, especially in the morning into early afternoon. Winds ease late tonight."
+      "text": "Saturday stays dry and breezy with seasonable temperatures across the city and surrounding area, as it sits between low pressure departing to the north and high pressure to the south. Gusts run 25 to 30 mph, and forecasters leaned toward the gustier end of the guidance. Plenty of clouds hang around, especially this morning into early afternoon, and winds ease late tonight."
     },
     {
       "title": "Short Term",
-      "text": "Sunday is dry. A storm tracking up from the southern Plains passes to the north Monday, dragging a cold front through with a period of moderate rain late Sunday night into Monday morning, a widespread 0.75 to 1 inch falling over 6 to 12 hours, though no flooding concerns are expected. A narrow line of heavier showers may cross Long Island and Connecticut Monday morning; lightning isn't expected, but it could bring brief heavier rain and stronger gusts. South winds gust to about 25 to 35 mph late Sunday night, then west winds gust to about 30 to 40 mph Monday, with a chance of reaching Wind Advisory levels, most likely Monday afternoon behind the front; winds gradually subside Monday night."
+      "text": "Sunday is dry. A storm tracking up from the southern Plains passes to the north on Monday, pushing a cold front through with a period of moderate rain late Sunday night into Monday morning: a widespread 0.75 to 1 inch over 6 to 12 hours, with no flooding concerns at this time. A narrow line of heavier showers may sweep across Long Island and Connecticut Monday morning along the front; lightning isn't expected, but it could bring brief heavier rain and stronger gusts. South winds gust to roughly 25 to 35 mph late Sunday night, then west winds gust to roughly 30 to 40 mph Monday, with a chance of reaching Wind Advisory levels (most likely Monday afternoon behind the front) before winds gradually subside Monday night."
     },
     {
       "title": "Long Term",
-      "text": "Tuesday and Wednesday look dry and quiet behind the storm. The discussion does not go into detail beyond midweek."
+      "text": "Tuesday and Wednesday look quiet behind the storm, with no notable weather mentioned. The discussion doesn't go into detail beyond midweek."
     }
   ],
-  "coast": "The Gale Warning for local waters has been canceled; Small Craft Advisories remain in effect for all waters today, easing tonight as winds lighten (ending this evening for some waters and between 1 and 6 AM Sunday for others). Gales are possible again Sunday night through Monday night with the frontal system: south gusts up to 40 knots (about 45 mph) late Sunday night into Monday morning, and gusts up to 40 knots continuing Monday as winds shift to the west and northwest.",
+  "coast": "The Gale Warning for local waters has been canceled; Small Craft Advisories remain for all waters today and step down tonight as winds lighten (ending this evening for some waters and between 1 and 6 AM Sunday for others). Gales are possible again Sunday night through Monday night with the frontal system: south gusts up to 40 knots (about 45 mph) late Sunday night into Monday morning, and gusts up to 40 knots continuing through Monday as winds shift to the west and northwest.",
   "watch_for": [
     "Rain timing and amounts late Sunday night into Monday morning",
     "Possible Wind Advisory-level gusts Monday, especially Monday afternoon",
     "A narrow line of heavier rain and stronger gusts Monday morning on Long Island and in Connecticut"
   ],
-  "confidence": "Forecasters are confident in a breezy, dry Saturday and quiet Sunday, and fairly confident in a quick-hitting rain Sunday night into Monday, with less certainty about how strong Monday's winds get."
+  "confidence": "Forecasters report no significant changes and are confident in a breezy, dry Saturday and quiet Sunday, fairly confident in the quick-hitting rain Sunday night into Monday, and less certain how strong Monday's winds get."
 }
