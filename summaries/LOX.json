@@ -1,14 +1,14 @@
 {
   "office": "LOX",
   "office_name": "Los Angeles",
-  "afd_id": "dd39707d-8c06-4e44-abe7-9a50b7c5de11",
-  "afd_issued": "2026-11-27T22:38:00Z",
-  "generated": "2026-11-28T00:25:57Z",
+  "afd_id": "a1ccf018-c380-486f-88b1-290910b5520c",
+  "afd_issued": "2026-11-27T23:52:00Z",
+  "generated": "2026-11-28T01:25:50Z",
   "headline": "The heat breaks this weekend, light showers start Sunday into Monday, and a major storm on an unusually southern track could arrive as early as Monday night with off-and-on rain, very heavy at times, through at least Wednesday morning — people near recent burn areas should prepare now.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday is another very warm fall day, with highs mostly in the low to mid 80s along the coast and in the coastal valleys, including the Glendale area, thanks to moderate offshore (land-to-sea) winds and high pressure that is unusually strong for late November. No daily records fell, but a few spots came close. Skies stay clear through tonight with light winds."
+      "text": "Friday was another very warm fall day, with highs mostly in the low to mid 80s along the coast and in the coastal valleys, including the Glendale area, thanks to moderate offshore (land-to-sea) winds and high pressure that is unusually strong for late November. No daily records fell, but a few spots came close. Skies stay clear through tonight with light winds."
     },
     {
       "title": "Short Term",
@@ -16,12 +16,12 @@
     },
     {
       "title": "Long Term",
-      "text": "The main storm could start as early as Monday night, and computer models agree very well that its low pressure center will take a track much farther south than usual, a path that historically favors severe weather in Southern California, especially Los Angeles County. It will also cross ocean waters that are still 5 to 10 degrees warmer than normal, and many model runs have raised rain totals, especially Tuesday, when there is a 20 to 30 percent chance of rain falling at 1 inch per hour or more on mountain-facing slopes south of Point Conception, which includes the foothills above the Los Angeles basin. Forecasters urge residents, especially near areas burned in the last year or two, to start protecting property now and make evacuation plans. Thursday looks dry, and a weak system Friday will likely bring little."
+      "text": "The main storm could start as early as Monday night, and computer models agree very well that its low pressure center will take a track much farther south than usual, a path that historically favors severe weather in Southern California, especially Los Angeles County. It will also cross ocean waters that are still 5 to 10 degrees warmer than normal, and many model runs have raised rain totals, especially Tuesday, when there is at least a 20 to 30 percent chance of rain falling at 1 inch per hour or more on mountain-facing slopes south of Point Conception, which includes the foothills above the Los Angeles basin. Forecasters urge residents, especially near areas burned in the last year or two, to start protecting property now and make evacuation plans. Thursday looks dry, and a weak system Friday will likely bring little."
     }
   ],
-  "coast": "A large, long-period west swell is slowly easing, but high surf continues through Saturday on the Central Coast from Point Conception northward and on the Los Angeles County coast, with many strong rip currents nearly everywhere, strong along-shore currents, some risk of sneaker waves, heavy shore break and beach erosion, making swimming dangerous. An exceptionally high tide of up to 7.2 feet Saturday morning keeps a threat of minor to moderate flooding in low-lying coastal spots; a Coastal Flood Advisory runs until 4 PM Friday for several beaches and until 2 PM Saturday for the Ventura County beaches, High Surf Advisories run until 3 PM or 9 PM Saturday depending on the stretch of coast, and a Beach Hazards Statement covers other beaches through Saturday afternoon. On the water, a Small Craft Advisory runs until 3 AM Saturday for the outer waters; conditions are mostly calmer Saturday through Monday, then winds and seas build Monday night and reach gale force Tuesday and Tuesday night across all coastal waters, with hazardous seas, squalls with thunderstorms, possible waterspouts and poor visibility in heavy rain. Advisory-level winds and seas linger Wednesday, with a 50 percent chance of gales at times on the outer waters.",
+  "coast": "A large, long-period west swell is slowly easing, but high surf continues through Saturday on the Central Coast from Point Conception northward and on the Los Angeles County coast, with many strong rip currents nearly everywhere, strong along-shore currents, some risk of sneaker waves, heavy shore break and beach erosion, making swimming dangerous. An exceptionally high tide of up to 7.2 feet Saturday morning keeps a threat of minor to moderate flooding in low-lying coastal spots; a Coastal Flood Advisory continues into Saturday afternoon for the Ventura County beaches, High Surf Advisories run until 4 PM or 9 PM Saturday depending on the stretch of coast, and a Beach Hazards Statement covers other beaches through Saturday afternoon. On the water, a Small Craft Advisory runs until 3 AM Saturday for the outer waters; conditions are mostly calmer Saturday through Monday, then winds and seas build Monday night and reach gale force Tuesday and Tuesday night across all coastal waters, with hazardous seas, squalls with thunderstorms, possible waterspouts and poor visibility in heavy rain. Advisory-level winds and seas linger Wednesday, with a 50 percent chance of gales at times on the outer waters.",
   "watch_for": [
-    "Tuesday's heavy rain: a 20–30% chance of 1 inch per hour rain rates on slopes south of Point Conception, a concern for recent burn areas",
+    "Tuesday's heavy rain: at least a 20–30% chance of 1 inch per hour rain rates on slopes south of Point Conception, a concern for recent burn areas",
     "Possible severe weather with the main storm, especially in Los Angeles County",
     "Exact start of the main storm — possibly as early as Monday night"
   ],
