@@ -1,29 +1,29 @@
 {
   "office": "OKX",
   "office_name": "New York",
-  "afd_id": "c7b9dd31-4cd3-4d37-bf9d-c3e402cd7637",
-  "afd_issued": "2026-11-27T20:12:00Z",
-  "generated": "2026-11-27T21:25:22Z",
-  "headline": "A breezy, seasonable weekend around New York City gives way to a fast-moving storm late Sunday night into Monday morning, bringing up to a half inch of rain and west wind gusts of 30 to 40 mph on Monday.",
+  "afd_id": "bac2f538-11c2-47b4-816e-4e0c3ad40448",
+  "afd_issued": "2026-11-28T00:43:00Z",
+  "generated": "2026-11-28T02:25:30Z",
+  "headline": "A breezy, seasonable Saturday around New York City leads to a quieter Sunday before a fast-moving storm brings up to a half inch of rain late Sunday night into Monday morning, followed by west wind gusts of 30 to 40 mph on Monday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "A band of showers sweeps west to east across the city and surrounding area Friday afternoon into early evening as an upper-level storm passes to the north and west. Southwest winds stay gusty, about 20 to 30 mph and strongest near the coast, turning more westerly overnight. Expect plenty of clouds with some breaks tonight, and the wind and clouds keep it mild for late November, with lows mainly around 40, about 5 to 8 degrees above normal."
+      "text": "Friday night stays breezy across the city and surrounding area as low pressure over upstate New York pulls away to the north, with winds turning from southwest to west and gusts of 20 to 30 mph, strongest near the coast. Expect plenty of clouds with occasional breaks. The wind and clouds keep it mild for late November, with lows mainly around 40, about 5 to 8 degrees above normal."
     },
     {
       "title": "Short Term",
-      "text": "Saturday stays breezy with west wind gusts of 20 to 30 mph (strongest near the coast during the day), plenty of clouds with breaks, and highs in the lower 50s, slightly above normal; skies clear late Saturday afternoon into the evening as winds ease. Sunday is a bit warmer and less windy under high pressure. A strengthening storm passing to the north then drags a cold front through late Sunday night into Monday morning, bringing a period of moderate rain totaling a half inch or less, with most of it over by Monday afternoon. South winds pick up Sunday night and swing to the west on Monday with gusts of 30 to 40 mph, possibly reaching marginal Wind Advisory levels."
+      "text": "Saturday remains breezy with west wind gusts of 20 to 30 mph (strongest near the coast during the day) and plenty of clouds with breaks, then skies clear from southwest to northwest late Saturday afternoon into the evening; highs reach the lower 50s, slightly above normal. Sunday is a bit warmer and less windy as high pressure passes. A rapidly strengthening storm passing to the north then drags a cold front through late Sunday night into Monday morning, bringing a period of moderate rain totaling a half inch or less, with most of it over by Monday afternoon (it may linger a little longer east of the city). South winds pick up Sunday night and swing to the west on Monday with gusts of 30 to 40 mph, possibly reaching marginal Wind Advisory levels."
     },
     {
       "title": "Long Term",
       "text": "Winds gradually die down Monday night. Tuesday and Wednesday look quiet and dry. The discussion gives no temperature details for midweek."
     }
   ],
-  "coast": "All coastal flood alerts have expired. On the water, a Gale Warning continues for much of the ocean until 6 AM Saturday as southwest-to-west winds blow, except from Sandy Hook to Fire Island Inlet within 20 miles of shore, where gusts are mostly near 30 knots with a few to 35. Ocean seas of 12 to 16 feet slowly subside through Saturday night. Small Craft Advisories cover the remaining waters until 6 PM Saturday or 1 AM Sunday depending on the area, with small craft conditions on all waters Saturday and on the ocean into Saturday night. Conditions calm briefly late Saturday night into Sunday before gales become possible again late Sunday night into Monday ahead of the strong front.",
+  "coast": "All coastal flood alerts have expired. On the water, a Gale Warning continues for much of the ocean until 6 AM Saturday as southwest-to-west winds blow, except from Sandy Hook to Fire Island Inlet within 20 miles of shore, where gusts are mostly near 30 knots with a few to 35. Ocean seas of 8 to 12 feet from Sandy Hook to Fire Island Inlet, and 11 to 17 feet farther south and east, slowly subside through Sunday. Small Craft Advisories cover the remaining waters until 6 PM Saturday or 1 AM Sunday depending on the area, with small craft conditions on all waters Saturday and on the ocean into Saturday night. Conditions calm briefly late Saturday night into Sunday before gales become possible again late Sunday night into Monday with the strong front.",
   "watch_for": [
-    "Rain timing late Sunday night into Monday morning, mainly before Monday afternoon",
+    "Rain timing late Sunday night into Monday morning, mostly done by Monday afternoon",
     "West wind gusts of 30 to 40 mph Monday, which could prompt a Wind Advisory",
     "Gales possible again on the ocean late Sunday night into Monday"
   ],
-  "confidence": "Forecasters are confident in a breezy, seasonable weekend; for Monday the storm looks fast-moving enough to keep rain at a half inch or less for now, though whether winds reach advisory levels is uncertain."
+  "confidence": "Forecasters are confident in a breezy, seasonable Saturday and a calmer Sunday; for Monday the storm looks fast-moving enough to keep rain at a half inch or less for now, though whether winds reach advisory levels is uncertain."
 }
