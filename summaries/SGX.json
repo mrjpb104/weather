@@ -1,29 +1,29 @@
 {
   "office": "SGX",
   "office_name": "San Diego",
-  "afd_id": "dca87ae0-65d0-47f3-9536-bf37f6359d70",
-  "afd_issued": "2026-11-28T06:23:00Z",
-  "generated": "2026-11-28T07:25:51Z",
-  "headline": "Dry weather with a cooling trend lasts through the weekend, then a strengthening storm fed by a weak to locally moderate atmospheric river (a long plume of Pacific moisture) is increasingly likely to bring heavy rain, possible thunderstorms, strong winds and a flash-flood risk Tuesday into Wednesday.",
+  "afd_id": "2ae3331a-86bf-4476-b4d4-24098c8cfc43",
+  "afd_issued": "2026-11-28T10:01:00Z",
+  "generated": "2026-11-28T10:25:22Z",
+  "headline": "A warm, dry weekend gives way to a strong storm fed by a weak to locally moderate atmospheric river (a long plume of Pacific moisture) that is likely to bring at least an inch of rain from the coast to the mountains, possible thunderstorms, gusty winds and mountain snow Tuesday into Wednesday.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Friday was the last very warm day west of the mountains. High clouds increase overnight, which should keep low coastal clouds from becoming widespread, though patchy low clouds around 700 to 1,200 feet are possible late tonight (about a 25 percent chance near San Diego and 15 percent near Santa Ana). Saturday brings more high clouds and cooling as the high pressure weakens and a storm passes well to the north, mainly in the western valleys, where highs drop into the 70s to near 80."
+      "text": "Saturday stays dry and warmer than normal under high pressure, with highs in the mid to upper 70s across most of the coast and valleys, including the Carlsbad area. The low deserts reach the upper 70s to low 80s, the High Desert the low 70s, and the mountains the 50s and 60s. Saturday night stays dry."
     },
     {
       "title": "Short Term",
-      "text": "Cooling spreads inland toward the mountains Sunday, with stronger ocean breezes and breezier conditions in the mountains and deserts, where mountain highs stay in the 50s and 60s. Light showers become more likely late Sunday night into Monday morning, but most areas from the coast to the coastal mountain slopes get about a quarter inch or less. Temperatures cool to within about 5 degrees of normal under cloudier skies Monday."
+      "text": "Sunday is another dry, warm day with highs similar to Saturday before an incoming low pressure system pushes the warm high pressure south Sunday night. Moisture arriving Sunday night brings a chance of light rain, and periods of spotty light rain are possible Monday, mostly at rates of 0.15 inch per hour or less. The chance of more than half an inch of rain from Sunday night through Monday night is 15 to 30 percent, highest north of San Diego County. Inland areas turn 3 to 7 degrees cooler than normal starting Monday."
     },
     {
       "title": "Long Term",
-      "text": "Heavier rain arrives late Monday night or Tuesday morning as a rapidly deepening storm pulls in a weak to locally moderate atmospheric river, sweeping northwest to southeast Tuesday and ending sometime Wednesday morning or afternoon; models are unusually consistent on timing this far out. Early estimates are 1 inch or more and locally near 3 inches west of the mountains (highest in the LA basin), around half an inch in the lower deserts with some spots over an inch, and higher totals in the high desert; an unstable atmosphere and warm ocean water raise thunderstorm chances and the risk of flash flooding, and strong winds are expected, most impactful near the coast, though speeds are uncertain. Snow levels start above 8,000 feet Tuesday morning and fall to around 6,000 feet, bringing a chance of snow showers to the San Bernardino Mountain villages. After a brief dry break later Wednesday into early Thursday, the unsettled pattern continues and a weak low pressure system may bring more cool, wet weather late next week."
+      "text": "Tuesday into Wednesday, a strong storm drops in from the northwest, bringing widespread moderate to heavy rain, gusty winds, mountain snow and a greater-than-usual chance of thunderstorms, ending sometime Wednesday morning or afternoon; Tuesday looks like the coolest day of the week. At least 1 inch of rain is likely from the coast to the mountains, with a 40 to 50 percent chance of more than 3 inches along the coast and valleys and 70 to 80 percent in the mountains from Tuesday morning through Thursday morning; the deserts will likely get at least half an inch, with a 40 to 50 percent chance of more than an inch in the low deserts and 60 to 70 percent in the High Desert. Gusts over 35 mph on Tuesday have a 60 to 70 percent chance near the coast and 40 to 60 percent farther inland, and with soaked soils, downed branches and toppled shallow-rooted trees are possible; snow levels start above 8,000 feet Tuesday morning and fall to around 6,500 feet Tuesday night into Wednesday morning, so prepare for flooding and snow impacts at 6,500 feet and above. After a brief dry break later Wednesday into early Thursday, the pattern stays unsettled with more chances of cool, wet weather late in the week, and temperatures stay below normal inland through Saturday."
     }
   ],
-  "coast": "High tides keep dropping this weekend, to around 7 feet Saturday and below 7 feet Sunday, running about a foot above normal predictions; Saturday morning's high tide plus elevated surf brings minor to locally moderate coastal flooding. A reinforcing long-period west swell arriving overnight builds surf Saturday to 4 to 7 feet with sets to 8 feet on exposed west-facing beaches and near piers, highest in the morning and early afternoon, under a Beach Hazards Statement for the Orange and San Diego County coasts through Saturday afternoon. No hazardous boating conditions are expected through Monday, but southwest winds build Tuesday with widespread gusts of 30 to 35 knots (about 35 to 40 mph) Tuesday morning through Wednesday morning, steep, choppy seas, a 20 to 30 percent chance of storm-force gusts Tuesday morning and afternoon, and a slight chance of thunderstorms on the water Tuesday.",
+  "coast": "High tides keep dropping this weekend, from around 7 feet Saturday to below 7 feet Sunday, running about a foot above normal predictions. A reinforcing long-period west swell builds surf Saturday to 4 to 7 feet with sets to 8 feet on exposed west-facing beaches and near piers, highest in the morning and early afternoon, and combined with the high tide brings minor to locally moderate coastal flooding Saturday morning; a Beach Hazards Statement is in effect for the Orange and San Diego County coasts through Saturday afternoon. No hazardous boating conditions are expected through Monday, but southwest winds build Tuesday, with widespread gusts of 30 to 35 knots (about 35 to 40 mph) Tuesday morning through Wednesday morning, steep, choppy seas, a 20 to 30 percent chance of storm-force gusts Tuesday morning and afternoon, and a slight chance of thunderstorms over the water Tuesday.",
   "watch_for": [
-    "Rain totals and thunderstorm/flash-flood risk with Tuesday–Wednesday's storm, which could still shift in track and strength",
-    "Strong winds Tuesday, especially near the coast",
-    "Minor to locally moderate coastal flooding and big surf Saturday morning"
+    "Rain totals, flooding and thunderstorm chances with the Tuesday–Wednesday storm",
+    "Gusty winds Tuesday on saturated ground, which could bring down branches and trees",
+    "Coastal flooding and high surf Saturday morning"
   ],
-  "confidence": "Forecasters are confident in the dry, cooling weekend and unusually confident this far out in the timing of the Tuesday–Wednesday storm, with growing confidence in heavy rain, but exact rain totals, wind speeds and impacts remain uncertain, as does the weather late next week."
+  "confidence": "Forecasters are confident in the dry, warm weekend and fairly confident in a significant Tuesday–Wednesday storm, but exact rain totals and snow levels are still being refined, and the weather late next week is less certain."
 }
