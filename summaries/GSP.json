@@ -1,28 +1,28 @@
 {
   "office": "GSP",
   "office_name": "Greenville-Spartanburg",
-  "afd_id": "95ecf2e1-ba03-4e47-b8a2-6cc997730921",
-  "afd_issued": "2026-11-27T23:26:00Z",
-  "generated": "2026-11-28T00:25:57Z",
-  "headline": "Gusty winds die down tonight and the weekend warms up, before a strong cold front brings a burst of rain, possibly heavy, and gusty winds Sunday afternoon into early Monday.",
+  "afd_id": "53fda6bb-1d70-4a32-ad47-fbe222bf4369",
+  "afd_issued": "2026-11-28T06:58:00Z",
+  "generated": "2026-11-28T07:25:51Z",
+  "headline": "A pleasant, warming weekend gives way to a fast-moving cold front Sunday afternoon into early Monday with a burst of rain and gusty winds, then dry, cool weather before temperatures climb well above normal late next week.",
   "sections": [
     {
       "title": "Today & Tonight",
-      "text": "Around Charlotte and the rest of the Piedmont, Friday's gusty west-southwest winds weaken and turn light overnight, and clouds keep clearing out this evening, especially east of the mountains. In the North Carolina mountains along the Tennessee border, very light snow showers and flurries may continue for several more hours into tonight; this morning's accumulations were mostly under 1 inch (up to 2 inches in the most favored spots), and any additional snow should be no more than that."
+      "text": "Gusts of 15 to 25 mph across the Charlotte area, Piedmont and Upstate ease through the morning, then another round of 15 to 20 mph gusts picks up this afternoon before dying down this evening. Skies turn mostly sunny and highs rebound to near or slightly above normal. In the mountains, gusts up to about 35 mph linger at higher elevations, especially in the northern North Carolina mountains."
     },
     {
       "title": "Short Term",
-      "text": "Saturday is dry with just thin high clouds and a light breeze, with gusts likely staying under 20 mph and highs back near normal; Sunday starts a few degrees warmer. A cold front then sweeps through Sunday afternoon into Sunday night, led by a strong band of winds about a mile up and plenty of Gulf moisture, bringing a period of rain that could be heavy at times Sunday afternoon and evening. Flooding isn't a big concern because the rain moves through quickly and storm totals of 2 inches look unlikely, but gusts could top 30 mph in lower elevations and reach 40 to 45 mph on ridgetops. Thunderstorms look limited, though a low-end severe storm threat with strong, shifting winds aloft can't be ruled out, and light snow may develop along the North Carolina–Tennessee border early Monday with little accumulation expected."
+      "text": "Sunday is a few degrees warmer before a strong cold front sweeps through Sunday afternoon into Sunday night, possibly with heavy rain for a time late Sunday afternoon and evening, but flooding looks unlikely because the front is moving fast. Most guidance gives 0.3 to 1.25 inches over the western half of the region (over an inch mainly along the Blue Ridge escarpment) and less than half an inch in the eastern areas, including the Charlotte area. There is little instability but strong winds aloft, so a low-end severe storm threat exists; the main concern is gusty winds Sunday afternoon into early Monday, over 30 mph in lower areas and 40 to 50 mph in the higher elevations, where a Wind Advisory may be needed. Dry, cool high pressure moves back in Monday."
     },
     {
       "title": "Long Term",
-      "text": "Behind the front, Monday and Tuesday turn cooler but dry, then temperatures trend warmer again. Another strong storm system crossing the Plains late next week could bring rain as soon as Thursday night, likely starting as rain with unusually warm temperatures, though cool air could get trapped against the mountains. Confidence is low, so only a slight chance of rain is in the forecast for Thursday night."
+      "text": "Dry, quiet weather lingers through the middle of the week, then temperatures warm to well above normal by the end of the week. Another storm system and cold front could bring rain Friday into Saturday, with chances increasing in the latest forecast, and warmer temperatures make it likely that it will be all rain."
     }
   ],
   "watch_for": [
-    "Sunday afternoon and evening rain and wind: gusts over 30 mph in lower elevations, 40–45 mph on ridgetops",
-    "A small chance of severe storms Sunday that forecasters are still monitoring",
-    "Timing of rain from next week's system, possibly as early as Thursday night"
+    "Gusty winds Sunday afternoon into early Monday, with a possible Wind Advisory for the mountains",
+    "Brief heavy rain and a low-end chance of damaging storm gusts Sunday afternoon and evening",
+    "Rain chances with the next system Friday into Saturday"
   ],
-  "confidence": "Forecasters are fairly confident in calming winds tonight and Sunday's front, are still watching thunderstorm details for Sunday as newer high-resolution models come in, and have low confidence in the late-week system."
+  "confidence": "Forecasters are confident in the weekend warm-up and a fast-moving front Sunday into early Monday, with some uncertainty in rain totals and wind strength, and growing but still moderate confidence in rain late next week."
 }
